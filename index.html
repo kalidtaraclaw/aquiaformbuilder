@@ -1182,15 +1182,21 @@
                     }
                     if (!templateStream) return labels;
 
-                    // Get raw compressed bytes
-                    let rawBytes;
-                    if (typeof templateStream.getContents === 'function') {
-                        rawBytes = templateStream.getContents();
-                    } else if (typeof templateStream.decode === 'function') {
-                        rawBytes = templateStream.decode();
-                    } else {
-                        return labels;
+                    // Resolve PDFRef if needed (XFA array entries are often indirect references)
+                    let resolvedStream = templateStream;
+                    if (typeof templateStream.getContents !== 'function' && pdfDoc.context) {
+                        try {
+                            resolvedStream = pdfDoc.context.lookup(templateStream);
+                        } catch (e) {
+                            console.warn('XFA: could not resolve template ref:', e.message);
+                            return labels;
+                        }
                     }
+                    if (!resolvedStream || typeof resolvedStream.getContents !== 'function') return labels;
+
+                    // Get raw compressed bytes
+                    const rawBytes = resolvedStream.getContents();
+                    if (!rawBytes || rawBytes.length === 0) return labels;
 
                     // Decompress with DecompressionStream API
                     let xmlText = '';
@@ -1219,15 +1225,30 @@
                         xmlText = new TextDecoder().decode(rawBytes);
                     }
 
-                    // Parse field name → toolTip mappings
-                    const fieldRegex = /<field[^>]*name="([^"]*)"[^>]*>([\s\S]*?)<\/field>/g;
-                    let match;
-                    while ((match = fieldRegex.exec(xmlText)) !== null) {
-                        const fieldName = match[1];
-                        const fieldBody = match[2];
-                        const tipMatch = fieldBody.match(/<toolTip>([\s\S]*?)<\/toolTip>/);
-                        if (tipMatch && tipMatch[1].trim()) {
-                            labels[fieldName] = tipMatch[1].trim();
+                    if (!xmlText || xmlText.length === 0) return labels;
+
+                    // Parse field name → toolTip mappings using DOMParser
+                    try {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(xmlText, 'text/xml');
+                        const fields = doc.querySelectorAll('field');
+                        for (const field of fields) {
+                            const name = field.getAttribute('name');
+                            if (!name) continue;
+                            const assist = field.querySelector('assist');
+                            if (assist) {
+                                const toolTip = assist.querySelector('toolTip');
+                                if (toolTip && toolTip.textContent.trim()) {
+                                    labels[name] = toolTip.textContent.trim();
+                                }
+                            }
+                        }
+                    } catch (parseErr) {
+                        console.warn('XFA: XML parse failed, falling back to regex');
+                        const fieldRegex = /<field[^>]*name="([^"]*)"[^>]*>[\s\S]*?<toolTip>([\s\S]*?)<\/toolTip>/g;
+                        let match;
+                        while ((match = fieldRegex.exec(xmlText)) !== null) {
+                            if (match[2].trim()) labels[match[1]] = match[2].trim();
                         }
                     }
                     console.log(`XFA: extracted ${Object.keys(labels).length} labels from template`);
@@ -1258,6 +1279,10 @@
                     label = label.replace(/\b\w+/g, w =>
                         w.length <= 2 ? w.toLowerCase() : w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()
                     );
+                }
+                // Ensure first letter is capitalized
+                if (label.length > 0) {
+                    label = label.charAt(0).toUpperCase() + label.slice(1);
                 }
                 return label;
             },
