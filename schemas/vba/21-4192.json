@@ -1,157 +1,509 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "21-4192",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VA Form 21-4192",
+  "description": "Request for Employment Information in Connection with Claim for Disability Benefits",
   "type": "object",
-  "required": [
-    "ssn",
-    "fullName"
-  ],
+  "x-va-form": {
+    "formNumber": "21-4192",
+    "formTitle": "Request for Employment Information in Connection with Claim for Disability Benefits",
+    "ombNumber": "2900-0065",
+    "respondentBurden": "15 minutes",
+    "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-4192-are.pdf",
+    "org": "VBA",
+    "pageCount": 2,
+    "status": "digitized",
+    "requires3rdParty": true,
+    "routingTypes": [],
+    "instructions": {
+      "title": "Information and Instructions for Completing Request for Employment Information",
+      "alert": "This form is used to request employment information from a veteran's current or former employer in connection with a claim for disability benefits. Please read the instructions below before completing this form.",
+      "sections": [
+        {
+          "heading": "Who Should Complete This Form",
+          "content": "Section I should be completed by the veteran or beneficiary. Sections II through IV should be completed by the employer or former employer. The veteran should give or mail this form to the employer for completion."
+        },
+        {
+          "heading": "Where to Submit This Form",
+          "content": "After completion, the employer should return this form to:\n\nDepartment of Veterans Affairs\nEvidence Intake Center\nPO Box 4444\nJanesville, WI 53547-4444\n\nThe employer may also return the completed form to the veteran, who may submit it with other evidence in support of the claim."
+        }
+      ]
+    },
+    "formSections": [
+      {
+        "id": "section1",
+        "number": "I",
+        "title": "Identification Information",
+        "page": 1,
+        "instructions": "To Be Completed By Veteran/Beneficiary. Please provide the following information and give or mail this form to your employer for completion.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "employerNameAddress", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "veteranFirstName", "width": 5},
+              {"fieldId": "veteranMiddleInitial", "width": 2},
+              {"fieldId": "veteranLastName", "width": 5}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "veteranSsn", "width": 4},
+              {"fieldId": "vaFileNumber", "width": 4},
+              {"fieldId": "dateOfBirth", "width": 4}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section2",
+        "number": "II",
+        "title": "Employment Information",
+        "page": 1,
+        "instructions": "To Be Completed By Employer. Please provide the following employment details for the veteran/beneficiary identified in Section I.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "beginningDateOfEmployment", "width": 6},
+              {"fieldId": "endingDateOfEmployment", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "typeOfWork", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "amountEarned12Months", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "timeLost12Months", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "hoursWorkedDaily", "width": 6},
+              {"fieldId": "hoursWorkedWeekly", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "concessions", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "reasonNotWorking", "width": 8},
+              {"fieldId": "dateLastWorked", "width": 4}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "dateLastPayment", "width": 6},
+              {"fieldId": "grossAmountLastPayment", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "grossAmountLumpSum", "width": 6},
+              {"fieldId": "dateLumpSum", "width": 6}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section3",
+        "number": "III",
+        "title": "Reserve or National Guard Status",
+        "page": 2,
+        "instructions": "Complete this section ONLY if the veteran is currently serving in the Reserve or National Guard.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "currentlyServingReserve", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "currentDutyStatus", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "disabilitiesPreventDuties", "width": 12}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section4",
+        "number": "IV",
+        "title": "Benefit Entitlement Information",
+        "page": 2,
+        "instructions": "To Be Completed By Employer.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "receivingBenefits", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "typeOfBenefit", "width": 6},
+              {"fieldId": "grossMonthlyAmount", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "dateBenefitsBegan", "width": 6},
+              {"fieldId": "dateBenefitsEnd", "width": 6}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section5",
+        "number": "V",
+        "title": "Certification and Signature",
+        "page": 2,
+        "instructions": "I certify that the statements on this form are true and correct to the best of my knowledge and belief.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "employerSignature", "width": 8},
+              {"fieldId": "employerSignatureDate", "width": 4}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "employerTitle", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "veteranSignature", "width": 8},
+              {"fieldId": "veteranSignatureDate", "width": 4}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "required": ["veteranSsn", "dateOfBirth", "veteranFirstName", "veteranLastName", "employerNameAddress", "beginningDateOfEmployment", "endingDateOfEmployment", "typeOfWork", "amountEarned12Months", "hoursWorkedDaily", "hoursWorkedWeekly", "employerSignature", "employerSignatureDate"],
   "properties": {
-    "ssn": {
+    "employerNameAddress": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "street": {"type": "string"},
+        "street2": {"type": "string"},
+        "city": {"type": "string"},
+        "state": {"type": "string", "maxLength": 2},
+        "zipCode": {"type": "string", "pattern": "^\\d{5}(-\\d{4})?$"}
+      },
+      "required": ["name", "street", "city", "state", "zipCode"],
+      "x-va-field": {
+        "label": "Employer Name and Address",
+        "widget": "address",
+        "required": true,
+        "note": "Enter the full name and mailing address of the employer"
+      }
+    },
+    "veteranFirstName": {
+      "type": "string",
+      "maxLength": 30,
+      "x-va-field": {
+        "label": "Veteran's First Name",
+        "widget": "text",
+        "required": true
+      }
+    },
+    "veteranMiddleInitial": {
+      "type": "string",
+      "maxLength": 1,
+      "x-va-field": {
+        "label": "Middle Initial",
+        "widget": "text"
+      }
+    },
+    "veteranLastName": {
+      "type": "string",
+      "maxLength": 30,
+      "x-va-field": {
+        "label": "Veteran's Last Name",
+        "widget": "text",
+        "required": true
+      }
+    },
+    "veteranSsn": {
       "type": "string",
       "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
-      "maxLength": 11
+      "maxLength": 11,
+      "x-va-field": {
+        "label": "Social Security Number",
+        "widget": "ssn",
+        "required": true
+      }
+    },
+    "vaFileNumber": {
+      "type": "string",
+      "maxLength": 9,
+      "x-va-field": {
+        "label": "VA File Number (if applicable)",
+        "widget": "text"
+      }
     },
     "dateOfBirth": {
       "type": "string",
-      "format": "date"
+      "format": "date",
+      "x-va-field": {
+        "label": "Date of Birth",
+        "widget": "date",
+        "required": true
+      }
     },
-    "fullName": {
-      "type": "object",
-      "properties": {
-        "first": {
-          "type": "string",
-          "maxLength": 30
-        },
-        "middle": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 30
-        },
-        "last": {
-          "type": "string",
-          "maxLength": 30
-        },
-        "suffix": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 10
-        }
-      },
-      "required": [
-        "first",
-        "last"
-      ]
-    },
-    "address": {
-      "type": "object",
-      "properties": {
-        "street": {
-          "type": "string",
-          "maxLength": 50
-        },
-        "street2": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 50
-        },
-        "city": {
-          "type": "string",
-          "maxLength": 30
-        },
-        "state": {
-          "type": "string",
-          "maxLength": 2
-        },
-        "postalCode": {
-          "type": "string",
-          "maxLength": 10
-        },
-        "country": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 30
-        }
-      },
-      "required": [
-        "street",
-        "city",
-        "state",
-        "postalCode"
-      ]
-    },
-    "vaFileNumber": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 9
-    },
-    "dateSigned": {
+    "beginningDateOfEmployment": {
       "type": "string",
-      "format": "date"
+      "format": "date",
+      "x-va-field": {
+        "label": "Beginning Date of Employment",
+        "widget": "date",
+        "required": true
+      }
     },
-    "signature": {
-      "type": "boolean",
-      "description": "Signature certification"
+    "endingDateOfEmployment": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {
+        "label": "Ending Date of Employment",
+        "widget": "date",
+        "required": true
+      }
     },
-    "radioButtonList": {
-      "type": "string"
+    "typeOfWork": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Type of Work Performed",
+        "widget": "text",
+        "required": true
+      }
     },
-    "grossamount": {
-      "type": "number"
+    "amountEarned12Months": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Amount Earned During 12 Months Preceding Last Date of Employment (before deductions)",
+        "widget": "text",
+        "required": true,
+        "note": "Enter gross earnings before any deductions"
+      }
     },
-    "thousandsDollarAmount": {
-      "type": "number"
+    "timeLost12Months": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Time Lost During 12 Months Preceding Last Date of Employment Due to Disability",
+        "widget": "text"
+      }
     },
-    "hundredsDollarAmount": {
-      "type": "number"
+    "hoursWorkedDaily": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Number of Hours Worked Daily",
+        "widget": "text",
+        "required": true
+      }
     },
-    "centsAmount": {
-      "type": "number"
-    },
-    "ofWork": {
-      "type": "string"
-    },
-    "reasonVeteranNotWorking": {
-      "type": "string"
-    },
-    "numberHoursWorkedDaily": {
-      "type": "string"
-    },
-    "numberHoursWorkedWeekly": {
-      "type": "string"
-    },
-    "veteransCurrentDutyStatus": {
-      "type": "string"
+    "hoursWorkedWeekly": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Number of Hours Worked Weekly",
+        "widget": "text",
+        "required": true
+      }
     },
     "concessions": {
-      "type": "string"
+      "type": "string",
+      "x-va-field": {
+        "label": "Concessions Made to Employee by Reason of Age or Disability",
+        "widget": "textarea",
+        "note": "Describe any special accommodations or concessions granted"
+      }
     },
-    "timelost": {
-      "type": "string"
+    "reasonNotWorking": {
+      "type": "string",
+      "x-va-field": {
+        "label": "If Veteran Is Not Working, State Reason for Termination of Employment",
+        "widget": "textarea",
+        "note": "If retired on disability, please specify"
+      }
     },
-    "typeofbenefit": {
-      "type": "string"
+    "dateLastWorked": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {
+        "label": "Date Last Worked",
+        "widget": "date"
+      }
+    },
+    "dateLastPayment": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {
+        "label": "Date of Last Payment",
+        "widget": "date"
+      }
+    },
+    "grossAmountLastPayment": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Gross Amount of Last Payment",
+        "widget": "text"
+      }
+    },
+    "grossAmountLumpSum": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Gross Amount of Lump Sum Payment (if applicable)",
+        "widget": "text"
+      }
+    },
+    "dateLumpSum": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {
+        "label": "Date of Lump Sum Payment",
+        "widget": "date"
+      }
+    },
+    "currentlyServingReserve": {
+      "type": "string",
+      "enum": ["yes", "no"],
+      "x-va-field": {
+        "label": "Is Veteran Currently Serving in the Reserve or National Guard?",
+        "widget": "radio",
+        "options": [
+          {"value": "yes", "label": "Yes"},
+          {"value": "no", "label": "No"}
+        ]
+      }
+    },
+    "currentDutyStatus": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Veteran's Current Duty Status",
+        "widget": "text",
+        "conditional": {"field": "currentlyServingReserve", "value": "yes"}
+      }
+    },
+    "disabilitiesPreventDuties": {
+      "type": "string",
+      "enum": ["yes", "no"],
+      "x-va-field": {
+        "label": "Does the Veteran Have Any Disabilities That Prevent Them From Performing Military Duties?",
+        "widget": "radio",
+        "options": [
+          {"value": "yes", "label": "Yes"},
+          {"value": "no", "label": "No"}
+        ],
+        "conditional": {"field": "currentlyServingReserve", "value": "yes"}
+      }
+    },
+    "receivingBenefits": {
+      "type": "string",
+      "enum": ["yes", "no"],
+      "x-va-field": {
+        "label": "Is the Veteran Receiving or Entitled to Receive Sick, Retirement, or Other Benefits as a Result of Employment?",
+        "widget": "radio",
+        "required": true,
+        "options": [
+          {"value": "yes", "label": "Yes"},
+          {"value": "no", "label": "No"}
+        ]
+      }
+    },
+    "typeOfBenefit": {
+      "type": "string",
+      "enum": ["sick", "retirement", "other"],
+      "x-va-field": {
+        "label": "Type of Benefit",
+        "widget": "radio",
+        "options": [
+          {"value": "sick", "label": "Sick Benefits"},
+          {"value": "retirement", "label": "Retirement Benefits"},
+          {"value": "other", "label": "Other (specify)"}
+        ],
+        "conditional": {"field": "receivingBenefits", "value": "yes"}
+      }
+    },
+    "grossMonthlyAmount": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Gross Monthly Amount of Benefit",
+        "widget": "text",
+        "conditional": {"field": "receivingBenefits", "value": "yes"}
+      }
+    },
+    "dateBenefitsBegan": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {
+        "label": "Date Benefits Began",
+        "widget": "date",
+        "conditional": {"field": "receivingBenefits", "value": "yes"}
+      }
+    },
+    "dateBenefitsEnd": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {
+        "label": "Date Benefits Are Expected to End",
+        "widget": "date",
+        "conditional": {"field": "receivingBenefits", "value": "yes"}
+      }
+    },
+    "employerSignature": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Signature of Employer/Supervisor",
+        "widget": "signature",
+        "required": true
+      }
+    },
+    "employerSignatureDate": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {
+        "label": "Date Signed",
+        "widget": "date",
+        "required": true
+      }
+    },
+    "employerTitle": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Title/Position of Employer or Supervisor",
+        "widget": "text",
+        "required": true
+      }
+    },
+    "veteranSignature": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Signature of Veteran (if applicable)",
+        "widget": "signature"
+      }
+    },
+    "veteranSignatureDate": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {
+        "label": "Date Signed",
+        "widget": "date"
+      }
     }
-  },
-  "x-va-metadata": {
-    "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-4192-are.pdf",
-    "status": "digitized",
-    "totalFields": 61,
-    "composedFields": 57,
-    "coveragePercent": 93,
-    "xfaLabelCount": 0,
-    "needsReviewCount": 0,
-    "pageCount": 2,
-    "generatedAt": "2026-03-28T17:35:29.209Z"
   }
 }

@@ -1,275 +1,887 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "21-2680",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VA Form 21-2680",
+  "description": "Examination for Housebound Status or Permanent Need for Regular Aid and Attendance",
   "type": "object",
-  "required": [
-    "ssn",
-    "fullName"
-  ],
+  "x-va-form": {
+    "formNumber": "21-2680",
+    "formTitle": "Examination for Housebound Status or Permanent Need for Regular Aid and Attendance",
+    "ombNumber": "2900-0721",
+    "respondentBurden": "30 minutes",
+    "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-2680-are.pdf",
+    "org": "VBA",
+    "pageCount": 4,
+    "status": "digitized",
+    "requires3rdParty": true,
+    "routingTypes": [],
+    "instructions": {
+      "title": "Information and Instructions for Completing Examination for Housebound Status or Permanent Need for Regular Aid and Attendance",
+      "alert": "This form is used to document the medical findings that support a claim for Aid and Attendance or Housebound benefits. Please read all instructions carefully. The medical examination portion of this form must be completed by a licensed physician, physician assistant, or nurse practitioner.",
+      "sections": [
+        {
+          "heading": "Purpose of This Form",
+          "content": "Use this form, VA Form 21-2680, to provide medical evidence to support a claim for Special Monthly Compensation based on the need for regular Aid and Attendance of another person, or on account of being housebound. This examination provides VA with the medical information necessary to determine eligibility for these additional benefits."
+        },
+        {
+          "heading": "Who Completes This Form",
+          "content": "Sections I and II are completed by the veteran or claimant. Sections III through VIII must be completed by the examining physician, physician assistant (PA-C), or advanced practice registered nurse (APRN). The examiner must be a licensed medical professional."
+        },
+        {
+          "heading": "Where to Submit This Form",
+          "content": "Submit the completed form to:\n\nDepartment of Veterans Affairs\nEvidence Intake Center\nPO Box 4444\nJanesville, WI 53547-4444\n\nYou may also submit this form through your representative or at your local VA Regional Office."
+        }
+      ]
+    },
+    "formSections": [
+      {
+        "id": "section1",
+        "number": "I",
+        "title": "Veteran's Identification Information",
+        "page": 1,
+        "instructions": "Please provide the veteran's personal information below.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "veteranFirstName", "width": 5},
+              {"fieldId": "veteranMiddleInitial", "width": 2},
+              {"fieldId": "veteranLastName", "width": 5}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "veteranSsn", "width": 4},
+              {"fieldId": "vaFileNumber", "width": 4},
+              {"fieldId": "dateOfBirth", "width": 4}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "serviceNumber", "width": 6},
+              {"fieldId": "telephone", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "email", "width": 6},
+              {"fieldId": "gender", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "currentMailingAddress", "width": 12}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section2",
+        "number": "II",
+        "title": "Claim Information",
+        "page": 1,
+        "instructions": "Complete this section ONLY if the claimant is NOT the veteran.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "claimantName", "width": 6},
+              {"fieldId": "claimantSsn", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "relationshipToVeteran", "width": 6},
+              {"fieldId": "benefitAppliedFor", "width": 6}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section3",
+        "number": "III",
+        "title": "Examination Information",
+        "page": 1,
+        "instructions": "To Be Completed By Examining Physician/Medical Professional.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "dateOfExamination", "width": 6},
+              {"fieldId": "placeOfExamination", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "isHospitalized", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "nameOfHospital", "width": 8},
+              {"fieldId": "dateAdmitted", "width": 4}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section4",
+        "number": "IV",
+        "title": "Diagnoses and Medical History",
+        "page": 2,
+        "instructions": "Please provide the complete medical diagnosis and describe all disabilities that affect the patient's ability to perform activities of daily living.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "completeDiagnosis", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "disabilityPermanentTotal", "width": 12}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section5",
+        "number": "V",
+        "title": "Functional Assessment — Activities of Daily Living",
+        "page": 2,
+        "instructions": "For each activity listed below, indicate whether the patient can perform the activity independently, needs assistance, or is unable to perform. Provide detailed explanations for any limitations.",
+        "note": "The purpose of this section is to document whether the patient requires the regular aid and attendance of another person to perform normal activities of daily living.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "bedConfinement", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "hoursInBed9pmTo9am", "width": 6},
+              {"fieldId": "hoursInBed9amTo9pm", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "bathingShowering", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "toileting", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "transferring", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "feedingMealPrep", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "hygieneNeeds", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "ambulatingWithinHome", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "dressing", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "medicationManagement", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "additionalActivities", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "whatDisabilitiesRestrict", "width": 12}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section6",
+        "number": "VI",
+        "title": "Physical Examination Findings",
+        "page": 3,
+        "instructions": "Record the patient's current physical examination findings below.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "age", "width": 3},
+              {"fieldId": "heightFeet", "width": 2},
+              {"fieldId": "heightInches", "width": 2},
+              {"fieldId": "weightActual", "width": 3},
+              {"fieldId": "weightEstimated", "width": 2}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "nutrition", "width": 6},
+              {"fieldId": "gait", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "bloodPressure", "width": 4},
+              {"fieldId": "pulseRate", "width": 4},
+              {"fieldId": "respiratoryRate", "width": 4}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "visionLeftEye", "width": 6},
+              {"fieldId": "visionRightEye", "width": 6}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section7",
+        "number": "VII",
+        "title": "Mobility and Travel Assessment",
+        "page": 3,
+        "instructions": "Assess the patient's ability to walk, travel, and leave home.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "ableToWalkWithout", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "walkingDistance", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "ableToTravel", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "ableToManageFinancial", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "additionalFindings", "width": 12}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section8",
+        "number": "VIII",
+        "title": "Examiner's Certification and Signature",
+        "page": 4,
+        "instructions": "I certify that I have personally examined the patient and that the findings recorded on this form are complete and accurate to the best of my knowledge and belief.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "examinerName", "width": 6},
+              {"fieldId": "examinerTitle", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "npiNumber", "width": 6},
+              {"fieldId": "medicalLicenseNumber", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "medicalFacilityName", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "medicalFacilityAddress", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "examinerSignature", "width": 8},
+              {"fieldId": "examinerSignatureDate", "width": 4}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "required": ["veteranFirstName", "veteranLastName", "veteranSsn", "dateOfBirth", "currentMailingAddress", "dateOfExamination", "completeDiagnosis", "examinerName", "examinerTitle", "npiNumber", "examinerSignature", "examinerSignatureDate"],
   "properties": {
-    "ssn": {
+    "veteranFirstName": {
+      "type": "string",
+      "maxLength": 30,
+      "x-va-field": {
+        "label": "Veteran's First Name",
+        "widget": "text",
+        "required": true
+      }
+    },
+    "veteranMiddleInitial": {
+      "type": "string",
+      "maxLength": 1,
+      "x-va-field": {
+        "label": "Middle Initial",
+        "widget": "text"
+      }
+    },
+    "veteranLastName": {
+      "type": "string",
+      "maxLength": 30,
+      "x-va-field": {
+        "label": "Veteran's Last Name",
+        "widget": "text",
+        "required": true
+      }
+    },
+    "veteranSsn": {
       "type": "string",
       "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
-      "maxLength": 11
+      "maxLength": 11,
+      "x-va-field": {
+        "label": "Social Security Number",
+        "widget": "ssn",
+        "required": true
+      }
+    },
+    "vaFileNumber": {
+      "type": "string",
+      "maxLength": 9,
+      "x-va-field": {
+        "label": "VA File Number (if applicable)",
+        "widget": "text"
+      }
     },
     "dateOfBirth": {
       "type": "string",
-      "format": "date"
-    },
-    "fullName": {
-      "type": "object",
-      "properties": {
-        "first": {
-          "type": "string",
-          "maxLength": 30
-        },
-        "middle": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 30
-        },
-        "last": {
-          "type": "string",
-          "maxLength": 30
-        },
-        "suffix": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 10
-        }
-      },
-      "required": [
-        "first",
-        "last"
-      ]
-    },
-    "address": {
-      "type": "object",
-      "properties": {
-        "street": {
-          "type": "string",
-          "maxLength": 50
-        },
-        "street2": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 50
-        },
-        "city": {
-          "type": "string",
-          "maxLength": 30
-        },
-        "state": {
-          "type": "string",
-          "maxLength": 2
-        },
-        "postalCode": {
-          "type": "string",
-          "maxLength": 10
-        },
-        "country": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 30
-        }
-      },
-      "required": [
-        "street",
-        "city",
-        "state",
-        "postalCode"
-      ]
-    },
-    "phoneNumber": {
-      "type": "string",
-      "pattern": "^\\d{10}$",
-      "maxLength": 10
-    },
-    "vaFileNumber": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 9
+      "format": "date",
+      "x-va-field": {
+        "label": "Date of Birth",
+        "widget": "date",
+        "required": true
+      }
     },
     "serviceNumber": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "dateAdmittedYear": {
       "type": "string",
-      "format": "date"
+      "x-va-field": {
+        "label": "Service Number (if applicable)",
+        "widget": "text"
+      }
     },
-    "dateAdmittedDay": {
+    "telephone": {
       "type": "string",
-      "format": "date"
+      "pattern": "^\\d{10}$",
+      "x-va-field": {
+        "label": "Telephone Number (include area code)",
+        "widget": "phone"
+      }
     },
-    "dateAdmittedMonth": {
+    "email": {
       "type": "string",
-      "format": "date"
+      "format": "email",
+      "x-va-field": {
+        "label": "E-mail Address",
+        "widget": "email"
+      }
     },
-    "dateSignedYear": {
+    "gender": {
       "type": "string",
-      "format": "date"
+      "enum": ["male", "female"],
+      "x-va-field": {
+        "label": "Gender",
+        "widget": "radio",
+        "options": [
+          {"value": "male", "label": "Male"},
+          {"value": "female", "label": "Female"}
+        ]
+      }
     },
-    "dateSignedDay": {
+    "currentMailingAddress": {
+      "type": "object",
+      "properties": {
+        "street": {"type": "string"},
+        "street2": {"type": "string"},
+        "city": {"type": "string"},
+        "state": {"type": "string", "maxLength": 2},
+        "zipCode": {"type": "string", "pattern": "^\\d{5}(-\\d{4})?$"},
+        "country": {"type": "string"}
+      },
+      "required": ["street", "city", "state", "zipCode"],
+      "x-va-field": {
+        "label": "Current Mailing Address",
+        "widget": "address",
+        "required": true
+      }
+    },
+    "claimantName": {
       "type": "string",
-      "format": "date"
+      "x-va-field": {
+        "label": "Claimant's Name (if other than veteran)",
+        "widget": "text"
+      }
     },
-    "dateSignedMonth": {
+    "claimantSsn": {
       "type": "string",
-      "format": "date"
+      "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+      "x-va-field": {
+        "label": "Claimant's Social Security Number",
+        "widget": "ssn"
+      }
     },
-    "dateOfExaminationYear": {
+    "relationshipToVeteran": {
       "type": "string",
-      "format": "date"
+      "x-va-field": {
+        "label": "Relationship to Veteran",
+        "widget": "text"
+      }
     },
-    "dateOfExaminationDay": {
+    "benefitAppliedFor": {
       "type": "string",
-      "format": "date"
+      "enum": ["aidAttendance", "housebound", "notSure"],
+      "x-va-field": {
+        "label": "Benefit Being Applied For",
+        "widget": "radio",
+        "options": [
+          {"value": "aidAttendance", "label": "Aid and Attendance"},
+          {"value": "housebound", "label": "Housebound"},
+          {"value": "notSure", "label": "Not sure"}
+        ]
+      }
     },
-    "dateOfExaminationMonth": {
+    "dateOfExamination": {
       "type": "string",
-      "format": "date"
+      "format": "date",
+      "x-va-field": {
+        "label": "Date of Examination",
+        "widget": "date",
+        "required": true
+      }
     },
-    "signature": {
-      "type": "boolean",
-      "description": "Signature certification"
+    "placeOfExamination": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Place of Examination",
+        "widget": "text"
+      }
     },
-    "checkBox1": {
-      "type": "boolean"
-    },
-    "radioButtonList": {
-      "type": "string"
+    "isHospitalized": {
+      "type": "string",
+      "enum": ["yes", "no"],
+      "x-va-field": {
+        "label": "Is the Patient Currently Hospitalized?",
+        "widget": "radio",
+        "options": [
+          {"value": "yes", "label": "Yes"},
+          {"value": "no", "label": "No"}
+        ]
+      }
     },
     "nameOfHospital": {
-      "type": "string"
+      "type": "string",
+      "x-va-field": {
+        "label": "Name of Hospital or Facility",
+        "widget": "text",
+        "conditional": {"field": "isHospitalized", "value": "yes"}
+      }
+    },
+    "dateAdmitted": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {
+        "label": "Date Admitted",
+        "widget": "date",
+        "conditional": {"field": "isHospitalized", "value": "yes"}
+      }
     },
     "completeDiagnosis": {
-      "type": "string"
+      "type": "string",
+      "x-va-field": {
+        "label": "Complete Diagnosis — List all disabling conditions",
+        "widget": "textarea",
+        "required": true,
+        "note": "Include all conditions that affect the patient's ability to perform activities of daily living"
+      }
     },
-    "disabilityConsideredPermanentAndTotallyDisabling": {
-      "type": "string"
+    "disabilityPermanentTotal": {
+      "type": "string",
+      "enum": ["yes", "no"],
+      "x-va-field": {
+        "label": "Is the disability considered permanent and totally disabling?",
+        "widget": "radio",
+        "options": [
+          {"value": "yes", "label": "Yes"},
+          {"value": "no", "label": "No"}
+        ]
+      }
     },
-    "medicationManagement": {
-      "type": "string"
-    },
-    "nameOfMedicalFacility": {
-      "type": "string"
-    },
-    "assressOfMedicalFacility": {
-      "type": "string"
-    },
-    "additionalActivitySpecify": {
-      "type": "string"
-    },
-    "describe": {
-      "type": "string"
-    },
-    "otherSpecifyDistance": {
-      "type": "string"
-    },
-    "weightActualLbs": {
-      "type": "string"
-    },
-    "weightEstimatedLbs": {
-      "type": "string"
-    },
-    "heightFeet": {
-      "type": "string"
-    },
-    "heightFeetInches": {
-      "type": "string"
-    },
-    "age": {
-      "type": "string"
-    },
-    "nutrition": {
-      "type": "string"
-    },
-    "gait": {
-      "type": "string"
-    },
-    "bloodPressure": {
-      "type": "string"
-    },
-    "pulseRate": {
-      "type": "string"
-    },
-    "respiratoryRate": {
-      "type": "string"
-    },
-    "whatDisabiltiesRestrictTheListedActivitiesFunctions": {
-      "type": "string"
+    "bedConfinement": {
+      "type": "string",
+      "enum": ["yes", "no"],
+      "x-va-field": {
+        "label": "Is the patient confined to bed?",
+        "widget": "radio",
+        "options": [
+          {"value": "yes", "label": "Yes"},
+          {"value": "no", "label": "No"}
+        ]
+      }
     },
     "hoursInBed9pmTo9am": {
-      "type": "string"
+      "type": "string",
+      "x-va-field": {
+        "label": "Hours in Bed (9 PM to 9 AM)",
+        "widget": "text"
+      }
     },
     "hoursInBed9amTo9pm": {
-      "type": "string"
+      "type": "string",
+      "x-va-field": {
+        "label": "Hours in Bed (9 AM to 9 PM)",
+        "widget": "text"
+      }
     },
-    "bathingshowering": {
-      "type": "string"
+    "bathingShowering": {
+      "type": "string",
+      "enum": ["independent", "needsAssistance", "unable"],
+      "x-va-field": {
+        "label": "Bathing/Showering",
+        "widget": "radio",
+        "options": [
+          {"value": "independent", "label": "Independent"},
+          {"value": "needsAssistance", "label": "Needs Assistance"},
+          {"value": "unable", "label": "Unable"}
+        ]
+      }
     },
     "toileting": {
-      "type": "string"
+      "type": "string",
+      "enum": ["independent", "needsAssistance", "unable"],
+      "x-va-field": {
+        "label": "Toileting",
+        "widget": "radio",
+        "options": [
+          {"value": "independent", "label": "Independent"},
+          {"value": "needsAssistance", "label": "Needs Assistance"},
+          {"value": "unable", "label": "Unable"}
+        ]
+      }
     },
-    "transferringInOrOutOfBedChair": {
-      "type": "string"
+    "transferring": {
+      "type": "string",
+      "enum": ["independent", "needsAssistance", "unable"],
+      "x-va-field": {
+        "label": "Transferring In or Out of Bed/Chair",
+        "widget": "radio",
+        "options": [
+          {"value": "independent", "label": "Independent"},
+          {"value": "needsAssistance", "label": "Needs Assistance"},
+          {"value": "unable", "label": "Unable"}
+        ]
+      }
     },
-    "feedingAndMealPreparation": {
-      "type": "string"
+    "feedingMealPrep": {
+      "type": "string",
+      "enum": ["independent", "needsAssistance", "unable"],
+      "x-va-field": {
+        "label": "Feeding and Meal Preparation",
+        "widget": "radio",
+        "options": [
+          {"value": "independent", "label": "Independent"},
+          {"value": "needsAssistance", "label": "Needs Assistance"},
+          {"value": "unable", "label": "Unable"}
+        ]
+      }
     },
-    "tendingToHygieneNeeds": {
-      "type": "string"
+    "hygieneNeeds": {
+      "type": "string",
+      "enum": ["independent", "needsAssistance", "unable"],
+      "x-va-field": {
+        "label": "Tending to Hygiene Needs",
+        "widget": "radio",
+        "options": [
+          {"value": "independent", "label": "Independent"},
+          {"value": "needsAssistance", "label": "Needs Assistance"},
+          {"value": "unable", "label": "Unable"}
+        ]
+      }
     },
-    "ambulatingWithinTheHomeOrLivingArea": {
-      "type": "string"
+    "ambulatingWithinHome": {
+      "type": "string",
+      "enum": ["independent", "needsAssistance", "unable"],
+      "x-va-field": {
+        "label": "Ambulating Within the Home or Living Area",
+        "widget": "radio",
+        "options": [
+          {"value": "independent", "label": "Independent"},
+          {"value": "needsAssistance", "label": "Needs Assistance"},
+          {"value": "unable", "label": "Unable"}
+        ]
+      }
     },
     "dressing": {
-      "type": "string"
+      "type": "string",
+      "enum": ["independent", "needsAssistance", "unable"],
+      "x-va-field": {
+        "label": "Dressing",
+        "widget": "radio",
+        "options": [
+          {"value": "independent", "label": "Independent"},
+          {"value": "needsAssistance", "label": "Needs Assistance"},
+          {"value": "unable", "label": "Unable"}
+        ]
+      }
     },
-    "leftEye": {
-      "type": "string"
-    },
-    "rightEye": {
-      "type": "string"
+    "medicationManagement": {
+      "type": "string",
+      "enum": ["independent", "needsAssistance", "unable"],
+      "x-va-field": {
+        "label": "Medication Management",
+        "widget": "radio",
+        "options": [
+          {"value": "independent", "label": "Independent"},
+          {"value": "needsAssistance", "label": "Needs Assistance"},
+          {"value": "unable", "label": "Unable"}
+        ]
+      }
     },
     "additionalActivities": {
-      "type": "string"
+      "type": "string",
+      "x-va-field": {
+        "label": "Additional Activities (specify)",
+        "widget": "textarea"
+      }
     },
-    "explain": {
-      "type": "string"
+    "whatDisabilitiesRestrict": {
+      "type": "string",
+      "x-va-field": {
+        "label": "What Disabilities Restrict the Listed Activities/Functions?",
+        "widget": "textarea"
+      }
     },
-    "nationalProviderIdentifierNumber": {
-      "type": "string"
+    "age": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Age",
+        "widget": "text"
+      }
     },
-    "printedNameOfExaminer": {
-      "type": "string"
+    "heightFeet": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Height (feet)",
+        "widget": "text"
+      }
     },
-    "titleOfExaminer": {
-      "type": "string"
+    "heightInches": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Height (inches)",
+        "widget": "text"
+      }
+    },
+    "weightActual": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Actual Weight (lbs)",
+        "widget": "text"
+      }
+    },
+    "weightEstimated": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Estimated Weight (lbs)",
+        "widget": "text"
+      }
+    },
+    "nutrition": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Nutrition",
+        "widget": "text"
+      }
+    },
+    "gait": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Gait",
+        "widget": "text"
+      }
+    },
+    "bloodPressure": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Blood Pressure",
+        "widget": "text"
+      }
+    },
+    "pulseRate": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Pulse Rate",
+        "widget": "text"
+      }
+    },
+    "respiratoryRate": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Respiratory Rate",
+        "widget": "text"
+      }
+    },
+    "visionLeftEye": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Vision — Left Eye",
+        "widget": "text"
+      }
+    },
+    "visionRightEye": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Vision — Right Eye",
+        "widget": "text"
+      }
+    },
+    "ableToWalkWithout": {
+      "type": "string",
+      "enum": ["yes", "no"],
+      "x-va-field": {
+        "label": "Is the patient able to walk without the assistance of another person?",
+        "widget": "radio",
+        "options": [
+          {"value": "yes", "label": "Yes"},
+          {"value": "no", "label": "No"}
+        ]
+      }
+    },
+    "walkingDistance": {
+      "type": "string",
+      "x-va-field": {
+        "label": "If able to walk, what distance can the patient walk?",
+        "widget": "text",
+        "conditional": {"field": "ableToWalkWithout", "value": "yes"}
+      }
+    },
+    "ableToTravel": {
+      "type": "string",
+      "enum": ["yes", "no"],
+      "x-va-field": {
+        "label": "Is the patient able to travel beyond their current living situation?",
+        "widget": "radio",
+        "options": [
+          {"value": "yes", "label": "Yes"},
+          {"value": "no", "label": "No"}
+        ]
+      }
+    },
+    "ableToManageFinancial": {
+      "type": "string",
+      "enum": ["yes", "no"],
+      "x-va-field": {
+        "label": "Does the patient have the ability to manage their own financial affairs?",
+        "widget": "radio",
+        "options": [
+          {"value": "yes", "label": "Yes"},
+          {"value": "no", "label": "No"}
+        ]
+      }
+    },
+    "additionalFindings": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Additional Findings or Comments",
+        "widget": "textarea",
+        "note": "Include any additional information that may assist VA in determining the patient's need for aid and attendance or housebound status"
+      }
+    },
+    "examinerName": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Printed Name of Examiner",
+        "widget": "text",
+        "required": true
+      }
+    },
+    "examinerTitle": {
+      "type": "string",
+      "enum": ["MD", "DO", "PA-C", "APRN"],
+      "x-va-field": {
+        "label": "Title/Credentials of Examiner",
+        "widget": "radio",
+        "required": true,
+        "options": [
+          {"value": "MD", "label": "MD (Medical Doctor)"},
+          {"value": "DO", "label": "DO (Doctor of Osteopathic Medicine)"},
+          {"value": "PA-C", "label": "PA-C (Physician Assistant)"},
+          {"value": "APRN", "label": "APRN (Advanced Practice Registered Nurse)"}
+        ]
+      }
+    },
+    "npiNumber": {
+      "type": "string",
+      "x-va-field": {
+        "label": "National Provider Identifier (NPI) Number",
+        "widget": "text",
+        "required": true
+      }
+    },
+    "medicalLicenseNumber": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Medical License Number",
+        "widget": "text"
+      }
+    },
+    "medicalFacilityName": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Name of Medical Facility",
+        "widget": "text"
+      }
+    },
+    "medicalFacilityAddress": {
+      "type": "object",
+      "properties": {
+        "street": {"type": "string"},
+        "city": {"type": "string"},
+        "state": {"type": "string", "maxLength": 2},
+        "zipCode": {"type": "string"}
+      },
+      "x-va-field": {
+        "label": "Address of Medical Facility",
+        "widget": "address"
+      }
+    },
+    "examinerSignature": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Signature of Examiner",
+        "widget": "signature",
+        "required": true
+      }
+    },
+    "examinerSignatureDate": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {
+        "label": "Date Signed",
+        "widget": "date",
+        "required": true
+      }
     }
-  },
-  "x-va-metadata": {
-    "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-2680-are.pdf",
-    "status": "digitized",
-    "totalFields": 118,
-    "composedFields": 93,
-    "coveragePercent": 79,
-    "xfaLabelCount": 0,
-    "needsReviewCount": 0,
-    "pageCount": 4,
-    "generatedAt": "2026-03-28T17:32:45.922Z"
   }
 }

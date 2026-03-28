@@ -1,173 +1,425 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "21-0779",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VA Form 21-0779",
+  "description": "Request for Nursing Home Information in Connection with Claim for Aid and Attendance",
   "type": "object",
-  "required": [
-    "ssn",
-    "fullName"
-  ],
+  "x-va-form": {
+    "formNumber": "21-0779",
+    "formTitle": "Request for Nursing Home Information in Connection with Claim for Aid and Attendance",
+    "ombNumber": "2900-0652",
+    "respondentBurden": "10 minutes",
+    "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-0779-are.pdf",
+    "org": "VBA",
+    "pageCount": 2,
+    "status": "digitized",
+    "requires3rdParty": true,
+    "routingTypes": [],
+    "instructions": {
+      "title": "Information and Instructions for Completing Request for Nursing Home Information",
+      "alert": "The claimant identified below has filed a claim for aid and attendance benefits and has stated that they are in a nursing home. We need this information to arrive at a fair decision in the case. Please read the information below carefully before completing this form.",
+      "sections": [
+        {
+          "heading": "Who Should Complete This Form",
+          "content": "Sections I and II should be completed by the veteran or claimant. Section III (Nursing Home Information) should be completed by the veteran or claimant with the help of nursing home staff if needed. Section IV (Certification) must be completed and signed by a nursing home official."
+        },
+        {
+          "heading": "Where to Submit This Form",
+          "content": "Submit this form to:\n\nDepartment of Veterans Affairs\nEvidence Intake Center\nPO Box 4444\nJanesville, WI 53547-4444\n\nFor more information, you can contact us online through Ask VA at https://ask.va.gov, or call us toll-free at 1-800-827-1000 (TTY: 711)."
+        }
+      ]
+    },
+    "formSections": [
+      {
+        "id": "section1",
+        "number": "I",
+        "title": "Veteran's Identification Information",
+        "page": 1,
+        "instructions": "Please provide the veteran's personal information below.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "veteranFirstName", "width": 5},
+              {"fieldId": "veteranMiddleInitial", "width": 2},
+              {"fieldId": "veteranLastName", "width": 5}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "veteranSsn", "width": 4},
+              {"fieldId": "vaFileNumber", "width": 4},
+              {"fieldId": "dateOfBirth", "width": 4}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "serviceNumber", "width": 12}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section2",
+        "number": "II",
+        "title": "Claimant's Identification Information",
+        "page": 1,
+        "instructions": "Complete this section ONLY if the claimant is NOT the veteran.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "claimantFirstName", "width": 5},
+              {"fieldId": "claimantMiddleInitial", "width": 2},
+              {"fieldId": "claimantLastName", "width": 5}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "claimantSsn", "width": 4},
+              {"fieldId": "claimantVaFileNumber", "width": 4},
+              {"fieldId": "claimantDateOfBirth", "width": 4}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section3",
+        "number": "III",
+        "title": "Nursing Home Information",
+        "page": 1,
+        "instructions": "Please provide the following information about the nursing home where the veteran/claimant currently resides.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "nursingHomeName", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "nursingHomeAddress", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "dateAdmitted", "width": 6},
+              {"fieldId": "medicaidApproved", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "appliedForMedicaid", "width": 6},
+              {"fieldId": "dateMedicaidBegan", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "monthlyAmountPatientResponsible", "width": 12}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section4",
+        "number": "IV",
+        "title": "Nursing Home Official Certification",
+        "page": 2,
+        "instructions": "To Be Completed By Nursing Home Official. I certify that the claimant is a patient in this facility because of mental or physical disability.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "nursingHomeOfficialName", "width": 6},
+              {"fieldId": "nursingHomeOfficialTitle", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "nursingHomeOfficialPhone", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "typeOfCare", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "officialSignature", "width": 8},
+              {"fieldId": "officialSignatureDate", "width": 4}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section5",
+        "number": "V",
+        "title": "Veteran/Claimant Certification and Signature",
+        "page": 2,
+        "instructions": "I certify that the statements on this form are true and correct to the best of my knowledge and belief.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "claimantSignature", "width": 8},
+              {"fieldId": "claimantSignatureDate", "width": 4}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "required": ["veteranFirstName", "veteranLastName", "veteranSsn", "dateOfBirth", "nursingHomeName", "nursingHomeAddress", "dateAdmitted", "medicaidApproved", "nursingHomeOfficialName", "nursingHomeOfficialTitle", "officialSignature", "officialSignatureDate", "claimantSignature", "claimantSignatureDate"],
   "properties": {
-    "ssn": {
+    "veteranFirstName": {
+      "type": "string",
+      "maxLength": 30,
+      "x-va-field": {
+        "label": "Veteran's First Name",
+        "widget": "text",
+        "required": true
+      }
+    },
+    "veteranMiddleInitial": {
+      "type": "string",
+      "maxLength": 1,
+      "x-va-field": {
+        "label": "Middle Initial",
+        "widget": "text"
+      }
+    },
+    "veteranLastName": {
+      "type": "string",
+      "maxLength": 30,
+      "x-va-field": {
+        "label": "Veteran's Last Name",
+        "widget": "text",
+        "required": true
+      }
+    },
+    "veteranSsn": {
       "type": "string",
       "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
-      "maxLength": 11
+      "maxLength": 11,
+      "x-va-field": {
+        "label": "Social Security Number",
+        "widget": "ssn",
+        "required": true
+      }
+    },
+    "vaFileNumber": {
+      "type": "string",
+      "maxLength": 9,
+      "x-va-field": {
+        "label": "VA File Number (if applicable)",
+        "widget": "text"
+      }
     },
     "dateOfBirth": {
       "type": "string",
-      "format": "date"
+      "format": "date",
+      "x-va-field": {
+        "label": "Date of Birth",
+        "widget": "date",
+        "required": true
+      }
     },
-    "fullName": {
+    "serviceNumber": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Service Number (if applicable)",
+        "widget": "text"
+      }
+    },
+    "claimantFirstName": {
+      "type": "string",
+      "maxLength": 30,
+      "x-va-field": {
+        "label": "Claimant's First Name",
+        "widget": "text"
+      }
+    },
+    "claimantMiddleInitial": {
+      "type": "string",
+      "maxLength": 1,
+      "x-va-field": {
+        "label": "Middle Initial",
+        "widget": "text"
+      }
+    },
+    "claimantLastName": {
+      "type": "string",
+      "maxLength": 30,
+      "x-va-field": {
+        "label": "Claimant's Last Name",
+        "widget": "text"
+      }
+    },
+    "claimantSsn": {
+      "type": "string",
+      "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+      "maxLength": 11,
+      "x-va-field": {
+        "label": "Claimant's Social Security Number",
+        "widget": "ssn"
+      }
+    },
+    "claimantVaFileNumber": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Claimant's VA File Number (if applicable)",
+        "widget": "text"
+      }
+    },
+    "claimantDateOfBirth": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {
+        "label": "Claimant's Date of Birth",
+        "widget": "date"
+      }
+    },
+    "nursingHomeName": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Name of Nursing Home",
+        "widget": "text",
+        "required": true
+      }
+    },
+    "nursingHomeAddress": {
       "type": "object",
       "properties": {
-        "first": {
-          "type": "string",
-          "maxLength": 30
-        },
-        "middle": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 30
-        },
-        "last": {
-          "type": "string",
-          "maxLength": 30
-        },
-        "suffix": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 10
-        }
+        "street": {"type": "string"},
+        "street2": {"type": "string"},
+        "city": {"type": "string"},
+        "state": {"type": "string", "maxLength": 2},
+        "zipCode": {"type": "string", "pattern": "^\\d{5}(-\\d{4})?$"},
+        "country": {"type": "string"}
       },
-      "required": [
-        "first",
-        "last"
-      ]
+      "required": ["street", "city", "state", "zipCode"],
+      "x-va-field": {
+        "label": "Address of Nursing Home",
+        "widget": "address",
+        "required": true
+      }
     },
-    "address": {
-      "type": "object",
-      "properties": {
-        "street": {
-          "type": "string",
-          "maxLength": 50
-        },
-        "street2": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 50
-        },
-        "city": {
-          "type": "string",
-          "maxLength": 30
-        },
-        "state": {
-          "type": "string",
-          "maxLength": 2
-        },
-        "postalCode": {
-          "type": "string",
-          "maxLength": 10
-        },
-        "country": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 30
-        }
-      },
-      "required": [
-        "street",
-        "city",
-        "state",
-        "postalCode"
-      ]
+    "dateAdmitted": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {
+        "label": "Date Admitted to Nursing Home",
+        "widget": "date",
+        "required": true
+      }
     },
-    "phoneNumber": {
+    "medicaidApproved": {
+      "type": "string",
+      "enum": ["yes", "no"],
+      "x-va-field": {
+        "label": "Is the nursing home a Medicaid-approved facility?",
+        "widget": "radio",
+        "required": true,
+        "options": [
+          {"value": "yes", "label": "Yes"},
+          {"value": "no", "label": "No"}
+        ]
+      }
+    },
+    "appliedForMedicaid": {
+      "type": "string",
+      "enum": ["yes", "no"],
+      "x-va-field": {
+        "label": "Has the patient applied for Medicaid?",
+        "widget": "radio",
+        "options": [
+          {"value": "yes", "label": "Yes"},
+          {"value": "no", "label": "No"}
+        ]
+      }
+    },
+    "dateMedicaidBegan": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {
+        "label": "Date Medicaid Began",
+        "widget": "date",
+        "conditional": {"field": "appliedForMedicaid", "value": "yes"}
+      }
+    },
+    "monthlyAmountPatientResponsible": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Monthly Amount Patient Is Responsible for Out of Pocket",
+        "widget": "text"
+      }
+    },
+    "nursingHomeOfficialName": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Nursing Home Official's Name",
+        "widget": "text",
+        "required": true
+      }
+    },
+    "nursingHomeOfficialTitle": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Official's Title",
+        "widget": "text",
+        "required": true
+      }
+    },
+    "nursingHomeOfficialPhone": {
       "type": "string",
       "pattern": "^\\d{10}$",
-      "maxLength": 10
+      "x-va-field": {
+        "label": "Official's Telephone Number",
+        "widget": "phone"
+      }
     },
-    "vaFileNumber": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 9
-    },
-    "dateAdmittedMonth": {
+    "typeOfCare": {
       "type": "string",
-      "format": "date"
+      "enum": ["skilledNursing", "intermediate", "assistedLiving", "other"],
+      "x-va-field": {
+        "label": "Type of Care Being Provided",
+        "widget": "radio",
+        "options": [
+          {"value": "skilledNursing", "label": "Skilled Nursing Care"},
+          {"value": "intermediate", "label": "Intermediate Care"},
+          {"value": "assistedLiving", "label": "Assisted Living"},
+          {"value": "other", "label": "Other (specify)"}
+        ]
+      }
     },
-    "dateAdmittedDay": {
+    "officialSignature": {
       "type": "string",
-      "format": "date"
+      "x-va-field": {
+        "label": "Signature of Nursing Home Official",
+        "widget": "signature",
+        "required": true
+      }
     },
-    "dateAdmittedYear": {
+    "officialSignatureDate": {
       "type": "string",
-      "format": "date"
+      "format": "date",
+      "x-va-field": {
+        "label": "Date Signed",
+        "widget": "date",
+        "required": true
+      }
     },
-    "dateMedicaidBeganMonth": {
+    "claimantSignature": {
       "type": "string",
-      "format": "date"
+      "x-va-field": {
+        "label": "Signature of Veteran/Claimant",
+        "widget": "signature",
+        "required": true
+      }
     },
-    "dateMedicaidBeganDay": {
+    "claimantSignatureDate": {
       "type": "string",
-      "format": "date"
-    },
-    "dateMedicaidBeganYear": {
-      "type": "string",
-      "format": "date"
-    },
-    "dateSignedMonth": {
-      "type": "string",
-      "format": "date"
-    },
-    "dateSignedDay": {
-      "type": "string",
-      "format": "date"
-    },
-    "dateSignedYear": {
-      "type": "string",
-      "format": "date"
-    },
-    "signature": {
-      "type": "boolean",
-      "description": "Signature certification"
-    },
-    "radioButtonList": {
-      "type": "string"
-    },
-    "amount": {
-      "type": "number"
-    },
-    "amountCents": {
-      "type": "number"
-    },
-    "nameOfNursingHome": {
-      "type": "string"
-    },
-    "nursingHomeOfficialsName": {
-      "type": "string"
-    },
-    "nursingHomeOfficialsTitle": {
-      "type": "string"
+      "format": "date",
+      "x-va-field": {
+        "label": "Date Signed",
+        "widget": "date",
+        "required": true
+      }
     }
-  },
-  "x-va-metadata": {
-    "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-0779-are.pdf",
-    "status": "digitized",
-    "totalFields": 51,
-    "composedFields": 48,
-    "coveragePercent": 94,
-    "xfaLabelCount": 0,
-    "needsReviewCount": 0,
-    "pageCount": 2,
-    "generatedAt": "2026-03-28T17:36:05.155Z"
   }
 }

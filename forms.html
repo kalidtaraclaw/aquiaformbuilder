@@ -865,9 +865,12 @@ function renderVAField(fieldId, def, vaField, isRequired) {
         case 'address':
             const subProps = def.properties || {};
             const subReq = new Set(def.required || []);
+            const hasName = subProps.name !== undefined;
             return `<div class="va-field">
                 <div class="va-field-label">${esc(label)} ${reqMark}</div>
+                ${vaField.note ? '<div class="va-field-hint">' + esc(vaField.note) + '</div>' : ''}
                 <div class="va-address-grid">
+                    ${hasName ? '<div class="va-field" style="margin-bottom:0.5rem;"><label for="f_' + fieldId + '_name">Name ' + (subReq.has('name') ? '<span class="required-mark">(*Required)</span>' : '') + '</label><input type="text" id="f_' + fieldId + '_name" name="' + fieldId + '.name" ' + (subReq.has('name') ? 'required' : '') + '></div>' : ''}
                     <div class="va-field" style="margin-bottom:0.5rem;">
                         <label for="f_${fieldId}_street">Street address ${subReq.has('street') ? '<span class="required-mark">(*Required)</span>' : ''}</label>
                         <input type="text" id="f_${fieldId}_street" name="${fieldId}.street" ${subReq.has('street') ? 'required' : ''}>
@@ -907,12 +910,14 @@ function renderVAField(fieldId, def, vaField, isRequired) {
         case 'textarea':
             return `<div class="va-field">
                 <label for="f_${fieldId}">${esc(label)} ${reqMark}</label>
+                ${vaField.note ? '<div class="va-field-hint">' + esc(vaField.note) + '</div>' : ''}
                 <textarea id="f_${fieldId}" name="${fieldId}" rows="3" ${isRequired ? 'required' : ''}></textarea>
             </div>`;
 
         default: // text
             return `<div class="va-field">
                 <label for="f_${fieldId}">${esc(label)} ${reqMark}</label>
+                ${vaField.note ? '<div class="va-field-hint">' + esc(vaField.note) + '</div>' : ''}
                 <input type="text" id="f_${fieldId}" name="${fieldId}" ${def.maxLength ? 'maxlength="' + def.maxLength + '"' : ''} ${isRequired ? 'required' : ''}>
             </div>`;
     }
