@@ -769,6 +769,163 @@
             font-weight: 300;
         }
 
+        /* Automate Tab Styles */
+        .automate-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .automate-card {
+            background: var(--white);
+            border: 1px solid var(--silver);
+            border-radius: 10px;
+            padding: 1.25rem;
+        }
+        .automate-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .automate-card-header h3 {
+            font-size: 0.95rem;
+            color: var(--midnight);
+            font-weight: 600;
+            margin: 0;
+            border: none;
+            padding: 0;
+        }
+        .automate-card-icon {
+            font-size: 1.1rem;
+        }
+        .automate-help {
+            font-size: 0.8rem;
+            color: var(--dark-gray);
+            font-weight: 300;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        .automate-row {
+            margin-bottom: 0.75rem;
+        }
+        .automate-row label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.3px;
+        }
+        .automate-input,
+        .automate-select {
+            width: 100%;
+            padding: 0.6rem 0.85rem;
+            border: 1px solid var(--silver);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            background: var(--white);
+            transition: all 0.2s;
+        }
+        .automate-input:focus,
+        .automate-select:focus {
+            outline: none;
+            border-color: var(--azure);
+            box-shadow: 0 0 0 3px rgba(32, 113, 198, 0.1);
+        }
+        .automate-hint {
+            font-size: 0.72rem;
+            color: #999;
+            margin-top: 0.25rem;
+            font-weight: 300;
+        }
+        .automate-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            padding: 0.6rem 1.25rem;
+            border: 1px solid var(--azure);
+            border-radius: 8px;
+            background: var(--ice);
+            color: var(--azure);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .automate-btn:hover {
+            background: #d4e8f9;
+            transform: translateY(-1px);
+        }
+        .automate-btn.primary {
+            background: linear-gradient(135deg, var(--azure) 0%, var(--royal) 100%);
+            color: white;
+            border: none;
+        }
+        .automate-btn.primary:hover {
+            box-shadow: 0 4px 12px rgba(32, 113, 198, 0.3);
+            transform: translateY(-1px);
+        }
+        .automate-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        .automate-result {
+            background: var(--ice);
+            border: 1px solid #b8d4ee;
+            border-radius: 8px;
+            padding: 0.85rem;
+            font-size: 0.82rem;
+        }
+        .automate-result.error {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: var(--crimson);
+        }
+        .automate-result.success {
+            background: #f0fdf4;
+            border-color: #86efac;
+            color: #166534;
+        }
+        .automate-result-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+        .automate-result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .automate-result-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #666;
+            text-transform: uppercase;
+        }
+        .automate-result-value {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--midnight);
+            font-family: 'Courier New', monospace;
+        }
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
         @media (max-width: 1024px) {
             .container {
                 flex-direction: column;
@@ -1037,6 +1194,34 @@
             <!-- Export Tab -->
             <div class="tab-content" id="export-tab">
                 <div class="export-section">
+
+                    <!-- Auto-detected route info (appears after PDF upload) -->
+                    <div id="routeInfoBar" class="automate-card" style="display:none; margin-bottom:1.25rem; background: var(--ice); border-color: #b8d4ee;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                            <div style="display:flex; align-items:center; gap:0.5rem;">
+                                <span style="font-size:1.1rem;">🗂️</span>
+                                <strong style="font-size:0.85rem; color:var(--midnight);" id="routeFormLabel">—</strong>
+                            </div>
+                            <span class="automate-result-value" id="routeOrgBadge" style="background:var(--white); padding:0.2rem 0.6rem; border-radius:6px; font-size:0.75rem;">—</span>
+                        </div>
+                        <div class="automate-result-grid" style="font-size:0.78rem;">
+                            <div class="automate-result-item">
+                                <span class="automate-result-label">Schema Path</span>
+                                <span class="automate-result-value" id="routePath" style="font-size:0.78rem;">—</span>
+                            </div>
+                            <div class="automate-result-item">
+                                <span class="automate-result-label">Index File</span>
+                                <span class="automate-result-value" id="routeIndex" style="font-size:0.78rem;">—</span>
+                            </div>
+                        </div>
+                        <div style="margin-top:0.5rem;">
+                            <div style="display:flex; gap:0.5rem; align-items:center;">
+                                <input type="text" id="autoFormNumber" class="automate-input" style="flex:1; padding:0.4rem 0.6rem; font-size:0.8rem;" placeholder="Override form number..." />
+                                <button class="automate-btn" onclick="app.detectRoute()" style="padding:0.4rem 0.8rem; font-size:0.78rem;">Re-detect</button>
+                            </div>
+                        </div>
+                    </div>
+
                     <div>
                         <h3 style="margin-bottom: 1rem;">PDF-Faithful Export</h3>
                         <button class="export-button" id="exportHtmlButton">
@@ -1054,6 +1239,48 @@
 
                     <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid var(--silver);">
                         <h3 style="margin-bottom: 1rem;">VA.gov-Aligned Export</h3>
+
+                        <!-- AI Enrichment inline -->
+                        <div id="aiEnrichSection" class="automate-card" style="margin-bottom:1rem; display:none;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+                                <div style="display:flex; align-items:center; gap:0.4rem;">
+                                    <span style="font-size:0.95rem;">🤖</span>
+                                    <strong style="font-size:0.82rem; color:var(--midnight);">AI Enrichment</strong>
+                                </div>
+                                <button class="automate-btn" onclick="document.getElementById('aiSettingsPanel').style.display = document.getElementById('aiSettingsPanel').style.display === 'none' ? 'block' : 'none'" style="padding:0.3rem 0.6rem; font-size:0.72rem;">Settings</button>
+                            </div>
+                            <div id="aiSettingsPanel" style="display:none; margin-bottom:0.75rem;">
+                                <div class="automate-row" style="margin-bottom:0.5rem;">
+                                    <label>Provider</label>
+                                    <select id="aiProvider" class="automate-select" onchange="app.onProviderChange()" style="padding:0.4rem 0.6rem; font-size:0.8rem;">
+                                        <option value="anthropic">Anthropic (Claude)</option>
+                                        <option value="openai">OpenAI (GPT)</option>
+                                        <option value="google">Google (Gemini)</option>
+                                        <option value="ollama">Ollama (Local)</option>
+                                        <option value="custom">Custom (OpenAI-Compatible)</option>
+                                    </select>
+                                </div>
+                                <div class="automate-row" style="margin-bottom:0.5rem;">
+                                    <label>Model</label>
+                                    <input type="text" id="aiModel" class="automate-input" value="claude-sonnet-4-20250514" style="padding:0.4rem 0.6rem; font-size:0.8rem;" />
+                                </div>
+                                <div class="automate-row" id="aiApiKeyRow" style="margin-bottom:0.5rem;">
+                                    <label>API Key</label>
+                                    <input type="password" id="aiApiKey" class="automate-input" placeholder="sk-..." style="padding:0.4rem 0.6rem; font-size:0.8rem;" />
+                                    <p class="automate-hint">Stored in browser memory only.</p>
+                                </div>
+                                <div class="automate-row" id="aiBaseUrlRow" style="display:none; margin-bottom:0.5rem;">
+                                    <label>Custom Base URL</label>
+                                    <input type="text" id="aiBaseUrl" class="automate-input" placeholder="https://your-api.com/v1/chat/completions" style="padding:0.4rem 0.6rem; font-size:0.8rem;" />
+                                </div>
+                            </div>
+                            <button class="automate-btn primary" id="enrichBtn" onclick="app.runEnrichment()" style="width:100%; padding:0.5rem;">
+                                <span id="enrichBtnText">Enhance labels and sections with AI</span>
+                                <span id="enrichSpinner" style="display:none;" class="spinner"></span>
+                            </button>
+                            <div id="enrichResult" class="automate-result" style="display:none; margin-top:0.5rem; font-size:0.8rem;"></div>
+                        </div>
+
                         <button class="export-button" id="downloadVAJsonButton" style="background: linear-gradient(135deg, var(--sky) 0%, var(--azure) 100%);">
                             <span>📥</span> Download VA.gov Schema (JSON)
                         </button>
@@ -1065,6 +1292,35 @@
                             <span>📋</span> Copy VA.gov Schema
                         </button>
                         <p class="help-text" style="margin-top: 0.5rem;">Copy composed schema to clipboard</p>
+                    </div>
+
+                    <!-- Publish to GitHub (inline) -->
+                    <div id="publishSection" style="display:none; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid var(--silver);">
+                        <h3 style="margin-bottom: 1rem;">Publish to GitHub</h3>
+                        <div class="automate-card" style="margin-bottom:0.75rem;">
+                            <div class="automate-row" style="margin-bottom:0.5rem;">
+                                <label>GitHub Token</label>
+                                <input type="password" id="ghToken" class="automate-input" placeholder="ghp_..." style="padding:0.4rem 0.6rem; font-size:0.8rem;" />
+                            </div>
+                            <div class="automate-row" style="margin-bottom:0.5rem;">
+                                <label>Repository</label>
+                                <input type="text" id="ghRepo" class="automate-input" value="kalidtaraclaw/aquiaformbuilder" style="padding:0.4rem 0.6rem; font-size:0.8rem;" />
+                            </div>
+                            <div class="automate-row" style="margin-bottom:0;">
+                                <label>Branch</label>
+                                <input type="text" id="ghBranch" class="automate-input" value="main" style="padding:0.4rem 0.6rem; font-size:0.8rem;" />
+                            </div>
+                        </div>
+                        <div style="display:flex; gap:0.5rem; align-items:center;">
+                            <div style="flex:1; font-size:0.78rem; color:var(--dark-gray);">
+                                <span id="publishSchemaPath"></span>
+                            </div>
+                            <button class="automate-btn primary" id="publishBtn" onclick="app.publishToGitHub()" style="padding:0.5rem 1.25rem;">
+                                <span id="publishBtnText">Publish</span>
+                                <span id="publishSpinner" style="display:none;" class="spinner"></span>
+                            </button>
+                        </div>
+                        <div id="publishResult" class="automate-result" style="display:none; margin-top:0.5rem; font-size:0.8rem;"></div>
                     </div>
 
                     <div>
@@ -1350,12 +1606,19 @@
                     this.renderFields();
                     this.renderSectionDetection();
 
+                    // Auto-detect form number from PDF text
+                    await this.autoDetectFormNumber(pdf, file.name);
+
                     const xfaCount = this.fields.filter(f => f.source === 'xfa').length;
                     const reviewCount = this.fields.filter(f => f.needsReview).length;
                     let msg = `Loaded PDF with ${this.fields.length} fields`;
                     if (xfaCount > 0) msg += ` (${xfaCount} XFA-resolved)`;
                     if (reviewCount > 0) msg += ` (${reviewCount} need review)`;
+                    if (this.detectedFormNumber) msg += ` | Form: ${this.detectedFormNumber}`;
                     this.showToast(msg, 'success');
+
+                    // Update automate tab
+                    this.updateAutomateUI();
                 } catch (error) {
                     console.error('Error processing PDF:', error);
                     this.showToast('Error loading PDF: ' + error.message, 'error');
@@ -2582,6 +2845,7 @@
                     jsonCode.textContent = json;
                     jsonBlock.style.display = 'block';
                 }
+                this.updateAutomateUI();
             },
 
             getFormSchema() {
@@ -2945,6 +3209,550 @@ ${formHtml}
                 }
             },
 
+            // ========== AUTOMATION: ORG MAP & ROUTING ==========
+
+            ORG_MAP: {
+                '20': { org: 'VBA', orgName: 'Compensation & Pension', path: 'schemas/vba' },
+                '21': { org: 'VBA', orgName: 'Compensation & Pension', path: 'schemas/vba' },
+                '21P': { org: 'VBA', orgName: 'Pension', path: 'schemas/vba' },
+                '22': { org: 'VBA', orgName: 'Education', path: 'schemas/vba' },
+                '26': { org: 'VBA', orgName: 'Loan Guaranty', path: 'schemas/vba' },
+                '27': { org: 'VBA', orgName: 'Insurance', path: 'schemas/vba' },
+                '28': { org: 'VBA', orgName: 'Vocational Rehab', path: 'schemas/vba' },
+                '29': { org: 'VBA', orgName: 'Insurance', path: 'schemas/vba' },
+                '10': { org: 'VHA', orgName: 'Health', path: 'schemas/va/vha' },
+                '40': { org: 'NCA', orgName: 'National Cemetery', path: 'schemas/va/nca' },
+                'VA40': { org: 'NCA', orgName: 'National Cemetery', path: 'schemas/va/nca' },
+                'SF': { org: 'Admin', orgName: 'Standard Forms', path: 'schemas/va/admin' },
+                'VA': { org: 'Admin', orgName: 'Other', path: 'schemas/va/other' }
+            },
+
+            detectedFormNumber: null,
+            detectedOrg: null,
+            enrichedSchema: null,
+
+            detectOrgFromFormNumber(formNumber) {
+                if (!formNumber) return null;
+                const normalized = formNumber.trim().toUpperCase().replace(/^VA\s+FORM\s+/i, '');
+
+                // Try specific prefixes first (longest match wins)
+                const prefixes = ['VA40', '21P', 'SF', 'VA', '20', '21', '22', '26', '27', '28', '29', '10', '40'];
+                for (const prefix of prefixes) {
+                    if (normalized.startsWith(prefix + '-') || normalized.startsWith(prefix + ' ') || normalized === prefix) {
+                        const orgInfo = this.ORG_MAP[prefix];
+                        return {
+                            formNumber: normalized,
+                            ...orgInfo,
+                            schemaFile: `${orgInfo.path}/${normalized.toLowerCase()}.json`,
+                            indexFile: `${orgInfo.path}/index.json`
+                        };
+                    }
+                }
+
+                // Try just the numeric prefix
+                const numMatch = normalized.match(/^(\d+)/);
+                if (numMatch) {
+                    const numPrefix = numMatch[1];
+                    if (this.ORG_MAP[numPrefix]) {
+                        const orgInfo = this.ORG_MAP[numPrefix];
+                        return {
+                            formNumber: normalized,
+                            ...orgInfo,
+                            schemaFile: `${orgInfo.path}/${normalized.toLowerCase()}.json`,
+                            indexFile: `${orgInfo.path}/index.json`
+                        };
+                    }
+                }
+
+                return null;
+            },
+
+            async autoDetectFormNumber(pdf, filename) {
+                this.detectedFormNumber = null;
+                this.detectedOrg = null;
+
+                // Try filename first
+                const fnMatch = filename.match(/(?:VA\s*(?:Form\s*)?)?(\d{1,2}[Pp]?-\d{1,5}[a-zA-Z]?)/i) ||
+                                filename.match(/(SF-\d+|VA40-\d+)/i);
+                if (fnMatch) {
+                    this.detectedFormNumber = fnMatch[1].toUpperCase();
+                    this.detectedOrg = this.detectOrgFromFormNumber(this.detectedFormNumber);
+                    if (this.detectedOrg) {
+                        document.getElementById('autoFormNumber').value = this.detectedFormNumber;
+                        return;
+                    }
+                }
+
+                // Try first page text
+                try {
+                    const page = await pdf.getPage(1);
+                    const textContent = await page.getTextContent();
+                    const text = textContent.items.map(i => i.str).join(' ');
+
+                    // Common VA form number patterns in PDF text
+                    const patterns = [
+                        /VA\s+FORM\s+(\d{1,2}[Pp]?-\d{1,5}[a-zA-Z]?)/i,
+                        /FORM\s+(\d{1,2}[Pp]?-\d{1,5}[a-zA-Z]?)/i,
+                        /(?:^|\s)(\d{2}-\d{4}[a-zA-Z]?)(?:\s|$)/,
+                        /(SF-\d+)/i,
+                        /(VA40-\d+)/i
+                    ];
+
+                    for (const pattern of patterns) {
+                        const match = text.match(pattern);
+                        if (match) {
+                            this.detectedFormNumber = match[1].toUpperCase();
+                            this.detectedOrg = this.detectOrgFromFormNumber(this.detectedFormNumber);
+                            if (this.detectedOrg) {
+                                document.getElementById('autoFormNumber').value = this.detectedFormNumber;
+                                return;
+                            }
+                        }
+                    }
+                } catch (e) {
+                    console.warn('Form number detection from text failed:', e.message);
+                }
+            },
+
+            detectRoute() {
+                const formNumber = document.getElementById('autoFormNumber').value.trim();
+                if (!formNumber) {
+                    this.showToast('Enter a form number', 'error');
+                    return;
+                }
+
+                const result = this.detectOrgFromFormNumber(formNumber);
+
+                if (result) {
+                    this.detectedFormNumber = result.formNumber;
+                    this.detectedOrg = result;
+                    this.updateRouteInfoBar();
+                    this.showToast(`Detected: ${result.org} — ${result.orgName}`, 'success');
+                } else {
+                    this.showToast('Unknown form number prefix', 'error');
+                }
+            },
+
+            updateRouteInfoBar() {
+                const bar = document.getElementById('routeInfoBar');
+                if (this.detectedOrg) {
+                    document.getElementById('routeFormLabel').textContent = `VA Form ${this.detectedFormNumber}`;
+                    document.getElementById('routeOrgBadge').textContent = `${this.detectedOrg.org} — ${this.detectedOrg.orgName}`;
+                    document.getElementById('routePath').textContent = this.detectedOrg.schemaFile;
+                    document.getElementById('routeIndex').textContent = this.detectedOrg.indexFile;
+                    bar.style.display = 'block';
+                    document.getElementById('publishSection').style.display = 'block';
+                    document.getElementById('publishSchemaPath').textContent = `→ ${this.detectedOrg.schemaFile}`;
+                } else {
+                    bar.style.display = 'none';
+                    document.getElementById('publishSection').style.display = 'none';
+                }
+            },
+
+            updateAutomateUI() {
+                if (this.fields.length > 0) {
+                    document.getElementById('aiEnrichSection').style.display = 'block';
+                    if (this.detectedFormNumber && this.detectedOrg) {
+                        this.updateRouteInfoBar();
+                    }
+                } else {
+                    document.getElementById('aiEnrichSection').style.display = 'none';
+                    document.getElementById('routeInfoBar').style.display = 'none';
+                    document.getElementById('publishSection').style.display = 'none';
+                }
+            },
+
+            onProviderChange() {
+                const provider = document.getElementById('aiProvider').value;
+                const modelInput = document.getElementById('aiModel');
+                const keyRow = document.getElementById('aiApiKeyRow');
+                const baseUrlRow = document.getElementById('aiBaseUrlRow');
+
+                const defaults = {
+                    anthropic: 'claude-sonnet-4-20250514',
+                    openai: 'gpt-4o',
+                    google: 'gemini-1.5-pro',
+                    ollama: 'llama3.1',
+                    custom: 'gpt-4o'
+                };
+
+                modelInput.value = defaults[provider] || '';
+                keyRow.style.display = provider === 'ollama' ? 'none' : 'block';
+                baseUrlRow.style.display = provider === 'custom' ? 'block' : 'none';
+            },
+
+            // ========== AI ENRICHMENT (CLIENT-SIDE) ==========
+
+            buildEnrichmentPrompt() {
+                const schema = this.getFormSchema();
+                const fieldSummary = schema.fields.map(f =>
+                    `- "${f.label}" (type: ${f.type}, section: ${f.section})`
+                ).join('\n');
+
+                return `You are a VA forms expert. Analyze these extracted PDF form fields and return a JSON object with enrichment data.
+
+Form Number: ${this.detectedFormNumber || 'Unknown'}
+Fields:
+${fieldSummary}
+
+Return ONLY valid JSON (no markdown, no explanation) with this structure:
+{
+  "formTitle": "Human-readable form title",
+  "sections": [
+    {
+      "id": "section-id",
+      "title": "Section Title",
+      "instructions": "Brief instructions for this section",
+      "fields": ["field-label-1", "field-label-2"]
+    }
+  ],
+  "fieldEnhancements": {
+    "Original Field Label": {
+      "betterLabel": "Improved human-readable label",
+      "widget": "text|date|ssn|phone|state-select|radio-yesno|address|email|select|textarea",
+      "hint": "Help text for the user",
+      "required": true
+    }
+  },
+  "sectionInstructions": {
+    "Section Title": "Detailed instructions for this section"
+  }
+}`;
+            },
+
+            async callAIProvider(prompt, provider, model, apiKey, baseUrl) {
+                let url, headers, body;
+
+                switch (provider) {
+                    case 'anthropic':
+                        url = 'https://api.anthropic.com/v1/messages';
+                        headers = {
+                            'Content-Type': 'application/json',
+                            'x-api-key': apiKey,
+                            'anthropic-version': '2023-06-01',
+                            'anthropic-dangerous-direct-browser-access': 'true'
+                        };
+                        body = JSON.stringify({
+                            model: model,
+                            max_tokens: 4096,
+                            messages: [{ role: 'user', content: prompt }]
+                        });
+                        break;
+
+                    case 'openai':
+                        url = 'https://api.openai.com/v1/chat/completions';
+                        headers = {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${apiKey}`
+                        };
+                        body = JSON.stringify({
+                            model: model,
+                            messages: [{ role: 'user', content: prompt }],
+                            temperature: 0.3
+                        });
+                        break;
+
+                    case 'google':
+                        url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+                        headers = { 'Content-Type': 'application/json' };
+                        body = JSON.stringify({
+                            contents: [{ parts: [{ text: prompt }] }]
+                        });
+                        break;
+
+                    case 'ollama':
+                        url = 'http://localhost:11434/api/chat';
+                        headers = { 'Content-Type': 'application/json' };
+                        body = JSON.stringify({
+                            model: model,
+                            messages: [{ role: 'user', content: prompt }],
+                            stream: false
+                        });
+                        break;
+
+                    case 'custom':
+                        url = baseUrl || 'http://localhost:8080/v1/chat/completions';
+                        headers = {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${apiKey}`
+                        };
+                        body = JSON.stringify({
+                            model: model,
+                            messages: [{ role: 'user', content: prompt }],
+                            temperature: 0.3
+                        });
+                        break;
+
+                    default:
+                        throw new Error(`Unknown provider: ${provider}`);
+                }
+
+                const response = await fetch(url, { method: 'POST', headers, body });
+                if (!response.ok) {
+                    const errText = await response.text();
+                    throw new Error(`API error (${response.status}): ${errText.slice(0, 200)}`);
+                }
+
+                const data = await response.json();
+
+                // Extract text from provider-specific response shapes
+                let text;
+                switch (provider) {
+                    case 'anthropic':
+                        text = data.content?.[0]?.text || '';
+                        break;
+                    case 'openai':
+                    case 'custom':
+                        text = data.choices?.[0]?.message?.content || '';
+                        break;
+                    case 'google':
+                        text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+                        break;
+                    case 'ollama':
+                        text = data.message?.content || '';
+                        break;
+                }
+
+                // Parse JSON from response (strip markdown fences if present)
+                const jsonMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/) || [null, text];
+                return JSON.parse(jsonMatch[1].trim());
+            },
+
+            async runEnrichment() {
+                if (this.fields.length === 0) {
+                    this.showToast('No fields to enrich. Upload a PDF first.', 'error');
+                    return;
+                }
+
+                const provider = document.getElementById('aiProvider').value;
+                const model = document.getElementById('aiModel').value;
+                const apiKey = document.getElementById('aiApiKey').value;
+                const baseUrl = document.getElementById('aiBaseUrl').value;
+                const resultEl = document.getElementById('enrichResult');
+                const btnText = document.getElementById('enrichBtnText');
+                const spinner = document.getElementById('enrichSpinner');
+                const btn = document.getElementById('enrichBtn');
+
+                if (provider !== 'ollama' && !apiKey) {
+                    this.showToast('Enter an API key for ' + provider, 'error');
+                    return;
+                }
+
+                btn.disabled = true;
+                btnText.textContent = 'Enriching...';
+                spinner.style.display = 'inline-block';
+                resultEl.style.display = 'none';
+
+                try {
+                    const prompt = this.buildEnrichmentPrompt();
+                    const aiResult = await this.callAIProvider(prompt, provider, model, apiKey, baseUrl);
+
+                    // Apply enrichments to fields
+                    let enhanced = 0;
+                    if (aiResult.fieldEnhancements) {
+                        for (const field of this.fields) {
+                            const enhancement = aiResult.fieldEnhancements[field.label];
+                            if (enhancement) {
+                                if (enhancement.betterLabel) field.label = enhancement.betterLabel;
+                                if (enhancement.hint) field.placeholder = enhancement.hint;
+                                if (enhancement.required !== undefined) field.required = enhancement.required;
+                                enhanced++;
+                            }
+                        }
+                    }
+
+                    // Update sections from AI
+                    if (aiResult.sections) {
+                        for (const section of aiResult.sections) {
+                            if (section.fields) {
+                                for (const fieldLabel of section.fields) {
+                                    const field = this.fields.find(f =>
+                                        f.label.toLowerCase() === fieldLabel.toLowerCase() ||
+                                        f.rawName === fieldLabel
+                                    );
+                                    if (field) {
+                                        field.section = section.title;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // Store enriched metadata
+                    this.enrichedSchema = {
+                        formTitle: aiResult.formTitle || this.detectedFormNumber || 'Unknown Form',
+                        sections: aiResult.sections || [],
+                        sectionInstructions: aiResult.sectionInstructions || {}
+                    };
+
+                    this.renderFields();
+                    this.renderSectionDetection();
+
+                    resultEl.style.display = 'block';
+                    resultEl.className = 'automate-result success';
+                    resultEl.innerHTML = `<strong>Enrichment complete.</strong> Enhanced ${enhanced} of ${this.fields.length} fields using ${provider}/${model}.` +
+                        (aiResult.formTitle ? `<br>Form title: ${this.escapeHtml(aiResult.formTitle)}` : '') +
+                        (aiResult.sections ? `<br>Sections: ${aiResult.sections.length}` : '');
+
+                    this.showToast(`AI enrichment complete: ${enhanced} fields enhanced`, 'success');
+                } catch (e) {
+                    console.error('AI enrichment failed:', e);
+                    resultEl.style.display = 'block';
+                    resultEl.className = 'automate-result error';
+                    resultEl.innerHTML = `<strong>Enrichment failed:</strong> ${this.escapeHtml(e.message)}`;
+                    this.showToast('AI enrichment failed', 'error');
+                } finally {
+                    btn.disabled = false;
+                    btnText.textContent = 'Enrich Schema with AI';
+                    spinner.style.display = 'none';
+                }
+            },
+
+            // ========== GITHUB PUBLISH ==========
+
+            async publishToGitHub() {
+                const token = document.getElementById('ghToken').value.trim();
+                const repo = document.getElementById('ghRepo').value.trim();
+                const branch = document.getElementById('ghBranch').value.trim();
+                const resultEl = document.getElementById('publishResult');
+                const btnText = document.getElementById('publishBtnText');
+                const spinner = document.getElementById('publishSpinner');
+                const btn = document.getElementById('publishBtn');
+
+                if (!token) { this.showToast('Enter a GitHub token', 'error'); return; }
+                if (!repo) { this.showToast('Enter a repository', 'error'); return; }
+                if (!this.detectedOrg) { this.showToast('Detect the form route first', 'error'); return; }
+                if (this.fields.length === 0) { this.showToast('No schema to publish', 'error'); return; }
+
+                btn.disabled = true;
+                btnText.textContent = 'Publishing...';
+                spinner.style.display = 'inline-block';
+                resultEl.style.display = 'none';
+
+                const ghHeaders = {
+                    'Authorization': `token ${token}`,
+                    'Accept': 'application/vnd.github.v3+json'
+                };
+
+                try {
+                    // Build enriched VA schema
+                    const vaSchema = this.getVAFormSchema();
+                    if (this.enrichedSchema) {
+                        vaSchema['x-va-form'] = {
+                            formNumber: this.detectedFormNumber,
+                            formTitle: this.enrichedSchema.formTitle,
+                            formSections: this.enrichedSchema.sections
+                        };
+                    }
+
+                    const schemaContent = JSON.stringify(vaSchema, null, 2);
+                    const schemaPath = this.detectedOrg.schemaFile;
+
+                    // 1. Get current ref SHA
+                    const refRes = await fetch(`https://api.github.com/repos/${repo}/git/ref/heads/${branch}`, { headers: ghHeaders });
+                    if (!refRes.ok) throw new Error('Failed to get branch ref');
+                    const refData = await refRes.json();
+                    const latestSha = refData.object.sha;
+
+                    // 2. Get current tree
+                    const commitRes = await fetch(`https://api.github.com/repos/${repo}/git/commits/${latestSha}`, { headers: ghHeaders });
+                    const commitData = await commitRes.json();
+                    const treeSha = commitData.tree.sha;
+
+                    // 3. Create blob for schema
+                    const blobRes = await fetch(`https://api.github.com/repos/${repo}/git/blobs`, {
+                        method: 'POST',
+                        headers: ghHeaders,
+                        body: JSON.stringify({ content: schemaContent, encoding: 'utf-8' })
+                    });
+                    const blobData = await blobRes.json();
+
+                    // 4. Try to get existing index.json
+                    let indexContent = { forms: [] };
+                    try {
+                        const indexRes = await fetch(`https://api.github.com/repos/${repo}/contents/${this.detectedOrg.indexFile}?ref=${branch}`, { headers: ghHeaders });
+                        if (indexRes.ok) {
+                            const indexData = await indexRes.json();
+                            indexContent = JSON.parse(atob(indexData.content));
+                        }
+                    } catch (e) { /* index doesn't exist yet, use default */ }
+
+                    // Add/update form entry in index
+                    const formEntry = {
+                        formNumber: this.detectedFormNumber,
+                        title: this.enrichedSchema?.formTitle || this.detectedFormNumber,
+                        schemaFile: this.detectedOrg.schemaFile.split('/').pop(),
+                        lastUpdated: new Date().toISOString().split('T')[0]
+                    };
+                    const existingIdx = indexContent.forms.findIndex(f => f.formNumber === this.detectedFormNumber);
+                    if (existingIdx >= 0) {
+                        indexContent.forms[existingIdx] = formEntry;
+                    } else {
+                        indexContent.forms.push(formEntry);
+                    }
+
+                    const indexBlobRes = await fetch(`https://api.github.com/repos/${repo}/git/blobs`, {
+                        method: 'POST',
+                        headers: ghHeaders,
+                        body: JSON.stringify({ content: JSON.stringify(indexContent, null, 2), encoding: 'utf-8' })
+                    });
+                    const indexBlobData = await indexBlobRes.json();
+
+                    // 5. Create new tree with both files
+                    const treeRes = await fetch(`https://api.github.com/repos/${repo}/git/trees`, {
+                        method: 'POST',
+                        headers: ghHeaders,
+                        body: JSON.stringify({
+                            base_tree: treeSha,
+                            tree: [
+                                { path: schemaPath, mode: '100644', type: 'blob', sha: blobData.sha },
+                                { path: this.detectedOrg.indexFile, mode: '100644', type: 'blob', sha: indexBlobData.sha }
+                            ]
+                        })
+                    });
+                    const treeData = await treeRes.json();
+
+                    // 6. Create commit
+                    const newCommitRes = await fetch(`https://api.github.com/repos/${repo}/git/commits`, {
+                        method: 'POST',
+                        headers: ghHeaders,
+                        body: JSON.stringify({
+                            message: `Add schema for VA Form ${this.detectedFormNumber}\n\nAuto-generated by Aquia Form Digitizer`,
+                            tree: treeData.sha,
+                            parents: [latestSha]
+                        })
+                    });
+                    const newCommitData = await newCommitRes.json();
+
+                    // 7. Update ref to point to new commit
+                    await fetch(`https://api.github.com/repos/${repo}/git/refs/heads/${branch}`, {
+                        method: 'PATCH',
+                        headers: ghHeaders,
+                        body: JSON.stringify({ sha: newCommitData.sha })
+                    });
+
+                    resultEl.style.display = 'block';
+                    resultEl.className = 'automate-result success';
+                    resultEl.innerHTML = `<strong>Published successfully!</strong><br>` +
+                        `Schema: <code>${this.escapeHtml(schemaPath)}</code><br>` +
+                        `Index: <code>${this.escapeHtml(this.detectedOrg.indexFile)}</code><br>` +
+                        `Commit: <code>${newCommitData.sha.slice(0, 7)}</code><br>` +
+                        `<a href="https://github.com/${repo}/commit/${newCommitData.sha}" target="_blank" style="color: var(--azure);">View commit on GitHub</a>`;
+
+                    this.showToast('Published to GitHub!', 'success');
+                } catch (e) {
+                    console.error('Publish failed:', e);
+                    resultEl.style.display = 'block';
+                    resultEl.className = 'automate-result error';
+                    resultEl.innerHTML = `<strong>Publish failed:</strong> ${this.escapeHtml(e.message)}`;
+                    this.showToast('Publish to GitHub failed', 'error');
+                } finally {
+                    btn.disabled = false;
+                    btnText.textContent = 'Publish';
+                    spinner.style.display = 'none';
+                }
+            },
+
             downloadJSON() {
                 if (this.fields.length === 0) {
                     this.showToast('No fields to export', 'error');
@@ -3031,6 +3839,9 @@ ${formHtml}
                 // Refresh preview if switching to preview tab
                 if (tabName === 'preview') {
                     this.updatePreview();
+                }
+                if (tabName === 'export') {
+                    this.updateAutomateUI();
                 }
             },
 
