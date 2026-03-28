@@ -1264,12 +1264,15 @@
                 let label = raw;
                 // Strip numbered prefixes like "2. ", "3a. "
                 label = label.replace(/^\d+[a-z]?\.\s*/i, '');
-                // Remove trailing periods
-                label = label.replace(/\.\s*$/, '');
+                // Remove trailing periods and dashes
+                label = label.replace(/[\.\-\s]+$/, '');
                 // Strip instructional filler
                 label = label.replace(/^(please\s+)?(enter|provide|give|specify|type|input|indicate|list|state)\s+(your\s+|the\s+)?/i, '');
-                // Remove trailing instructions like "(Enter 2-digit month...)"
+                // Remove trailing instructions like "(Enter 2-digit month...)" or "- Enter nine digit..."
+                label = label.replace(/\s*[-–]\s*(enter|type|please|format|use)\s.*$/i, '');
                 label = label.replace(/\s*\(?(enter|type|please|format|use)\s[^)]*\)?\s*$/i, '');
+                // Clean up trailing dashes/periods again after instruction removal
+                label = label.replace(/[\.\-\s]+$/, '');
                 // Strip array indices
                 label = label.replace(/\[\d+\]/g, '');
                 // Normalize whitespace
