@@ -1,233 +1,413 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "20-0995",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VA Form 20-0995",
+  "description": "Decision Review Request: Supplemental Claim",
   "type": "object",
-  "required": [
-    "ssn",
-    "fullName"
-  ],
+  "x-va-form": {
+    "formNumber": "20-0995",
+    "formTitle": "Decision Review Request: Supplemental Claim",
+    "ombNumber": "2900-0862",
+    "respondentBurden": "30 minutes",
+    "formUrl": "https://www.vba.va.gov/pubs/forms/vba-20-0995-are.pdf",
+    "org": "VBA",
+    "pageCount": 7,
+    "status": "digitized",
+    "requires3rdParty": false,
+    "routingTypes": [],
+    "instructions": {
+      "title": "Information and Instructions for Completing Decision Review Request: Supplemental Claim",
+      "alert": "Please read the information below carefully to help you complete this form quickly and accurately. Some parts of the form also contain notes or specific instructions for completing that section.",
+      "sections": [
+        {
+          "heading": "When to Use This Form",
+          "content": "Use this form, VA Form 20-0995, Decision Review Request: Supplemental Claim, to submit a supplemental claim of the decision you received that you disagree with.\n\nA supplemental claim is a new review of an issue(s) previously decided by the Department of Veterans Affairs (VA) based on submission of new and relevant evidence. For additional information on the supplemental claim process or other decision review options such as a higher-level review and appeal to the Board of Veterans' Appeals (BVA), visit www.va.gov/decision-reviews/. This form should only be used if you DISAGREE with a decision you received."
+        },
+        {
+          "heading": "Where to Submit This Form",
+          "content": "Submit your supplemental claim to one of the addresses shown below that corresponds to your benefit type. It is important that you keep a copy of all completed forms and materials you give to VA. This form has several key components, which, when filled out completely and accurately, will decrease the amount of time it takes to process your supplemental claim.\n\nThis form may only be submitted for review of an issue(s) related to one benefit type (Compensation, Pension and Survivors Benefits, Fiduciary, Life Insurance, Education, Loan Guaranty (LGY), Veteran Readiness and Employment (VR&E), Veterans Health Administration (VHA) or National Cemetery Administration (NCA))."
+        }
+      ]
+    },
+    "formSections": [
+      {
+        "id": "section1",
+        "number": "I",
+        "title": "Claimant Information",
+        "page": 3,
+        "instructions": "Please provide your personal information below.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "veteranSsn", "width": 6},
+              {"fieldId": "vaFileNumber", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "dateOfBirth", "width": 6},
+              {"fieldId": "serviceNumber", "width": 6}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "insuranceNumber", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "veteranFirstName", "width": 5},
+              {"fieldId": "veteranMiddleInitial", "width": 2},
+              {"fieldId": "veteranLastName", "width": 4},
+              {"fieldId": "veteranSuffix", "width": 1}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "currentMailingAddress", "width": 12}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "telephone", "width": 6},
+              {"fieldId": "email", "width": 6}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section1a",
+        "number": "I.A",
+        "title": "Claimant Type",
+        "page": 3,
+        "instructions": "Check the box that best describes you (select ONLY one).",
+        "rows": [
+          {"columns": [{"fieldId": "claimantType", "width": 12}]},
+          {"columns": [{"fieldId": "claimantTypeOther", "width": 12}]}
+        ]
+      },
+      {
+        "id": "section1b",
+        "number": "I.B",
+        "title": "Claimant Name and Mailing Address",
+        "page": 4,
+        "instructions": "Complete this section ONLY if you are a claimant other than the Veteran.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "claimantFirstName", "width": 5},
+              {"fieldId": "claimantMiddleInitial", "width": 2},
+              {"fieldId": "claimantLastName", "width": 5}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section2",
+        "number": "II",
+        "title": "Benefit Type",
+        "page": 4,
+        "instructions": "Select ONLY ONE benefit type. You MUST complete a separate form for each benefit type.",
+        "rows": [
+          {"columns": [{"fieldId": "benefitType", "width": 12}]}
+        ]
+      },
+      {
+        "id": "section3",
+        "number": "III",
+        "title": "Issue(s) for Review",
+        "page": 4,
+        "instructions": "List the issue(s) you disagree with and the date of the decision for each. You may add additional issue(s) on the next page.",
+        "note": "You must identify new and relevant evidence that you want VA to review, OR you must identify the conditions you would like VA to assist you in obtaining new and relevant evidence for.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "issue1", "width": 8},
+              {"fieldId": "dateOfDecision1", "width": 4}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "issue2", "width": 8},
+              {"fieldId": "dateOfDecision2", "width": 4}
+            ]
+          },
+          {
+            "columns": [
+              {"fieldId": "issue3", "width": 8},
+              {"fieldId": "dateOfDecision3", "width": 4}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section4",
+        "number": "IV",
+        "title": "5103 Notice Acknowledgment",
+        "page": 5,
+        "rows": [
+          {"columns": [{"fieldId": "noticeAck", "width": 12}]}
+        ]
+      },
+      {
+        "id": "section5",
+        "number": "V",
+        "title": "Certification and Signature",
+        "page": 5,
+        "instructions": "I certify that the statements on this form are true and correct to the best of my knowledge and belief.",
+        "rows": [
+          {
+            "columns": [
+              {"fieldId": "signature", "width": 8},
+              {"fieldId": "signatureDate", "width": 4}
+            ]
+          },
+          {"columns": [{"fieldId": "printedName", "width": 12}]}
+        ]
+      }
+    ]
+  },
+  "required": ["veteranSsn", "dateOfBirth", "veteranFirstName", "veteranLastName", "currentMailingAddress", "claimantType", "benefitType", "issue1", "dateOfDecision1", "noticeAck", "signature", "signatureDate", "printedName"],
   "properties": {
-    "ssn": {
+    "veteranSsn": {
       "type": "string",
       "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
-      "maxLength": 11
+      "maxLength": 11,
+      "x-va-field": {
+        "label": "Veteran's Social Security Number",
+        "widget": "ssn",
+        "required": true
+      }
+    },
+    "vaFileNumber": {
+      "type": "string",
+      "x-va-field": {
+        "label": "VA File Number (if applicable)",
+        "widget": "text"
+      }
     },
     "dateOfBirth": {
       "type": "string",
-      "format": "date"
-    },
-    "fullName": {
-      "type": "object",
-      "properties": {
-        "first": {
-          "type": "string",
-          "maxLength": 30
-        },
-        "middle": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 30
-        },
-        "last": {
-          "type": "string",
-          "maxLength": 30
-        },
-        "suffix": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 10
-        }
-      },
-      "required": [
-        "first",
-        "last"
-      ]
-    },
-    "address": {
-      "type": "object",
-      "properties": {
-        "street": {
-          "type": "string",
-          "maxLength": 50
-        },
-        "street2": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 50
-        },
-        "city": {
-          "type": "string",
-          "maxLength": 30
-        },
-        "state": {
-          "type": "string",
-          "maxLength": 2
-        },
-        "postalCode": {
-          "type": "string",
-          "maxLength": 10
-        },
-        "country": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "maxLength": 30
-        }
-      },
-      "required": [
-        "street",
-        "city",
-        "state",
-        "postalCode"
-      ]
-    },
-    "phoneNumber": {
-      "type": "string",
-      "pattern": "^\\d{10}$",
-      "maxLength": 10
-    },
-    "vaFileNumber": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 9
+      "format": "date",
+      "x-va-field": {
+        "label": "Date of Birth",
+        "widget": "date",
+        "required": true
+      }
     },
     "serviceNumber": {
-      "type": [
-        "string",
-        "null"
-      ]
-    },
-    "dateOfVaDecisionNoticeMonth": {
       "type": "string",
-      "format": "date"
+      "x-va-field": {
+        "label": "Service Number (if applicable)",
+        "widget": "text"
+      }
     },
-    "dateDay": {
+    "insuranceNumber": {
       "type": "string",
-      "format": "date"
+      "x-va-field": {
+        "label": "Insurance Policy Number(s) (if applicable)",
+        "widget": "text"
+      }
     },
-    "dateYear": {
+    "veteranFirstName": {
       "type": "string",
-      "format": "date"
+      "maxLength": 30,
+      "x-va-field": {
+        "label": "Veteran's First Name",
+        "widget": "text",
+        "required": true
+      }
     },
-    "checkBoxDoNotHaveDateS": {
+    "veteranMiddleInitial": {
       "type": "string",
-      "format": "date"
+      "maxLength": 1,
+      "x-va-field": {
+        "label": "Middle Initial",
+        "widget": "text"
+      }
     },
-    "dateOfTreatmentYear": {
+    "veteranLastName": {
       "type": "string",
-      "format": "date"
+      "maxLength": 30,
+      "x-va-field": {
+        "label": "Veteran's Last Name",
+        "widget": "text",
+        "required": true
+      }
     },
-    "dateOfTreatmentMonth": {
+    "veteranSuffix": {
       "type": "string",
-      "format": "date"
+      "enum": ["Jr.", "Sr.", "II", "III", "IV"],
+      "x-va-field": {
+        "label": "Suffix",
+        "widget": "select"
+      }
     },
-    "dateSignedMonth": {
-      "type": "string",
-      "format": "date"
+    "currentMailingAddress": {
+      "type": "object",
+      "properties": {
+        "street": {"type": "string"},
+        "street2": {"type": "string"},
+        "city": {"type": "string"},
+        "state": {"type": "string", "maxLength": 2},
+        "zipCode": {"type": "string", "pattern": "^\\d{5}(-\\d{4})?$"},
+        "country": {"type": "string"}
+      },
+      "required": ["street", "city", "state", "zipCode"],
+      "x-va-field": {
+        "label": "Current Mailing Address",
+        "widget": "address",
+        "required": true
+      }
     },
-    "dateSignedDay": {
+    "telephone": {
       "type": "string",
-      "format": "date"
+      "pattern": "^\\d{10}$",
+      "x-va-field": {
+        "label": "Telephone Number (include area code)",
+        "widget": "phone"
+      }
     },
-    "dateSignedYear": {
+    "email": {
       "type": "string",
-      "format": "date"
+      "format": "email",
+      "x-va-field": {
+        "label": "E-mail Address (if applicable)",
+        "widget": "email"
+      }
+    },
+    "claimantType": {
+      "type": "string",
+      "enum": ["veteran", "veteranSpouse", "veteranChild", "veteranParent", "other"],
+      "x-va-field": {
+        "label": "Claimant Type",
+        "widget": "radio",
+        "required": true,
+        "options": [
+          {"value": "veteran", "label": "Veteran"},
+          {"value": "veteranSpouse", "label": "Veteran's Spouse"},
+          {"value": "veteranChild", "label": "Veteran's Child"},
+          {"value": "veteranParent", "label": "Veteran's Parent"},
+          {"value": "other", "label": "Other (specify)"}
+        ]
+      }
+    },
+    "claimantTypeOther": {
+      "type": "string",
+      "x-va-field": {
+        "label": "If Other, specify",
+        "widget": "text",
+        "conditional": {"field": "claimantType", "value": "other"}
+      }
+    },
+    "claimantFirstName": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Claimant's First Name",
+        "widget": "text"
+      }
+    },
+    "claimantMiddleInitial": {
+      "type": "string",
+      "maxLength": 1,
+      "x-va-field": {
+        "label": "Middle Initial",
+        "widget": "text"
+      }
+    },
+    "claimantLastName": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Claimant's Last Name",
+        "widget": "text"
+      }
+    },
+    "benefitType": {
+      "type": "string",
+      "enum": ["compensation", "pension", "fiduciary", "lifeInsurance", "education", "vocRehab", "loanGuaranty", "vha", "nca"],
+      "x-va-field": {
+        "label": "Benefit Type",
+        "widget": "radio",
+        "required": true,
+        "options": [
+          {"value": "compensation", "label": "Compensation"},
+          {"value": "pension", "label": "Pension/Survivors Benefits"},
+          {"value": "fiduciary", "label": "Fiduciary"},
+          {"value": "lifeInsurance", "label": "Life Insurance"},
+          {"value": "education", "label": "Education"},
+          {"value": "vocRehab", "label": "Veteran Readiness and Employment (VR&E)"},
+          {"value": "loanGuaranty", "label": "Loan Guaranty"},
+          {"value": "vha", "label": "Veterans Health Administration (VHA)"},
+          {"value": "nca", "label": "National Cemetery Administration (NCA)"}
+        ]
+      }
+    },
+    "issue1": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Issue 1",
+        "widget": "text",
+        "required": true
+      }
+    },
+    "dateOfDecision1": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {
+        "label": "Date of Decision",
+        "widget": "date",
+        "required": true
+      }
+    },
+    "issue2": {
+      "type": "string",
+      "x-va-field": {"label": "Issue 2", "widget": "text"}
+    },
+    "dateOfDecision2": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {"label": "Date of Decision", "widget": "date"}
+    },
+    "issue3": {
+      "type": "string",
+      "x-va-field": {"label": "Issue 3", "widget": "text"}
+    },
+    "dateOfDecision3": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {"label": "Date of Decision", "widget": "date"}
+    },
+    "noticeAck": {
+      "type": "boolean",
+      "x-va-field": {
+        "label": "I acknowledge that I have been advised by VA of the evidence necessary to substantiate my supplemental claim for the benefit(s) sought. I certify that I have submitted or will submit all new and relevant evidence I have received or will receive in support of this supplemental claim.",
+        "widget": "checkbox",
+        "required": true
+      }
     },
     "signature": {
-      "type": "boolean",
-      "description": "Signature certification"
+      "type": "string",
+      "x-va-field": {
+        "label": "Signature of Claimant or Representative",
+        "widget": "signature",
+        "required": true
+      }
     },
-    "radioButtonList": {
-      "type": "string"
+    "signatureDate": {
+      "type": "string",
+      "format": "date",
+      "x-va-field": {
+        "label": "Date Signed",
+        "widget": "date",
+        "required": true
+      }
     },
-    "radioButtonList2": {
-      "type": "string"
-    },
-    "vaMedicalC": {
-      "type": "string"
-    },
-    "departmentOfDefenseDODMilitaryTreatmentFacilityMTF": {
-      "type": "string"
-    },
-    "nameAndLocationOfTreatmentFacility": {
-      "type": "string"
-    },
-    "vAInsurancePolicyNumber": {
-      "type": "string"
-    },
-    "otherSpecify": {
-      "type": "string"
-    },
-    "benefit": {
-      "type": "string"
-    },
-    "iLiveOrSleepInAPlaceThatIsNotMeantForRegularSleeping": {
-      "type": "string"
-    },
-    "iLiveInAShelter": {
-      "type": "string"
-    },
-    "stayingWithAFriendOrFamilyMemberBeca": {
-      "type": "string"
-    },
-    "inTheNext30DaysIWillHaveToLeaveAFacilityLikeAHomelessShelter": {
-      "type": "string"
-    },
-    "inTheNext30DaysIWillLoseMyHome": {
-      "type": "string"
-    },
-    "pointOfContact": {
-      "type": "string"
-    },
-    "noneOfTheseSituationsApplyToMe": {
-      "type": "string"
-    },
-    "specificissue2": {
-      "type": "string"
-    },
-    "specificissue3": {
-      "type": "string"
-    },
-    "specificissue4": {
-      "type": "string"
-    },
-    "specificissue5": {
-      "type": "string"
-    },
-    "specificissue6": {
-      "type": "string"
-    },
-    "specificissue7": {
-      "type": "string"
-    },
-    "privateHealthcareProvider": {
-      "type": "string"
-    },
-    "vaVetCenter": {
-      "type": "string"
-    },
-    "accreditationNumber": {
-      "type": "string"
+    "printedName": {
+      "type": "string",
+      "x-va-field": {
+        "label": "Print Name of Claimant or Representative",
+        "widget": "text",
+        "required": true
+      }
     }
-  },
-  "x-va-metadata": {
-    "formUrl": "https://www.vba.va.gov/pubs/forms/vba-20-0995-are.pdf",
-    "status": "digitized",
-    "totalFields": 144,
-    "composedFields": 124,
-    "coveragePercent": 86,
-    "xfaLabelCount": 0,
-    "needsReviewCount": 0,
-    "pageCount": 7,
-    "generatedAt": "2026-03-28T17:32:01.267Z"
   }
 }
