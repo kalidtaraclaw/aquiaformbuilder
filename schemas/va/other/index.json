@@ -1,0 +1,87 @@
+{
+  "organization": "Standard Forms & Other",
+  "generated": "2026-03-28T21:56:35.121Z",
+  "totalForms": 6,
+  "summary": {
+    "totalFields": 325,
+    "totalComposed": 167,
+    "totalNeedsReview": 0,
+    "averageCoverage": 50,
+    "digitized": 6,
+    "flatPdfs": 0
+  },
+  "forms": [
+    {
+      "name": "0857r",
+      "fileName": "0857r.json",
+      "totalFields": 26,
+      "composedFields": 11,
+      "coveragePercent": 42,
+      "xfaLabelCount": 21,
+      "needsReviewCount": 0,
+      "pageCount": 2,
+      "status": "digitized",
+      "formUrl": "https://www.va.gov/vaforms/va/pdf/VA0857r.pdf"
+    },
+    {
+      "name": "4676a",
+      "fileName": "4676a.json",
+      "totalFields": 11,
+      "composedFields": 6,
+      "coveragePercent": 55,
+      "xfaLabelCount": 11,
+      "needsReviewCount": 0,
+      "pageCount": 3,
+      "status": "digitized",
+      "formUrl": "https://www.va.gov/vaforms/va/pdf/VA4676a.pdf"
+    },
+    {
+      "name": "7031D",
+      "fileName": "7031d.json",
+      "totalFields": 9,
+      "composedFields": 4,
+      "coveragePercent": 44,
+      "xfaLabelCount": 0,
+      "needsReviewCount": 0,
+      "pageCount": 1,
+      "status": "digitized",
+      "formUrl": "https://www.va.gov/vaforms/medical/pdf/Cert%2010-7031D%20Voluntary%20Service%20Award%20for%20Hours%20and%20Years%20of%20Service_final%20(002).pdf"
+    },
+    {
+      "name": "SF 1442",
+      "fileName": "sf_1442.json",
+      "totalFields": 82,
+      "composedFields": 49,
+      "coveragePercent": 60,
+      "xfaLabelCount": 82,
+      "needsReviewCount": 0,
+      "pageCount": 2,
+      "status": "digitized",
+      "formUrl": "https://www.gsa.gov/system/files/SF1442-22.pdf"
+    },
+    {
+      "name": "SF-26",
+      "fileName": "sf-26.json",
+      "totalFields": 93,
+      "composedFields": 47,
+      "coveragePercent": 51,
+      "xfaLabelCount": 92,
+      "needsReviewCount": 0,
+      "pageCount": 1,
+      "status": "digitized",
+      "formUrl": "https://www.gsa.gov/system/files/SF26-22.pdf"
+    },
+    {
+      "name": "SF52(ES)",
+      "fileName": "sf52_es_.json",
+      "totalFields": 104,
+      "composedFields": 50,
+      "coveragePercent": 48,
+      "xfaLabelCount": 102,
+      "needsReviewCount": 0,
+      "pageCount": 2,
+      "status": "digitized",
+      "formUrl": "https://www.va.gov/vaforms/va/pdf/SF52.pdf"
+    }
+  ]
+}
