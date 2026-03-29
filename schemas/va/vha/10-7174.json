@@ -2,16 +2,73 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "10-7174",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "volunteerName": {
+      "type": "string",
+      "description": "Volunteer name"
+    },
+    "volunteerAddress": {
+      "type": "string",
+      "description": "Address"
+    },
+    "volunteerPhone": {
+      "type": "string",
+      "description": "Phone"
+    },
+    "dateOfBirth": {
+      "type": "string",
+      "format": "date",
+      "description": "DOB"
+    },
+    "vaFacility": {
+      "type": "string",
+      "description": "VA facility"
+    },
+    "assignmentArea": {
+      "type": "string",
+      "description": "Assignment"
+    },
+    "supervisorName": {
+      "type": "string",
+      "description": "Supervisor"
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date"
+    },
+    "hoursPerWeek": {
+      "type": "string",
+      "description": "Hours per week"
+    },
+    "duties": {
+      "type": "string",
+      "description": "Duties"
+    },
+    "volunteerSignature": {
+      "type": "boolean",
+      "description": "Volunteer signature"
+    },
+    "supervisorSignature": {
+      "type": "boolean",
+      "description": "Supervisor signature"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date"
+    }
+  },
   "x-va-metadata": {
     "formUrl": "https://www.va.gov/vaforms/medical/pdf/10-7174.pdf",
-    "totalFields": 0,
-    "composedFields": 0,
-    "coveragePercent": 0,
+    "totalFields": 13,
+    "composedFields": 13,
+    "coveragePercent": 100,
     "xfaLabelCount": 0,
     "needsReviewCount": 0,
-    "status": "flat",
+    "status": "digitized",
     "pageCount": 1,
-    "generatedAt": "2026-03-28T21:04:38.774Z"
+    "generatedAt": "2026-03-29T14:34:58.000Z",
+    "generationMethod": "template-based-inference"
   }
 }

@@ -1,17 +1,49 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "10-0454",
+  "title": "Military Treatment Facility Referral to VA Liaison",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "veteranFullName": {
+      "type": "string",
+      "description": "Veteran full name"
+    },
+    "socialSecurityNumber": {
+      "type": "string",
+      "description": "SSN last 4"
+    },
+    "dateOfBirth": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of birth"
+    },
+    "vaFileNumber": {
+      "type": "string",
+      "description": "VA file number"
+    },
+    "vaFacilityName": {
+      "type": "string",
+      "description": "VA facility"
+    },
+    "stationNumber": {
+      "type": "string",
+      "description": "Station number"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date"
+    }
+  },
   "x-va-metadata": {
     "formUrl": "https://www.va.gov/vaforms/medical/pdf/vha-10-0454-fill.pdf",
-    "totalFields": 0,
-    "composedFields": 0,
-    "coveragePercent": 0,
+    "totalFields": 7,
+    "composedFields": 7,
+    "coveragePercent": 100,
     "xfaLabelCount": 0,
     "needsReviewCount": 0,
-    "status": "flat",
+    "status": "digitized",
     "pageCount": 1,
-    "generatedAt": "2026-03-28T21:16:59.314Z"
+    "generatedAt": "2026-03-29T14:34:58.000Z",
+    "generationMethod": "template-based-inference"
   }
 }

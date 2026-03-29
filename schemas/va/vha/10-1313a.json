@@ -1,17 +1,83 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "10-1313A",
+  "title": "R&D Committee Meeting Record",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "principalInvestigator": {
+      "type": "string",
+      "description": "PI name"
+    },
+    "coInvestigators": {
+      "type": "string",
+      "description": "Co-investigators"
+    },
+    "projectTitle": {
+      "type": "string",
+      "description": "Project title"
+    },
+    "projectNumber": {
+      "type": "string",
+      "description": "Project ID"
+    },
+    "vaFacility": {
+      "type": "string",
+      "description": "VA facility"
+    },
+    "stationNumber": {
+      "type": "string",
+      "description": "Station number"
+    },
+    "fundingSource": {
+      "type": "string",
+      "description": "Funding source"
+    },
+    "totalBudget": {
+      "type": "string",
+      "description": "Budget"
+    },
+    "projectStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date"
+    },
+    "projectEndDate": {
+      "type": "string",
+      "format": "date",
+      "description": "End date"
+    },
+    "researchCategory": {
+      "type": "string",
+      "description": "Category"
+    },
+    "projectAbstract": {
+      "type": "string",
+      "description": "Description"
+    },
+    "irbApprovalDate": {
+      "type": "string",
+      "format": "date",
+      "description": "IRB approval"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date"
+    },
+    "signature": {
+      "type": "boolean",
+      "description": "Signature"
+    }
+  },
   "x-va-metadata": {
     "formUrl": "https://www.va.gov/vaforms/medical/pdf/10-1313a.pdf",
-    "totalFields": 0,
-    "composedFields": 0,
-    "coveragePercent": 0,
+    "totalFields": 15,
+    "composedFields": 15,
+    "coveragePercent": 100,
     "xfaLabelCount": 0,
     "needsReviewCount": 0,
-    "status": "flat",
+    "status": "digitized",
     "pageCount": 1,
-    "generatedAt": "2026-03-28T21:28:00.668Z"
+    "generatedAt": "2026-03-29T14:34:58.000Z",
+    "generationMethod": "template-based-inference"
   }
 }

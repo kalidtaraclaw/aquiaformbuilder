@@ -1,17 +1,118 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "10-0114J-7",
+  "title": "Inspection - Residential Care Home",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "facilityName": {
+      "type": "string",
+      "description": "Facility name"
+    },
+    "facilityAddress": {
+      "type": "string",
+      "description": "Address"
+    },
+    "facilityPhone": {
+      "type": "string",
+      "description": "Phone"
+    },
+    "inspectionDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Inspection date"
+    },
+    "inspectorName": {
+      "type": "string",
+      "description": "Inspector name"
+    },
+    "inspectorTitle": {
+      "type": "string",
+      "description": "Inspector title"
+    },
+    "vaFacilityName": {
+      "type": "string",
+      "description": "VA medical center"
+    },
+    "stationNumber": {
+      "type": "string",
+      "description": "Station number"
+    },
+    "numberOfBeds": {
+      "type": "string",
+      "description": "Number of beds"
+    },
+    "numberOfVAPatients": {
+      "type": "string",
+      "description": "VA patients"
+    },
+    "overallRating": {
+      "type": "string",
+      "enum": [
+        "Satisfactory",
+        "Marginal",
+        "Unsatisfactory"
+      ],
+      "description": "Rating"
+    },
+    "environmentalSafety": {
+      "type": "boolean",
+      "description": "Environmental safety met"
+    },
+    "staffingAdequacy": {
+      "type": "boolean",
+      "description": "Staffing adequate"
+    },
+    "patientRights": {
+      "type": "boolean",
+      "description": "Patient rights maintained"
+    },
+    "medicationManagement": {
+      "type": "boolean",
+      "description": "Medication management followed"
+    },
+    "nutritionServices": {
+      "type": "boolean",
+      "description": "Nutrition adequate"
+    },
+    "activityPrograms": {
+      "type": "boolean",
+      "description": "Activity programs available"
+    },
+    "deficienciesNoted": {
+      "type": "string",
+      "description": "Deficiencies noted"
+    },
+    "correctiveActionsRequired": {
+      "type": "string",
+      "description": "Corrective actions"
+    },
+    "followUpDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Follow-up date"
+    },
+    "inspectorSignature": {
+      "type": "boolean",
+      "description": "Inspector signature"
+    },
+    "facilityRepresentativeName": {
+      "type": "string",
+      "description": "Facility rep name"
+    },
+    "facilityRepresentativeSignature": {
+      "type": "boolean",
+      "description": "Facility rep signature"
+    }
+  },
   "x-va-metadata": {
     "formUrl": "https://www.va.gov/vaforms/medical/pdf/VA_Form_10-0114J(7).pdf",
-    "totalFields": 0,
-    "composedFields": 0,
-    "coveragePercent": 0,
+    "totalFields": 23,
+    "composedFields": 23,
+    "coveragePercent": 100,
     "xfaLabelCount": 0,
     "needsReviewCount": 0,
-    "status": "flat",
+    "status": "digitized",
     "pageCount": 2,
-    "generatedAt": "2026-03-28T21:09:39.246Z"
+    "generatedAt": "2026-03-29T14:34:58.000Z",
+    "generationMethod": "template-based-inference"
   }
 }

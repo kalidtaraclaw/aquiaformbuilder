@@ -2,16 +2,82 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "10-2321",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "veteranFullName": {
+      "type": "string",
+      "description": "Veteran full name"
+    },
+    "socialSecurityNumber": {
+      "type": "string",
+      "description": "SSN last 4"
+    },
+    "dateOfBirth": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of birth"
+    },
+    "vaFileNumber": {
+      "type": "string",
+      "description": "VA file number"
+    },
+    "vaFacilityName": {
+      "type": "string",
+      "description": "VA facility"
+    },
+    "stationNumber": {
+      "type": "string",
+      "description": "Station number"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date"
+    },
+    "specimenType": {
+      "type": "string",
+      "description": "Specimen type"
+    },
+    "testOrdered": {
+      "type": "string",
+      "description": "Test ordered"
+    },
+    "collectionDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Collection date"
+    },
+    "collectedBy": {
+      "type": "string",
+      "description": "Collector"
+    },
+    "results": {
+      "type": "string",
+      "description": "Results"
+    },
+    "normalRange": {
+      "type": "string",
+      "description": "Normal range"
+    },
+    "pathologistName": {
+      "type": "string",
+      "description": "Pathologist"
+    },
+    "reportDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Report date"
+    }
+  },
   "x-va-metadata": {
     "formUrl": "https://www.va.gov/vaforms/medical/pdf/10-2321.pdf",
-    "totalFields": 0,
-    "composedFields": 0,
-    "coveragePercent": 0,
+    "totalFields": 15,
+    "composedFields": 15,
+    "coveragePercent": 100,
     "xfaLabelCount": 0,
     "needsReviewCount": 0,
-    "status": "flat",
+    "status": "digitized",
     "pageCount": 1,
-    "generatedAt": "2026-03-28T21:02:10.367Z"
+    "generatedAt": "2026-03-29T14:34:58.000Z",
+    "generationMethod": "template-based-inference"
   }
 }
