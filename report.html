@@ -1,386 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VA Forms — Composition Engine Coverage Report</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --navy: #030940; --royal: #050F69; --azure: #2071C6;
-  --sky: #68B4E7; --silver: #CECBD2; --ice: #E7F1FB; --white: #FAFAFA;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Poppins', sans-serif; background: var(--ice); color: #1a1a2e; line-height: 1.6; }
-.header { background: linear-gradient(135deg, var(--navy) 0%, var(--royal) 100%); color: white; padding: 32px 40px; position: relative; }
-.header h1 { font-size: 28px; font-weight: 600; margin-bottom: 4px; }
-.header p { font-size: 14px; opacity: 0.8; }
-.header-nav { position: absolute; top: 20px; right: 40px; display: flex; gap: 4px; }
-.header-nav a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 13px; padding: 5px 12px; border-radius: 6px; transition: all 0.2s; }
-.header-nav a:hover { color: white; background: rgba(255,255,255,0.1); }
-.header-nav a.active { color: white; background: rgba(255,255,255,0.15); font-weight: 500; }
-.logo { height: 36px; margin-bottom: 12px; }
-.container { max-width: 1200px; margin: 0 auto; padding: 24px; }
-
-/* Stats Cards */
-.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 32px; }
-.stat-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-.stat-card .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #666; font-weight: 500; }
-.stat-card .value { font-size: 32px; font-weight: 700; color: var(--navy); margin: 4px 0; }
-.stat-card .sub { font-size: 12px; color: #888; }
-.stat-card.highlight { background: linear-gradient(135deg, var(--azure), var(--sky)); color: white; }
-.stat-card.highlight .label, .stat-card.highlight .sub { color: rgba(255,255,255,0.8); }
-.stat-card.highlight .value { color: white; }
-
-/* Sections */
-.section { background: white; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-.section h2 { font-size: 18px; font-weight: 600; color: var(--navy); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--ice); }
-.section h3 { font-size: 14px; font-weight: 600; color: var(--royal); margin: 16px 0 8px; }
-
-/* Tables */
-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-th { background: var(--ice); color: var(--navy); font-weight: 600; text-align: left; padding: 10px 12px; position: sticky; top: 0; cursor: pointer; }
-th:hover { background: #d0e4f5; }
-td { padding: 8px 12px; border-bottom: 1px solid #f0f0f0; }
-tr:hover td { background: #f8fbff; }
-.num { text-align: right; font-variant-numeric: tabular-nums; }
-
-/* Coverage bar */
-.cov-bar { display: flex; align-items: center; gap: 8px; }
-.cov-bar .bar { flex: 1; height: 8px; background: #eee; border-radius: 4px; overflow: hidden; max-width: 120px; }
-.cov-bar .bar .fill { height: 100%; border-radius: 4px; }
-.cov-bar .pct { font-size: 12px; font-weight: 600; min-width: 36px; }
-.fill-high { background: #22c55e; }
-.fill-mid { background: #f59e0b; }
-.fill-low { background: #ef4444; }
-
-/* Badges */
-.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
-.badge-ok { background: #dcfce7; color: #166534; }
-.badge-err { background: #fee2e2; color: #991b1b; }
-.badge-skip { background: #f3f4f6; color: #6b7280; }
-
-/* Key Insights */
-.insight { background: var(--ice); border-left: 4px solid var(--azure); padding: 12px 16px; margin-bottom: 12px; border-radius: 0 8px 8px 0; font-size: 14px; }
-.insight strong { color: var(--navy); }
-
-/* Responsive table wrapper */
-.table-wrap { overflow-x: auto; max-height: 600px; overflow-y: auto; }
-
-/* Tabs */
-.tab-btns { display: flex; gap: 4px; margin-bottom: 16px; flex-wrap: wrap; }
-.tab-btn { padding: 6px 16px; border: none; background: var(--ice); color: var(--navy); border-radius: 20px; cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 500; transition: all 0.2s; }
-.tab-btn.active { background: var(--azure); color: white; }
-.tab-content { display: none; }
-.tab-content.active { display: block; }
-
-/* Distribution chart */
-.dist-chart { display: flex; align-items: flex-end; gap: 12px; height: 180px; padding: 16px 0; }
-.dist-bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; }
-.dist-bar { width: 100%; max-width: 80px; border-radius: 6px 6px 0 0; transition: height 0.3s; position: relative; }
-.dist-bar .count { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 12px; font-weight: 700; color: var(--navy); }
-.dist-label { font-size: 11px; color: #666; margin-top: 6px; font-weight: 500; text-align: center; }
-
-/* Search */
-.search-box { width: 100%; padding: 10px 16px; border: 2px solid var(--ice); border-radius: 8px; font-family: inherit; font-size: 14px; margin-bottom: 12px; outline: none; transition: border-color 0.2s; }
-.search-box:focus { border-color: var(--azure); }
-
-/* Domain breakdown mini-table */
-.domain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
-.domain-card { background: var(--ice); border-radius: 8px; padding: 16px; }
-.domain-card h4 { font-size: 13px; color: var(--navy); margin-bottom: 8px; }
-.domain-card .metric { display: flex; justify-content: space-between; font-size: 13px; padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
-.domain-card .metric .val { font-weight: 600; }
-
-footer { text-align: center; padding: 24px; color: #888; font-size: 12px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA Forms — Schema Database Coverage Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; color: #1B1B1B; background-color: #f0f6fa; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, #112E51 0%, #0071BC 100%); color: white; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .header-container { max-width: 1400px; margin: 0 auto; }
+        .logo-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+        .logo { height: 50px; object-fit: contain; }
+        .header-nav { display: flex; gap: 2rem; list-style: none; }
+        .header-nav a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding-bottom: 0.5rem; border-bottom: 2px solid transparent; }
+        .header-nav a:hover { color: #02BFE7; }
+        .header-nav a.active { border-bottom-color: #02BFE7; color: #02BFE7; }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 700; }
+        .subtitle { font-size: 1.1rem; opacity: 0.95; color: #f0f6fa; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+        .loading { text-align: center; padding: 4rem 2rem; }
+        .spinner { border: 4px solid #D6D7D9; border-top: 4px solid #0071BC; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 1rem; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .error-message { background-color: #FEE5E6; border-left: 4px solid #E31C3D; color: #923B3F; padding: 1.5rem; border-radius: 4px; margin: 2rem 0; }
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+        .card-label { font-size: 0.9rem; color: #5B616B; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
+        .card-value { font-size: 2.5rem; font-weight: 700; color: #112E51; }
+        .card-subtext { font-size: 0.85rem; color: #5B616B; margin-top: 0.5rem; }
+        .section-title { font-size: 1.8rem; color: #112E51; margin: 2.5rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 3px solid #02BFE7; }
+        .org-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .org-card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .org-name { font-size: 1.2rem; font-weight: 700; color: #112E51; margin-bottom: 1rem; }
+        .org-stat { display: flex; justify-content: space-between; margin-bottom: 0.8rem; font-size: 0.95rem; }
+        .org-stat-label { color: #5B616B; }
+        .org-stat-value { font-weight: 600; color: #1B1B1B; }
+        .progress-bar { width: 100%; height: 8px; background-color: #D6D7D9; border-radius: 4px; overflow: hidden; margin-top: 1rem; }
+        .progress-fill { height: 100%; transition: width 0.3s ease; }
+        .progress-text { font-size: 0.85rem; color: #5B616B; margin-top: 0.5rem; font-weight: 500; }
+        .chart-container { background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 2rem; }
+        .chart-bars { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: space-around; }
+        .bar-item { flex: 1; min-width: 120px; }
+        .bar-label { font-size: 0.9rem; color: #5B616B; font-weight: 500; text-align: center; margin-bottom: 0.5rem; }
+        .bar { width: 100%; height: 200px; background-color: #D6D7D9; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column-reverse; justify-content: flex-start; }
+        .bar-fill { width: 100%; display: flex; align-items: flex-end; justify-content: center; color: white; font-weight: 600; font-size: 0.9rem; padding-bottom: 0.5rem; transition: all 0.3s ease; }
+        .bar-count { font-size: 0.85rem; color: #5B616B; font-weight: 500; text-align: center; margin-top: 0.5rem; }
+        .table-controls { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: center; }
+        .toggle-button { background-color: #0071BC; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 4px; cursor: pointer; font-weight: 500; transition: background-color 0.3s ease; }
+        .toggle-button:hover { background-color: #005a96; }
+        .table-wrapper { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        table { width: 100%; border-collapse: collapse; }
+        thead { background-color: #112E51; color: white; }
+        th { padding: 1rem; text-align: left; font-weight: 600; cursor: pointer; user-select: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; transition: background-color 0.3s ease; white-space: nowrap; }
+        th:hover { background-color: #0071BC; }
+        th.sortable::after { content: " \2B0D"; opacity: 0.5; font-size: 0.8rem; }
+        th.sort-asc::after { content: " \25B2"; opacity: 1; }
+        th.sort-desc::after { content: " \25BC"; opacity: 1; }
+        tbody tr { border-bottom: 1px solid #D6D7D9; transition: background-color 0.2s ease; }
+        tbody tr:hover { background-color: #f9fafb; }
+        td { padding: 1rem; font-size: 0.95rem; }
+        .form-link { color: #0071BC; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        .form-link:hover { color: #005a96; text-decoration: underline; }
+        .badge { display: inline-block; padding: 0.4rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; white-space: nowrap; }
+        .badge-digitized { background-color: #D4EDDA; color: #2E8540; }
+        .badge-online { background-color: #D1ECF1; color: #0071BC; }
+        .insights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .insight-card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-left: 4px solid #02BFE7; }
+        .insight-title { font-size: 0.9rem; color: #5B616B; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; font-weight: 600; }
+        .insight-value { font-size: 1.8rem; font-weight: 700; color: #112E51; }
+        .insight-description { font-size: 0.85rem; color: #5B616B; margin-top: 0.5rem; }
+        @media (max-width: 768px) { h1 { font-size: 1.8rem; } .subtitle { font-size: 0.95rem; } .summary-grid, .org-grid, .insights-grid { grid-template-columns: 1fr; } .header-nav { gap: 1rem; font-size: 0.9rem; } table { font-size: 0.85rem; } th, td { padding: 0.75rem 0.5rem; } .card-value { font-size: 2rem; } .chart-bars { gap: 0.5rem; } .bar { height: 150px; } }
+        @media (max-width: 480px) { .container { padding: 1rem; } .header { padding: 1rem; } h1 { font-size: 1.4rem; } .logo-nav { flex-direction: column; align-items: flex-start; gap: 1rem; } .header-nav { flex-direction: column; gap: 0.5rem; width: 100%; } .header-nav a { padding: 0.5rem 0; } .card-value { font-size: 1.6rem; } .chart-bars { flex-direction: column; gap: 1rem; } .bar { height: 120px; } }
+    </style>
 </head>
 <body>
-
-<div class="header">
-  <img src="https://images.squarespace-cdn.com/content/v1/6209762bbb7641327e69acc0/21737a6d-1c02-42eb-89e0-afff7da79c68/Aquia+Inc+Website+Header+Logo_Deep+Blue+Background.png?format=300w" alt="Aquia Inc." class="logo">
-  <nav class="header-nav">
-    <a href="forms.html">Forms</a>
-    <a href="index.html">Digitizer</a>
-    <a href="report.html" class="active">Report</a>
-  </nav>
-  <h1>VA Forms — Composition Engine Coverage Report</h1>
-  <p>Batch analysis of 686 active VA forms across va.gov and vba.va.gov • Generated March 28, 2026</p>
-</div>
-
-<div class="container">
-
-<!-- ══ SUMMARY STATS ══ -->
-<div class="stats-grid">
-  <div class="stat-card">
-    <div class="label">Forms Analyzed</div>
-    <div class="value">456</div>
-    <div class="sub">230 va.gov + 226 vba.va.gov</div>
-  </div>
-  <div class="stat-card">
-    <div class="label">Total Fields</div>
-    <div class="value">26,930</div>
-    <div class="sub">9,373 va.gov + 17,557 vba.va.gov</div>
-  </div>
-  <div class="stat-card highlight">
-    <div class="label">Composed Fields</div>
-    <div class="value">8,685</div>
-    <div class="sub">Matched by 17 patterns</div>
-  </div>
-  <div class="stat-card highlight">
-    <div class="label">Overall Coverage</div>
-    <div class="value">32%</div>
-    <div class="sub">8,685 of 26,930 fields</div>
-  </div>
-  <div class="stat-card">
-    <div class="label">Forms with Fields</div>
-    <div class="value">376</div>
-    <div class="sub">179 va.gov + 197 vba.va.gov</div>
-  </div>
-  <div class="stat-card">
-    <div class="label">Errors / Flat PDFs</div>
-    <div class="value">16 / 80</div>
-    <div class="sub">16 download errors, 80 no AcroFields</div>
-  </div>
-</div>
-
-<!-- ══ KEY INSIGHTS ══ -->
-<div class="section">
-  <h2>Key Insights</h2>
-  <div class="insight"><strong>VBA forms have nearly 2x the fields</strong> — averaging 89 fields per form vs 52 on va.gov, making them higher-value targets for the composition engine.</div>
-  <div class="insight"><strong>XFA generic field names remain the #1 coverage blocker</strong> — field names like <code>form1[0].#subform[0].TextField1[0]</code> cannot be matched by name-based patterns. XFA label-proximity matching is the highest-impact improvement opportunity.</div>
-  <div class="insight"><strong>Signature is the most widespread pattern</strong> — matched across 273 forms (60% of all forms with fields), followed by Address (218 forms) and SSN (175 forms).</div>
-  <div class="insight"><strong>VBA forms show higher composition coverage</strong> — 36% vs 26% on va.gov, because VBA forms use more descriptive AcroForm field naming conventions.</div>
-  <div class="insight"><strong>31 forms achieve 76-100% coverage</strong> — these are ready for near-complete composition engine support today. Another 86 forms are at 51-75%, needing only modest pattern additions.</div>
-</div>
-
-<!-- ══ DOMAIN BREAKDOWN ══ -->
-<div class="section">
-  <h2>Domain Breakdown</h2>
-  <div class="domain-grid">
-    <div class="domain-card">
-      <h4>www.va.gov (437 forms in catalog)</h4>
-      <div class="metric"><span>Analyzed successfully</span><span class="val">230</span></div>
-      <div class="metric"><span>Download errors</span><span class="val">14</span></div>
-      <div class="metric"><span>Forms with AcroFields</span><span class="val">179</span></div>
-      <div class="metric"><span>Total fields</span><span class="val">9,373</span></div>
-      <div class="metric"><span>Composed fields</span><span class="val">2,400 (26%)</span></div>
+    <div class="header">
+        <div class="header-container">
+            <div class="logo-nav">
+                <img src="https://images.squarespace-cdn.com/content/v1/6209762bbb7641327e69acc0/21737a6d-1c02-42eb-89e0-afff7da79c68/Aquia+Inc+Website+Header+Logo_Deep+Blue+Background.png?format=300w" alt="Aquia Inc." class="logo">
+                <nav class="header-nav">
+                    <a href="forms.html">Forms</a>
+                    <a href="index.html">Digitizer</a>
+                    <a href="report.html" class="active">Report</a>
+                </nav>
+            </div>
+            <h1>VA Forms &mdash; Schema Database Coverage Report</h1>
+            <p class="subtitle">Live analysis of <span id="totalCount">...</span> digitized VA form schemas across 6 organizations</p>
+        </div>
     </div>
-    <div class="domain-card">
-      <h4>www.vba.va.gov (228 forms in catalog)</h4>
-      <div class="metric"><span>Analyzed successfully</span><span class="val">226</span></div>
-      <div class="metric"><span>Download errors</span><span class="val">2</span></div>
-      <div class="metric"><span>Forms with AcroFields</span><span class="val">197</span></div>
-      <div class="metric"><span>Total fields</span><span class="val">17,557</span></div>
-      <div class="metric"><span>Composed fields</span><span class="val">6,285 (36%)</span></div>
+    <div class="container">
+        <div id="loadingState" class="loading"><div class="spinner"></div><p>Loading schema data...</p></div>
+        <div id="content" style="display:none;">
+            <div class="summary-grid" id="summaryCards"></div>
+            <h2 class="section-title">Organization Breakdown</h2>
+            <div class="org-grid" id="orgCards"></div>
+            <h2 class="section-title">Coverage Distribution</h2>
+            <div class="chart-container"><div class="chart-bars" id="chartBars"></div></div>
+            <h2 class="section-title">Key Insights</h2>
+            <div class="insights-grid" id="insights"></div>
+            <h2 class="section-title">All Forms</h2>
+            <div class="table-controls">
+                <button class="toggle-button" id="toggleShowAll">Show All Forms</button>
+                <span id="formCountDisplay"></span>
+            </div>
+            <div class="table-wrapper">
+                <table id="formsTable">
+                    <thead><tr>
+                        <th class="sortable" data-sort="name">Form Number</th>
+                        <th class="sortable" data-sort="org">Organization</th>
+                        <th class="sortable" data-sort="totalFields">Total Fields</th>
+                        <th class="sortable" data-sort="composedFields">Composed Fields</th>
+                        <th class="sortable" data-sort="coveragePercent">Coverage %</th>
+                        <th class="sortable" data-sort="pageCount">Pages</th>
+                        <th>Status</th>
+                    </tr></thead>
+                    <tbody id="formsTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+        <div id="errorState" style="display:none;"><div class="error-message" id="errorMessage"></div></div>
     </div>
-    <div class="domain-card">
-      <h4>Other domains (21 forms in catalog)</h4>
-      <div class="metric"><span>Analyzed</span><span class="val">Not yet (CORS)</span></div>
-      <div class="metric"><span>Domains</span><span class="val">opm.gov, gsa.gov, etc.</span></div>
-      <div class="metric"><span>Status</span><span class="val">Pending proxy analysis</span></div>
-    </div>
-  </div>
-</div>
+    <script>
+    const DATA_SOURCES = [
+        { url: 'schemas/vba/index.json', org: 'VBA' },
+        { url: 'schemas/va/vha/index.json', org: 'VHA' },
+        { url: 'schemas/va/nca/index.json', org: 'NCA' },
+        { url: 'schemas/va/admin/index.json', org: 'Admin' },
+        { url: 'schemas/va/facilities/index.json', org: 'Facilities' },
+        { url: 'schemas/va/other/index.json', org: 'Other' }
+    ];
+    let allForms = [], showAllForms = false, currentSort = { field: 'totalFields', direction: 'desc' };
 
-<!-- ══ COVERAGE DISTRIBUTION ══ -->
-<div class="section">
-  <h2>Coverage Distribution (376 forms with fields)</h2>
-  <div class="dist-chart">
-    <div class="dist-bar-wrap">
-      <div class="dist-bar" style="height:13%; background:#ef4444;"><span class="count">24</span></div>
-      <div class="dist-label">0%</div>
-    </div>
-    <div class="dist-bar-wrap">
-      <div class="dist-bar" style="height:57%; background:#f97316;"><span class="count">108</span></div>
-      <div class="dist-label">1–25%</div>
-    </div>
-    <div class="dist-bar-wrap">
-      <div class="dist-bar" style="height:67%; background:#f59e0b;"><span class="count">127</span></div>
-      <div class="dist-label">26–50%</div>
-    </div>
-    <div class="dist-bar-wrap">
-      <div class="dist-bar" style="height:45%; background:#84cc16;"><span class="count">86</span></div>
-      <div class="dist-label">51–75%</div>
-    </div>
-    <div class="dist-bar-wrap">
-      <div class="dist-bar" style="height:16%; background:#22c55e;"><span class="count">31</span></div>
-      <div class="dist-label">76–100%</div>
-    </div>
-  </div>
-  <p style="font-size:13px; color:#666; margin-top:8px;">The largest group (127 forms) falls in the 26–50% range — these would benefit most from additional pattern matching and XFA label support.</p>
-</div>
+    async function loadData() {
+        try {
+            const results = await Promise.all(DATA_SOURCES.map(source =>
+                fetch(source.url).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+                .then(data => ({ org: source.org, forms: data.forms || [] }))
+            ));
+            allForms = [];
+            results.forEach(r => r.forms.forEach(f => allForms.push({ ...f, org: r.org })));
+            renderReport();
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        } catch (e) {
+            console.error('Error loading data:', e);
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('errorState').style.display = 'block';
+            document.getElementById('errorMessage').textContent = 'Failed to load form data: ' + e.message;
+        }
+    }
 
-<!-- ══ PATTERN COVERAGE ══ -->
-<div class="section">
-  <h2>Pattern Coverage (17 Composition Patterns)</h2>
-  <div class="table-wrap">
-    <table id="patternTable">
-      <thead>
-        <tr>
-          <th>Pattern</th>
-          <th class="num">Forms (va.gov)</th>
-          <th class="num">Forms (vba)</th>
-          <th class="num">Forms (Total)</th>
-          <th class="num">Fields (va.gov)</th>
-          <th class="num">Fields (vba)</th>
-          <th class="num">Fields (Total)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>signature</strong></td><td class="num">90</td><td class="num">183</td><td class="num">273</td><td class="num">355</td><td class="num">978</td><td class="num">1,333</td></tr>
-        <tr><td><strong>address</strong></td><td class="num">65</td><td class="num">153</td><td class="num">218</td><td class="num">202</td><td class="num">1,426</td><td class="num">1,628</td></tr>
-        <tr><td><strong>ssn</strong></td><td class="num">57</td><td class="num">118</td><td class="num">175</td><td class="num">150</td><td class="num">565</td><td class="num">715</td></tr>
-        <tr><td><strong>phone</strong></td><td class="num">48</td><td class="num">113</td><td class="num">161</td><td class="num">268</td><td class="num">419</td><td class="num">687</td></tr>
-        <tr><td><strong>radio</strong></td><td class="num">41</td><td class="num">113</td><td class="num">154</td><td class="num">201</td><td class="num">945</td><td class="num">1,146</td></tr>
-        <tr><td><strong>checkbox</strong></td><td class="num">41</td><td class="num">49</td><td class="num">90</td><td class="num">537</td><td class="num">238</td><td class="num">775</td></tr>
-        <tr><td><strong>fullName</strong></td><td class="num">53</td><td class="num">28</td><td class="num">81</td><td class="num">188</td><td class="num">81</td><td class="num">269</td></tr>
-        <tr><td><strong>vaFileNumber</strong></td><td class="num">4</td><td class="num">69</td><td class="num">73</td><td class="num">4</td><td class="num">85</td><td class="num">89</td></tr>
-        <tr><td><strong>dob</strong></td><td class="num">16</td><td class="num">65</td><td class="num">81</td><td class="num">22</td><td class="num">332</td><td class="num">354</td></tr>
-        <tr><td><strong>date</strong></td><td class="num">54</td><td class="num">26</td><td class="num">80</td><td class="num">257</td><td class="num">59</td><td class="num">316</td></tr>
-        <tr><td><strong>employer</strong></td><td class="num">9</td><td class="num">37</td><td class="num">46</td><td class="num">15</td><td class="num">169</td><td class="num">184</td></tr>
-        <tr><td><strong>medical</strong></td><td class="num">25</td><td class="num">21</td><td class="num">46</td><td class="num">116</td><td class="num">159</td><td class="num">275</td></tr>
-        <tr><td><strong>email</strong></td><td class="num">17</td><td class="num">20</td><td class="num">37</td><td class="num">23</td><td class="num">36</td><td class="num">59</td></tr>
-        <tr><td><strong>dependent</strong></td><td class="num">4</td><td class="num">32</td><td class="num">36</td><td class="num">23</td><td class="num">195</td><td class="num">218</td></tr>
-        <tr><td><strong>financial</strong></td><td class="num">4</td><td class="num">32</td><td class="num">36</td><td class="num">21</td><td class="num">498</td><td class="num">519</td></tr>
-        <tr><td><strong>insurance</strong></td><td class="num">3</td><td class="num">29</td><td class="num">32</td><td class="num">17</td><td class="num">80</td><td class="num">97</td></tr>
-        <tr><td><strong>serviceNumber</strong></td><td class="num">1</td><td class="num">18</td><td class="num">19</td><td class="num">1</td><td class="num">20</td><td class="num">21</td></tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+    function renderReport() { renderSummaryCards(); renderOrgBreakdown(); renderCoverageDistribution(); renderInsights(); renderFormsTable(); setupTableSorting(); }
 
-<!-- ══ PER-FORM DETAILS ══ -->
-<div class="section">
-  <h2>Per-Form Analysis (376 forms with fields)</h2>
-  <div class="tab-btns">
-    <button class="tab-btn active" onclick="showTab('all')">All Forms</button>
-    <button class="tab-btn" onclick="showTab('va')">va.gov (179)</button>
-    <button class="tab-btn" onclick="showTab('vba')">vba.va.gov (197)</button>
-    <button class="tab-btn" onclick="showTab('high')">High Coverage (76%+)</button>
-    <button class="tab-btn" onclick="showTab('low')">Low Coverage (&lt;25%)</button>
-  </div>
-  <input type="text" class="search-box" id="formSearch" placeholder="Search forms by name..." oninput="filterForms()">
-  <div class="table-wrap">
-    <table id="formTable">
-      <thead>
-        <tr>
-          <th onclick="sortTable(0)">Form Name</th>
-          <th onclick="sortTable(1)" class="num">Domain</th>
-          <th onclick="sortTable(2)" class="num">Total Fields</th>
-          <th onclick="sortTable(3)" class="num">Composed</th>
-          <th onclick="sortTable(4)" class="num">Unmatched</th>
-          <th onclick="sortTable(5)">Coverage</th>
-        </tr>
-      </thead>
-      <tbody id="formBody"></tbody>
-    </table>
-  </div>
-</div>
+    function renderSummaryCards() {
+        const total = allForms.length, digitized = allForms.filter(f => f.status === 'digitized').length;
+        const totalFields = allForms.reduce((s, f) => s + (f.totalFields || 0), 0);
+        const composed = allForms.reduce((s, f) => s + (f.composedFields || 0), 0);
+        const coverage = totalFields > 0 ? Math.round((composed / totalFields) * 100) : 0;
+        const online = allForms.filter(f => f.availableOnline).length;
+        document.getElementById('totalCount').textContent = total.toLocaleString();
+        const cards = [
+            { label: 'Total Forms', value: total, sub: 'across 6 organizations' },
+            { label: 'Digitized', value: digitized, sub: Math.round((digitized/total)*100) + '% complete' },
+            { label: 'Total Fields', value: totalFields, sub: 'across all forms' },
+            { label: 'Composed Fields', value: composed, sub: 'matched to patterns' },
+            { label: 'Overall Coverage', value: coverage + '%', sub: composed.toLocaleString() + ' of ' + totalFields.toLocaleString() },
+            { label: 'Available Online', value: online, sub: 'already on VA.gov' }
+        ];
+        document.getElementById('summaryCards').innerHTML = cards.map(c => '<div class="card"><div class="card-label">' + c.label + '</div><div class="card-value">' + (typeof c.value === 'number' ? c.value.toLocaleString() : c.value) + '</div><div class="card-subtext">' + c.sub + '</div></div>').join('');
+    }
 
-<!-- ══ NEXT STEPS ══ -->
-<div class="section">
-  <h2>Recommended Next Steps</h2>
-  <div class="insight"><strong>1. XFA Label-Proximity Matching:</strong> Build a secondary matcher that reads XFA XML label data (or uses spatial proximity to text labels in the PDF) to identify fields with generic names like TextField1[0]. This alone could recover 40-60% of currently unmatched fields.</div>
-  <div class="insight"><strong>2. Pattern Expansion:</strong> Add patterns for common unmatched field categories: military service dates, branch of service, discharge type, claim type, benefit election, relationship type, and education/training fields.</div>
-  <div class="insight"><strong>3. Spanish Form Variant Mapping:</strong> Many VBA forms have Spanish translations (e.g., 21P-0517-1 vs 21P-0517-1(Spanish)). Build a mapping that reuses the same composition template for both language variants.</div>
-  <div class="insight"><strong>4. Other-Domain Forms:</strong> Analyze the 21 forms hosted on opm.gov, gsa.gov, and other external domains via server-side proxy to complete full catalog coverage.</div>
-  <div class="insight"><strong>5. High-Coverage Form Templates:</strong> The 31 forms at 76-100% coverage are ready for composition engine template generation today. Start building templates for these to validate the end-to-end digitization pipeline.</div>
-</div>
+    function getCoverageColor(p) { return p >= 75 ? '#2E8540' : p >= 50 ? '#FDB81E' : '#E31C3D'; }
 
-</div>
+    function renderOrgBreakdown() {
+        const orgMap = {};
+        DATA_SOURCES.forEach(s => { orgMap[s.org] = { name: s.org, totalFields: 0, composedFields: 0, forms: 0, online: 0 }; });
+        allForms.forEach(f => { if (orgMap[f.org]) { orgMap[f.org].totalFields += f.totalFields || 0; orgMap[f.org].composedFields += f.composedFields || 0; orgMap[f.org].forms++; if (f.availableOnline) orgMap[f.org].online++; } });
+        const orgs = Object.values(orgMap).sort((a, b) => b.forms - a.forms);
+        document.getElementById('orgCards').innerHTML = orgs.map(o => {
+            const cov = o.totalFields > 0 ? Math.round((o.composedFields / o.totalFields) * 100) : 0;
+            return '<div class="org-card"><div class="org-name">' + o.name + '</div>' +
+                '<div class="org-stat"><span class="org-stat-label">Forms</span><span class="org-stat-value">' + o.forms.toLocaleString() + '</span></div>' +
+                '<div class="org-stat"><span class="org-stat-label">Total Fields</span><span class="org-stat-value">' + o.totalFields.toLocaleString() + '</span></div>' +
+                '<div class="org-stat"><span class="org-stat-label">Composed Fields</span><span class="org-stat-value">' + o.composedFields.toLocaleString() + '</span></div>' +
+                '<div class="org-stat"><span class="org-stat-label">Online Forms</span><span class="org-stat-value">' + o.online + '</span></div>' +
+                '<div class="progress-bar"><div class="progress-fill" style="width:' + cov + '%;background-color:' + getCoverageColor(cov) + ';"></div></div>' +
+                '<div class="progress-text">' + cov + '% coverage</div></div>';
+        }).join('');
+    }
 
-<footer>
-  Aquia Inc. — VA Form Digitizer • Composition Engine Analysis Report • March 28, 2026
-</footer>
+    function renderCoverageDistribution() {
+        const buckets = { '0%': 0, '1-25%': 0, '26-50%': 0, '51-75%': 0, '76-99%': 0, '100%': 0 };
+        allForms.forEach(f => {
+            const c = f.totalFields > 0 ? Math.round((f.composedFields / f.totalFields) * 100) : 0;
+            if (c === 0) buckets['0%']++; else if (c === 100) buckets['100%']++; else if (c >= 76) buckets['76-99%']++; else if (c >= 51) buckets['51-75%']++; else if (c >= 26) buckets['26-50%']++; else buckets['1-25%']++;
+        });
+        const max = Math.max(...Object.values(buckets));
+        const order = ['0%', '1-25%', '26-50%', '51-75%', '76-99%', '100%'];
+        document.getElementById('chartBars').innerHTML = order.map(b => {
+            const cnt = buckets[b], pct = max > 0 ? (cnt / max) * 100 : 0;
+            const color = getCoverageColor(parseInt(b) || 0);
+            return '<div class="bar-item"><div class="bar-label">' + b + '</div><div class="bar"><div class="bar-fill" style="height:' + pct + '%;background-color:' + color + ';">' + (cnt > 0 ? cnt : '') + '</div></div><div class="bar-count">' + cnt + ' form' + (cnt !== 1 ? 's' : '') + '</div></div>';
+        }).join('');
+    }
 
-<script>
-// ── Form data ──
-const VA_FORMS = [
-["10-0491","va",496,16,3],["10-0453","va",274,80,29],["10-2675c","va",249,183,73],["10-2364","va",238,2,1],["10-0440","va",219,6,3],["10-2638","va",201,4,2],["10-2570","va",197,60,30],["10-2614d-3a","va",175,29,17],["10-2320","va",174,2,1],["10-6001a","va",169,0,0],["10-394","va",163,18,11],["10-4790","va",161,0,0],["10-5501","va",138,109,79],["10-2421","va",137,7,5],["10-0445","va",137,52,38],["10-7078","va",136,6,4],["10-1314","va",126,0,0],["10-10072","va",125,79,63],["10-5392","va",120,20,17],["10-0053","va",117,5,4],
-["VA0918b","va",111,41,37],["SF52(ES)","va",104,0,0],["10-0396","va",100,60,60],["10-2914","va",96,0,0],["10-380","va",93,30,32],["10-2917","va",92,0,0],["10-0432a","va",91,38,42],["10-10CG(T)","va",91,0,0],["10-10CG(S)","va",91,0,0],["10-0388-14","va",90,21,23],["10-2770","va",87,2,2],["10-10065","va",85,6,7],["10-0376a","va",83,9,11],["10-10176","va",81,38,47],["10-9028","va",78,7,9],["10-319a","va",76,15,20],["10-0460","va",76,44,58],["10-0388-3","va",75,3,4],["10-0395","va",74,43,58],["10-0436","va",74,45,61],
-["10-314","va",73,6,8],["10-2406","va",73,18,25],["10-2723","va",71,3,4],["10-2687","va",71,6,8],["10-328","va",71,14,20],["10-7131","va",67,28,42],["10-2675","va",66,47,71],["10-2804a","va",65,8,12],["10-2614d-2a","va",65,2,3],["10-318b","va",65,16,25],["10-1313-1","va",65,22,34],["10-0455a","va",63,52,83],["10-330","va",62,43,69],["10-318a","va",61,25,41],["10-10068c","va",60,50,83],["10-7959e","va",58,28,48],["10-0383","va",57,44,77],["10-1371","va",56,16,29],["10-2633","va",56,14,25],["VA0744","va",56,12,21],
-["10-5504","va",55,0,0],["10-10068b","va",53,22,42],["10-0246","va",52,7,13],["10-10152","va",50,33,66],["10-2804c","va",49,5,10],["10-7132","va",49,24,49],["10-0426","va",49,14,29],["10-0102","va",47,22,47],["10-1313-13","va",46,5,11],["10-10230a","va",45,19,42],["10-2829","va",44,7,16],["10-2623","va",43,22,51],["10-5345a","va",43,17,40],["10-2520","va",42,5,12],["10-2641","va",41,2,5],["10-2920","va",40,9,23],["10-10068a","va",40,21,53],["10-0379","va",39,10,26],["10-313","va",38,14,37],["10-7108","va",38,19,50],
-["10-0403b","va",36,0,0],["10-2623a","va",36,20,56],["10-0394","va",35,1,3],["VA0918a","va",34,8,24],["10-1170","va",34,10,29],["10-1313-4","va",34,2,6],["10-7976d","va",33,10,30],["10-8001","va",32,15,47],["10-2478a","va",31,2,6],["10-2743","va",31,5,16],["10-5096","va",31,0,0],["VA0918e","va",31,16,52],["VA0381","va",31,12,39],["10-10143g","va",31,18,58],["10-0464a","va",29,13,45],["10-2850e","va",29,8,28],["10-9054","va",29,19,66],["10-9055","va",29,20,69],["10-0408","va",29,0,0],["10-2478","va",28,0,0],
-["FL-10-90","va",28,8,29],["10-10HS","va",27,15,56],["10-2431","va",26,12,46],["10-5018","va",26,1,4],["0857r","va",26,6,23],["10-2804b","va",25,6,24],["10-7919","va",25,0,0],["10-387","va",25,24,96],["10-7055","va",25,3,12],["10-0403","va",24,5,21],["10-379","va",24,12,50],["10-2815","va",23,6,26],["10-4794","va",22,1,5],["10-4236a","va",22,16,73],["10-5506","va",22,7,32],["10-1223","va",22,14,64],["10-329","va",21,14,67],["10-0394b","va",20,4,20],["10-5397","va",18,7,39],["10-376","va",18,9,50],
-["10-10116c","va",18,1,6],["10-9050","va",18,11,61],["10-2407","va",18,12,67],["10-3203a","va",18,0,0],["10-10115c","va",17,0,0],["10-2068a","va",16,5,31],["10-10118","va",16,14,88],["10-7008","va",15,7,47],["10-7008a","va",15,7,47],["10-0403a","va",15,3,20],["10-0708","va",15,9,60],["10-0451","va",14,1,7],["10-10171-NH","va",14,4,29],["10-303","va",14,11,79],["10-7959f-1","va",14,11,79],["10-253","va",14,1,7],["VA0918d","va",13,7,54],["10-10171","va",13,7,54],["10-2409","va",13,9,69],["10-2410","va",13,7,54],
-["10-0103","va",12,9,75],["10-0477","va",11,1,9],["10-493a","va",11,1,9],["10-10169","va",10,5,50],["10-322","va",10,5,50],["10-493b","va",10,7,70],["10-0144","va",10,4,40],["10-2501","va",9,0,0],["10-0389a","va",9,7,78],["10-0388-6","va",9,5,56],["10-10145","va",9,1,11],["10-0144a","va",9,5,56],["10-0525","va",9,8,89],["10-0143","va",8,1,13],["10-0143a","va",8,4,50],["10-0388-12","va",8,4,50],["10-1313-5","va",8,2,25],["10-0388-7","va",7,4,57],["10-2357","va",7,2,29],["10-2636","va",7,0,0],
-["10-7042","va",7,3,43],["10-381","va",7,3,43],["10-2553","va",7,3,43],["10-0388-2","va",7,3,43],["10-1450","va",6,4,67],["10-7033","va",6,0,0],["10-5023","va",6,6,100],["10-5379a","va",6,0,0],["10-2382","va",6,3,50],["10-0491n","va",6,0,0],["10-1313-2","va",6,1,17],["10-0388-8","va",6,2,33],["10-0388-10","va",6,2,33],["10-0483","va",5,1,20],["10-304","va",5,4,80],["FL-10-426","va",4,0,0],["10-2817","va",3,1,33],["10-1349","va",2,1,50],["10-1313-6","va",2,1,50]
-];
+    function renderInsights() {
+        const orgStats = {};
+        DATA_SOURCES.forEach(s => { orgStats[s.org] = { totalFields: 0, composedFields: 0, forms: 0 }; });
+        allForms.forEach(f => { if (orgStats[f.org]) { orgStats[f.org].totalFields += f.totalFields || 0; orgStats[f.org].composedFields += f.composedFields || 0; orgStats[f.org].forms++; } });
+        const largest = Object.entries(orgStats).sort((a, b) => b[1].forms - a[1].forms)[0];
+        const highCov = Object.entries(orgStats).reduce((m, c) => { const mc = m[1].totalFields > 0 ? m[1].composedFields/m[1].totalFields : 0; const cc = c[1].totalFields > 0 ? c[1].composedFields/c[1].totalFields : 0; return cc > mc ? c : m; });
+        const maxForm = allForms.reduce((m, c) => (c.totalFields||0) > (m.totalFields||0) ? c : m, allForms[0] || {});
+        const full = allForms.filter(f => f.totalFields > 0 && f.composedFields >= f.totalFields).length;
+        const onl = allForms.filter(f => f.availableOnline).length;
+        const avgFields = Math.round(allForms.reduce((s, f) => s + (f.totalFields||0), 0) / allForms.length);
+        const hPct = highCov[1].totalFields > 0 ? Math.round((highCov[1].composedFields/highCov[1].totalFields)*100) : 0;
+        const insights = [
+            { t: 'Largest Organization', v: largest[0], d: largest[1].forms + ' forms' },
+            { t: 'Highest Avg Coverage', v: hPct + '%', d: highCov[0] },
+            { t: 'Largest Form', v: (maxForm.totalFields||0).toLocaleString(), d: 'Form ' + (maxForm.name||'N/A') },
+            { t: '100% Coverage', v: full.toLocaleString(), d: 'forms fully composed' },
+            { t: 'Online Forms', v: onl.toLocaleString(), d: Math.round((onl/allForms.length)*100) + '% of total' },
+            { t: 'Average Form Size', v: avgFields.toLocaleString(), d: 'fields per form' }
+        ];
+        document.getElementById('insights').innerHTML = insights.map(i => '<div class="insight-card"><div class="insight-title">' + i.t + '</div><div class="insight-value">' + i.v + '</div><div class="insight-description">' + i.d + '</div></div>').join('');
+    }
 
-const VBA_FORMS = [
-["26-1852","vba",644,19,3],["21P-527EZ","vba",519,253,49],["21P-8416","vba",517,196,38],["21P-8416(Spanish)","vba",507,82,16],["21P-0969","vba",428,189,44],["21P-0969(Spanish)","vba",421,205,49],["21P-4706c","vba",363,11,3],["21-526EZ","vba",345,103,30],["26-1849","vba",233,7,3],["21P-535","vba",222,56,25],["28-1905c","vba",208,24,12],["21P-1775","vba",200,88,44],["28-1905m","vba",197,38,19],["21P-524","vba",190,96,51],["21-6898","vba",184,36,20],["29-336","vba",181,152,84],["29-541","vba",179,57,32],["21-8940","vba",176,65,37],["26-8844","vba",171,30,18],["21-4170","vba",171,55,32],
-["26-6705b","vba",170,42,25],["29-336a","vba",169,140,83],["21P-8416b","vba",168,47,28],["21P-0517-1","vba",160,48,30],["21P-0519C-1(Spanish)","vba",153,53,35],["22-1990","vba",153,33,22],["21P-0519S-1(Spanish)","vba",152,22,14],["21P-0519s-1","vba",152,22,14],["21P-8049","vba",152,48,32],["21P-0513-1","vba",147,42,29],["21P-0519c-1","vba",147,38,26],["20-0995","vba",144,76,53],["22-8864","vba",142,48,34],["21P-0513-1(Spanish)","vba",141,42,30],["21-4142","vba",140,86,61],["21P-0517-1(Spanish)","vba",140,42,30],["21-509","vba",132,17,13],["26-6681","vba",131,67,51],["28-1902w","vba",128,48,38],["22-10215a","vba",126,3,2],
-["28-10289","vba",126,69,55],["26-8630","vba",126,8,6],["26-6807","vba",124,49,40],["21-0781","vba",124,44,35],["29-357","vba",122,45,37],["22-10215","vba",121,2,2],["20-0996","vba",119,57,48],["21-2680","vba",118,64,54],["21-0538","vba",117,83,71],["20-10207","vba",116,79,68],["26-1820","vba",111,23,21],["26-6808","vba",111,39,35],["21P-4171","vba",108,44,41],["21-674","vba",107,26,24],["21P-601","vba",107,61,57],["26-8149","vba",106,42,40],["21P-4165","vba",106,24,23],["26-6393","vba",104,27,26],["21P-4706b","vba",103,20,19],["26-8629","vba",101,8,8],
-["22-0839","vba",98,10,10],["21P-0516-1 (Spanish)","vba",96,28,29],["21-4142a","vba",96,51,53],["20-10206","vba",96,36,38],["21P-0516-1","vba",96,28,29],["26-8712","vba",94,34,36],["21P-530EZ","vba",93,51,55],["21-22a","vba",90,71,79],["21-4502","vba",90,69,77],["21-0304","vba",90,59,66],["28-0968","vba",89,35,39],["22-10278","vba",86,42,49],["21P-0514-1(Spanish)","vba",85,26,31],["21P-0512V-1","vba",85,18,21],["20-8800","vba",84,8,10],["21P-0514-1","vba",82,23,28],["22-0976","vba",82,16,20],["22-5490","vba",79,51,65],["21-0845","vba",77,29,38],["27-8832","vba",77,38,49],
-["21P-4185","vba",77,28,36],["20-10208","vba",76,58,76],["21-10210","vba",76,38,50],["22-1990n","vba",75,23,31],["22-1990t","vba",74,26,35],["21P-0571","vba",74,37,50],["26-10284","vba",73,6,8],["26-6705","vba",72,17,24],["26-6363","vba",70,20,29],["26-8497a","vba",69,0,0],["26-0971","vba",68,3,4],["22-8794","vba",68,56,82],["26-1805","vba",67,36,54],["22-1995","vba",66,33,50],["28-1903","vba",64,39,61],["21P-534a","vba",64,38,59],["21P-0512s-1(Spanish)","vba",63,16,25],["21-22","vba",63,40,63],["22-1990e","vba",63,22,35],["21P-0518-1(Spanish)","vba",62,19,31],
-["22-1999b","vba",62,9,15],["26-8497","vba",62,3,5],["21P-0518-1","vba",62,20,32],["21-0972","vba",61,46,75],["21-4192","vba",61,44,72],["21P-8924","vba",61,34,56],["21-0966","vba",61,47,77],["22-10275","vba",61,7,11],["26-1880","vba",61,25,41],["21P-0512s-1","vba",60,17,28],["21-4140","vba",59,37,63],["28-1905h","vba",57,52,91],["26-1833","vba",56,14,25],["21-0788","vba",55,33,60],["22-6553c","vba",54,5,9],["21-674b","vba",54,13,24],["21P-530a","vba",53,23,43],["26-8641a","vba",51,4,8],["21-0779","vba",51,29,57],["29-4125","vba",48,31,65],
-["22-8865","vba",47,19,40],["26-8736b","vba",47,30,64],["21P-4718a","vba",47,8,17],["21-4193","vba",47,21,45],["22-8691","vba",46,10,22],["21-8951-2","vba",45,37,82],["29-352","vba",45,29,64],["26-4555c","vba",44,19,43],["28-10281","vba",43,33,77],["26-1839","vba",43,7,16],["26-6382","vba",42,21,50],["21-8960","vba",42,22,52],["29-1549","vba",41,35,85],["28-1900","vba",41,28,68],["22-0803","vba",40,5,13],["28-10286","vba",37,23,62],["26-8736a","vba",37,13,35],["29-0975","vba",37,21,57],["20-572","vba",37,18,49],["21P-0537","vba",37,21,57],
-["22-10201","vba",36,26,72],["29-8636","vba",36,11,31],["21P-0847","vba",35,23,66],["22-10282","vba",34,19,56],["29-0152","vba",33,7,21],["21-4138","vba",33,26,79],["22-8979","vba",33,21,64],["26-1817","vba",32,23,72],["29-0543","vba",32,9,28],["29-1546","vba",31,17,55],["26-6381","vba",30,9,30],["22-6553d-1","vba",29,6,21],["26-8261a","vba",29,17,59],["21P-8941","vba",29,22,76],["26-8923","vba",28,2,7],["26-6705d","vba",28,6,21],["22-0848","vba",27,18,67],["26-8937","vba",27,14,52],["29-4125a","vba",27,16,59],["27-2008","vba",26,17,65],
-["22-10219","vba",25,9,36],["22-10270","vba",23,12,52],["22-6553b-1","vba",23,10,43],["22-0989","vba",23,17,74],["22-10272","vba",21,4,19],["26-8644","vba",20,7,35],["26-4555","vba",20,9,45],["26-8730","vba",19,5,26],["26-8731a","vba",19,5,26],["26-8731c","vba",19,5,26],["29-586","vba",18,10,56],["26-8827","vba",18,14,78],["26-10280","vba",17,13,76],["22-0810","vba",17,10,59],["26-0829","vba",17,8,47],["26-0785","vba",17,2,12],["29-0309","vba",16,12,75],["29-888","vba",16,5,31],["26-10280a","vba",14,10,71],["29-0165","vba",14,11,79],
-["26-1859","vba",14,8,57],["29-0563","vba",13,9,69],["26-8731b","vba",12,3,25],["22-10216","vba",11,2,18],["22-1919","vba",11,4,36],["26-0551","vba",10,0,0],["26-0967","vba",9,4,44],["22-1999c","vba",9,5,56],["29-8485","vba",9,7,78],["29-8485a","vba",9,7,78],["26-6807a","vba",7,3,43],["21-651","vba",7,5,71],["26-0967a","vba",6,1,17],["22-0993","vba",5,2,40],["26-8106","vba",4,3,75],["28-0588","vba",4,2,50],["26-0503","vba",2,2,100]
-];
+    function renderFormsTable() {
+        const display = showAllForms ? allForms : allForms.slice(0, 50);
+        const sorted = [...display].sort((a, b) => {
+            const av = a[currentSort.field], bv = b[currentSort.field];
+            if (typeof av === 'string') return currentSort.direction === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av);
+            return currentSort.direction === 'asc' ? (av||0) - (bv||0) : (bv||0) - (av||0);
+        });
+        document.getElementById('formsTableBody').innerHTML = sorted.map(f => {
+            const cov = f.totalFields > 0 ? Math.round((f.composedFields/f.totalFields)*100) : 0;
+            return '<tr><td><a href="' + (f.formUrl||'#') + '" target="_blank" class="form-link">' + (f.name||'N/A') + '</a></td>' +
+                '<td>' + (f.org||'') + '</td><td>' + (f.totalFields||0).toLocaleString() + '</td><td>' + (f.composedFields||0).toLocaleString() + '</td>' +
+                '<td>' + cov + '%</td><td>' + (f.pageCount||0) + '</td>' +
+                '<td><span class="badge badge-digitized">' + (f.status||'unknown') + '</span>' + (f.availableOnline ? ' <span class="badge badge-online">Online</span>' : '') + '</td></tr>';
+        }).join('');
+        const cnt = showAllForms ? allForms.length : Math.min(50, allForms.length);
+        document.getElementById('formCountDisplay').textContent = 'Showing ' + cnt + ' of ' + allForms.length + ' forms';
+        document.getElementById('toggleShowAll').textContent = showAllForms ? 'Show Top 50' : 'Show All ' + allForms.length + ' Forms';
+    }
 
-const ALL_FORMS = VA_FORMS.concat(VBA_FORMS);
-let currentFilter = 'all';
+    function setupTableSorting() {
+        document.querySelectorAll('th.sortable').forEach(th => {
+            th.addEventListener('click', function() {
+                const field = this.dataset.sort;
+                if (currentSort.field === field) currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+                else { currentSort.field = field; currentSort.direction = 'desc'; }
+                document.querySelectorAll('th.sortable').forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+                this.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
+                renderFormsTable();
+            });
+        });
+    }
 
-function covBar(pct) {
-  const cls = pct >= 60 ? 'fill-high' : pct >= 30 ? 'fill-mid' : 'fill-low';
-  return `<div class="cov-bar"><div class="bar"><div class="fill ${cls}" style="width:${pct}%"></div></div><span class="pct">${pct}%</span></div>`;
-}
-
-function renderForms(data) {
-  const body = document.getElementById('formBody');
-  body.innerHTML = data.map(f => `<tr>
-    <td><strong>${f[0]}</strong></td>
-    <td class="num"><span class="badge ${f[1]==='va'?'badge-ok':'badge-skip'}">${f[1]}</span></td>
-    <td class="num">${f[2]}</td>
-    <td class="num">${f[3]}</td>
-    <td class="num">${f[2]-f[3]}</td>
-    <td>${covBar(f[4])}</td>
-  </tr>`).join('');
-}
-
-function showTab(tab) {
-  currentFilter = tab;
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
-  filterForms();
-}
-
-function filterForms() {
-  const q = document.getElementById('formSearch').value.toLowerCase();
-  let data = ALL_FORMS;
-  if (currentFilter === 'va') data = VA_FORMS;
-  else if (currentFilter === 'vba') data = VBA_FORMS;
-  else if (currentFilter === 'high') data = ALL_FORMS.filter(f => f[4] >= 76);
-  else if (currentFilter === 'low') data = ALL_FORMS.filter(f => f[4] < 25);
-  if (q) data = data.filter(f => f[0].toLowerCase().includes(q));
-  renderForms(data);
-}
-
-let sortCol = 2, sortAsc = false;
-function sortTable(col) {
-  if (sortCol === col) sortAsc = !sortAsc;
-  else { sortCol = col; sortAsc = col === 0; }
-  const getData = () => {
-    if (currentFilter === 'va') return VA_FORMS;
-    if (currentFilter === 'vba') return VBA_FORMS;
-    if (currentFilter === 'high') return ALL_FORMS.filter(f => f[4] >= 76);
-    if (currentFilter === 'low') return ALL_FORMS.filter(f => f[4] < 25);
-    return ALL_FORMS;
-  };
-  const data = getData().slice().sort((a, b) => {
-    const va = col === 0 ? a[0] : col === 1 ? a[1] : col === 5 ? a[4] : a[col];
-    const vb = col === 0 ? b[0] : col === 1 ? b[1] : col === 5 ? b[4] : b[col];
-    if (typeof va === 'string') return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
-    return sortAsc ? va - vb : vb - va;
-  });
-  renderForms(data);
-}
-
-// Initial render
-renderForms(ALL_FORMS.slice().sort((a, b) => b[2] - a[2]));
-</script>
+    document.getElementById('toggleShowAll').addEventListener('click', function() { showAllForms = !showAllForms; renderFormsTable(); });
+    document.addEventListener('DOMContentLoaded', loadData);
+    </script>
 </body>
 </html>
