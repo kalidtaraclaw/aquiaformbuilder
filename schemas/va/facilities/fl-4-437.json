@@ -1,0 +1,103 @@
+{
+  "type": "object",
+  "title": "Equipment Inventory Report",
+  "properties": {
+    "facilityName": {
+      "type": "string",
+      "title": "Facilityname"
+    },
+    "facilityNumber": {
+      "type": "string",
+      "title": "Facilitynumber"
+    },
+    "reportDate": {
+      "type": "string",
+      "title": "Reportdate"
+    },
+    "equipmentDescription": {
+      "type": "string",
+      "title": "Equipmentdescription"
+    },
+    "manufacturer": {
+      "type": "string",
+      "title": "Manufacturer"
+    },
+    "modelNumber": {
+      "type": "string",
+      "title": "Modelnumber"
+    },
+    "serialNumber": {
+      "type": "string",
+      "title": "Serialnumber"
+    },
+    "acquisitionDate": {
+      "type": "string",
+      "title": "Acquisitiondate"
+    },
+    "acquisitionCost": {
+      "type": "string",
+      "title": "Acquisitioncost"
+    },
+    "currentCondition": {
+      "type": "string",
+      "title": "Currentcondition"
+    },
+    "locationBuilding": {
+      "type": "string",
+      "title": "Locationbuilding"
+    },
+    "locationRoom": {
+      "type": "string",
+      "title": "Locationroom"
+    },
+    "responsibleOfficial": {
+      "type": "string",
+      "title": "Responsibleofficial"
+    },
+    "maintenanceSchedule": {
+      "type": "string",
+      "title": "Maintenanceschedule"
+    },
+    "inventoryControlNumber": {
+      "type": "string",
+      "title": "Inventorycontrolnumber"
+    }
+  },
+  "required": [
+    "facilityName",
+    "facilityNumber",
+    "reportDate",
+    "equipmentDescription",
+    "manufacturer"
+  ],
+  "x-va-metadata": {
+    "status": "digitized",
+    "totalFields": 15,
+    "composedFields": 15,
+    "coveragePercent": 100,
+    "generationMethod": "template-based-inference",
+    "generatedAt": "2026-03-29T17:36:08.000Z"
+  },
+  "pages": {
+    "page1": {
+      "title": "Equipment Inventory Report",
+      "properties": {
+        "facilityName": {},
+        "facilityNumber": {},
+        "reportDate": {},
+        "equipmentDescription": {},
+        "manufacturer": {},
+        "modelNumber": {},
+        "serialNumber": {},
+        "acquisitionDate": {},
+        "acquisitionCost": {},
+        "currentCondition": {},
+        "locationBuilding": {},
+        "locationRoom": {},
+        "responsibleOfficial": {},
+        "maintenanceSchedule": {},
+        "inventoryControlNumber": {}
+      }
+    }
+  }
+}

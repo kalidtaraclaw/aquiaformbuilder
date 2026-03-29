@@ -1,0 +1,113 @@
+{
+  "type": "object",
+  "title": "Formulario Administrativo",
+  "properties": {
+    "actionType": {
+      "type": "string",
+      "title": "Actiontype"
+    },
+    "employeeName": {
+      "type": "string",
+      "title": "Employeename"
+    },
+    "employeeSSN": {
+      "type": "string",
+      "title": "Employeessn"
+    },
+    "position": {
+      "type": "string",
+      "title": "Position"
+    },
+    "department": {
+      "type": "string",
+      "title": "Department"
+    },
+    "effectiveDate": {
+      "type": "string",
+      "title": "Effectivedate"
+    },
+    "supervisorName": {
+      "type": "string",
+      "title": "Supervisorname"
+    },
+    "supervisorApproval": {
+      "type": "string",
+      "title": "Supervisorapproval"
+    },
+    "justification": {
+      "type": "string",
+      "title": "Justification"
+    },
+    "humanResourcesReview": {
+      "type": "string",
+      "title": "Humanresourcesreview"
+    },
+    "documentNumber": {
+      "type": "string",
+      "title": "Documentnumber"
+    },
+    "dateOfAction": {
+      "type": "string",
+      "title": "Dateofaction"
+    },
+    "authorityReference": {
+      "type": "string",
+      "title": "Authorityreference"
+    },
+    "remarks": {
+      "type": "string",
+      "title": "Remarks"
+    },
+    "attachmentList": {
+      "type": "string",
+      "title": "Attachmentlist"
+    },
+    "certifyingOfficial": {
+      "type": "string",
+      "title": "Certifyingofficial"
+    },
+    "approvalDate": {
+      "type": "string",
+      "title": "Approvaldate"
+    }
+  },
+  "required": [
+    "actionType",
+    "employeeName",
+    "employeeSSN",
+    "position",
+    "department"
+  ],
+  "x-va-metadata": {
+    "status": "digitized",
+    "totalFields": 17,
+    "composedFields": 17,
+    "coveragePercent": 100,
+    "generationMethod": "template-based-inference",
+    "generatedAt": "2026-03-29T17:36:08.000Z"
+  },
+  "pages": {
+    "page1": {
+      "title": "Formulario Administrativo",
+      "properties": {
+        "actionType": {},
+        "employeeName": {},
+        "employeeSSN": {},
+        "position": {},
+        "department": {},
+        "effectiveDate": {},
+        "supervisorName": {},
+        "supervisorApproval": {},
+        "justification": {},
+        "humanResourcesReview": {},
+        "documentNumber": {},
+        "dateOfAction": {},
+        "authorityReference": {},
+        "remarks": {},
+        "attachmentList": {},
+        "certifyingOfficial": {},
+        "approvalDate": {}
+      }
+    }
+  }
+}

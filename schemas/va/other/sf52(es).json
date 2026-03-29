@@ -1,0 +1,128 @@
+{
+  "type": "object",
+  "title": "Solicitud de Accion de Personal",
+  "properties": {
+    "actionCode": {
+      "type": "string",
+      "title": "Actioncode"
+    },
+    "actionDescription": {
+      "type": "string",
+      "title": "Actiondescription"
+    },
+    "effectiveDate": {
+      "type": "string",
+      "title": "Effectivedate"
+    },
+    "employeeName": {
+      "type": "string",
+      "title": "Employeename"
+    },
+    "employeeSSN": {
+      "type": "string",
+      "title": "Employeessn"
+    },
+    "dateOfBirth": {
+      "type": "string",
+      "title": "Dateofbirth"
+    },
+    "positionTitle": {
+      "type": "string",
+      "title": "Positiontitle"
+    },
+    "payPlan": {
+      "type": "string",
+      "title": "Payplan"
+    },
+    "gradeLevel": {
+      "type": "string",
+      "title": "Gradelevel"
+    },
+    "step": {
+      "type": "string",
+      "title": "Step"
+    },
+    "salary": {
+      "type": "string",
+      "title": "Salary"
+    },
+    "organizationCode": {
+      "type": "string",
+      "title": "Organizationcode"
+    },
+    "dutyStation": {
+      "type": "string",
+      "title": "Dutystation"
+    },
+    "supervisor": {
+      "type": "string",
+      "title": "Supervisor"
+    },
+    "remarks": {
+      "type": "string",
+      "title": "Remarks"
+    },
+    "requestingOffice": {
+      "type": "string",
+      "title": "Requestingoffice"
+    },
+    "approvalAuthority": {
+      "type": "string",
+      "title": "Approvalauthority"
+    },
+    "hrAction": {
+      "type": "string",
+      "title": "Hraction"
+    },
+    "dateProcessed": {
+      "type": "string",
+      "title": "Dateprocessed"
+    },
+    "controlNumber": {
+      "type": "string",
+      "title": "Controlnumber"
+    }
+  },
+  "required": [
+    "actionCode",
+    "actionDescription",
+    "effectiveDate",
+    "employeeName",
+    "employeeSSN"
+  ],
+  "x-va-metadata": {
+    "status": "digitized",
+    "totalFields": 20,
+    "composedFields": 20,
+    "coveragePercent": 100,
+    "generationMethod": "template-based-inference",
+    "generatedAt": "2026-03-29T17:36:08.000Z"
+  },
+  "pages": {
+    "page1": {
+      "title": "Solicitud de Accion de Personal",
+      "properties": {
+        "actionCode": {},
+        "actionDescription": {},
+        "effectiveDate": {},
+        "employeeName": {},
+        "employeeSSN": {},
+        "dateOfBirth": {},
+        "positionTitle": {},
+        "payPlan": {},
+        "gradeLevel": {},
+        "step": {},
+        "salary": {},
+        "organizationCode": {},
+        "dutyStation": {},
+        "supervisor": {},
+        "remarks": {},
+        "requestingOffice": {},
+        "approvalAuthority": {},
+        "hrAction": {},
+        "dateProcessed": {},
+        "controlNumber": {}
+      }
+    }
+  }
+}

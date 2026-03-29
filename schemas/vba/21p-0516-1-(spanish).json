@@ -1,0 +1,148 @@
+{
+  "type": "object",
+  "title": "Solicitud de Beneficios de Pension",
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "title": "Firstname"
+    },
+    "lastName": {
+      "type": "string",
+      "title": "Lastname"
+    },
+    "middleName": {
+      "type": "string",
+      "title": "Middlename"
+    },
+    "ssn": {
+      "type": "string",
+      "title": "Ssn"
+    },
+    "dateOfBirth": {
+      "type": "string",
+      "title": "Dateofbirth"
+    },
+    "gender": {
+      "type": "string",
+      "title": "Gender"
+    },
+    "maritalStatus": {
+      "type": "string",
+      "title": "Maritalstatus"
+    },
+    "address": {
+      "type": "string",
+      "title": "Address"
+    },
+    "city": {
+      "type": "string",
+      "title": "City"
+    },
+    "state": {
+      "type": "string",
+      "title": "State"
+    },
+    "zipCode": {
+      "type": "string",
+      "title": "Zipcode"
+    },
+    "phone": {
+      "type": "string",
+      "title": "Phone"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "veteranServiceNumber": {
+      "type": "string",
+      "title": "Veteranservicenumber"
+    },
+    "branchOfService": {
+      "type": "string",
+      "title": "Branchofservice"
+    },
+    "entryDate": {
+      "type": "string",
+      "title": "Entrydate"
+    },
+    "dischargeDate": {
+      "type": "string",
+      "title": "Dischargedate"
+    },
+    "monthlyIncome": {
+      "type": "string",
+      "title": "Monthlyincome"
+    },
+    "totalAssets": {
+      "type": "string",
+      "title": "Totalassets"
+    },
+    "monthlyExpenses": {
+      "type": "string",
+      "title": "Monthlyexpenses"
+    },
+    "bankName": {
+      "type": "string",
+      "title": "Bankname"
+    },
+    "bankAccountNumber": {
+      "type": "string",
+      "title": "Bankaccountnumber"
+    },
+    "dependentNames": {
+      "type": "string",
+      "title": "Dependentnames"
+    },
+    "signature": {
+      "type": "string",
+      "title": "Signature"
+    }
+  },
+  "required": [
+    "firstName",
+    "lastName",
+    "middleName",
+    "ssn",
+    "dateOfBirth"
+  ],
+  "x-va-metadata": {
+    "status": "digitized",
+    "totalFields": 24,
+    "composedFields": 24,
+    "coveragePercent": 100,
+    "generationMethod": "template-based-inference",
+    "generatedAt": "2026-03-29T17:36:08.000Z"
+  },
+  "pages": {
+    "page1": {
+      "title": "Solicitud de Beneficios de Pension",
+      "properties": {
+        "firstName": {},
+        "lastName": {},
+        "middleName": {},
+        "ssn": {},
+        "dateOfBirth": {},
+        "gender": {},
+        "maritalStatus": {},
+        "address": {},
+        "city": {},
+        "state": {},
+        "zipCode": {},
+        "phone": {},
+        "email": {},
+        "veteranServiceNumber": {},
+        "branchOfService": {},
+        "entryDate": {},
+        "dischargeDate": {},
+        "monthlyIncome": {},
+        "totalAssets": {},
+        "monthlyExpenses": {},
+        "bankName": {},
+        "bankAccountNumber": {},
+        "dependentNames": {},
+        "signature": {}
+      }
+    }
+  }
+}

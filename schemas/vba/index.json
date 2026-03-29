@@ -25,7 +25,10 @@
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-20-0995-are.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/forms/20-0995/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "20-0996",
@@ -39,7 +42,10 @@
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-20-0996-are.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/forms/20-0996/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "20-10206",
@@ -55,7 +61,10 @@
       "requires3rdParty": "Yes",
       "routingTypes": [
         "attorney"
-      ]
+      ],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/records/request-personal-records-form-20-10206/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "20-10207",
@@ -69,7 +78,10 @@
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-20-10207-are.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/forms/20-10207/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "20-10208",
@@ -176,7 +188,10 @@
       "requires3rdParty": "Yes",
       "routingTypes": [
         "attorney"
-      ]
+      ],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/forms/21-0781/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "21-0788",
@@ -204,7 +219,10 @@
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-0845-are.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/forms/21-0845/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "21-0966",
@@ -220,7 +238,10 @@
       "requires3rdParty": "Yes",
       "routingTypes": [
         "attorney"
-      ]
+      ],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/forms/21-0966/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "21-0972",
@@ -266,7 +287,10 @@
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-22-are.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/get-help-from-accredited-representative/appoint-rep/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "21-22a",
@@ -280,7 +304,10 @@
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-22a-are.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/forms/21-22a/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "21-2680",
@@ -340,7 +367,10 @@
       "requires3rdParty": "Yes",
       "routingTypes": [
         "physician"
-      ]
+      ],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/supporting-forms-for-claims/release-information-to-va-form-21-4142/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "21-4142a",
@@ -356,7 +386,10 @@
       "requires3rdParty": "Yes",
       "routingTypes": [
         "physician"
-      ]
+      ],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/supporting-forms-for-claims/release-information-to-va-form-21-4142/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "21-4170",
@@ -442,7 +475,10 @@
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-526ez-are.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/disability/file-disability-claim-form-21-526ez/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "21-651",
@@ -473,7 +509,10 @@
       "routingTypes": [
         "physician",
         "school"
-      ]
+      ],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/find-forms/about-form-21-674/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "21-674b",
@@ -520,7 +559,10 @@
       "routingTypes": [
         "employer",
         "physician"
-      ]
+      ],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/forms/21-8940/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "21-8951-2",
@@ -846,7 +888,10 @@
       "requires3rdParty": "Yes",
       "routingTypes": [
         "appraiser"
-      ]
+      ],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/forms/21p-0969/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "21P-0969(Spanish)",
@@ -934,7 +979,10 @@
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-4706b-are.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/find-forms/about-form-21p-4706b/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "21P-4706c",
@@ -992,7 +1040,10 @@
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-527ez-are.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/pension/apply-for-veteran-pension-form-21p-527ez/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "21P-530a",
@@ -1022,7 +1073,10 @@
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-530ez-are.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/burials-memorials/veterans-burial-allowance/apply-for-allowance-form-21p-530ez/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "21P-534a",
@@ -1438,7 +1492,10 @@
       "requires3rdParty": "Yes",
       "routingTypes": [
         "school"
-      ]
+      ],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/education/apply-for-gi-bill-form-22-1990/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "22-1990e",
@@ -1454,7 +1511,10 @@
       "requires3rdParty": "Yes",
       "routingTypes": [
         "school"
-      ]
+      ],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/forms/22-1990e/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "22-1990n",
@@ -1468,7 +1528,10 @@
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-1990n-are.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/education/apply-for-education-benefits/application/1990n/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "22-1990t",
@@ -1498,7 +1561,10 @@
       "requires3rdParty": "Yes",
       "routingTypes": [
         "school"
-      ]
+      ],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/education/apply-for-education-benefits/application/1995/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "22-1999b",
@@ -1547,7 +1613,10 @@
       "routingTypes": [
         "attorney",
         "school"
-      ]
+      ],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/forms/22-5490/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "22-6553b-1",
@@ -1951,7 +2020,10 @@
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-1880-are.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/housing-assistance/home-loans/request-coe-form-26-1880/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "26-4555",
@@ -1965,7 +2037,10 @@
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-4555-are.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/housing-assistance/disability-housing-grants/apply-for-grant-form-26-4555/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "26-4555c",
@@ -2558,7 +2633,10 @@
       "requires3rdParty": "Yes",
       "routingTypes": [
         "school"
-      ]
+      ],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/careers-employment/vocational-rehabilitation/apply-vre-form-28-1900/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "28-1902w",
@@ -2681,7 +2759,10 @@
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-0309-are.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/forms/29-0309/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "29-0543",
@@ -2825,7 +2906,10 @@
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-4125-are.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/find-forms/about-form-29-4125/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "29-4125a",

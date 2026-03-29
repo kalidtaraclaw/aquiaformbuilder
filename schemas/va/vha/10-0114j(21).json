@@ -1,0 +1,143 @@
+{
+  "type": "object",
+  "title": "Inspection - Specialized Adult Day Health Care",
+  "properties": {
+    "inspectionDate": {
+      "type": "string",
+      "title": "Inspectiondate"
+    },
+    "facilityName": {
+      "type": "string",
+      "title": "Facilityname"
+    },
+    "facilityAddress": {
+      "type": "string",
+      "title": "Facilityaddress"
+    },
+    "facilityPhone": {
+      "type": "string",
+      "title": "Facilityphone"
+    },
+    "administratorName": {
+      "type": "string",
+      "title": "Administratorname"
+    },
+    "inspectorName": {
+      "type": "string",
+      "title": "Inspectorname"
+    },
+    "inspectorTitle": {
+      "type": "string",
+      "title": "Inspectortitle"
+    },
+    "inspectionType": {
+      "type": "string",
+      "title": "Inspectiontype"
+    },
+    "licensureStatus": {
+      "type": "string",
+      "title": "Licensurestatus"
+    },
+    "capacityCensus": {
+      "type": "string",
+      "title": "Capacitycensus"
+    },
+    "staffingLevels": {
+      "type": "string",
+      "title": "Staffinglevels"
+    },
+    "patientRightsCompliance": {
+      "type": "string",
+      "title": "Patientrightscompliance"
+    },
+    "medicationManagement": {
+      "type": "string",
+      "title": "Medicationmanagement"
+    },
+    "infectionControl": {
+      "type": "string",
+      "title": "Infectioncontrol"
+    },
+    "safetyCompliance": {
+      "type": "string",
+      "title": "Safetycompliance"
+    },
+    "nutritionServices": {
+      "type": "string",
+      "title": "Nutritionservices"
+    },
+    "rehabilitationServices": {
+      "type": "string",
+      "title": "Rehabilitationservices"
+    },
+    "activitiesProgram": {
+      "type": "string",
+      "title": "Activitiesprogram"
+    },
+    "qualityOfCare": {
+      "type": "string",
+      "title": "Qualityofcare"
+    },
+    "environmentalConditions": {
+      "type": "string",
+      "title": "Environmentalconditions"
+    },
+    "documentationReview": {
+      "type": "string",
+      "title": "Documentationreview"
+    },
+    "deficienciesFound": {
+      "type": "string",
+      "title": "Deficienciesfound"
+    },
+    "inspectorSignature": {
+      "type": "string",
+      "title": "Inspectorsignature"
+    }
+  },
+  "required": [
+    "inspectionDate",
+    "facilityName",
+    "facilityAddress",
+    "facilityPhone",
+    "administratorName"
+  ],
+  "x-va-metadata": {
+    "status": "digitized",
+    "totalFields": 23,
+    "composedFields": 23,
+    "coveragePercent": 100,
+    "generationMethod": "template-based-inference",
+    "generatedAt": "2026-03-29T17:36:08.000Z"
+  },
+  "pages": {
+    "page1": {
+      "title": "Inspection - Specialized Adult Day Health Care",
+      "properties": {
+        "inspectionDate": {},
+        "facilityName": {},
+        "facilityAddress": {},
+        "facilityPhone": {},
+        "administratorName": {},
+        "inspectorName": {},
+        "inspectorTitle": {},
+        "inspectionType": {},
+        "licensureStatus": {},
+        "capacityCensus": {},
+        "staffingLevels": {},
+        "patientRightsCompliance": {},
+        "medicationManagement": {},
+        "infectionControl": {},
+        "safetyCompliance": {},
+        "nutritionServices": {},
+        "rehabilitationServices": {},
+        "activitiesProgram": {},
+        "qualityOfCare": {},
+        "environmentalConditions": {},
+        "documentationReview": {},
+        "deficienciesFound": {},
+        "inspectorSignature": {}
+      }
+    }
+  }
+}

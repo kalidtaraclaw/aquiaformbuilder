@@ -2877,7 +2877,10 @@
       "requires3rdParty": "Yes",
       "routingTypes": [
         "physician"
-      ]
+      ],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/health-care/file-travel-pay-reimbursement/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "10-356",
@@ -3453,7 +3456,10 @@
       "status": "digitized",
       "formUrl": "https://www.va.gov/vaforms/medical/pdf/VA%20Form%2010-7959c.pdf",
       "requires3rdParty": "No",
-      "routingTypes": []
+      "routingTypes": [],
+      "availableOnline": true,
+      "onlineUrl": "https://www.va.gov/forms/10-7959c/",
+      "note": "Available as interactive form on VA.gov. Kept for testing/review."
     },
     {
       "name": "10-7959e",

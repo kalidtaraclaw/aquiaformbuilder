@@ -1,0 +1,88 @@
+{
+  "type": "object",
+  "title": "Presidential Memorial Certificate",
+  "properties": {
+    "veteranName": {
+      "type": "string",
+      "title": "Veteranname"
+    },
+    "veteranSSN": {
+      "type": "string",
+      "title": "Veteranssn"
+    },
+    "dateOfBirth": {
+      "type": "string",
+      "title": "Dateofbirth"
+    },
+    "dateOfDeath": {
+      "type": "string",
+      "title": "Dateofdeath"
+    },
+    "branchOfService": {
+      "type": "string",
+      "title": "Branchofservice"
+    },
+    "dischargeDate": {
+      "type": "string",
+      "title": "Dischargedate"
+    },
+    "requestorName": {
+      "type": "string",
+      "title": "Requestorname"
+    },
+    "requestorRelationship": {
+      "type": "string",
+      "title": "Requestorrelationship"
+    },
+    "requestorAddress": {
+      "type": "string",
+      "title": "Requestoraddress"
+    },
+    "requestorPhone": {
+      "type": "string",
+      "title": "Requestorphone"
+    },
+    "numberOfCopies": {
+      "type": "string",
+      "title": "Numberofcopies"
+    },
+    "requestorSignature": {
+      "type": "string",
+      "title": "Requestorsignature"
+    }
+  },
+  "required": [
+    "veteranName",
+    "veteranSSN",
+    "dateOfBirth",
+    "dateOfDeath",
+    "branchOfService"
+  ],
+  "x-va-metadata": {
+    "status": "digitized",
+    "totalFields": 12,
+    "composedFields": 12,
+    "coveragePercent": 100,
+    "generationMethod": "template-based-inference",
+    "generatedAt": "2026-03-29T17:36:08.000Z"
+  },
+  "pages": {
+    "page1": {
+      "title": "Presidential Memorial Certificate",
+      "properties": {
+        "veteranName": {},
+        "veteranSSN": {},
+        "dateOfBirth": {},
+        "dateOfDeath": {},
+        "branchOfService": {},
+        "dischargeDate": {},
+        "requestorName": {},
+        "requestorRelationship": {},
+        "requestorAddress": {},
+        "requestorPhone": {},
+        "numberOfCopies": {},
+        "requestorSignature": {}
+      }
+    }
+  }
+}

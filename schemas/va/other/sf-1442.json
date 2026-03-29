@@ -1,0 +1,128 @@
+{
+  "type": "object",
+  "title": "Solicitation Offer and Award",
+  "properties": {
+    "solicitationNumber": {
+      "type": "string",
+      "title": "Solicitationnumber"
+    },
+    "issuedBy": {
+      "type": "string",
+      "title": "Issuedby"
+    },
+    "issuedDate": {
+      "type": "string",
+      "title": "Issueddate"
+    },
+    "contractNumber": {
+      "type": "string",
+      "title": "Contractnumber"
+    },
+    "purchaseRequestNumber": {
+      "type": "string",
+      "title": "Purchaserequestnumber"
+    },
+    "projectTitle": {
+      "type": "string",
+      "title": "Projecttitle"
+    },
+    "projectLocation": {
+      "type": "string",
+      "title": "Projectlocation"
+    },
+    "performancePeriod": {
+      "type": "string",
+      "title": "Performanceperiod"
+    },
+    "bondRequirements": {
+      "type": "string",
+      "title": "Bondrequirements"
+    },
+    "offerorName": {
+      "type": "string",
+      "title": "Offerorname"
+    },
+    "offerorAddress": {
+      "type": "string",
+      "title": "Offeroraddress"
+    },
+    "offerorPhone": {
+      "type": "string",
+      "title": "Offerorphone"
+    },
+    "offerorTIN": {
+      "type": "string",
+      "title": "Offerortin"
+    },
+    "bidAmount": {
+      "type": "string",
+      "title": "Bidamount"
+    },
+    "bidBondAmount": {
+      "type": "string",
+      "title": "Bidbondamount"
+    },
+    "acknowledgmentOfAmendments": {
+      "type": "string",
+      "title": "Acknowledgmentofamendments"
+    },
+    "offerorSignature": {
+      "type": "string",
+      "title": "Offerorsignature"
+    },
+    "offerorDate": {
+      "type": "string",
+      "title": "Offerordate"
+    },
+    "awardDate": {
+      "type": "string",
+      "title": "Awarddate"
+    },
+    "contractingOfficer": {
+      "type": "string",
+      "title": "Contractingofficer"
+    }
+  },
+  "required": [
+    "solicitationNumber",
+    "issuedBy",
+    "issuedDate",
+    "contractNumber",
+    "purchaseRequestNumber"
+  ],
+  "x-va-metadata": {
+    "status": "digitized",
+    "totalFields": 20,
+    "composedFields": 20,
+    "coveragePercent": 100,
+    "generationMethod": "template-based-inference",
+    "generatedAt": "2026-03-29T17:36:08.000Z"
+  },
+  "pages": {
+    "page1": {
+      "title": "Solicitation Offer and Award",
+      "properties": {
+        "solicitationNumber": {},
+        "issuedBy": {},
+        "issuedDate": {},
+        "contractNumber": {},
+        "purchaseRequestNumber": {},
+        "projectTitle": {},
+        "projectLocation": {},
+        "performancePeriod": {},
+        "bondRequirements": {},
+        "offerorName": {},
+        "offerorAddress": {},
+        "offerorPhone": {},
+        "offerorTIN": {},
+        "bidAmount": {},
+        "bidBondAmount": {},
+        "acknowledgmentOfAmendments": {},
+        "offerorSignature": {},
+        "offerorDate": {},
+        "awardDate": {},
+        "contractingOfficer": {}
+      }
+    }
+  }
+}
