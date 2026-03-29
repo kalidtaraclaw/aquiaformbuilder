@@ -59,43 +59,52 @@
             gap: 1rem;
         }
 
-        .header-logo {
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
             flex-shrink: 0;
         }
 
-        .header-logo img {
+        .header-logos img {
             height: 36px;
             width: auto;
             display: block;
+        }
+
+        .header-logos .logo-divider {
+            width: 1px;
+            height: 28px;
+            background: rgba(255,255,255,0.3);
         }
 
         .header-text { flex: 1; }
 
         .header-nav {
             display: flex;
-            gap: 0.25rem;
+            gap: 1rem;
             align-items: center;
+            flex-shrink: 0;
         }
 
-        .header-nav-link {
-            color: rgba(255,255,255,0.75);
+        .header-nav a {
+            color: rgba(255,255,255,0.85);
             text-decoration: none;
-            font-size: 0.82rem;
-            font-weight: 400;
-            padding: 0.4rem 0.75rem;
-            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
             transition: all 0.2s;
         }
 
-        .header-nav-link:hover {
+        .header-nav a:hover {
             color: white;
             background: rgba(255,255,255,0.1);
         }
 
-        .header-nav-link.active {
+        .header-nav a.active {
             color: white;
             background: rgba(255,255,255,0.15);
-            font-weight: 500;
         }
 
         .header h1 {
@@ -1153,15 +1162,19 @@
 </head>
 <body>
     <div class="header">
-        <div class="header-logo"><img src="https://images.squarespace-cdn.com/content/v1/6209762bbb7641327e69acc0/21737a6d-1c02-42eb-89e0-afff7da79c68/Aquia+Inc+Website+Header+Logo_Deep+Blue+Background.png?format=300w" alt="Aquia Inc."></div>
+        <div class="header-logos">
+            <img src="https://images.squarespace-cdn.com/content/v1/6209762bbb7641327e69acc0/21737a6d-1c02-42eb-89e0-afff7da79c68/Aquia+Inc+Website+Header+Logo_Deep+Blue+Background.png?format=300w" alt="Aquia Inc.">
+            <div class="logo-divider"></div>
+            <img src="https://s3-us-gov-west-1.amazonaws.com/content.www.va.gov/img/header-logo.png" alt="VA" style="height: 32px;">
+        </div>
         <div class="header-text">
             <h1>Aquia Form Digitizer</h1>
             <p>Transform PDF forms into fillable digital forms</p>
         </div>
         <nav class="header-nav">
-            <a href="forms.html" class="header-nav-link">Forms</a>
-            <a href="index.html" class="header-nav-link active">Digitizer</a>
-            <a href="report.html" class="header-nav-link">Report</a>
+            <a href="forms.html">Forms</a>
+            <a href="index.html" class="active">Digitizer</a>
+            <a href="report.html">Report</a>
         </nav>
     </div>
 
