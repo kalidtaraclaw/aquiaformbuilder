@@ -1113,12 +1113,29 @@ function renderSectionStep(schema, section) {
 function renderLegacyStep(schema) {
     const props = schema.properties || {};
     const requiredList = new Set(schema.required || []);
+    const fieldEntries = Object.entries(props).filter(([k]) => k !== 'x-va-metadata');
 
     let html = '<div class="va-step-page">';
+
+    // If there are no fields at all, show a flat-form message instead of an empty page
+    if (fieldEntries.length === 0) {
+        const meta = schema['x-va-metadata'] || {};
+        const formUrl = meta.formUrl || '';
+        html += '<h2>Form Not Yet Available</h2>';
+        html += '<div class="va-alert va-alert--warning" style="border-left:4px solid var(--vads-color-warning);background:var(--vads-color-warning-light);padding:1.5rem;margin-bottom:1.5rem;">';
+        html += '<h3 style="margin-bottom:0.5rem;">This form could not be digitized automatically</h3>';
+        html += '<p style="margin-bottom:0.75rem;">The source PDF for this form uses a format that our parser could not extract fields from (likely a scanned image or non-standard PDF structure). This form is queued for re-digitization with enhanced extraction.</p>';
+        if (formUrl) {
+            html += '<p><strong>In the meantime</strong>, you can <a href="' + esc(formUrl) + '" target="_blank" rel="noopener" style="color:var(--vads-color-primary);text-decoration:underline;">download the original PDF</a> to fill it out manually.</p>';
+        }
+        html += '</div>';
+        html += '</div>';
+        return html;
+    }
+
     html += '<h2>Form Fields</h2>';
     html += '<div class="va-alert"><h3>Legacy Form Schema</h3><p>This form uses the legacy schema format. Field labels are auto-generated. Enhanced versions with full instructions and layout are being rolled out.</p></div>';
-    for (const [key, def] of Object.entries(props)) {
-        if (key === 'x-va-metadata') continue;
+    for (const [key, def] of fieldEntries) {
         const vaField = def?.['x-va-field'] || {};
         const label = vaField.label || humanize(key);
         const isRequired = requiredList.has(key);

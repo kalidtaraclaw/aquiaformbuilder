@@ -1,0 +1,47 @@
+{
+  "skill_name": "bio-qa",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Run QA on forms.html to check if the implementation matches VA.gov BIO patterns. The file is at /sessions/eager-nice-euler/mnt/Aquia Form Builder/forms.html",
+      "expected_output": "A structured QA report covering design tokens, component structure, Unicode characters, ARIA attributes, and page flow logic with severity-rated findings",
+      "files": [],
+      "expectations": [
+        "Report checks design token values in :root against VADS spec",
+        "Report verifies the Continue button arrow is U+203A and marks it as correct",
+        "Report verifies the Back button arrow is U+2039 and marks it as correct",
+        "Report checks that action link uses var(--vads-color-success) green color",
+        "Report verifies progress bar is not shown on intro page",
+        "Report checks ARIA attributes on review accordion headers",
+        "Report includes severity levels (CRITICAL/WARNING/INFO) for each finding",
+        "Report ends with a summary including pass/fail counts and priorities"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I just updated the buttons in forms.html. Can you QA check the button components specifically? File is at /sessions/eager-nice-euler/mnt/Aquia Form Builder/forms.html",
+      "expected_output": "A focused QA report on button components (primary, back, action link) checking CSS, Unicode arrows, hover states, and accessibility",
+      "files": [],
+      "expectations": [
+        "Report focuses on button-related components rather than full form audit",
+        "Report checks Continue button CSS properties against spec",
+        "Report checks Back button CSS properties against spec",
+        "Report verifies action link green color and circular badge",
+        "Report checks button accessibility (text content, keyboard interaction)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "QA the forms.html file and pay special attention to whether form fields are properly rendering. Path: /sessions/eager-nice-euler/mnt/Aquia Form Builder/forms.html",
+      "expected_output": "QA report with emphasis on form field rendering — input styling, labels, required indicators, select elements, and field-schema alignment",
+      "files": [],
+      "expectations": [
+        "Report checks text input border styling (2px solid var(--vads-color-base-dark))",
+        "Report checks label font-weight is 700",
+        "Report checks required field indicator styling",
+        "Report verifies form fields have associated labels",
+        "Report includes general QA checks beyond just fields"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "skill_name": "bio-humanized-tester",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Test forms.html as if you were a Veteran filling out the form. Check that it looks right, works correctly, and is accessible. File: /sessions/eager-nice-euler/mnt/Aquia Form Builder/forms.html",
+      "expected_output": "A humanized test report covering visual appearance, functional flow, and accessibility (508/WCAG) with a pass/conditional pass/fail verdict",
+      "files": [],
+      "expectations": [
+        "Report evaluates visual appearance (layout, colors, typography)",
+        "Report traces the user journey (intro → form pages → review → confirmation)",
+        "Report checks Section 508 / WCAG 2.1 AA compliance",
+        "Report checks screen reader compatibility (ARIA, labels, heading hierarchy)",
+        "Report checks keyboard navigation feasibility",
+        "Report includes a test verdict (pass/conditional pass/fail)",
+        "Report explains issues in user-impact terms, not just code terms"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Check if this form is accessible for someone using a screen reader. I need to make sure it's 508 compliant before we publish. File: /sessions/eager-nice-euler/mnt/Aquia Form Builder/forms.html",
+      "expected_output": "Focused accessibility audit covering screen reader support, keyboard navigation, ARIA attributes, contrast, and WCAG compliance",
+      "files": [],
+      "expectations": [
+        "Report focuses primarily on accessibility rather than visual design",
+        "Report checks heading hierarchy for screen readers",
+        "Report checks form field label associations",
+        "Report checks ARIA attributes on dynamic elements (accordions, alerts)",
+        "Report checks color contrast ratios",
+        "Report references specific WCAG criteria by number"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "The green start button and the arrow characters on the Continue/Back buttons look weird to me. Can you test whether those are correct? File: /sessions/eager-nice-euler/mnt/Aquia Form Builder/forms.html",
+      "expected_output": "Targeted analysis of the action link and button arrow components, confirming they match BIO patterns and explaining why they look the way they do",
+      "files": [],
+      "expectations": [
+        "Report confirms green action link IS correct per BIO VaLinkAction pattern",
+        "Report confirms U+203A on Continue button IS correct per BIO pattern",
+        "Report confirms U+2039 on Back button IS correct per BIO pattern",
+        "Report explains WHY these patterns are correct (references VA.gov source)",
+        "Report evaluates whether these elements work well from a user perspective despite being unfamiliar"
+      ]
+    }
+  ]
+}

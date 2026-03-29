@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquia Form Re-Digitizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Aquia Brand Palette */
+            --midnight: #030940;
+            --royal: #050F69;
+            --azure: #2071C6;
+            --sky: #68B4E7;
+            --silver: #CECBD2;
+            --ice: #E7F1FB;
+            --offwhite: #FAFAFA;
+            --white: #FFFFFF;
+            --orange: #CC5800;
+            --crimson: #E11A0C;
+            --gold: #FFC107;
+            --amethyst: #7751A8;
+            --navy: var(--midnight);
+            --blue: var(--azure);
+            --red: var(--crimson);
+            --light-gray: var(--offwhite);
+            --dark-gray: #4A4A5A;
+            --border: var(--silver);
+            --success: #1a8a3e;
+            --warning: #f59e0b;
+            --focus: var(--amethyst);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-gray);
+            background-color: var(--offwhite);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--midnight) 0%, var(--royal) 100%);
+            color: white;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 2px 8px rgba(3, 9, 64, 0.15);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.25rem;
+        }
+
+        .header p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .stats {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            min-width: 180px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--dark-gray);
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--midnight);
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            letter-spacing: 0.2px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--azure) 0%, var(--royal) 100%);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(32, 113, 198, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--ice);
+            color: var(--azure);
+            border: 1px solid var(--azure);
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: #d4e8f9;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .progress-container {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: none;
+        }
+
+        .progress-container.active {
+            display: block;
+        }
+
+        .progress-label {
+            font-size: 0.85rem;
+            color: var(--dark-gray);
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--light-gray);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--azure) 0%, var(--sky) 100%);
+            transition: width 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .progress-status {
+            font-size: 0.85rem;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .filters {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .filter-group label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .filter-group select:focus,
+        .filter-group input:focus {
+            outline: none;
+            border-color: var(--azure);
+            box-shadow: 0 0 0 3px rgba(32, 113, 198, 0.1);
+        }
+
+        .forms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.2s;
+            overflow: hidden;
+        }
+
+        .form-card:hover {
+            border-color: var(--azure);
+            box-shadow: 0 4px 12px rgba(32, 113, 198, 0.1);
+        }
+
+        .form-card.processing {
+            opacity: 0.7;
+        }
+
+        .form-card.completed {
+            border-color: var(--success);
+            background: #f0fdf4;
+        }
+
+        .form-card.error {
+            border-color: var(--crimson);
+            background: #fef2f2;
+        }
+
+        .form-header {
+            margin-bottom: 1rem;
+        }
+
+        .form-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--midnight);
+            margin-bottom: 0.25rem;
+            word-break: break-word;
+        }
+
+        .form-meta {
+            font-size: 0.8rem;
+            color: var(--dark-gray);
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .form-org {
+            background: var(--ice);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            color: var(--azure);
+        }
+
+        .form-status {
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .status-flat {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-processing {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-completed {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .form-fields {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: var(--offwhite);
+            border-radius: 6px;
+        }
+
+        .field-count {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--midnight);
+        }
+
+        .field-count-label {
+            font-size: 0.8rem;
+            color: var(--dark-gray);
+        }
+
+        .extraction-methods {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .method-badge {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+
+        .method-badge.acroform {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        .method-badge.xfa {
+            border-color: #7c3aed;
+            color: #7c3aed;
+        }
+
+        .method-badge.inference {
+            border-color: #f59e0b;
+            color: #f59e0b;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-redigitize {
+            flex: 1;
+            min-width: 150px;
+            background: linear-gradient(135deg, var(--azure) 0%, var(--royal) 100%);
+            color: white;
+            border: none;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-redigitize:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(32, 113, 198, 0.2);
+        }
+
+        .btn-redigitize:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-download {
+            background: var(--ice);
+            color: var(--azure);
+            border: 1px solid var(--azure);
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-download:hover:not(:disabled) {
+            background: #d4e8f9;
+        }
+
+        .error-message {
+            background: #fef2f2;
+            border: 1px solid var(--crimson);
+            color: var(--crimson);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-top: 0.75rem;
+            border-left: 4px solid var(--crimson);
+        }
+
+        .success-message {
+            background: #f0fdf4;
+            border: 1px solid var(--success);
+            color: var(--success);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-top: 0.75rem;
+            border-left: 4px solid var(--success);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            background: white;
+            border: 1px dashed var(--border);
+            border-radius: 10px;
+        }
+
+        .empty-state h2 {
+            color: var(--midnight);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .empty-state p {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        .results-summary {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .summary-item {
+            text-align: center;
+        }
+
+        .summary-number {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--midnight);
+        }
+
+        .summary-label {
+            font-size: 0.85rem;
+            color: var(--dark-gray);
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .forms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .stats {
+                width: 100%;
+            }
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Aquia Form Re-Digitizer</h1>
+        <p>Re-extract fields from 88 flat VA forms with improved pattern matching</p>
+    </div>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-label">Total Forms</div>
+                    <div class="stat-value" id="totalCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Processed</div>
+                    <div class="stat-value" id="processedCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">With Fields</div>
+                    <div class="stat-value" id="successCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Needs Review</div>
+                    <div class="stat-value" id="reviewCount">0</div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary" id="redigitizeAllBtn">
+                    <span class="spinner" id="spinner" style="display:none;"></span>
+                    <span id="btnText">Re-Digitize All</span>
+                </button>
+                <button class="btn btn-secondary" id="downloadAllBtn" disabled>Download All Updated</button>
+            </div>
+        </div>
+
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-label">
+                <span>Processing forms...</span>
+                <span id="progressText">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+            </div>
+            <div class="progress-status" id="progressStatus">Loading...</div>
+        </div>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label for="orgFilter">Organization:</label>
+                <select id="orgFilter">
+                    <option value="">All Organizations</option>
+                    <option value="vha">VHA</option>
+                    <option value="facilities">Facilities</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="statusFilter">Status:</label>
+                <select id="statusFilter">
+                    <option value="">All Status</option>
+                    <option value="flat">Flat</option>
+                    <option value="processing">Processing</option>
+                    <option value="completed">Completed</option>
+                    <option value="error">Error</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="searchFilter">Search:</label>
+                <input type="text" id="searchFilter" placeholder="Form name...">
+            </div>
+        </div>
+
+        <div id="resultsContainer"></div>
+    </div>
+
+    <script>
+        // PDF.js worker setup
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        const app = {
+            allForms: [],
+            displayedForms: [],
+            results: new Map(),
+            isProcessing: false,
+
+            async init() {
+                await this.loadFlatForms();
+                this.setupEventListeners();
+                this.render();
+            },
+
+            async loadFlatForms() {
+                try {
+                    this.allForms = [];
+                    const orgs = ['va/vha', 'va/facilities', 'va/admin'];
+
+                    for (const org of orgs) {
+                        try {
+                            const response = await fetch(`./schemas/${org}/index.json`);
+                            if (!response.ok) continue;
+                            const data = await response.json();
+                            const flatForms = (data.forms || []).filter(f => f.status === 'flat' && f.totalFields === 0);
+
+                            flatForms.forEach(form => {
+                                this.allForms.push({
+                                    ...form,
+                                    org: org.split('/')[1],
+                                    orgPath: org,
+                                    status: 'flat'
+                                });
+                            });
+                        } catch (e) {
+                            console.warn(`Failed to load ${org}:`, e);
+                        }
+                    }
+
+                    this.displayedForms = [...this.allForms];
+                    document.getElementById('totalCount').textContent = this.allForms.length;
+                } catch (e) {
+                    console.error('Failed to load flat forms:', e);
+                }
+            },
+
+            setupEventListeners() {
+                document.getElementById('redigitizeAllBtn').addEventListener('click', () => this.redigitizeAll());
+                document.getElementById('downloadAllBtn').addEventListener('click', () => this.downloadAll());
+                document.getElementById('orgFilter').addEventListener('change', () => this.applyFilters());
+                document.getElementById('statusFilter').addEventListener('change', () => this.applyFilters());
+                document.getElementById('searchFilter').addEventListener('input', () => this.applyFilters());
+            },
+
+            applyFilters() {
+                const org = document.getElementById('orgFilter').value;
+                const status = document.getElementById('statusFilter').value;
+                const search = document.getElementById('searchFilter').value.toLowerCase();
+
+                this.displayedForms = this.allForms.filter(form => {
+                    const currentStatus = this.results.get(form.name)?.status || form.status;
+                    const matchOrg = !org || form.org === org;
+                    const matchStatus = !status || currentStatus === status;
+                    const matchSearch = !search || form.name.toLowerCase().includes(search);
+                    return matchOrg && matchStatus && matchSearch;
+                });
+
+                this.render();
+            },
+
+            async redigitizeAll() {
+                if (this.isProcessing) return;
+                this.isProcessing = true;
+
+                document.getElementById('redigitizeAllBtn').disabled = true;
+                document.getElementById('spinner').style.display = 'inline-block';
+                document.getElementById('progressContainer').classList.add('active');
+
+                const total = this.allForms.length;
+                let processed = 0;
+
+                for (const form of this.allForms) {
+                    try {
+                        await this.redigitizeForm(form);
+                    } catch (e) {
+                        console.error(`Error processing ${form.name}:`, e);
+                        this.results.set(form.name, {
+                            status: 'error',
+                            error: e.message,
+                            fields: [],
+                            sources: []
+                        });
+                    }
+
+                    processed++;
+                    const percent = Math.round((processed / total) * 100);
+                    document.getElementById('progressFill').style.width = percent + '%';
+                    document.getElementById('progressText').textContent = percent + '%';
+                    document.getElementById('progressStatus').textContent = `Processed ${processed} of ${total} forms...`;
+                    this.updateStats();
+                    this.render();
+                }
+
+                document.getElementById('spinner').style.display = 'none';
+                document.getElementById('btnText').textContent = 'Complete! Download Results';
+                document.getElementById('downloadAllBtn').disabled = false;
+                this.isProcessing = false;
+                document.getElementById('redigitizeAllBtn').disabled = false;
+            },
+
+            async redigitizeForm(form) {
+                // Update status to processing
+                this.results.set(form.name, { status: 'processing', fields: [], sources: [] });
+
+                // Fetch the PDF
+                const pdfUrl = form.formUrl;
+                const response = await fetch(pdfUrl);
+                if (!response.ok) throw new Error(`Failed to fetch PDF: ${response.statusText}`);
+
+                const arrayBuffer = await response.arrayBuffer();
+                const uint8Array = new Uint8Array(arrayBuffer);
+
+                // Load with pdf.js
+                const pdf = await pdfjsLib.getDocument({ data: uint8Array }).promise;
+
+                const fields = [];
+                const sources = [];
+
+                // 1. Extract AcroForm fields
+                const acroFormFields = this.extractAcroFormFields(pdf, {});
+                if (acroFormFields.length > 0) {
+                    fields.push(...acroFormFields);
+                    sources.push('AcroForm');
+                }
+
+                // 2. Extract XFA labels
+                const xfaLabels = await this.extractXFALabels(uint8Array);
+                if (Object.keys(xfaLabels).length > 0) {
+                    sources.push('XFA');
+                }
+
+                // 3. Infer fields from text with EXPANDED patterns
+                const inferredFields = await this.inferFieldsFromTextExpanded(pdf);
+                if (inferredFields.length > 0) {
+                    fields.push(...inferredFields);
+                    sources.push('Text Inference');
+                }
+
+                // Deduplicate by label
+                const seenLabels = new Set();
+                const deduped = [];
+                for (const field of fields) {
+                    const key = field.label.toLowerCase();
+                    if (!seenLabels.has(key)) {
+                        seenLabels.add(key);
+                        deduped.push(field);
+                    }
+                }
+
+                const status = deduped.length === 0 ? 'needs-manual-review' : 'completed';
+                this.results.set(form.name, {
+                    status: status,
+                    fields: deduped,
+                    sources: [...new Set(sources)],
+                    pageCount: pdf.numPages
+                });
+            },
+
+            extractAcroFormFields(pdf, xfaLabels) {
+                const fields = [];
+                try {
+                    if (pdf._pdfInfo && pdf._pdfInfo.acroForm && pdf._pdfInfo.acroForm.fields) {
+                        pdf._pdfInfo.acroForm.fields.forEach((field, index) => {
+                            if (field.name) {
+                                const rawName = field.name.replace(/[\[\]]/g, '');
+                                const label = this.cleanFieldLabel(this.humanizeFieldName(rawName));
+                                fields.push({
+                                    label: label,
+                                    type: this.inferFieldType(field),
+                                    source: 'acroform'
+                                });
+                            }
+                        });
+                    }
+                } catch (e) {
+                    console.log('AcroForm extraction note:', e.message);
+                }
+                return fields;
+            },
+
+            async extractXFALabels(uint8Array) {
+                const labels = {};
+                try {
+                    const pdfDoc = await PDFLib.PDFDocument.load(uint8Array, { ignoreEncryption: true });
+                    const catalog = pdfDoc.catalog;
+                    const acroFormDict = catalog.lookup(PDFLib.PDFName.of('AcroForm'));
+                    if (!acroFormDict) return labels;
+
+                    const xfa = acroFormDict.lookup(PDFLib.PDFName.of('XFA'));
+                    if (!xfa) return labels;
+
+                    let templateStream = null;
+                    if (typeof xfa.asArray === 'function') {
+                        const arr = xfa.asArray();
+                        for (let i = 0; i < arr.length - 1; i++) {
+                            const entry = arr[i];
+                            if (entry && typeof entry.asString === 'function' && entry.asString() === 'template') {
+                                templateStream = arr[i + 1];
+                                break;
+                            }
+                            if (entry && typeof entry.decodeText === 'function' && entry.decodeText() === 'template') {
+                                templateStream = arr[i + 1];
+                                break;
+                            }
+                        }
+                    }
+                    if (!templateStream) return labels;
+
+                    let resolvedStream = templateStream;
+                    if (typeof templateStream.getContents !== 'function' && pdfDoc.context) {
+                        try {
+                            resolvedStream = pdfDoc.context.lookup(templateStream);
+                        } catch (e) {
+                            return labels;
+                        }
+                    }
+                    if (!resolvedStream || typeof resolvedStream.getContents !== 'function') return labels;
+
+                    const rawBytes = resolvedStream.getContents();
+                    if (!rawBytes || rawBytes.length === 0) return labels;
+
+                    let xmlText = '';
+                    try {
+                        const ds = new DecompressionStream('deflate');
+                        const writer = ds.writable.getWriter();
+                        writer.write(rawBytes);
+                        writer.close();
+                        const reader = ds.readable.getReader();
+                        const chunks = [];
+                        while (true) {
+                            const { done, value } = await reader.read();
+                            if (done) break;
+                            chunks.push(value);
+                        }
+                        const totalLen = chunks.reduce((s, c) => s + c.length, 0);
+                        const merged = new Uint8Array(totalLen);
+                        let offset = 0;
+                        for (const c of chunks) {
+                            merged.set(c, offset);
+                            offset += c.length;
+                        }
+                        xmlText = new TextDecoder().decode(merged);
+                    } catch (decompErr) {
+                        xmlText = new TextDecoder().decode(rawBytes);
+                    }
+
+                    if (!xmlText || xmlText.length === 0) return labels;
+
+                    try {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(xmlText, 'text/xml');
+                        const fields = doc.querySelectorAll('field');
+                        for (const field of fields) {
+                            const name = field.getAttribute('name');
+                            if (!name) continue;
+                            const assist = field.querySelector('assist');
+                            if (assist) {
+                                const toolTip = assist.querySelector('toolTip');
+                                if (toolTip && toolTip.textContent.trim()) {
+                                    labels[name] = toolTip.textContent.trim();
+                                }
+                            }
+                        }
+                    } catch (parseErr) {
+                        const fieldRegex = /<field[^>]*name="([^"]*)"[^>]*>[\s\S]*?<toolTip>([\s\S]*?)<\/toolTip>/g;
+                        let match;
+                        while ((match = fieldRegex.exec(xmlText)) !== null) {
+                            if (match[2].trim()) labels[match[1]] = match[2].trim();
+                        }
+                    }
+                } catch (e) {
+                    console.warn('XFA extraction failed:', e.message);
+                }
+                return labels;
+            },
+
+            async inferFieldsFromTextExpanded(pdf) {
+                const fields = [];
+                const seenLabels = new Set();
+
+                try {
+                    // Sample ALL pages
+                    const pagesToSample = pdf.numPages;
+
+                    for (let pageNum = 1; pageNum <= pagesToSample; pageNum++) {
+                        try {
+                            const page = await pdf.getPage(pageNum);
+                            const textContent = await page.getTextContent();
+
+                            let currentSection = 'Default Section';
+                            let lineBuffer = '';
+
+                            for (const item of textContent.items) {
+                                if (!item.str) continue;
+                                const text = item.str.trim();
+                                if (!text) continue;
+
+                                if (text === text.toUpperCase() && text.length > 5 && /^[A-Z\s]+$/.test(text)) {
+                                    currentSection = text;
+                                    lineBuffer = '';
+                                    continue;
+                                }
+
+                                lineBuffer += text + ' ';
+
+                                if (lineBuffer.includes(':') || lineBuffer.includes('____') || lineBuffer.includes('[') || /\s{2,}/.test(lineBuffer)) {
+                                    // EXPANDED PATTERNS
+                                    const patterns = [
+                                        // Original patterns
+                                        { regex: /^([^:]+):\s*____+/, type: 'text', desc: 'colon-underscores' },
+                                        { regex: /^([^:]+):\s*(YES|NO)/, type: 'checkbox', desc: 'colon-yesno' },
+                                        { regex: /^([^:]+):\s*(Yes\s*\[\s*\]|No\s*\[\s*\])/, type: 'radio', desc: 'colon-checkbox' },
+                                        { regex: /^([^:]+?)\s*\(?MM\/DD\/YYYY\)?/, type: 'date', desc: 'date-format' },
+                                        { regex: /^([^:]+):\s*\(\d+\)/, type: 'phone', desc: 'colon-paren-num' },
+
+                                        // EXPANDED PATTERNS
+                                        // Field label followed by blank line or underscore
+                                        { regex: /^([A-Za-z][^:]{2,50})[\s]*[_]{2,}/, type: 'text', desc: 'label-underscores' },
+                                        // Parenthetical number fields (numbered items)
+                                        { regex: /(\d+[a-z]?)\.\s+(.+?)(?:\s{2,}|$)/, type: 'text', desc: 'numbered-item', labelGroup: 2 },
+                                        // Checkbox-style
+                                        { regex: /\[\s*\]\s+(.+?)(?:\s{2,}|$)/, type: 'checkbox', desc: 'checkbox-style', labelGroup: 1 },
+                                        // Colon-suffix patterns (common VA forms)
+                                        { regex: /^(Name):\s*/, type: 'text', desc: 'name-colon' },
+                                        { regex: /^(Date):\s*/, type: 'date', desc: 'date-colon' },
+                                        { regex: /^(Signature):\s*/, type: 'signature', desc: 'signature-colon' },
+                                        { regex: /^(Address):\s*/, type: 'text', desc: 'address-colon' },
+                                        { regex: /^(Phone):\s*/, type: 'phone', desc: 'phone-colon' },
+                                        { regex: /^(Email):\s*/, type: 'email', desc: 'email-colon' },
+                                        { regex: /^(City):\s*/, type: 'text', desc: 'city-colon' },
+                                        { regex: /^(State):\s*/, type: 'text', desc: 'state-colon' },
+                                        { regex: /^(ZIP):\s*/, type: 'text', desc: 'zip-colon' },
+                                        // Generic colon pattern
+                                        { regex: /^([A-Za-z][^:]{2,40}):\s+/, type: 'text', desc: 'generic-colon', labelGroup: 1 }
+                                    ];
+
+                                    for (const pattern of patterns) {
+                                        const match = lineBuffer.match(pattern.regex);
+                                        if (match) {
+                                            const labelIdx = pattern.labelGroup || 1;
+                                            const label = match[labelIdx] ? match[labelIdx].trim() : '';
+
+                                            if (label && !seenLabels.has(label.toLowerCase()) && label.length > 2) {
+                                                seenLabels.add(label.toLowerCase());
+                                                fields.push({
+                                                    label: this.cleanFieldLabel(label),
+                                                    type: pattern.type,
+                                                    source: 'inference'
+                                                });
+                                            }
+                                            lineBuffer = '';
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                if (lineBuffer.length > 300) {
+                                    lineBuffer = lineBuffer.slice(-150);
+                                }
+                            }
+                        } catch (pageErr) {
+                            console.log(`Page ${pageNum} processing note:`, pageErr.message);
+                        }
+                    }
+                } catch (e) {
+                    console.log('Text inference note:', e.message);
+                }
+
+                return fields;
+            },
+
+            inferFieldType(field) {
+                const name = (field.name || '').toLowerCase();
+                const fieldType = field.fieldType || '';
+
+                if (fieldType.includes('radio')) return 'radio';
+                if (fieldType.includes('check')) return 'checkbox';
+                if (fieldType.includes('choice')) return 'select';
+                if (fieldType.includes('text')) {
+                    if (name.includes('date')) return 'date';
+                    if (name.includes('phone') || name.includes('tel')) return 'phone';
+                    if (name.includes('email')) return 'email';
+                    if (name.includes('ssn')) return 'ssn';
+                    return 'text';
+                }
+                return 'text';
+            },
+
+            cleanFieldLabel(raw) {
+                if (!raw || raw.length === 0) return raw;
+                let label = raw;
+                label = label.replace(/^\d+[a-z]?\.\s*/i, '');
+                label = label.replace(/[\.\-\s]+$/, '');
+                label = label.replace(/^(please\s+)?(enter|provide|give|specify|type|input|indicate|list|state)\s+(your\s+|the\s+)?/i, '');
+                label = label.replace(/\s*[-–]\s*(enter|type|please|format|use)\s.*$/i, '');
+                label = label.replace(/\s*\(?(enter|type|please|format|use)\s[^)]*\)?\s*$/i, '');
+                label = label.replace(/[\.\-\s]+$/, '');
+                label = label.replace(/\[\d+\]/g, '');
+                label = label.replace(/\s+/g, ' ').trim();
+
+                if (label === label.toUpperCase() && label.length > 3) {
+                    label = label.replace(/\b\w+/g, w =>
+                        w.length <= 2 ? w.toLowerCase() : w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()
+                    );
+                }
+
+                if (label.length > 0) {
+                    label = label.charAt(0).toUpperCase() + label.slice(1);
+                }
+                return label;
+            },
+
+            humanizeFieldName(name) {
+                let label = name.split('.').pop();
+                label = label.replace(/\[\d+\]/g, '');
+                label = label.replace(/([a-z])([A-Z])/g, '$1 $2');
+                label = label.replace(/[_-]/g, ' ');
+                label = label.replace(/\b\w/g, c => c.toUpperCase());
+                return label.trim();
+            },
+
+            updateStats() {
+                let processed = 0;
+                let success = 0;
+                let review = 0;
+
+                for (const result of this.results.values()) {
+                    if (result.status !== 'flat') {
+                        processed++;
+                        if (result.status === 'completed') {
+                            success++;
+                        } else if (result.status === 'needs-manual-review') {
+                            review++;
+                        }
+                    }
+                }
+
+                document.getElementById('processedCount').textContent = processed;
+                document.getElementById('successCount').textContent = success;
+                document.getElementById('reviewCount').textContent = review;
+            },
+
+            render() {
+                const container = document.getElementById('resultsContainer');
+
+                if (this.displayedForms.length === 0) {
+                    container.innerHTML = `
+                        <div class="empty-state">
+                            <h2>No forms found</h2>
+                            <p>Try adjusting your filters</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                const hasResults = this.results.size > 0;
+
+                if (hasResults) {
+                    const summaryHtml = this.renderSummary();
+                    container.innerHTML = summaryHtml;
+                } else {
+                    container.innerHTML = '';
+                }
+
+                const formsHtml = this.displayedForms.map(form => this.renderFormCard(form)).join('');
+                const gridDiv = document.createElement('div');
+                gridDiv.className = 'forms-grid';
+                gridDiv.innerHTML = formsHtml;
+                container.appendChild(gridDiv);
+
+                // Add event listeners
+                gridDiv.querySelectorAll('.btn-redigitize').forEach(btn => {
+                    btn.addEventListener('click', async (e) => {
+                        const formName = btn.dataset.formName;
+                        const form = this.allForms.find(f => f.name === formName);
+                        if (form) {
+                            btn.disabled = true;
+                            btn.innerHTML = '<span class="spinner"></span> Processing...';
+                            try {
+                                await this.redigitizeForm(form);
+                                this.updateStats();
+                                this.render();
+                            } catch (err) {
+                                alert('Error: ' + err.message);
+                            }
+                            btn.disabled = false;
+                            btn.textContent = 'Re-Digitize';
+                        }
+                    });
+                });
+
+                gridDiv.querySelectorAll('.btn-download').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const formName = btn.dataset.formName;
+                        const result = this.results.get(formName);
+                        const form = this.allForms.find(f => f.name === formName);
+                        if (result && form) {
+                            this.downloadFormSchema(form, result);
+                        }
+                    });
+                });
+            },
+
+            renderSummary() {
+                let totalFields = 0;
+                let totalForms = 0;
+                const sourceCount = {};
+
+                for (const result of this.results.values()) {
+                    if (result.status !== 'flat') {
+                        totalForms++;
+                        totalFields += result.fields.length;
+                        result.sources.forEach(src => {
+                            sourceCount[src] = (sourceCount[src] || 0) + 1;
+                        });
+                    }
+                }
+
+                return `
+                    <div class="results-summary">
+                        <h2 style="margin-bottom: 1.5rem; color: var(--midnight); font-size: 1.2rem;">Results Summary</h2>
+                        <div class="summary-grid">
+                            <div class="summary-item">
+                                <div class="summary-number">${totalForms}</div>
+                                <div class="summary-label">Forms Processed</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-number">${totalFields}</div>
+                                <div class="summary-label">Total Fields Extracted</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-number">${totalFields > 0 ? (totalFields / totalForms).toFixed(1) : 0}</div>
+                                <div class="summary-label">Avg Fields per Form</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            },
+
+            renderFormCard(form) {
+                const result = this.results.get(form.name);
+                const status = result?.status || form.status;
+                const fields = result?.fields || [];
+                const sources = result?.sources || [];
+
+                let html = `
+                    <div class="form-card ${status === 'processing' ? 'processing' : ''} ${status === 'completed' ? 'completed' : ''} ${status === 'error' ? 'error' : ''}">
+                        <div class="form-header">
+                            <div class="form-name">${this.escapeHtml(form.name)}</div>
+                            <div class="form-meta">
+                                <span class="form-org">${form.org.toUpperCase()}</span>
+                                <span class="form-status status-${status}">${status.replace('-', ' ')}</span>
+                            </div>
+                        </div>
+                `;
+
+                if (form.pageCount) {
+                    html += `<div style="font-size: 0.8rem; color: var(--dark-gray); margin-bottom: 0.75rem;">${form.pageCount} pages</div>`;
+                }
+
+                if (result && result.status !== 'flat') {
+                    html += `
+                        <div class="form-fields">
+                            <div class="field-count">${fields.length} <span class="field-count-label">fields extracted</span></div>
+                            ${sources.length > 0 ? `
+                                <div class="extraction-methods">
+                                    ${sources.map(src => {
+                                        let className = 'method-badge';
+                                        if (src === 'AcroForm') className += ' acroform';
+                                        else if (src === 'XFA') className += ' xfa';
+                                        else if (src === 'Text Inference') className += ' inference';
+                                        return `<span class="${className}">${src}</span>`;
+                                    }).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                }
+
+                if (result?.error) {
+                    html += `<div class="error-message">${this.escapeHtml(result.error)}</div>`;
+                }
+
+                if (status === 'completed' && fields.length > 0) {
+                    html += `<div class="success-message">Successfully extracted ${fields.length} field${fields.length !== 1 ? 's' : ''}</div>`;
+                } else if (status === 'needs-manual-review') {
+                    html += `<div class="error-message">No fields extracted. Requires manual review.</div>`;
+                }
+
+                html += `
+                        <div class="form-actions">
+                            <button class="btn-redigitize" data-form-name="${this.escapeHtml(form.name)}" ${status === 'processing' ? 'disabled' : ''}>
+                                ${status === 'processing' ? '<span class="spinner"></span> Processing' : 'Re-Digitize'}
+                            </button>
+                `;
+
+                if (result && fields.length > 0) {
+                    html += `<button class="btn-download" data-form-name="${this.escapeHtml(form.name)}">Download</button>`;
+                }
+
+                html += `
+                        </div>
+                    </div>
+                `;
+
+                return html;
+            },
+
+            downloadFormSchema(form, result) {
+                const schema = {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "title": form.name,
+                    "type": "object",
+                    "properties": result.fields.reduce((props, field) => {
+                        props[field.label] = {
+                            "type": field.type === 'date' ? 'string' : field.type === 'email' ? 'string' : 'string',
+                            "title": field.label
+                        };
+                        return props;
+                    }, {}),
+                    "x-va-metadata": {
+                        "formUrl": form.formUrl,
+                        "totalFields": result.fields.length,
+                        "extractedFields": result.fields.map(f => f.label),
+                        "sources": result.sources,
+                        "status": result.status,
+                        "pageCount": result.pageCount,
+                        "redigitizedAt": new Date().toISOString()
+                    }
+                };
+
+                const blob = new Blob([JSON.stringify(schema, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = form.fileName || `${form.name.toLowerCase()}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+            },
+
+            async downloadAll() {
+                if (this.results.size === 0) {
+                    alert('No results to download');
+                    return;
+                }
+
+                document.getElementById('downloadAllBtn').disabled = true;
+                document.getElementById('downloadAllBtn').textContent = 'Creating zip...';
+
+                try {
+                    const zip = new JSZip();
+                    const orgForms = {};
+
+                    // Organize by org
+                    for (const form of this.allForms) {
+                        const result = this.results.get(form.name);
+                        if (!result || result.fields.length === 0) continue;
+
+                        if (!orgForms[form.org]) {
+                            orgForms[form.org] = [];
+                        }
+
+                        const schema = {
+                            "$schema": "http://json-schema.org/draft-07/schema#",
+                            "title": form.name,
+                            "type": "object",
+                            "properties": result.fields.reduce((props, field) => {
+                                props[field.label] = {
+                                    "type": "string",
+                                    "title": field.label
+                                };
+                                return props;
+                            }, {}),
+                            "x-va-metadata": {
+                                "formUrl": form.formUrl,
+                                "totalFields": result.fields.length,
+                                "extractedFields": result.fields.map(f => f.label),
+                                "sources": result.sources,
+                                "status": result.status,
+                                "pageCount": result.pageCount,
+                                "redigitizedAt": new Date().toISOString()
+                            }
+                        };
+
+                        const fileName = form.fileName || `${form.name.toLowerCase()}.json`;
+                        zip.folder('schemas/va/' + form.org).file(fileName, JSON.stringify(schema, null, 2));
+
+                        orgForms[form.org].push({
+                            ...form,
+                            totalFields: result.fields.length,
+                            status: 'extracted'
+                        });
+                    }
+
+                    // Create updated index.json files for each org
+                    for (const [org, forms] of Object.entries(orgForms)) {
+                        const response = await fetch(`./schemas/va/${org}/index.json`);
+                        const indexData = await response.json();
+
+                        // Update forms in index
+                        const formMap = new Map(forms.map(f => [f.name, f]));
+                        indexData.forms = indexData.forms.map(f => {
+                            const updated = formMap.get(f.name);
+                            return updated ? { ...f, ...updated } : f;
+                        });
+
+                        zip.folder('schemas/va/' + org).file('index.json', JSON.stringify(indexData, null, 2));
+                    }
+
+                    const blob = await zip.generateAsync({ type: 'blob' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `aquia-redigitized-${new Date().toISOString().slice(0, 10)}.zip`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+
+                } catch (e) {
+                    alert('Error creating zip: ' + e.message);
+                } finally {
+                    document.getElementById('downloadAllBtn').disabled = false;
+                    document.getElementById('downloadAllBtn').textContent = 'Download All Updated';
+                }
+            },
+
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+        };
+
+        // Initialize on load
+        window.addEventListener('load', () => app.init());
+    </script>
+</body>
+</html>
