@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VA Forms — Aquia Form Builder</title>
+    <title>VA Forms â Aquia Form Builder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Bitter:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* ─── USWDS / VA.gov Design Tokens ─── */
+        /* âââ USWDS / VA.gov Design Tokens âââ */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         fieldset { border: none; padding: 0; margin: 0; min-width: 0; }
         legend { display: block; width: 100%; }
@@ -44,38 +44,59 @@
             overflow: hidden;
         }
 
-        /* ─── US Gov Banner ─── */
-        .usa-banner {
-            background: var(--vads-color-base-lightest);
-            font-size: 0.75rem;
-            padding: 0.25rem 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--vads-color-base-dark);
-        }
-        .usa-banner img { height: 11px; }
-
-        /* ─── VA Header ─── */
-        .va-header {
-            background: var(--vads-color-primary-darker);
-            color: var(--vads-color-white);
-            padding: 0.75rem 1.5rem;
+        /* âââ Unified Header âââ */
+        .header {
+            background: linear-gradient(135deg, #030940 0%, #050F69 100%);
+            color: white;
+            padding: 1.25rem 1.5rem;
             display: flex;
             align-items: center;
             gap: 1rem;
+            font-family: 'Source Sans 3', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
-        .va-header-logo {
+        .header-logos {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            text-decoration: none;
-            color: inherit;
+            gap: 0.75rem;
+            flex-shrink: 0;
         }
-        .va-header-logo img { height: 40px; width: auto; }
-        .va-header-logo span { display: none; /* text is part of logo image */ }
-        .va-header-right { margin-left: auto; display: flex; gap: 0.75rem; align-items: center; }
-        .va-header-search {
+        .header-logos img { height: 36px; width: auto; display: block; }
+        .header-logos .logo-divider {
+            width: 1px;
+            height: 28px;
+            background: rgba(255,255,255,0.3);
+        }
+        .header-text { flex: 1; }
+        .header h1 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            margin: 0;
+        }
+        .header p {
+            font-size: 0.8rem;
+            opacity: 0.75;
+            margin-top: 0.1rem;
+            font-weight: 300;
+        }
+        .header-nav {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .header-nav a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        .header-nav a:hover { color: white; background: rgba(255,255,255,0.1); }
+        .header-nav a.active { color: white; background: rgba(255,255,255,0.15); }
+        .header-search {
             background: rgba(255,255,255,0.15);
             border: 1px solid rgba(255,255,255,0.3);
             border-radius: 4px;
@@ -83,24 +104,16 @@
             color: white;
             font-family: inherit;
             font-size: 0.8rem;
-            width: 220px;
+            width: 200px;
             outline: none;
         }
-        .va-header-search::placeholder { color: rgba(255,255,255,0.6); }
-        .va-header-search:focus { border-color: var(--vads-color-info); }
-        .va-header-link {
-            color: rgba(255,255,255,0.85);
-            text-decoration: none;
-            font-size: 0.8rem;
-            padding: 0.3rem 0.5rem;
-            border-radius: 3px;
-        }
-        .va-header-link:hover { color: white; background: rgba(255,255,255,0.1); }
+        .header-search::placeholder { color: rgba(255,255,255,0.6); }
+        .header-search:focus { border-color: #68B4E7; }
 
-        /* ─── Layout ─── */
-        .layout { display: flex; height: calc(100vh - 82px); }
+        /* âââ Layout âââ */
+        .layout { display: flex; height: calc(100vh - 64px); }
 
-        /* ─── Sidebar ─── */
+        /* âââ Sidebar âââ */
         .sidebar {
             width: 320px;
             min-width: 320px;
@@ -183,10 +196,10 @@
         .badge-flat { background: #fdf0e0; color: #b45309; }
         .badge-routing { background: #f0e6f6; color: #7b1fa2; }
 
-        /* ─── Main Content ─── */
+        /* âââ Main Content âââ */
         .main { flex: 1; overflow-y: auto; background: var(--vads-color-base-lightest); }
 
-        /* ─── Empty State ─── */
+        /* âââ Empty State âââ */
         .empty-state {
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             height: 100%; color: var(--vads-color-base-light); text-align: center; padding: 3rem;
@@ -196,14 +209,14 @@
         .empty-state h2 { font-size: 1.1rem; color: var(--vads-color-base-dark); font-weight: 600; }
         .empty-state p { font-size: 0.85rem; color: var(--vads-color-base-light); margin-top: 0.25rem; }
 
-        /* ─── Form Container (VA.gov wizard style) ─── */
+        /* âââ Form Container (VA.gov wizard style) âââ */
         .va-form-container {
             max-width: 720px;
             margin: 0 auto;
             padding: 0 2rem 4rem;
         }
 
-        /* ─── Breadcrumb ─── */
+        /* âââ Breadcrumb âââ */
         .va-breadcrumb {
             font-size: 0.8rem;
             color: var(--vads-color-base-dark);
@@ -213,7 +226,7 @@
         .va-breadcrumb a { color: var(--vads-color-primary); text-decoration: none; }
         .va-breadcrumb a:hover { text-decoration: underline; }
 
-        /* ─── Form Title Block (introduction page) ─── */
+        /* âââ Form Title Block (introduction page) âââ */
         .va-form-intro {
             background: var(--vads-color-white);
             padding: 2rem 0;
@@ -240,7 +253,7 @@
             flex-wrap: wrap;
         }
 
-        /* ─── Segmented Progress Bar (matches VA.gov va-segmented-progress-bar) ─── */
+        /* âââ Segmented Progress Bar (matches VA.gov va-segmented-progress-bar) âââ */
         .va-progress-bar {
             display: flex;
             gap: 2px;
@@ -269,7 +282,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* ─── Step Page ─── */
+        /* âââ Step Page âââ */
         .va-step-page {
             background: var(--vads-color-white);
             border: 1px solid var(--vads-color-base-lighter);
@@ -293,12 +306,12 @@
         }
         .va-step-page .step-description {
             font-size: 0.92rem;
-            color: var(--vads-color-base-dark);
+            color: var(---vads-color-base-dark);
             margin-bottom: 1.5rem;
             line-height: 1.5;
         }
 
-        /* ─── Alert box ─── */
+        /* âââ Alert box âââ */
         .va-alert {
             border-left: 4px solid var(--vads-color-info);
             background: var(--vads-color-info-lighter);
@@ -321,7 +334,7 @@
         .va-alert h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.35rem; margin-top: 0; }
         .va-alert p { font-size: 0.88rem; color: var(--vads-color-base); line-height: 1.5; margin: 0; }
 
-        /* ─── Instructions ─── */
+        /* âââ Instructions âââ */
         .va-instructions { margin-bottom: 2rem; }
         .va-instructions h2 {
             font-family: var(--vads-font-serif);
@@ -341,7 +354,7 @@
             margin-bottom: 0.6rem;
         }
 
-        /* ─── Form Row (grid) — inputs aligned to bottom ─── */
+        /* âââ Form Row (grid) âââ inputs aligned to bottom âââ */
         .va-form-row {
             display: flex;
             gap: 1rem;
@@ -364,7 +377,7 @@
         .col-11 { flex: 0 0 91.67%; max-width: 91.67%; }
         .col-12 { flex: 0 0 100%; max-width: 100%; }
 
-        /* ─── Form Fields (USWDS style) ─── */
+        /* âââ Form Fields (USWDS style) âââ */
         .va-field { margin-bottom: 1.25rem; }
         .va-field label, .va-field .va-field-label {
             display: block;
@@ -372,8 +385,7 @@
             font-weight: 600;
             color: var(--vads-color-base);
             margin-bottom: 0.3rem;
-            line-height: 1.3;
-        }
+            line-height: 1.3;        }
         .va-field .required-mark { color: var(--vads-color-secondary); margin-left: 0.15rem; }
         .va-field-error {
             color: var(--vads-color-error);
@@ -471,7 +483,7 @@
             width: 100%; outline: none;
         }
 
-        /* ─── Navigation buttons (wizard) ─── */
+        /* âââ Navigation buttons (wizard) âââ */
         .va-nav-buttons {
             display: flex;
             gap: 0.75rem;
@@ -501,7 +513,7 @@
             border: 2px solid var(--vads-color-primary);
         }
         .va-btn--secondary:hover { background: var(--vads-color-info-lighter); }
-        .va-btn--back::before { content: '\2039  '; font-size: 1.2em; }
+        .va-btn--back::before { content: '_2039  '; font-size: 1.2em; }
         .va-btn--outline {
             background: none;
             color: var(--vads-color-base-dark);
@@ -514,7 +526,7 @@
         }
         .va-btn--link:hover { text-decoration: underline; }
 
-        /* ─── Process List (VA.gov pattern) ─── */
+        /* âââ Process List (VA.gov pattern) âââ */
         .va-process-list {
             list-style: none;
             padding: 0;
@@ -538,725 +550,350 @@
             width: 28px;
             height: 28px;
             background: var(--vads-color-primary);
-            color: white;
-            font-size: 0.85rem;
-            font-weight: 700;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .va-process-list-item h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--vads-color-base);
-            margin: 0 0 0.5rem;
-            padding-top: 0.15rem;
-        }
-        .va-process-list-item p {
-            font-size: 0.92rem;
-            line-height: 1.6;
-            color: var(--vads-color-base);
-            margin: 0 0 0.5rem;
-        }
-        .va-process-list-item ul {
-            margin: 0.25rem 0 0.75rem 1.25rem;
-            padding: 0;
-        }
-        .va-process-list-item li {
-            font-size: 0.92rem;
-            line-height: 1.6;
-            color: var(--vads-color-base);
-        }
+            color:Ú]NÂÛ\Ú^N
+\[NÂÛ]ÙZYÚ
+ÌÂÜ\\Y]\Î
+L	NÂ\Ü^N^Â[YÛZ][\ÎÙ[\Â\ÝYKXÛÛ[Ù[\ÂBK\ØÙ\ÜË[\ÝZ][HÈÂÛ\Ú^NK\[NÂÛ]ÙZYÚ
+ÌÂÛÛÜ\K]YËXÛÛÜX\ÙJNÂX\Ú[\[NÂY[Ë]ÜM\[NÂBK\ØÙ\ÜË[\ÝZ][HÂÛ\Ú^NL[NÂ[KZZYÚKÂÛÛÜ\K]YËXÛÛÜX\ÙJNÂX\Ú[\[NÂBK\ØÙ\ÜË[\ÝZ][H[ÂX\Ú[\[HÍ\[HK\[NÂY[ÎÂBK\ØÙ\ÜË[\ÝZ][HHÂÛ\Ú^NL[NÂ[KZZYÚKÂÛÛÜ\K]YËXÛÛÜX\ÙJNÂBÊ8¥ 8¥ 8¥ XÝ[Û[È
+ÜY[\ÝÈÕJH8¥ 8¥ 8¥ 
+ÂKXXÝ[Û[[ÈÂ\Ü^N[[KY^Â[YÛZ][\ÎÙ[\ÂØ\\[NÂÛ\Ú^NK\[NÂÛ]ÙZYÚ
+ÌÂÛÛÜ\K]YËXÛÛÜ\ÝXØÙ\ÜÊNÂ^YXÛÜ][ÛÛNÂÝ\ÛÜÚ[\ÂXÚÙÜÝ[ÛNÂÜ\ÛNÂÛY[Z[N[\]ÂY[Î\[HÂX\Ú[\[HK\[NÂBKXXÝ[Û[[ÎÝ\ÈÛÛÜÌ
+LMÈBKXXÝ[Û[[ÎYÜHÂÛÛ[	ø¥¦ÎÂÛ\Ú^NÜ[NÂXÚÙÜÝ[\K]YËXÛÛÜ\ÝXØÙ\ÜÊNÂÛÛÜÚ]NÂÚYÂZYÚÂÜ\\Y]\Î
+L	NÂ\Ü^N^Â[YÛZ][\ÎÙ[\Â\ÝYKXÛÛ[Ù[\Â^\Ú[ÎÂBKXXÝ[Û[[ÎÝ\YÜHÈXÚÙÜÝ[Ì
+LMÈBÊ8¥ 8¥ 8¥ ÓP[È
+ÛÝ\Ù[ÈYÙJH8¥ 8¥ 8¥ 
+ÂK[ÛXZ[ÈÂÜ\]Ü\ÛÛY\K]YËXÛÛÜX\ÙK[YÚ\NÂY[Ë]Ü\[NÂX\Ú[]Ü\[NÂÛ\Ú^N[NÂÛÛÜ\K]YËXÛÛÜX\ÙKY\ÊNÂ[KZZYÚKÂBK[ÛXZ[ÈÝÛÈÈÛ]ÙZYÚ
+ÌÈBÊ8¥ 8¥ 8¥ ÙXÝ[Û]Y\[ÚYHÚ^\Ý\8¥ 8¥ 8¥ 
+ÂK\ÙXÝ[ÛY]Y\ÂÜ\]Ü\ÛÛY\K]YËXÛÛÜX\ÙK[YÚ\NÂX\Ú[K\[HÂY[Ë]ÜK\[NÂBÊ8¥ 8¥ 8¥ ]Y]ÈXØÛÜ[Û
+SÈ]\H8¥ 8¥ 8¥ 
+ÂK\]Y]ËXXØÛÜ[ÛÂÜ\\ÛÛY\K]YËXÛÛÜX\ÙK[YÚ\NÂÜ\\Y]\Î
+ÂX\Ú[XÝÛN\[NÂÝ\ÝÎY[ÂBK\]Y]ËXXØÛÜ[ÛZXY\Â\Ü^N^Â\ÝYKXÛÛ[ÜXÙKX]ÙY[Â[YÛZ][\ÎÙ[\ÂY[Î\[HK\[NÂXÚÙÜÝ[\K]YËXÛÛÜX\ÙK[YÚ\Ý
+NÂÜ\ÛNÂÚYL	NÂÝ\ÛÜÚ[\ÂÛY[Z[N[\]ÂÛ\Ú^N\[NÂÛ]ÙZYÚ
+ÌÂÛÛÜ\K]YËXÛÛÜX\ÙJNÂ^X[YÛYÂBK\]Y]ËXXØÛÜ[ÛZXY\Ý\ÈXÚÙÜÝ[\K]YËXÛÛÜX\ÙK[YÚ\NÈBK\]Y]ËXXØÛÜ[ÛZXY\KXXØÛÜ[ÛZXÛÛÂÛ\Ú^NK[NÂÛÛÜ\K]YËXÛÛÜ\[X\JNÂ[Ú][Û[ÙÜHÎÂBK\]Y]ËXXØÛÜ[ÛZXY\Ø\XKY^[YHYHHKXXØÛÜ[ÛZXÛÛÂ[ÙÜNÝ]JNYÊNÂBK\]Y]ËXXØÛÜ[ÛXÙHÂ\Ü^NÛNÂY[ÎK\[NÂÜ\]Ü\ÛÛY\K]YËXÛÛÜX\ÙK[YÚ\NÂBK\]Y]ËXXØÛÜ[ÛXÙKÜ[È\Ü^NØÚÎÈBK\]Y]Ë\ÝÈÂ\Ü^N^Â\ÝYKXÛÛ[ÜXÙKX]ÙY[ÂY[Î\[HÂÜ\XÝÛN\ÛÛY\K]YËXÛÛÜX\ÙK[YÚ\Ý
+NÂÛ\Ú^N\[NÂBK\]Y]Ë\ÝÎ\ÝXÚ[ÈÜ\XÝÛNÛNÈBK\]Y]Ë\ÝÈÈÛÛÜ\K]YËXÛÛÜX\ÙKY\ÊNÈÛ]ÙZYÚ
+ÈBK\]Y]Ë\ÝÈÈÛÛÜ\K]YËXÛÛÜX\ÙJNÈÛ]ÙZYÚ
+È^X[YÛYÚÈBK\]Y]ËYY][[ÈÂÛÛÜ\K]YËXÛÛÜ\[X\JNÂÛ\Ú^N
+\[NÂÛ]ÙZYÚ
+ÂÝ\ÛÜÚ[\ÂXÚÙÜÝ[ÛNÂÜ\ÛNÂ^YXÛÜ][Û[\[NÂÛY[Z[N[\]ÂBÊ8¥ 8¥ 8¥ ]XÞHYÜY[Y[ÚXÚØÞ8¥ 8¥ 8¥ 
+ÂK\]XÞKXYÜY[Y[ÂX\Ú[K\[HÂY[Î\[NÂXÚÙÜÝ[\K]YËXÛÛÜX\ÙK[YÚ\Ý
+NÂÜ\\Y]\Î
+ÂBK\]XÞKXYÜY[Y[X[Â\Ü^N^Â[YÛZ][\Î^\Ý\ÂØ\Í\[NÂÛ\Ú^N\[NÂ[KZZYÚKNÂÝ\ÛÜÚ[\ÂBK\]XÞKXYÜY[Y[[]Ý\OHÚXÚØÞHÂÚYÂZYÚÂX\Ú[]ÜÂ^\Ú[ÎÂBÊ8¥ 8¥ 8¥ ÛÝ\XÝ[Û\8¥ 8¥ 8¥ 
+ÂKXXÝ[ÛX\Â\Ü^N^ÂØ\Í\[NÂX\Ú[]Ü[NÂY[Ë]ÜK\[NÂÜ\]Ü\ÛÛY\K]YËXÛÛÜX\ÙK[YÚ\NÂ^]Ü\Ü\ÂBÊ8¥ 8¥ 8¥ ØY[È8¥ 8¥ 8¥ 
+ÂØY[ÈÈ^X[YÛÙ[\ÈY[ÎÜ[NÈÛÛÜ\K]YËXÛÛÜX\ÙK[YÚ
+NÈBÜ[\ÂÚYÈZYÚÂÜ\ÜÛÛY\K]YËXÛÛÜX\ÙK[YÚ\NÂÜ\]ÜXÛÛÜ\K]YËXÛÛÜ\[X\JNÂÜ\\Y]\Î
+L	NÂ[[X][ÛÜ[È[X\[[]NÂX\Ú[]]È[NÂBÙ^Y[Y\ÈÜ[ÈÈÈ[ÙÜNÝ]JÍYÊNÈHBÊ8¥ 8¥ 8¥ \ÜÛÚ]H8¥ 8¥ 8¥ 
+ÂYYXH
+X^]ÚY
+Í
+HÂÚYX\ÈÚYL	NÈZ[]ÚY[Ù]ÈX^ZZYÚÍ]ÈB^[Ý]È^Y\XÝ[ÛÛÛ[[ÈBKYÜK\ÝÈÈ^]Ü\Ü\ÈBKYÜK\ÝÈ
+È^L	HZ[\Ü[ÈX^]ÚYL	HZ[\Ü[ÈBKXY\ÜË\ÝÈÈ^]Ü\Ü\ÈBKXY\ÜË\ÝÈKYY[\ÝËKXY\ÜË\ÝÈKYY[\È^L	HZ[\Ü[ÈX^]ÚYL	HZ[\Ü[ÈÚYL	HZ[\Ü[ÈBBÜÝ[OÚXYÙO]Û\ÜÏHXY\]Û\ÜÏHXY\[ÙÛÜÈ[YÈÜÏHÎËÚ[XYÙ\ËÜ]X\\ÜXÙKXÙÛÛKØÛÛ[ÝKÍMÍÍLÌÙMXXØÌÌMÌÍØMLXÌMXNYLXYÙMÎXÍÐ\]ZXJÒ[ÊÕÙXÚ]JÒXY\ÓÙÛ×ÑY\
+ÐYJÐXÚÙÜÝ[ÏÙÜX]LÌÈ[H\]ZXH[Ë]Û\ÜÏHÙÛËY]Y\Ù][YÈÜÏHÎËÜÌË]\ËYÛÝ]Ù\ÝLK[X^Û]ÜËÛÛKØÛÛ[ÝÝËKÛÝÚ[YËÚXY\[ÙÛËÈ[HHÝ[OHZYÚÌÈÙ]]Û\ÜÏHXY\]^OHÜ\È]X\ÙOÚOÝÜÙH[ÙX\ÚYÚ]^YHÜHØÚ[X\ÏÜÙ][]\OH^Û\ÜÏHXY\\ÙX\ÚYHÙX\ÚÞXÙZÛ\HÙX\ÚÜ\Ë]Û\ÜÏHXY\[]HYHÜ\Ë[Û\ÜÏHXÝ]HÜ\ÏØOHYH[^[YÚ]^\ØOHYH\Ü[\ÜØOÛ]Ù]]Û\ÜÏH^[Ý]]Û\ÜÏHÚYX\\XK[X[HÜH\Ý]Û\ÜÏHÜË]XÈYHÜÕXÈÙ]]Û\ÜÏHÜK[\ÝYHÜS\Ý]Û\ÜÏHØY[È]Û\ÜÏHÜ[\Ù]ØY[ÈÜ\ËÙ]Ù]Û]XZ[Û\ÜÏHXZ[YHXZ[[[]Û\ÜÏH[\K\Ý]HÝÈY]ÐÞH[HÛHÝÚÙOHÝ\[ÛÛÜÝÚÙK]ÚYHKH\XKZY[HYH]HNHL
+KM
+
+L
+R
+ØLKLLXLLL
+KN
+LHHKÌ
+ËLÛ
+KM
+KMLHHKLËÌ
+ÕNXLKLÏÜÝÏÙ[XÝHÜHÈÙ]Ý\YÚÚÛÜÙHHÜHÛHHÚYX\ÈY]È[[]Ý]ÜÙ]ÛXZ[Ù]ØÜ\ÛÛÝÐÒSPWÐTÑHH	ÜØÚ[X\ÉÎÂÛÛÝÔÔÈHÂÈY	ÝIËX[	ÕIË\	ÝIË[[YN	Õ]\[È[Y]ÈYZ[\Ý][ÛÈKÈY	ÝIËX[	ÕIË\	ÝKÝIË[[YN	Õ]\[ÈX[YZ[\Ý][ÛÈKÈY	ÛØIËX[	ÓÐIË\	ÝKÛØIË[[YN	Ó][Û[Ù[Y]\HYZ[\Ý][ÛÈKÈY	ÙXÚ[]Y\ÉËX[	ÑXÚ[]Y\ÉË\	ÝKÙXÚ[]Y\ÉË[[YN	ÑXÚ[]Y\È	ÙÚ\ÝXÜÉÈKÈY	ØYZ[ËX[	ÐYZ[Ë\	ÝKØYZ[Ë[[YN	ÕHYZ[\Ý][ÛÈKÈY	ÛÝ\ËX[	ÓÝ\Ë\	ÝKÛÝ\Ë[[YN	ÔÝ[\Ü\È	Ý\ÈBNÂ]Ý\[ÜÈH[Â]Ý\[ØÚ[XHH[Â]Ý\[Ý\HÂ][Ü\ÐSÜÈHßNÂ]ÜQ]HHßNÈËÈ[[Y[[ÜH]H[Ù[8 %\Ú\ÝÈY[[Y\ÈXÜÜÜÈÝ\]YØ][ÛÛÛÝT×ÔÕUTÈHÉÐS	Ë	ÐRÉË	ÐVË	ÐTË	ÐÐIË	ÐÓÉË	ÐÕ	Ë	ÑIË	Ñ	Ë	ÑÐIË	ÒIË	ÒQ	Ë	ÒS	Ë	ÒSË	ÒPIË	ÒÔÉË	ÒÖIË	ÓIË	ÓQIË	ÓQ	Ë	ÓPIË	ÓRIË	ÓSË	ÓTÉË	ÓSÉË	ÓU	Ë	ÓIË	ÓË	Ó	Ë	ÓË	ÓIË	ÓIË	ÓÉË	Ó	Ë	ÓÒ	Ë	ÓÒÉË	ÓÔË	ÔIË	ÔIË	ÔÐÉË	ÔÑ	Ë	ÕË	Õ	Ë	ÕU	Ë	Õ	Ë	ÕIË	ÕÐIË	ÕÕË	ÕÒIË	ÕÖIË	ÑÉË	ÔË	ÕIË	ÑÕIË	ÐTÉË	ÓT	×NÂËÈ8¥ 8¥ 8¥ ØYÒ[]8¥ 8¥ 8¥ \Þ[È[Ý[ÛØYÜÒ[^
+ÜÊHÂÛÛÝ\H	ÔÐÒSPWÐTÑ_KÉÛÜË\KÚ[^ÛÛØØIÑ]KÝÊ
+_XÂÛÛÝ\ÜH]ØZ]]Ú
+\
+NÂY
+\\ÜÚÊHÝÈ]È\Ü	ÑZ[YÈØY	È
+È\
+NÂ]\\ÜÛÛ
+NÂB\Þ[È[Ý[ÛØYØÚ[XJÜË[S[YJHÂÛÛÝ\H	ÔÐÒSPWÐTÑ_KÉÛÜË\KÉÙ[S[Y_OØØIÑ]KÝÊ
+_XÂÛÛÝ\ÜH]ØZ]]Ú
+\
+NÂY
+\\ÜÚÊHÝÈ]È\Ü	ÑZ[YÈØYØÚ[XIÊNÂ]\\ÜÛÛ
+NÂB\Þ[È[Ý[Û[]XÊ
+HÂÛÛÝXÈHØÝ[Y[Ù][[Y[RY
+	ÛÜÕXÉÊNÂÜ
+ÛÛÝÜÈÙÔÔÊHÂÛÛÝHØÝ[Y[ÜX]Q[[Y[
+	Ø]ÛÊNÂÛ\ÜÓ[YHH	ÛÜË]XÎÂ]\Ù]ÜÒYHÜËYÂ[\SH	ÛÜËX[HÜ[Û\ÜÏHÛÝ[ÜÜ[ÂÛÛXÚÈH
 
-        /* ─── Action Link (green arrow CTA) ─── */
-        .va-action-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--vads-color-success);
-            text-decoration: none;
-            cursor: pointer;
-            background: none;
-            border: none;
-            font-family: inherit;
-            padding: 0.5rem 0;
-            margin: 0.5rem 0 1.5rem;
-        }
-        .va-action-link:hover { color: #008516; }
-        .va-action-link::before {
-            content: '▶';
-            font-size: 0.7rem;
-            background: var(--vads-color-success);
-            color: white;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        .va-action-link:hover::before { background: #008516; }
-
-        /* ─── OMB Info (footer of intro page) ─── */
-        .va-omb-info {
-            border-top: 1px solid var(--vads-color-base-lighter);
-            padding-top: 1rem;
-            margin-top: 1rem;
-            font-size: 0.8rem;
-            color: var(--vads-color-base-dark);
-            line-height: 1.6;
-        }
-        .va-omb-info strong { font-weight: 700; }
-
-        /* ─── Section divider inside wizard step ─── */
-        .va-section-divider {
-            border-top: 1px solid var(--vads-color-base-lighter);
-            margin: 1.5rem 0;
-            padding-top: 1.5rem;
-        }
-
-        /* ─── Review Accordion (BIO pattern) ─── */
-        .va-review-accordion {
-            border: 1px solid var(--vads-color-base-lighter);
-            border-radius: 4px;
-            margin-bottom: 0.5rem;
-            overflow: hidden;
-        }
-        .va-review-accordion-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.25rem;
-            background: var(--vads-color-base-lightest);
-            border: none;
-            width: 100%;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--vads-color-base);
-            text-align: left;
-        }
-        .va-review-accordion-header:hover { background: var(--vads-color-base-lighter); }
-        .va-review-accordion-header .va-accordion-icon {
-            font-size: 1.2rem;
-            color: var(--vads-color-primary);
-            transition: transform 0.2s;
-        }
-        .va-review-accordion-header[aria-expanded="true"] .va-accordion-icon {
-            transform: rotate(180deg);
-        }
-        .va-review-accordion-body {
-            display: none;
-            padding: 1.25rem;
-            border-top: 1px solid var(--vads-color-base-lighter);
-        }
-        .va-review-accordion-body.open { display: block; }
-        .va-review-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--vads-color-base-lightest);
-            font-size: 0.9rem;
-        }
-        .va-review-row:last-child { border-bottom: none; }
-        .va-review-row dt { color: var(--vads-color-base-dark); font-weight: 400; }
-        .va-review-row dd { color: var(--vads-color-base); font-weight: 600; text-align: right; }
-        .va-review-edit-link {
-            color: var(--vads-color-primary);
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            background: none;
-            border: none;
-            text-decoration: underline;
-            font-family: inherit;
-        }
-
-        /* ─── Privacy Agreement Checkbox ─── */
-        .va-privacy-agreement {
-            margin: 1.5rem 0;
-            padding: 1rem;
-            background: var(--vads-color-base-lightest);
-            border-radius: 4px;
-        }
-        .va-privacy-agreement label {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            cursor: pointer;
-        }
-        .va-privacy-agreement input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            margin-top: 2px;
-            flex-shrink: 0;
-        }
-
-        /* ─── Footer action bar ─── */
-        .va-action-bar {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--vads-color-base-lighter);
-            flex-wrap: wrap;
-        }
-
-        /* ─── Loading ─── */
-        .loading { text-align: center; padding: 3rem; color: var(--vads-color-base-light); }
-        .spinner {
-            width: 28px; height: 28px;
-            border: 3px solid var(--vads-color-base-lighter);
-            border-top-color: var(--vads-color-primary);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin: 0 auto 0.6rem;
-        }
-        @keyframes spin { to { transform: rotate(360deg); } }
-
-        /* ─── Responsive ─── */
-        @media (max-width: 768px) {
-            .sidebar { width: 100%; min-width: unset; max-height: 35vh; }
-            .layout { flex-direction: column; }
-            .va-form-row { flex-wrap: wrap; }
-            .va-form-row > * { flex: 0 0 100% !important; max-width: 100% !important; }
-            .va-address-row { flex-wrap: wrap; }
-            .va-address-row .va-field.narrow,
-            .va-address-row .va-field.zip { flex: 0 0 100% !important; max-width: 100% !important; width: 100% !important; }
-        }
-    </style>
-</head>
-<body>
-    <div class="usa-banner">
-        <img src="https://s3-us-gov-west-1.amazonaws.com/content.www.va.gov/img/tiny-usa-flag.png" alt="U.S. flag" height="11">
-        An official form of the United States government
-    </div>
-
-    <div class="va-header">
-        <a class="va-header-logo" href="index.html">
-            <img src="https://s3-us-gov-west-1.amazonaws.com/content.www.va.gov/img/header-logo.png" alt="VA logo and Seal, U.S. Department of Veterans Affairs" height="40">
-            <span>U.S. Department of Veterans Affairs</span>
-        </a>
-        <div class="va-header-right">
-            <input type="text" class="va-header-search" id="searchBox" placeholder="Search forms...">
-            <a class="va-header-link" href="index.html">Digitizer</a>
-            <a class="va-header-link" href="report.html">Report</a>
-        </div>
-    </div>
-
-    <div class="layout">
-        <nav class="sidebar" aria-label="Form list">
-            <div class="org-tabs" id="orgTabs"></div>
-            <div class="form-list" id="formList">
-                <div class="loading"><div class="spinner"></div>Loading forms...</div>
-            </div>
-        </nav>
-        <main class="main" id="mainPanel">
-            <div class="empty-state">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                    <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                </svg>
-                <h2>Select a form to get started</h2>
-                <p>Choose a form from the sidebar to view and fill it out</p>
-            </div>
-        </main>
-    </div>
-
-<script>
-const SCHEMA_BASE = 'schemas';
-const ORGS = [
-    { id: 'vba', label: 'VBA', dir: 'vba', fullName: 'Veterans Benefits Administration' },
-    { id: 'vha', label: 'VHA', dir: 'va/vha', fullName: 'Veterans Health Administration' },
-    { id: 'nca', label: 'NCA', dir: 'va/nca', fullName: 'National Cemetery Administration' },
-    { id: 'facilities', label: 'Facilities', dir: 'va/facilities', fullName: 'Facilities & Logistics' },
-    { id: 'admin', label: 'Admin', dir: 'va/admin', fullName: 'VA Administration' },
-    { id: 'other', label: 'Other', dir: 'va/other', fullName: 'Standard Forms & Other' }
-];
-
-let currentOrg = null;
-let currentSchema = null;
-let currentStep = 0;
-let allFormsByOrg = {};
-let formData = {}; // in-memory data model — persists field values across step navigation
-
-const US_STATES = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY','DC','PR','VI','GU','AS','MP'];
-
-// ─── Load/Init ───
-async function loadOrgIndex(org) {
-    const url = `${SCHEMA_BASE}/${org.dir}/index.json?cb=${Date.now()}`;
-    const resp = await fetch(url);
-    if (!resp.ok) throw new Error('Failed to load ' + url);
-    return resp.json();
-}
-
-async function loadSchema(org, fileName) {
-    const url = `${SCHEMA_BASE}/${org.dir}/${fileName}?cb=${Date.now()}`;
-    const resp = await fetch(url);
-    if (!resp.ok) throw new Error('Failed to load schema');
-    return resp.json();
-}
-
-async function initTabs() {
-    const tabs = document.getElementById('orgTabs');
-    for (const org of ORGS) {
-        const btn = document.createElement('button');
-        btn.className = 'org-tab';
-        btn.dataset.orgId = org.id;
-        btn.innerHTML = `${org.label} <span class="count">...</span>`;
-        btn.onclick = () => selectOrg(org);
-        tabs.appendChild(btn);
-    }
-    const results = await Promise.allSettled(ORGS.map(async org => {
-        const idx = await loadOrgIndex(org);
-        allFormsByOrg[org.id] = { org, index: idx };
-        return { org, index: idx };
-    }));
-    for (const r of results) {
-        if (r.status === 'fulfilled') {
-            const { org, index } = r.value;
-            const tab = tabs.querySelector(`[data-org-id="${org.id}"]`);
-            tab.querySelector('.count').textContent = (index.forms || []).length;
-        }
-    }
-    selectOrg(ORGS[0]);
-}
-
-function selectOrg(org) {
-    currentOrg = org;
-    document.querySelectorAll('.org-tab').forEach(t => t.classList.remove('active'));
-    document.querySelector(`[data-org-id="${org.id}"]`).classList.add('active');
-    renderFormList(org);
-}
-
-function renderFormList(org, filterText) {
-    const listEl = document.getElementById('formList');
-    const data = allFormsByOrg[org.id];
-    if (!data) { listEl.innerHTML = '<div class="loading">Loading...</div>'; return; }
-    let forms = data.index.forms || [];
-    if (filterText) {
-        const q = filterText.toLowerCase();
-        forms = forms.filter(f => f.name.toLowerCase().includes(q));
-    }
-    if (!forms.length) { listEl.innerHTML = '<div style="padding:2rem;text-align:center;color:#a9aeb1;font-size:0.82rem;">No forms found</div>'; return; }
-    listEl.innerHTML = forms.map(f => {
-        const status = f.status || 'unknown';
-        const badgeClass = status === 'digitized' ? 'badge-digitized' : 'badge-flat';
-        const routing = f.requires3rdParty === 'Yes' || (f.routingTypes && f.routingTypes.length > 0);
-        const safeName = (f.name || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
-        return `<div class="form-item" data-file="${f.fileName}" onclick="selectForm('${org.id}','${f.fileName}','${safeName}')">
-            <div class="form-item-info">
-                <div class="form-item-name">${f.name}</div>
-                <div class="form-item-meta">${f.totalFields || 0} fields · ${f.coveragePercent || 0}% mapped${f.pageCount ? ' · ' + f.pageCount + 'pg' : ''}</div>
-            </div>
-            <div class="form-item-badges">
-                <span class="badge ${badgeClass}">${status === 'digitized' ? 'Digitized' : 'Flat'}</span>
-                ${routing ? '<span class="badge badge-routing">3rd Party</span>' : ''}
-            </div>
-        </div>`;
-    }).join('');
-}
-
-async function selectForm(orgId, fileName, formName) {
-    document.querySelectorAll('.form-item').forEach(el => el.classList.remove('active'));
-    const item = document.querySelector(`.form-item[data-file="${fileName}"]`);
-    if (item) item.classList.add('active');
-    const main = document.getElementById('mainPanel');
-    main.innerHTML = '<div class="loading" role="status" aria-live="polite"><div class="spinner"></div>Loading form...</div>';
-    const org = ORGS.find(o => o.id === orgId);
-    try {
-        const schema = await loadSchema(org, fileName);
-        currentSchema = schema;
-        currentStep = 0;
-        formData = {}; // reset data model for new form
-        renderVAForm(schema, org);
-    } catch (e) {
-        main.innerHTML = `<div class="empty-state"><h2>Failed to load form</h2><p>${e.message}</p></div>`;
-    }
-}
-
-// ─── Build sections list for wizard steps ───
-function getFormSteps(schema) {
-    const vaForm = schema['x-va-form'] || {};
-    const formSections = vaForm.formSections || [];
-    if (formSections.length > 0) {
-        // Enriched schema: each section = one wizard step
-        return [
-            { type: 'intro', title: 'Introduction' },
-            ...formSections.map(s => ({ type: 'section', ...s })),
-            { type: 'review', title: 'Review & Submit' }
-        ];
-    } else {
-        // Legacy: intro + single fields step + review
-        return [
-            { type: 'intro', title: 'Introduction' },
-            { type: 'legacy', title: 'Form Fields' },
-            { type: 'review', title: 'Review & Submit' }
-        ];
-    }
-}
-
-// ─── Render Form (VA.gov wizard style) ───
-function renderVAForm(schema, org) {
-    const main = document.getElementById('mainPanel');
-    const steps = getFormSteps(schema);
-    const vaForm = schema['x-va-form'] || {};
-    const formNumber = vaForm.formNumber || schema.title || 'Form';
-    const formTitle = vaForm.formTitle || schema.description || '';
-
-    let html = '<div class="va-form-container"><form id="vaForm" onsubmit="return false;">';
-
-    // Breadcrumb
-    html += `<div class="va-breadcrumb">
-        <a href="forms.html">VA Forms</a> ›
-        <a href="forms.html">${esc(org.fullName)}</a> ›
-        <span>VA Form ${esc(formNumber)}</span>
-    </div>`;
-
-    const step = steps[currentStep];
-
-    // Progress bar (skip on intro page — matches BIO SegmentedProgressBar pattern)
-    if (step.type !== 'intro') {
-        // BIO only shows segments for content steps (no intro)
-        const contentSteps = steps.filter(s => s.type !== 'intro');
-        const contentIdx = contentSteps.indexOf(step);
-        html += '<div class="va-progress-bar">';
-        for (let i = 0; i < contentSteps.length; i++) {
-            const cls = i < contentIdx ? 'completed' : (i === contentIdx ? 'active' : '');
-            html += `<div class="va-progress-segment ${cls}" title="${esc(contentSteps[i].title)}"></div>`;
-        }
-        html += '</div>';
-        html += `<div class="va-progress-label">Step ${contentIdx + 1} of ${contentSteps.length}: ${esc(step.title)}</div>`;
-    }
-
-    if (step.type === 'intro') {
-        html += renderIntroStep(schema, vaForm, org);
-    } else if (step.type === 'section') {
-        html += renderSectionStep(schema, step);
-    } else if (step.type === 'legacy') {
-        html += renderLegacyStep(schema);
-    } else if (step.type === 'review') {
-        html += renderReviewStep(schema, vaForm, steps);
-    }
-
-    // Navigation buttons (skip on intro — intro has its own action link)
-    if (step.type !== 'intro') {
-        html += '<div class="va-nav-buttons">';
-        if (currentStep > 0) {
-            html += `<button class="va-btn va-btn--secondary va-btn--back" onclick="navigateStep(-1)">Back</button>`;
-        }
-        if (currentStep < steps.length - 1) {
-            html += `<button class="va-btn va-btn--primary" onclick="navigateStep(1)">Continue</button>`;
-        }
-        if (step.type === 'review') {
-            html += `<button class="va-btn va-btn--primary" onclick="exportFormData()" style="margin-left:auto;">Submit application</button>`;
-        }
-        html += '</div>';
-    }
-
-    html += '</form></div>';
-    // aria-live status region for screen readers
-    html += '<div id="formStatus" aria-live="polite" aria-atomic="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);"></div>';
-    main.innerHTML = html;
-    main.scrollTop = 0;
-
-    // Restore saved field values
-    restoreFormValues();
-
-    // Focus management: move focus to new page heading (WCAG 2.4.3)
-    const heading = main.querySelector('h1, h2');
-    if (heading) {
-        heading.tabIndex = -1;
-        heading.focus();
-    }
-
-    // Announce step change to screen readers
-    const statusEl = document.getElementById('formStatus');
-    if (statusEl && steps && steps[currentStep]) {
-        const step = steps[currentStep];
-        statusEl.textContent = step.type === 'intro'
-            ? 'Form introduction page loaded'
-            : 'Step ' + (steps.filter(s => s.type !== 'intro').indexOf(step) + 1) + ': ' + (step.title || 'Review');
-    }
-}
-
-function renderIntroStep(schema, vaForm, org) {
-    const formNumber = vaForm.formNumber || schema.title || 'Form';
-    const formTitle = vaForm.formTitle || schema.description || '';
-    const instructions = vaForm.instructions || null;
-    const formSections = vaForm.formSections || [];
-    const props = schema.properties || {};
-    const requiredList = new Set(schema.required || []);
-
-    let html = '<div class="va-step-page">';
-
-    // ─── Form Title (matches BIO FormTitle component) ───
-    html += `<div class="va-form-intro">
-        <h1>${esc(formTitle) || 'VA Form ' + esc(formNumber)}</h1>
-        <div class="va-form-subtitle">VA Form ${esc(formNumber)}</div>
-    </div>`;
-
-    // ─── "Follow these steps" heading ───
-    html += `<h2 class="vads-u-font-size--h3" style="font-family:var(--vads-font-sans);font-size:1.1rem;font-weight:700;margin:1rem 0 0.25rem;">Follow these steps to submit VA Form ${esc(formNumber)}</h2>`;
-
-    // ─── Process List (matches <va-process-list>) ───
-    html += '<div class="va-process-list">';
-
-    // Step 1: Gather your information
-    html += '<div class="va-process-list-item" data-step="1">';
-    html += '<h3>Gather your information</h3>';
-
-    // Build "what you'll need" from schema sections + required fields
-    if (formSections.length > 0) {
-        html += '<p><strong>You\'ll need this information to complete this form:</strong></p><ul>';
-        for (const sec of formSections) {
-            if (sec.rows) {
-                for (const row of sec.rows) {
-                    for (const col of row.columns) {
-                        const fieldDef = props[col.fieldId];
-                        const vaField = fieldDef?.['x-va-field'] || {};
-                        const isReq = requiredList.has(col.fieldId) || vaField.required;
-                        if (isReq && vaField.label) {
-                            html += `<li>${esc(vaField.label)}</li>`;
-                        }
-                    }
-                }
-            }
-        }
-        html += '</ul>';
-    } else {
-        // Legacy: list required fields
-        const reqFields = [];
-        for (const [key, def] of Object.entries(props)) {
-            const vaField = def?.['x-va-field'] || {};
-            if (requiredList.has(key) && vaField.label) reqFields.push(vaField.label);
-        }
-        if (reqFields.length > 0) {
-            html += '<p><strong>You\'ll need this information to complete this form:</strong></p><ul>';
-            for (const f of reqFields) html += `<li>${esc(f)}</li>`;
-            html += '</ul>';
-        }
-    }
-    html += '</div>';
-
-    // Step 2: Fill out the form
-    html += '<div class="va-process-list-item" data-step="2">';
-    html += '<h3>Fill out and sign the form</h3>';
-    html += `<p>We'll take you through each step of the process. It should take about ${esc(vaForm.respondentBurden || '15 minutes')} to complete this form.</p>`;
-    html += '</div>';
-
-    // Step 3: Submit the form
-    html += '<div class="va-process-list-item" data-step="3">';
-    html += '<h3>Submit the form</h3>';
-    html += '<p>After you submit the form, you\'ll receive a confirmation message. You can print this for your records.</p>';
-    html += '</div>';
-
-    html += '</div>'; // end process list
-
-    // ─── Action Link (green arrow CTA — matches <VaLinkAction>) ───
-    html += `<button class="va-action-link" onclick="navigateStep(1)">Start VA Form ${esc(formNumber)}</button>`;
-
-    // ─── OMB Info (matches <va-omb-info>) ───
-    if (vaForm.ombNumber || vaForm.respondentBurden) {
-        html += '<div class="va-omb-info">';
-        if (vaForm.respondentBurden) {
-            html += `<strong>Respondent burden:</strong> ${esc(vaForm.respondentBurden)}<br>`;
-        }
-        if (vaForm.ombNumber) {
-            html += `<strong>OMB Control #:</strong> ${esc(vaForm.ombNumber)}<br>`;
-        }
-        html += `<strong>Expiration date:</strong> Refer to form for current date<br>`;
-        html += '<strong>Privacy Act Statement:</strong> VA Form ' + esc(formNumber) + ' collects the information needed to process your request under applicable federal laws.';
-        html += '</div>';
-    }
-
-    html += '</div>';
-    return html;
-}
-
-function renderSectionStep(schema, section) {
-    const props = schema.properties || {};
-    const requiredList = new Set(schema.required || []);
-
-    let html = '<div class="va-step-page">';
-    html += `<h2>${esc(section.title)}</h2>`;
-    if (section.instructions) {
-        html += `<div class="step-description">${esc(section.instructions)}</div>`;
-    }
-    if (section.note) {
-        html += `<div class="va-alert va-alert--warning"><p>${esc(section.note)}</p></div>`;
-    }
-    if (section.rows) {
-        for (const row of section.rows) {
-            html += '<div class="va-form-row">';
-            for (const col of row.columns) {
-                const fieldDef = props[col.fieldId];
-                const vaField = fieldDef?.['x-va-field'] || {};
-                const isRequired = requiredList.has(col.fieldId) || vaField.required;
-                html += `<div class="col-${col.width}">`;
-                html += renderVAField(col.fieldId, fieldDef, vaField, isRequired);
-                html += '</div>';
-            }
-            html += '</div>';
-        }
-    }
-    html += '</div>';
-    return html;
-}
-
-function renderLegacyStep(schema) {
-    const props = schema.properties || {};
-    const requiredList = new Set(schema.required || []);
-    const fieldEntries = Object.entries(props).filter(([k]) => k !== 'x-va-metadata');
-
-    let html = '<div class="va-step-page">';
-
-    // If there are no fields at all, show a flat-form message instead of an empty page
-    if (fieldEntries.length === 0) {
-        const meta = schema['x-va-metadata'] || {};
-        const formUrl = meta.formUrl || '';
-        html += '<h2>Form Not Yet Available</h2>';
-        html += '<div class="va-alert va-alert--warning" role="alert" aria-live="assertive" style="border-left:4px solid var(--vads-color-warning);background:var(--vads-color-warning-light);padding:1.5rem;margin-bottom:1.5rem;">';
-        html += '<h3 style="margin-bottom:0.5rem;">This form could not be digitized automatically</h3>';
-        html += '<p style="margin-bottom:0.75rem;">The source PDF for this form uses a format that our parser could not extract fields from (likely a scanned image or non-standard PDF structure). This form is queued for re-digitization with enhanced extraction.</p>';
-        if (formUrl) {
-            html += '<p><strong>In the meantime</strong>, you can <a href="' + esc(formUrl) + '" target="_blank" rel="noopener" style="color:var(--vads-color-primary);text-decoration:underline;">download the original PDF</a> to fill it out manually.</p>';
-        }
-        html += '</div>';
-        html += '</div>';
-        return html;
-    }
-
-    html += '<h2>Form Fields</h2>';
-    html += '<div class="va-alert"><h3>Legacy Form Schema</h3><p>This form uses the legacy schema format. Field labels are auto-generated. Enhanced versions with full instructions and layout are being rolled out.</p></div>';
-    for (const [key, def] of fieldEntries) {
-        const vaField = def?.['x-va-field'] || {};
-        const label = vaField.label || humanize(key);
-        const isRequired = requiredList.has(key);
-        html += renderVAField(key, def, { ...vaField, label }, isRequired);
-    }
-    html += '</div>';
-    return html;
-}
-
-function renderReviewStep(schema, vaForm, steps) {
-    const formNumber = vaForm.formNumber || schema.title || 'Form';
-    const props = schema.properties || {};
-
-    let html = '<div class="va-step-page">';
-    html += '<h2>Review your information</h2>';
-    html += '<div class="step-description">Please review the information you entered before submitting.</div>';
-
-    const sectionSteps = steps.filter(s => s.type === 'section');
-    if (sectionSteps.length > 0) {
-        for (let i = 0; i < sectionSteps.length; i++) {
-            const s = sectionSteps[i];
-            const stepIdx = steps.indexOf(s);
-            const accId = 'review-acc-' + i;
-
-            html += '<div class="va-review-accordion">';
-            html += `<button class="va-review-accordion-header" aria-expanded="false" aria-label="Section: ${esc(s.title)}, click to expand or collapse" onclick="toggleAccordion('${accId}', this)">
-                <span>${esc(s.title)}</span>
-                <span class="va-accordion-icon" aria-hidden="true">&#9660;</span>
-            </button>`;
-            html += `<div class="va-review-accordion-body" id="${accId}">`;
-
-            // Show fields in this section as review rows (populated from formData)
-            if (s.rows) {
-                html += '<dl>';
-                for (const row of s.rows) {
-                    for (const col of row.columns) {
-                        const fieldDef = props[col.fieldId];
-                        const vaField = fieldDef?.['x-va-field'] || {};
-                        const label = vaField.label || humanize(col.fieldId);
-                        const widget = vaField.widget || guessWidget(col.fieldId, fieldDef || {});
-                        let displayVal = '—';
-
-                        if (widget === 'address' && fieldDef?.properties) {
-                            // Compose address from sub-fields
-                            const parts = [];
-                            const street = formData[col.fieldId + '.street'] || '';
-                            const street2 = formData[col.fieldId + '.street2'] || '';
-                            const city = formData[col.fieldId + '.city'] || '';
-                            const state = formData[col.fieldId + '.state'] || '';
-                            const zip = formData[col.fieldId + '.zipCode'] || '';
-                            if (street) parts.push(street);
-                            if (street2) parts.push(street2);
-                            if (city || state || zip) parts.push([city, state].filter(Boolean).join(', ') + (zip ? ' ' + zip : ''));
-                            displayVal = parts.length ? esc(parts.join(', ')) : '—';
-                        } else if (widget === 'checkbox') {
-                            displayVal = formData[col.fieldId] ? 'Yes' : 'No';
-                        } else if (widget === 'radio' || widget === 'select') {
-                            const raw = formData[col.fieldId] || '';
-                            // Try to find the label for the selected value
-                            const opts = vaField.options || fieldDef?.enum || [];
-                            const match = opts.find(o => (typeof o === 'object' ? o.value : o) === raw);
-                            displayVal = match ? esc(typeof match === 'object' ? match.label : match) : (raw ? esc(raw) : '—');
-                        } else {
-                            const raw = formData[col.fieldId] || '';
-                            displayVal = raw ? esc(raw) : '—';
-                        }
-
-                        html += `<div class="va-review-row">
-                            <dt>${esc(label)}</dt>
-                            <dd>${displayVal}</dd>
-                        </div>`;
-                    }
-                }
-                html += '</dl>';
-            }
-
-            html += `<div style="text-align:right;margin-top:0.75rem;">
-                <button class="va-review-edit-link" onclick="navigateToStep(${stepIdx})">Edit ${esc(s.title)}</button>
-            </div>`;
-            html += '</div></div>';
-        }
-    }
-
-    // Privacy agreement checkbox (BIO pattern)
-    html += `<div class="va-privacy-agreement">
-        <label>
-            <input type="checkbox" id="privacyAgreement" required aria-required="true">
-            I have read and accept the <a href="https://www.va.gov/privacy-policy/" target="_blank">privacy policy</a>.
-            <strong>Note:</strong> According to the Paperwork Reduction Act, you are not required to respond to a collection
-            of information unless it displays a currently valid OMB control number.
-        </label>
-    </div>`;
-
-    html += '</div>';
-    return html;
-}
-
-function toggleAccordion(id, btn) {
-    const body = document.getElementById(id);
-    const isOpen = body.classList.contains('open');
-    body.classList.toggle('open');
-    btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-}
-
-// ─── Save current form field values into formData ───
-function saveFormValues() {
-    const form = document.getElementById('vaForm');
-    if (!form) return;
-    form.querySelectorAll('input, select, textarea').forEach(el => {
-        if (!el.name) return;
-        if (el.type === 'radio') {
-            if (el.checked) formData[el.name] = el.value;
-        } else if (el.type === 'checkbox') {
-            formData[el.name] = el.checked;
-        } else {
-            formData[el.name] = el.value;
+HOÙ[XÝÜÊÜÊNÂXË\[Ú[
+NÂBÛÛÝ\Ý[ÈH]ØZ]ÛZ\ÙK[Ù]Y
+ÔÔËX\
+\Þ[ÈÜÈOÂÛÛÝYH]ØZ]ØYÜÒ[^
+ÜÊNÂ[Ü\ÐSÜÖÛÜËYHHÈÜË[^YNÂ]\ÈÜË[^YNÂJJNÂÜ
+ÛÛÝÙ\Ý[ÊHÂY
+Ý]\ÈOOH	Ù[[Y	ÊHÂÛÛÝÈÜË[^HH[YNÂÛÛÝXHXË]Y\TÙ[XÝÜÙ]K[ÜËZYHÛÜËYHX
+NÂX]Y\TÙ[XÝÜ	ËÛÝ[	ÊK^ÛÛ[H
+[^Ü\È×JK[ÝÂBBÙ[XÝÜÊÔÔÖÌJNÂB[Ý[ÛÙ[XÝÜÊÜÊHÂÝ\[ÜÈHÜÎÂØÝ[Y[]Y\TÙ[XÝÜ[
+	ËÜË]XÊKÜXXÚ
+OÛ\ÜÓ\Ý[[ÝJ	ØXÝ]IÊJNÂØÝ[Y[]Y\TÙ[XÝÜÙ]K[ÜËZYHÛÜËYHX
+KÛ\ÜÓ\ÝY
+	ØXÝ]IÊNÂ[\ÜS\Ý
+ÜÊNÂB[Ý[Û[\ÜS\Ý
+ÜË[\^
+HÂÛÛÝ\Ý[HØÝ[Y[Ù][[Y[RY
+	ÙÜS\Ý	ÊNÂÛÛÝ]HH[Ü\ÐSÜÖÛÜËYNÂY
+Y]JHÈ\Ý[[\SH	Ï]Û\ÜÏHØY[ÈØY[ËÙ]ÎÈ]\ÈB]Ü\ÈH]K[^Ü\È×NÂY
+[\^
+HÂÛÛÝHH[\^ÓÝÙ\Ø\ÙJ
+NÂÜ\ÈHÜ\Ë[\O[YKÓÝÙ\Ø\ÙJ
+K[ÛY\ÊJJNÂBY
+YÜ\Ë[Ý
+HÈ\Ý[[\SH	Ï]Ý[OHY[Î[NÝ^X[YÛÙ[\ØÛÛÜØNXYXNÙÛ\Ú^N[NÈÈÜ\ÈÝ[Ù]ÎÈ]\ÈB\Ý[[\SHÜ\ËX\
+OÂÛÛÝÝ]\ÈHÝ]\È	Ý[ÛÝÛÎÂÛÛÝYÙPÛ\ÜÈHÝ]\ÈOOH	ÙYÚ]^Y	ÈÈ	ØYÙKYYÚ]^Y	È	ØYÙKY]	ÎÂÛÛÝÝ][ÈH\]Z\\ÌÜ\HOOH	ÖY\ÉÈ
+Ý][Õ\\È	Ý][Õ\\Ë[Ý
+NÂÛÛÝØYS[YHH
+[YH	ÉÊK\XÙJÉËÙË	ÈK\XÙJÈÙË	É][ÝÉÊNÂ]\]Û\ÜÏHÜKZ][H]KY[OHÙ[S[Y_HÛÛXÚÏHÙ[XÝÜJ	ÉÛÜËYIË	ÉÙ[S[Y_IË	ÉÜØYS[Y_IÊH]Û\ÜÏHÜKZ][KZ[È]Û\ÜÏHÜKZ][K[[YHÙ[Y_OÙ]]Û\ÜÏHÜKZ][K[Y]HÙÝ[Y[ÈHY[È0­È	ÙÛÝ\YÙT\Ù[IHX\Y	ÙYÙPÛÝ[È	È0­È	È
+ÈYÙPÛÝ[
+È	ÜÉÈ	ÉßOÙ]Ù]]Û\ÜÏHÜKZ][KXYÙ\ÈÜ[Û\ÜÏHYÙH	ØYÙPÛ\ÜßHÜÝ]\ÈOOH	ÙYÚ]^Y	ÈÈ	ÑYÚ]^Y	È	Ñ]	ßOÜÜ[	ÜÝ][ÈÈ	ÏÜ[Û\ÜÏHYÙHYÙK\Ý][ÈÜ\OÜÜ[È	ÉßBÙ]Ù]ÂJKÚ[	ÉÊNÂB\Þ[È[Ý[ÛÙ[XÝÜJÜÒY[S[YKÜS[YJHÂØÝ[Y[]Y\TÙ[XÝÜ[
+	ËÜKZ][IÊKÜXXÚ
+[O[Û\ÜÓ\Ý[[ÝJ	ØXÝ]IÊJNÂÛÛÝ][HHØÝ[Y[]Y\TÙ[XÝÜÜKZ][VÙ]KY[OHÙ[S[Y_HX
+NÂY
+][JH][KÛ\ÜÓ\ÝY
+	ØXÝ]IÊNÂÛÛÝXZ[HØÝ[Y[Ù][[Y[RY
+	ÛXZ[[[	ÊNÂXZ[[\SH	Ï]Û\ÜÏHØY[ÈÛOHÝ]\È\XK[]OHÛ]H]Û\ÜÏHÜ[\Ù]ØY[ÈÜKÙ]ÎÂÛÛÝÜÈHÔÔË[
+ÈOËYOOHÜÒY
+NÂHÂÛÛÝØÚ[XHH]ØZ]ØYØÚ[XJÜË[S[YJNÂÝ\[ØÚ[XHHØÚ[XNÂÝ\[Ý\HÂÜQ]HHßNÈËÈ\Ù]]H[Ù[Ü]ÈÜB[\QÜJØÚ[XKÜÊNÂHØ]Ú
+JHÂXZ[[\SH]Û\ÜÏH[\K\Ý]HZ[YÈØYÜOÚÙKY\ÜØYÙ_OÜÙ]ÂBBËÈ8¥ 8¥ 8¥ Z[ÙXÝ[ÛÈ\ÝÜÚ^\Ý\È8¥ 8¥ 8¥ [Ý[ÛÙ]ÜTÝ\ÊØÚ[XJHÂÛÛÝQÜHHØÚ[XVÉÞ]KYÜI×HßNÂÛÛÝÜTÙXÝ[ÛÈHQÜKÜTÙXÝ[ÛÈ×NÂY
+ÜTÙXÝ[ÛË[Ý
+HÂËÈ[XÚYØÚ[XNXXÚÙXÝ[ÛHÛHÚ^\Ý\]\ÂÈ\N	Ú[ÉË]N	Ò[ÙXÝ[ÛÈKÜTÙXÝ[ÛËX\
+ÈO
+È\N	ÜÙXÝ[ÛËÈJJKÈ\N	Ü]Y]ÉË]N	Ô]Y]È	ÝXZ]	ÈBNÂH[ÙHÂËÈYØXÞN[È
+ÈÚ[ÛHY[ÈÝ\
+È]Y]Â]\ÂÈ\N	Ú[ÉË]N	Ò[ÙXÝ[ÛÈKÈ\N	ÛYØXÞIË]N	ÑÜHY[ÉÈKÈ\N	Ü]Y]ÉË]N	Ô]Y]È	ÝXZ]	ÈBNÂBBËÈ8¥ 8¥ 8¥ [\ÜH
+KÛÝÚ^\Ý[JH8¥ 8¥ 8¥ [Ý[Û[\QÜJØÚ[XKÜÊHÂÛÛÝXZ[HØÝ[Y[Ù][[Y[RY
+	ÛXZ[[[	ÊNÂÛÛÝÝ\ÈHÙ]ÜTÝ\ÊØÚ[XJNÂÛÛÝQÜHHØÚ[XVÉÞ]KYÜI×HßNÂÛÛÝÜS[X\HQÜKÜS[X\ØÚ[XK]H	ÑÜIÎÂÛÛÝÜU]HHQÜKÜU]HØÚ[XK\ØÜ\[Û	ÉÎÂ][H	Ï]Û\ÜÏHKYÜKXÛÛZ[\ÜHYHQÜHÛÝXZ]H]\[ÙNÈÎÂËÈXYÜ[X[
+ÏH]Û\ÜÏHKXXYÜ[XHYHÜ\Ë[HÜ\ÏØO8 .HYHÜ\Ë[Ù\ØÊÜË[[YJ_OØO8 .Ü[HÜH	Ù\ØÊÜS[X\_OÜÜ[Ù]ÂÛÛÝÝ\HÝ\ÖØÝ\[Ý\NÂËÈÙÜ\ÜÈ\
+ÚÚ\Û[ÈYÙH8¥ 8¥ 8¥ X]Ú\ÈSÈÙYÛY[YÙÜ\ÜÐ\]\BY
+Ý\\HOOH	Ú[ÉÊHÂËÈSÈÛHÚÝÜÈÙYÛY[ÈÜÛÛ[Ý\È
+È[ÊBÛÛÝÛÛ[Ý\ÈHÝ\Ë[\ÈOË\HOOH	Ú[ÉÊNÂÛÛÝÛÛ[YHÛÛ[Ý\Ë[^ÙÝ\
+NÂ[
+ÏH	Ï]Û\ÜÏHK\ÙÜ\ÜËX\ÎÂÜ
+]HHÈHÛÛ[Ý\Ë[ÝÈJÊÊHÂÛÛÝÛÈHHÛÛ[YÈ	ØÛÛ\]Y	È
+HOOHÛÛ[YÈ	ØXÝ]IÈ	ÉÊNÂ[
+ÏH]Û\ÜÏHK\ÙÜ\ÜË\ÙYÛY[	ØÛßH]OHÙ\ØÊÛÛ[Ý\ÖÚWK]J_HÙ]ÂB[
+ÏH	ÏÙ]ÎÂ[
+ÏH]Û\ÜÏHK\ÙÜ\ÜË[X[Ý\	ØÛÛ[Y
+È_HÙ	ØÛÛ[Ý\Ë[ÝN	Ù\ØÊÝ\]J_OÙ]ÂBY
+Ý\\HOOH	Ú[ÉÊHÂ[
+ÏH[\[ÔÝ\
+ØÚ[XKQÜKÜÊNÂH[ÙHY
+Ý\\HOOH	ÜÙXÝ[ÛÊHÂ[
+ÏH[\ÙXÝ[ÛÝ\
+ØÚ[XKÝ\
+NÂH[ÙHY
+Ý\\HOOH	ÛYØXÞIÊHÂ[
+ÏH[\YØXÞTÝ\
+ØÚ[XJNÂH[ÙHY
+Ý\\HOOH	Ü]Y]ÉÊHÂ[
+ÏH[\]Y]ÔÝ\
+ØÚ[XKQÜKÝ\ÊNÂBËÈ]YØ][Û]ÛÈ
+ÚÚ\Û[È8 %[È\È]ÈÝÛXÝ[Û[ÊBY
+Ý\\HOOH	Ú[ÉÊHÂ[
+ÏH	Ï]Û\ÜÏHK[]X]ÛÈÎÂY
+Ý\[Ý\
+HÂ[
+ÏH]ÛÛ\ÜÏHKXKXK\ÙXÛÛ\HKXKXXÚÈÛÛXÚÏH]YØ]TÝ\
+LJHXÚÏØ]ÛÂBY
+Ý\[Ý\Ý\Ë[ÝHJHÂ[
+ÏH]ÛÛ\ÜÏHKXKXK\[X\HÛÛXÚÏH]YØ]TÝ\
+JHÛÛ[YOØ]ÛÂBY
+Ý\\HOOH	Ü]Y]ÉÊHÂ[
+ÏH]ÛÛ\ÜÏHKXKXK\[X\HÛÛXÚÏH^ÜÜQ]J
+HÝ[OHX\Ú[[Y]]ÎÈÝXZ]\XØ][ÛØ]ÛÂB[
+ÏH	ÏÙ]ÎÂB[
+ÏH	ÏÙÜOÙ]ÎÂËÈ\XK[]HÝ]\ÈYÚ[ÛÜØÜY[XY\Â[
+ÏH	Ï]YHÜTÝ]\È\XK[]OHÛ]H\XKX]ÛZXÏHYHÝ[OHÜÚ][ÛXÛÛ]NÝÚY\ÚZYÚ\ÛÝ\ÝÎY[ØÛ\XÝ
+
+NÈÙ]ÎÂXZ[[\SH[ÂXZ[ØÜÛÜHÂËÈ\ÝÜHØ]YY[[Y\Â\ÝÜQÜU[Y\Ê
+NÂËÈØÝ\ÈX[YÙ[Y[[ÝHØÝ\ÈÈ]ÈYÙHXY[È
+ÐÐQÈÊBÛÛÝXY[ÈHXZ[]Y\TÙ[XÝÜ	ÚKÊNÂY
+XY[ÊHÂXY[ËX[^HLNÂXY[ËØÝ\Ê
+NÂBËÈ[Ý[ÙHÝ\Ú[ÙHÈØÜY[XY\ÂÛÛÝÝ]\Ñ[HØÝ[Y[Ù][[Y[RY
+	ÙÜTÝ]\ÉÊNÂY
+Ý]\Ñ[	Ý\È	Ý\ÖØÝ\[Ý\JHÂÛÛÝÝ\HÝ\ÖØÝ\[Ý\NÂÝ]\Ñ[^ÛÛ[HÝ\\HOOH	Ú[ÉÂÈ	ÑÜH[ÙXÝ[ÛYÙHØYY	Â	ÔÝ\	È
+È
+Ý\Ë[\ÈOË\HOOH	Ú[ÉÊK[^ÙÝ\
+H
+ÈJH
+È	Î	È
+È
+Ý\]H	Ô]Y]ÉÊNÂBB[Ý[Û[\[ÔÝ\
+ØÚ[XKQÜKÜÊHÂÛÛÝÜS[X\HQÜKÜS[X\ØÚ[XK]H	ÑÜIÎÂÛÛÝÜU]HHQÜKÜU]HØÚ[XK\ØÜ\[Û	ÉÎÂÛÛÝ[ÝXÝ[ÛÈHQÜK[ÝXÝ[ÛÈ[ÂÛÛÝÜTÙXÝ[ÛÈHQÜKÜTÙXÝ[ÛÈ×NÂÛÛÝÜÈHØÚ[XKÜ\Y\ÈßNÂÛÛÝ\]Z\Y\ÝH]ÈÙ]
+ØÚ[XK\]Z\Y×JNÂ][H	Ï]Û\ÜÏHK\Ý\\YÙHÎÂËÈ8¥ 8¥ 8¥ ÜH]H
+X]Ú\ÈSÈÜU]HÛÛ\Û[
+H8¥ 8¥ 8¥ [
+ÏH]Û\ÜÏHKYÜKZ[ÈOÙ\ØÊÜU]JH	ÕHÜH	È
+È\ØÊÜS[X\_OÚO]Û\ÜÏHKYÜK\ÝX]HHÜH	Ù\ØÊÜS[X\_OÙ]Ù]ÂËÈ8¥ 8¥ 8¥ ÛÝÈ\ÙHÝ\ÈXY[È8¥ 8¥ 8¥ [
+ÏHÛ\ÜÏHYË]KYÛ\Ú^KKZÈÝ[OHÛY[Z[N\K]YËYÛ\Ø[ÊNÙÛ\Ú^NK\[NÙÛ]ÙZYÚÌÛX\Ú[\[H\[NÈÛÝÈ\ÙHÝ\ÈÈÝXZ]HÜH	Ù\ØÊÜS[X\_OÚÂËÈ8¥ 8¥ 8¥ ØÙ\ÜÈ\Ý
+X]Ú\ÈK\ØÙ\ÜË[\ÝH8¥ 8¥ 8¥ [
+ÏH	Ï]Û\ÜÏHK\ØÙ\ÜË[\ÝÎÂËÈÝ\NØ]\[Ý\[ÜX][Û[
+ÏH	Ï]Û\ÜÏHK\ØÙ\ÜË[\ÝZ][H]K\Ý\HHÎÂ[
+ÏH	ÏÏØ]\[Ý\[ÜX][ÛÚÏÎÂËÈZ[Ú][ÝIÛYYÛHØÚ[XHÙXÝ[ÛÈ
+È\]Z\YY[ÂY
+ÜTÙXÝ[ÛË[Ý
+HÂ[
+ÏH	ÏÝÛÏ[ÝW	ÛYY\È[ÜX][ÛÈÛÛ\]H\ÈÜNÜÝÛÏÜ[ÎÂÜ
+ÛÛÝÙXÈÙÜTÙXÝ[ÛÊHÂY
+ÙXËÝÜÊHÂÜ
+ÛÛÝÝÈÙÙXËÝÜÊHÂÜ
+ÛÛÝÛÛÙÝËÛÛ[[ÊHÂÛÛÝY[YHÜÖØÛÛY[YNÂÛÛÝQY[HY[YËÉÞ]KYY[	×HßNÂÛÛÝ\Ô\HH\]Z\Y\Ý\ÊÛÛY[Y
+HQY[\]Z\YÂY
+\Ô\H	QY[X[
+HÂ[
+ÏHOÙ\ØÊQY[X[
+_OÛOÂBBBBB[
+ÏH	ÏÝ[ÎÂH[ÙHÂËÈYØXÞN\Ý\]Z\YY[ÂÛÛÝ\QY[ÈH×NÂÜ
+ÛÛÝÚÙ^KYHÙØXÝ[Y\ÊÜÊJHÂÛÛÝQY[HYËÉÞ]KYY[	×HßNÂY
+\]Z\Y\Ý\ÊÙ^JH	QY[X[
+H\QY[Ë\Ú
+QY[X[
+NÂBY
+\QY[Ë[Ý
+HÂ[
+ÏH	ÏÝÛÏ[ÝW	ÛYY\È[ÜX][ÛÈÛÛ\]H\ÈÜNÜÝÛÏÜ[ÎÂÜ
+ÛÛÝÙ\QY[ÊH[
+ÏHOÙ\ØÊ_OÛOÂ[
+ÏH	ÏÝ[ÎÂBB[
+ÏH	ÏÙ]ÎÂËÈÝ\[Ý]HÜB[
+ÏH	Ï]Û\ÜÏHK\ØÙ\ÜË[\ÝZ][H]K\Ý\HÎÂ[
+ÏH	ÏÏ[Ý][ÚYÛHÜOÚÏÎÂ[
+ÏHÙIÛZÙH[ÝHÝYÚXXÚÝ\ÙHØÙ\ÜË]ÚÝ[ZÙHXÝ]	Ù\ØÊQÜK\ÜÛ[\[	ÌMHZ[]\ÉÊ_HÈÛÛ\]H\ÈÜKÜÂ[
+ÏH	ÏÙ]ÎÂËÈÝ\ÎÝXZ]HÜB[
+ÏH	Ï]Û\ÜÏHK\ØÙ\ÜË[\ÝZ][H]K\Ý\HÈÎÂ[
+ÏH	ÏÏÝXZ]HÜOÚÏÎÂ[
+ÏH	ÏY\[ÝHÝXZ]HÜK[ÝW	ÛXÙZ]HHÛÛ\X][ÛY\ÜØYÙK[ÝHØ[[\ÈÜ[Ý\XÛÜËÜÎÂ[
+ÏH	ÏÙ]ÎÂ[
+ÏH	ÏÙ]ÎÈËÈ[ØÙ\ÜÈ\ÝËÈ8¥ 8¥ 8¥ XÝ[Û[È
+ÜY[\ÝÈÕH8 %X]Ú\ÈS[ÐXÝ[ÛH8¥ 8¥ 8¥ [
+ÏH]ÛÛ\ÜÏHKXXÝ[Û[[ÈÛÛXÚÏH]YØ]TÝ\
+JHÝ\HÜH	Ù\ØÊÜS[X\_OØ]ÛÂËÈ8¥ 8¥ 8¥ ÓP[È
+X]Ú\ÈK[ÛXZ[ÏH8¥ 8¥ 8¥ Y
+QÜKÛX[X\QÜK\ÜÛ[\[HÂ[
+ÏH	Ï]Û\ÜÏHK[ÛXZ[ÈÎÂY
+QÜK\ÜÛ[\[HÂ[
+ÏHÝÛÏ\ÜÛ[\[ÜÝÛÏ	Ù\ØÊQÜK\ÜÛ[\[_OÂBY
+QÜKÛX[X\HÂ[
+ÏHÝÛÏÓPÛÛÛÎÜÝÛÏ	Ù\ØÊQÜKÛX[X\_OÂB[
+ÏHÝÛÏ^\][Û]NÜÝÛÏY\ÈÜHÜÝ\[]OÂ[
+ÏH	ÏÝÛÏ]XÞHXÝÝ][Y[ÜÝÛÏHÜH	È
+È\ØÊÜS[X\H
+È	ÈÛÛXÝÈH[ÜX][ÛYYYÈØÙ\ÜÈ[Ý\\]Y\Ý[\\XØXHY\[]ÜËÎÂ[
+ÏH	ÏÙ]ÎÂB[
+ÏH	ÏÙ]ÎÂ]\[ÂB[Ý[Û[\ÙXÝ[ÛÝ\
+ØÚ[XKÙXÝ[ÛHÂÛÛÝÜÈHØÚ[XKÜ\Y\ÈßNÂÛÛÝ\]Z\Y\ÝH]ÈÙ]
+ØÚ[XK\]Z\Y×JNÂ][H	Ï]Û\ÜÏHK\Ý\\YÙHÎÂ[
+ÏHÙ\ØÊÙXÝ[Û]J_OÚÂY
+ÙXÝ[Û[ÝXÝ[ÛÊHÂ[
+ÏH]Û\ÜÏHÝ\Y\ØÜ\[ÛÙ\ØÊÙXÝ[Û[ÝXÝ[ÛÊ_OÙ]ÂBY
+ÙXÝ[ÛÝJHÂ[
+ÏH]Û\ÜÏHKX[\KX[\K]Ø\[ÈÙ\ØÊÙXÝ[ÛÝJ_OÜÙ]ÂBY
+ÙXÝ[ÛÝÜÊHÂÜ
+ÛÛÝÝÈÙÙXÝ[ÛÝÜÊHÂ[
+ÏH	Ï]Û\ÜÏHKYÜK\ÝÈÎÂÜ
+ÛÛÝÛÛÙÝËÛÛ[[ÊHÂÛÛÝY[YHÜÖØÛÛY[YNÂÛÛÝQY[HY[YËÉÞ]KYY[	×HßNÂÛÛÝ\Ô\]Z\YH\]Z\Y\Ý\ÊÛÛY[Y
+HQY[\]Z\YÂ[
+ÏH]Û\ÜÏHÛÛIØÛÛÚYHÂ[
+ÏH[\QY[
+ÛÛY[YY[YQY[\Ô\]Z\Y
+NÂ[
+ÏH	ÏÙ]ÎÂB[
+ÏH	ÏÙ]ÎÂBB[
+ÏH	ÏÙ]ÎÂ]\[ÂB[Ý[Û[\YØXÞTÝ\
+ØÚ[XJHÂÛÛÝÜÈHØÚ[XKÜ\Y\ÈßNÂÛÛÝ\]Z\Y\ÝH]ÈÙ]
+ØÚ[XK\]Z\Y×JNÂÛÛÝY[[Y\ÈHØXÝ[Y\ÊÜÊK[\
+Ú×JHOÈOOH	Þ]K[Y]Y]IÊNÂ][H	Ï]Û\ÜÏHK\Ý\\YÙHÎÂËÈY\H\HÈY[È][ÚÝÈH]YÜHY\ÜØYÙH[ÝXYÙ[[\HYÙBY
+Y[[Y\Ë[ÝOOH
+HÂÛÛÝY]HHØÚ[XVÉÞ]K[Y]Y]I×HßNÂÛÛÝÜU\HY]KÜU\	ÉÎÂ[
+ÏH	ÏÜHÝY]]Z[XOÚÎÂ[
+ÏH	Ï]Û\ÜÏHKX[\KX[\K]Ø\[ÈÛOH[\\XK[]OH\ÜÙ\]HÝ[OHÜ\[YÛÛY\K]YËXÛÛÜ]Ø\[ÊNØXÚÙÜÝ[\K]YËXÛÛÜ]Ø\[Ë[YÚ
+NÜY[ÎK\[NÛX\Ú[XÝÛNK\[NÈÎÂ[
+ÏH	ÏÈÝ[OHX\Ú[XÝÛN\[NÈ\ÈÜHÛÝ[ÝHYÚ]^Y]]ÛX]XØ[OÚÏÎÂ[
+ÏH	ÏÝ[OHX\Ú[XÝÛNÍ\[NÈHÛÝ\ÙHÜ\ÈÜH\Ù\ÈHÜX]]Ý\\Ù\ÛÝ[Ý^XÝY[ÈÛH
+ZÙ[HHØØ[Y[XYÙHÜÛ\Ý[\ÝXÝ\JK\ÈÜH\È]Y]YYÜKYYÚ]^][ÛÚ][[ÙY^XÝ[ÛÜÎÂY
+ÜU\
+HÂ[
+ÏH	ÏÝÛÏ[HYX[[YOÜÝÛÏ[ÝHØ[HYHÈ
+È\ØÊÜU\
+H
+È	È\Ù]HØ[È[HÛÜ[\Ý[OHÛÛÜ\K]YËXÛÛÜ\[X\JNÝ^YXÛÜ][Û[\[NÈÝÛØYHÜYÚ[[ØOÈ[]Ý]X[X[KÜÎÂB[
+ÏH	ÏÙ]ÎÂ[
+ÏH	ÏÙ]ÎÂ]\[ÂB[
+ÏH	ÏÜHY[ÏÚÎÂ[
+ÏH	Ï]Û\ÜÏHKX[\ÏYØXÞHÜHØÚ[XOÚÏ\ÈÜH\Ù\ÈHYØXÞHØÚ[XHÜX]Y[X[È\H]]ËYÙ[\]Y[[ÙY\Ú[ÛÈÚ][[ÝXÝ[ÛÈ[^[Ý]\HZ[ÈÛYÝ]ÜÙ]ÎÂÜ
+ÛÛÝÚÙ^KYHÙY[[Y\ÊHÂÛÛÝQY[HYËÉÞ]KYY[	×HßNÂÛÛÝX[HQY[X[[X[^JÙ^JNÂÛÛÝ\Ô\]Z\YH\]Z\Y\Ý\ÊÙ^JNÂ[
+ÏH[\QY[
+Ù^KYÈQY[X[K\Ô\]Z\Y
+NÂB[
+ÏH	ÏÙ]ÎÂ]\[ÂB[Ý[Û[\]Y]ÔÝ\
+ØÚ[XKQÜKÝ\ÊHÂÛÛÝÜS[X\HQÜKÜS[X\ØÚ[XK]H	ÑÜIÎÂÛÛÝÜÈHØÚ[XKÜ\Y\ÈßNÂ][H	Ï]Û\ÜÏHK\Ý\\YÙHÎÂ[
+ÏH	Ï]Y]È[Ý\[ÜX][ÛÚÎÂ[
+ÏH	Ï]Û\ÜÏHÝ\Y\ØÜ\[ÛX\ÙH]Y]ÈH[ÜX][Û[ÝH[\YYÜHÝXZ][ËÙ]ÎÂÛÛÝÙXÝ[ÛÝ\ÈHÝ\Ë[\ÈOË\HOOH	ÜÙXÝ[ÛÊNÂY
+ÙXÝ[ÛÝ\Ë[Ý
+HÂÜ
+]HHÈHÙXÝ[ÛÝ\Ë[ÝÈJÊÊHÂÛÛÝÈHÙXÝ[ÛÝ\ÖÚWNÂÛÛÝÝ\YHÝ\Ë[^ÙÊNÂÛÛÝXØÒYH	Ü]Y]ËXXØËIÈ
+ÈNÂ[
+ÏH	Ï]Û\ÜÏHK\]Y]ËXXØÛÜ[ÛÎÂ[
+ÏH]ÛÛ\ÜÏHK\]Y]ËXXØÛÜ[ÛZXY\\XKY^[YH[ÙH\XK[X[HÙXÝ[Û	Ù\ØÊË]J_KÛXÚÈÈ^[ÜÛÛ\ÙHÛÛXÚÏHÙÙÛPXØÛÜ[Û	ÉØXØÒYIË\ÊHÜ[Ù\ØÊË]J_OÜÜ[Ü[Û\ÜÏHKXXØÛÜ[ÛZXÛÛ\XKZY[HYHÎMÏÜÜ[Ø]ÛÂ[
+ÏH]Û\ÜÏHK\]Y]ËXXØÛÜ[ÛXÙHYHØXØÒYHÂËÈÚÝÈY[È[\ÈÙXÝ[Û\È]Y]ÈÝÜÈ
+Ü[]YÛHÜQ]JBY
+ËÝÜÊHÂ[
+ÏH	ÏÎÂÜ
+ÛÛÝÝÈÙËÝÜÊHÂÜ
+ÛÛÝÛÛÙÝËÛÛ[[ÊHÂÛÛÝY[YHÜÖØÛÛY[YNÂÛÛÝQY[HY[YËÉÞ]KYY[	×HßNÂÛÛÝX[HQY[X[[X[^JÛÛY[Y
+NÂÛÛÝÚYÙ]HQY[ÚYÙ]ÝY\ÜÕÚYÙ]
+ÛÛY[YY[YßJNÂ]\Ü^U[H	ø %	ÎÂY
+ÚYÙ]OOH	ØY\ÜÉÈ	Y[YËÜ\Y\ÊHÂËÈÛÛ\ÜÙHY\ÜÈÛHÝXYY[ÂÛÛÝ\ÈH×NÂÛÛÝÝY]HÜQ]VØÛÛY[Y
+È	ËÝY]	×H	ÉÎÂÛÛÝÝY]HÜQ]VØÛÛY[Y
+È	ËÝY]×H	ÉÎÂÛÛÝÚ]HHÜQ]VØÛÛY[Y
+È	ËÚ]I×H	ÉÎÂÛÛÝÝ]HHÜQ]VØÛÛY[Y
+È	ËÝ]I×H	ÉÎÂÛÛÝ\HÜQ]VØÛÛY[Y
+È	Ë\ÛÙI×H	ÉÎÂY
+ÝY]
+H\Ë\Ú
+ÝY]
+NÂY
+ÝY]H\Ë\Ú
+ÝY]NÂY
+Ú]HÝ]H\
+H\Ë\Ú
+ØÚ]KÝ]WK[\ÛÛX[KÚ[	Ë	ÊH
+È
+\È	È	È
+È\	ÉÊJNÂ\Ü^U[H\Ë[ÝÈ\ØÊ\ËÚ[	Ë	ÊJH	ø %	ÎÂH[ÙHY
+ÚYÙ]OOH	ØÚXÚØÞ	ÊHÂ\Ü^U[HÜQ]VØÛÛY[YHÈ	ÖY\ÉÈ	ÓÉÎÂH[ÙHY
+ÚYÙ]OOH	ÜY[ÉÈÚYÙ]OOH	ÜÙ[XÝ	ÊHÂÛÛÝ]ÈHÜQ]VØÛÛY[YH	ÉÎÂËÈHÈ[HX[ÜHÙ[XÝY[YBÛÛÝÜÈHQY[Ü[ÛÈY[YË[[H×NÂÛÛÝX]ÚHÜË[
+ÈO
+\[ÙÈOOH	ÛØXÝ	ÈÈË[YHÊHOOH]ÊNÂ\Ü^U[HX]ÚÈ\ØÊ\[ÙX]ÚOOH	ÛØXÝ	ÈÈX]ÚX[X]Ú
+H
+]ÈÈ\ØÊ]ÊH	ø %	ÊNÂH[ÙHÂÛÛÝ]ÈHÜQ]VØÛÛY[YH	ÉÎÂ\Ü^U[H]ÈÈ\ØÊ]ÊH	ø %	ÎÂB[
+ÏH]Û\ÜÏHK\]Y]Ë\ÝÈÙ\ØÊX[
+_OÙÙ\Ü^U[OÙÙ]ÂBB[
+ÏH	ÏÙÎÂB[
+ÏH]Ý[OH^X[YÛYÚÛX\Ú[]ÜÍ\[NÈ]ÛÛ\ÜÏHK\]Y]ËYY][[ÈÛÛXÚÏH]YØ]UÔÝ\
+	ÜÝ\YJHY]	Ù\ØÊË]J_OØ]ÛÙ]Â[
+ÏH	ÏÙ]Ù]ÎÂBBËÈ]XÞHYÜY[Y[ÚXÚØÞ
+SÈ]\B[
+ÏH]Û\ÜÏHK\]XÞKXYÜY[Y[X[[]\OHÚXÚØÞYH]XÞPYÜY[Y[\]Z\Y\XK\\]Z\YHYHH]HXY[XØÙ\HHYHÎËÝÝÝËKÛÝÜ]XÞK\ÛXÞKÈ\Ù]HØ[È]XÞHÛXÞOØOÝÛÏÝNÜÝÛÏXØÛÜ[ÈÈH\\ÛÜÈYXÝ[ÛXÝ[ÝH\HÝ\]Z\YÈ\ÜÛÈHÛÛXÝ[ÛÙ[ÜX][Û[\ÜÈ]\Ü^\ÈHÝ\[H[YÓPÛÛÛ[X\ÛX[Ù]Â[
+ÏH	ÏÙ]ÎÂ]\[ÂB[Ý[ÛÙÙÛPXØÛÜ[ÛYHÂÛÛÝÙHHØÝ[Y[Ù][[Y[RY
+Y
+NÂÛÛÝ\ÓÜ[HÙKÛ\ÜÓ\ÝÛÛZ[Ê	ÛÜ[ÊNÂÙKÛ\ÜÓ\ÝÙÙÛJ	ÛÜ[ÊNÂÙ]]X]J	Ø\XKY^[Y	Ë\ÓÜ[È	Ù[ÙIÈ	ÝYIÊNÂB[Ý[ÛØ]QÜU[Y\Ê
+HÂÛÛÝÜHHØÝ[Y[Ù][[Y[RY
+	ÝQÜIÊNÂY
+YÜJH]\ÂÜK]Y\TÙ[XÝÜ[
+	Ú[]Ù[XÝ^\XIÊKÜXXÚ
+[OÂY
+Y[[YJH]\ÂY
+[\HOOH	ÜY[ÉÊHÂY
+[ÚXÚÙY
+HÜQ]VÙ[[YWHH[[YNÂH[ÙHY
+[\HOOH	ØÚXÚØÞ	ÊHÂÜQ]VÙ[[YWHH[ÚXÚÙYÂH[ÙHÂÜQ]VÙ[[YWHH[[YNÂBJNÂB      formData[el.name] = el.value;
         }
     });
 }
 
-// ─── Restore saved values into rendered form fields ───
+// âââ Restore saved values into rendered form fields âââ
 function restoreFormValues() {
     const form = document.getElementById('vaForm');
     if (!form) return;
@@ -1273,7 +910,7 @@ function restoreFormValues() {
     });
 }
 
-// ─── Validate required fields on current step, show VA-style errors ───
+// âââ Validate required fields on current step, show VA-style errors âââ
 function validateCurrentStep() {
     const form = document.getElementById('vaForm');
     if (!form) return true;
@@ -1304,7 +941,6 @@ function validateCurrentStep() {
             // Create error message
             const errId = 'err_' + (el.name || el.id);
             const errDiv = document.createElement('div');
-            errDiv.id = 'privacyError';
             errDiv.className = 'va-field-error';
             errDiv.id = errId;
             errDiv.setAttribute('role', 'alert');
@@ -1347,7 +983,7 @@ function navigateToStep(stepIndex) {
     renderVAForm(currentSchema, currentOrg);
 }
 
-// ─── Render a single field ───
+// âââ Render a single field âââ
 function renderVAField(fieldId, def, vaField, isRequired) {
     if (!def) return '';
     const label = vaField.label || humanize(fieldId);
@@ -1512,7 +1148,7 @@ function esc(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-// ─── Export / Clear ───
+// âââ Export / Clear âââ
 function exportFormData() {
     // Validate privacy agreement
     const privacyCb = document.getElementById('privacyAgreement');
@@ -1556,7 +1192,7 @@ function exportFormData() {
     URL.revokeObjectURL(url);
 }
 
-// ─── Search ───
+// âââ Search âââ
 document.getElementById('searchBox').addEventListener('input', function(e) {
     const q = e.target.value.trim();
     if (q.length < 2) { if (currentOrg) renderFormList(currentOrg); return; }
@@ -1573,7 +1209,7 @@ document.getElementById('searchBox').addEventListener('input', function(e) {
         const safeName = (f.name || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
         const status = f.status || 'unknown';
         return `<div class="form-item" data-file="${f.fileName}" onclick="selectForm('${f.orgId}','${f.fileName}','${safeName}')">
-            <div class="form-item-info"><div class="form-item-name">${f.name}</div><div class="form-item-meta">${f.orgLabel} · ${f.totalFields || 0} fields</div></div>
+            <div class="form-item-info"><div class="form-item-name">${f.name}</div><div class="form-item-meta">${f.orgLabel} Â· ${f.totalFields || 0} fields</div></div>
             <div class="form-item-badges"><span class="badge ${status === 'digitized' ? 'badge-digitized' : 'badge-flat'}">${status === 'digitized' ? 'Digitized' : 'Flat'}</span></div>
         </div>`;
     }).join('');
