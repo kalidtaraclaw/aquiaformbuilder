@@ -1,8 +1,8 @@
 {
   "generated": "2026-03-28T18:00:00Z",
   "totalForms": 197,
-  "forms": {
-    "26-1852": {
+  "forms": [
+    {
       "file": "26-1852.json",
       "properties": 250,
       "totalFields": 374,
@@ -12,9 +12,11 @@
       "pageCount": 6,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-1852-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.091Z"
+      "redigitizedAt": "2026-03-30T20:39:38.091Z",
+      "name": "26-1852",
+      "fileName": "26-1852.json"
     },
-    "21P-527EZ": {
+    {
       "file": "21P-527EZ.json",
       "properties": 120,
       "totalFields": 284,
@@ -24,9 +26,11 @@
       "pageCount": 17,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-527ez-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-527EZ",
+      "fileName": "21P-527EZ.json"
     },
-    "21P-8416": {
+    {
       "file": "21P-8416.json",
       "properties": 90,
       "totalFields": 201,
@@ -36,9 +40,11 @@
       "pageCount": 10,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-8416-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-8416",
+      "fileName": "21P-8416.json"
     },
-    "21P-8416(Spanish)": {
+    {
       "file": "21P-8416(Spanish).json",
       "properties": 125,
       "totalFields": 104,
@@ -48,9 +54,11 @@
       "pageCount": 10,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-8416(spanish)-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-8416(Spanish)",
+      "fileName": "21P-8416(Spanish).json"
     },
-    "21P-0969": {
+    {
       "file": "21P-0969.json",
       "properties": 378,
       "totalFields": 436,
@@ -60,9 +68,11 @@
       "pageCount": 11,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0969-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-0969",
+      "fileName": "21P-0969.json"
     },
-    "21P-0969(Spanish)": {
+    {
       "file": "21P-0969(Spanish).json",
       "properties": 388,
       "totalFields": 421,
@@ -71,9 +81,11 @@
       "needsReviewCount": 0,
       "pageCount": 11,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0969(spanish)-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0969(spanish)-are.pdf",
+      "name": "21P-0969(Spanish)",
+      "fileName": "21P-0969(Spanish).json"
     },
-    "21P-4706c": {
+    {
       "file": "21P-4706c.json",
       "properties": 355,
       "totalFields": 369,
@@ -83,9 +95,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-4706c-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-4706c",
+      "fileName": "21P-4706c.json"
     },
-    "21-526EZ": {
+    {
       "file": "21-526EZ.json",
       "properties": 123,
       "totalFields": 204,
@@ -95,9 +109,11 @@
       "pageCount": 15,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-526ez-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21-526EZ",
+      "fileName": "21-526EZ.json"
     },
-    "26-1849": {
+    {
       "file": "26-1849.json",
       "properties": 230,
       "totalFields": 250,
@@ -107,9 +123,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-1849-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "26-1849",
+      "fileName": "26-1849.json"
     },
-    "21P-535": {
+    {
       "file": "21P-535.json",
       "properties": 118,
       "totalFields": 222,
@@ -118,9 +136,11 @@
       "needsReviewCount": 91,
       "pageCount": 10,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-535-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-535-are.pdf",
+      "name": "21P-535",
+      "fileName": "21P-535.json"
     },
-    "28-1905c": {
+    {
       "file": "28-1905c.json",
       "properties": 29,
       "totalFields": 72,
@@ -130,9 +150,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-28-1905c-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "28-1905c",
+      "fileName": "28-1905c.json"
     },
-    "21P-1775": {
+    {
       "file": "21P-1775.json",
       "properties": 115,
       "totalFields": 237,
@@ -142,9 +164,11 @@
       "pageCount": 6,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-1775-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-1775",
+      "fileName": "21P-1775.json"
     },
-    "28-1905m": {
+    {
       "file": "28-1905m.json",
       "properties": 24,
       "totalFields": 84,
@@ -154,9 +178,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-28-1905m-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "28-1905m",
+      "fileName": "28-1905m.json"
     },
-    "21P-524": {
+    {
       "file": "21P-524.json",
       "properties": 78,
       "totalFields": 223,
@@ -166,9 +192,11 @@
       "pageCount": 6,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-524-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-524",
+      "fileName": "21P-524.json"
     },
-    "21-6898": {
+    {
       "file": "21-6898.json",
       "properties": 148,
       "totalFields": 184,
@@ -177,9 +205,11 @@
       "needsReviewCount": 0,
       "pageCount": 4,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-6898-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-6898-are.pdf",
+      "name": "21-6898",
+      "fileName": "21-6898.json"
     },
-    "29-336": {
+    {
       "file": "29-336.json",
       "properties": 11,
       "totalFields": 94,
@@ -189,9 +219,11 @@
       "pageCount": 6,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-336-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "29-336",
+      "fileName": "29-336.json"
     },
-    "29-541": {
+    {
       "file": "29-541.json",
       "properties": 26,
       "totalFields": 71,
@@ -201,9 +233,11 @@
       "pageCount": 5,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-541-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "29-541",
+      "fileName": "29-541.json"
     },
-    "21-8940": {
+    {
       "file": "21-8940.json",
       "properties": 86,
       "totalFields": 161,
@@ -213,9 +247,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-8940-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21-8940",
+      "fileName": "21-8940.json"
     },
-    "26-8844": {
+    {
       "file": "26-8844.json",
       "properties": 98,
       "totalFields": 171,
@@ -224,9 +260,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8844-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8844-are.pdf",
+      "name": "26-8844",
+      "fileName": "26-8844.json"
     },
-    "21-4170": {
+    {
       "file": "21-4170.json",
       "properties": 112,
       "totalFields": 188,
@@ -236,9 +274,11 @@
       "pageCount": 5,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-4170-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21-4170",
+      "fileName": "21-4170.json"
     },
-    "26-6705b": {
+    {
       "file": "26-6705b.json",
       "properties": 158,
       "totalFields": 170,
@@ -247,9 +287,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6705b-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6705b-are.pdf",
+      "name": "26-6705b",
+      "fileName": "26-6705b.json"
     },
-    "29-336a": {
+    {
       "file": "29-336a.json",
       "properties": 11,
       "totalFields": 75,
@@ -259,9 +301,11 @@
       "pageCount": 5,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-336a-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "29-336a",
+      "fileName": "29-336a.json"
     },
-    "21P-8416b": {
+    {
       "file": "21P-8416b.json",
       "properties": 40,
       "totalFields": 168,
@@ -270,9 +314,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-8416b-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-8416b-are.pdf",
+      "name": "21P-8416b",
+      "fileName": "21P-8416b.json"
     },
-    "21P-0517-1": {
+    {
       "file": "21P-0517-1.json",
       "properties": 34,
       "totalFields": 65,
@@ -282,9 +328,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0517-1-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-0517-1",
+      "fileName": "21P-0517-1.json"
     },
-    "21P-0519C-1(Spanish)": {
+    {
       "file": "21P-0519C-1(Spanish).json",
       "properties": 46,
       "totalFields": 49,
@@ -294,9 +342,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0519c-1(spanish)-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-0519C-1(Spanish)",
+      "fileName": "21P-0519C-1(Spanish).json"
     },
-    "22-1990": {
+    {
       "file": "22-1990.json",
       "properties": 125,
       "totalFields": 189,
@@ -306,9 +356,11 @@
       "pageCount": 7,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-1990-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "22-1990",
+      "fileName": "22-1990.json"
     },
-    "21P-0519S-1(Spanish)": {
+    {
       "file": "21P-0519S-1(Spanish).json",
       "properties": 55,
       "totalFields": 61,
@@ -318,9 +370,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0519s-1(spanish)-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-0519S-1(Spanish)",
+      "fileName": "21P-0519S-1(Spanish).json"
     },
-    "21P-0519s-1": {
+    {
       "file": "21P-0519s-1.json",
       "properties": 55,
       "totalFields": 49,
@@ -330,9 +384,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0519s-1-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-0519s-1",
+      "fileName": "21P-0519s-1.json"
     },
-    "21P-8049": {
+    {
       "file": "21P-8049.json",
       "properties": 21,
       "totalFields": 65,
@@ -342,9 +398,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-8049-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-8049",
+      "fileName": "21P-8049.json"
     },
-    "21P-0513-1": {
+    {
       "file": "21P-0513-1.json",
       "properties": 47,
       "totalFields": 37,
@@ -354,9 +412,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0513-1-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-0513-1",
+      "fileName": "21P-0513-1.json"
     },
-    "21P-0519c-1": {
+    {
       "file": "21P-0519c-1.json",
       "properties": 55,
       "totalFields": 55,
@@ -366,9 +426,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0519c-1-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-0519c-1",
+      "fileName": "21P-0519c-1.json"
     },
-    "20-0995": {
+    {
       "file": "20-0995.json",
       "properties": 41,
       "totalFields": 127,
@@ -378,9 +440,11 @@
       "pageCount": 7,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-20-0995-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "20-0995",
+      "fileName": "20-0995.json"
     },
-    "22-8864": {
+    {
       "file": "22-8864.json",
       "properties": 66,
       "totalFields": 142,
@@ -389,9 +453,11 @@
       "needsReviewCount": 0,
       "pageCount": 5,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-8864-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-8864-are.pdf",
+      "name": "22-8864",
+      "fileName": "22-8864.json"
     },
-    "21P-0513-1(Spanish)": {
+    {
       "file": "21P-0513-1(Spanish).json",
       "properties": 47,
       "totalFields": 38,
@@ -401,9 +467,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0513-1(spanish)-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-0513-1(Spanish)",
+      "fileName": "21P-0513-1(Spanish).json"
     },
-    "21-4142": {
+    {
       "file": "21-4142.json",
       "properties": 20,
       "totalFields": 105,
@@ -413,9 +481,11 @@
       "pageCount": 5,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-4142-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21-4142",
+      "fileName": "21-4142.json"
     },
-    "21P-0517-1(Spanish)": {
+    {
       "file": "21P-0517-1(Spanish).json",
       "properties": 40,
       "totalFields": 65,
@@ -425,9 +495,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0517-1(spanish)-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-0517-1(Spanish)",
+      "fileName": "21P-0517-1(Spanish).json"
     },
-    "21-509": {
+    {
       "file": "21-509.json",
       "properties": 61,
       "totalFields": 34,
@@ -437,9 +509,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-509-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21-509",
+      "fileName": "21-509.json"
     },
-    "26-6681": {
+    {
       "file": "26-6681.json",
       "properties": 30,
       "totalFields": 82,
@@ -449,9 +523,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6681-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "26-6681",
+      "fileName": "26-6681.json"
     },
-    "28-1902w": {
+    {
       "file": "28-1902w.json",
       "properties": 74,
       "totalFields": 127,
@@ -461,9 +537,11 @@
       "pageCount": 8,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-28-1902w-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "28-1902w",
+      "fileName": "28-1902w.json"
     },
-    "22-10215a": {
+    {
       "file": "22-10215a.json",
       "properties": 7,
       "totalFields": 126,
@@ -472,9 +550,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-10215a-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-10215a-are.pdf",
+      "name": "22-10215a",
+      "fileName": "22-10215a.json"
     },
-    "28-10289": {
+    {
       "file": "28-10289.json",
       "properties": 28,
       "totalFields": 80,
@@ -484,9 +564,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-28-10289-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "28-10289",
+      "fileName": "28-10289.json"
     },
-    "26-8630": {
+    {
       "file": "26-8630.json",
       "properties": 120,
       "totalFields": 126,
@@ -495,9 +577,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8630-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8630-are.pdf",
+      "name": "26-8630",
+      "fileName": "26-8630.json"
     },
-    "26-6807": {
+    {
       "file": "26-6807.json",
       "properties": 93,
       "totalFields": 143,
@@ -507,9 +591,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6807-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "26-6807",
+      "fileName": "26-6807.json"
     },
-    "21-0781": {
+    {
       "file": "21-0781.json",
       "properties": 59,
       "totalFields": 113,
@@ -519,9 +605,11 @@
       "pageCount": 7,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-0781-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21-0781",
+      "fileName": "21-0781.json"
     },
-    "29-357": {
+    {
       "file": "29-357.json",
       "properties": 100,
       "totalFields": 122,
@@ -530,9 +618,11 @@
       "needsReviewCount": 0,
       "pageCount": 3,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-357-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-357-are.pdf",
+      "name": "29-357",
+      "fileName": "29-357.json"
     },
-    "22-10215": {
+    {
       "file": "22-10215.json",
       "properties": 14,
       "totalFields": 55,
@@ -542,9 +632,11 @@
       "pageCount": 5,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-10215-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "22-10215",
+      "fileName": "22-10215.json"
     },
-    "20-0996": {
+    {
       "file": "20-0996.json",
       "properties": 20,
       "totalFields": 85,
@@ -554,9 +646,11 @@
       "pageCount": 5,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-20-0996-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "20-0996",
+      "fileName": "20-0996.json"
     },
-    "21-2680": {
+    {
       "file": "21-2680.json",
       "properties": 55,
       "totalFields": 147,
@@ -566,9 +660,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-2680-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21-2680",
+      "fileName": "21-2680.json"
     },
-    "21-0538": {
+    {
       "file": "21-0538.json",
       "properties": 32,
       "totalFields": 94,
@@ -578,9 +674,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-0538-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21-0538",
+      "fileName": "21-0538.json"
     },
-    "20-10207": {
+    {
       "file": "20-10207.json",
       "properties": 48,
       "totalFields": 103,
@@ -590,9 +688,11 @@
       "pageCount": 5,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-20-10207-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "20-10207",
+      "fileName": "20-10207.json"
     },
-    "26-1820": {
+    {
       "file": "26-1820.json",
       "properties": 93,
       "totalFields": 143,
@@ -602,9 +702,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-1820-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "26-1820",
+      "fileName": "26-1820.json"
     },
-    "26-6808": {
+    {
       "file": "26-6808.json",
       "properties": 94,
       "totalFields": 111,
@@ -613,9 +715,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6808-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6808-are.pdf",
+      "name": "26-6808",
+      "fileName": "26-6808.json"
     },
-    "21P-4171": {
+    {
       "file": "21P-4171.json",
       "properties": 48,
       "totalFields": 96,
@@ -625,9 +729,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-4171-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-4171",
+      "fileName": "21P-4171.json"
     },
-    "21-674": {
+    {
       "file": "21-674.json",
       "properties": 29,
       "totalFields": 75,
@@ -637,9 +743,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-674-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21-674",
+      "fileName": "21-674.json"
     },
-    "21P-601": {
+    {
       "file": "21P-601.json",
       "properties": 29,
       "totalFields": 100,
@@ -649,9 +757,11 @@
       "pageCount": 5,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-601-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-601",
+      "fileName": "21P-601.json"
     },
-    "26-8149": {
+    {
       "file": "26-8149.json",
       "properties": 78,
       "totalFields": 151,
@@ -661,9 +771,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8149-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "26-8149",
+      "fileName": "26-8149.json"
     },
-    "21P-4165": {
+    {
       "file": "21P-4165.json",
       "properties": 43,
       "totalFields": 89,
@@ -673,9 +785,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-4165-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-4165",
+      "fileName": "21P-4165.json"
     },
-    "26-6393": {
+    {
       "file": "26-6393.json",
       "properties": 95,
       "totalFields": 120,
@@ -685,9 +799,11 @@
       "pageCount": 1,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6393-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "26-6393",
+      "fileName": "26-6393.json"
     },
-    "21P-4706b": {
+    {
       "file": "21P-4706b.json",
       "properties": 87,
       "totalFields": 103,
@@ -696,9 +812,11 @@
       "needsReviewCount": 2,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-4706b-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-4706b-are.pdf",
+      "name": "21P-4706b",
+      "fileName": "21P-4706b.json"
     },
-    "26-8629": {
+    {
       "file": "26-8629.json",
       "properties": 96,
       "totalFields": 101,
@@ -707,9 +825,11 @@
       "needsReviewCount": 2,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8629-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8629-are.pdf",
+      "name": "26-8629",
+      "fileName": "26-8629.json"
     },
-    "22-0839": {
+    {
       "file": "22-0839.json",
       "properties": 38,
       "totalFields": 98,
@@ -718,9 +838,11 @@
       "needsReviewCount": 6,
       "pageCount": 6,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-0839-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-0839-are.pdf",
+      "name": "22-0839",
+      "fileName": "22-0839.json"
     },
-    "21P-0516-1 (Spanish)": {
+    {
       "file": "21P-0516-1 (Spanish).json",
       "properties": 24,
       "totalFields": 59,
@@ -730,9 +852,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0516-1(spanish)-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-0516-1 (Spanish)",
+      "fileName": "21P-0516-1 (Spanish).json"
     },
-    "21-4142a": {
+    {
       "file": "21-4142a.json",
       "properties": 11,
       "totalFields": 96,
@@ -741,9 +865,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-4142a-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-4142a-are.pdf",
+      "name": "21-4142a",
+      "fileName": "21-4142a.json"
     },
-    "20-10206": {
+    {
       "file": "20-10206.json",
       "properties": 34,
       "totalFields": 74,
@@ -753,9 +879,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-20-10206-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "20-10206",
+      "fileName": "20-10206.json"
     },
-    "21P-0516-1": {
+    {
       "file": "21P-0516-1.json",
       "properties": 24,
       "totalFields": 49,
@@ -765,9 +893,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0516-1-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-0516-1",
+      "fileName": "21P-0516-1.json"
     },
-    "26-8712": {
+    {
       "file": "26-8712.json",
       "properties": 92,
       "totalFields": 94,
@@ -776,9 +906,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8712-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8712-are.pdf",
+      "name": "26-8712",
+      "fileName": "26-8712.json"
     },
-    "21P-530EZ": {
+    {
       "file": "21P-530EZ.json",
       "properties": 33,
       "totalFields": 110,
@@ -788,9 +920,11 @@
       "pageCount": 8,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-530ez-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-530EZ",
+      "fileName": "21P-530EZ.json"
     },
-    "21-22a": {
+    {
       "file": "21-22a.json",
       "properties": 19,
       "totalFields": 78,
@@ -800,9 +934,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-22a-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21-22a",
+      "fileName": "21-22a.json"
     },
-    "21-4502": {
+    {
       "file": "21-4502.json",
       "properties": 23,
       "totalFields": 107,
@@ -812,9 +948,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-4502-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21-4502",
+      "fileName": "21-4502.json"
     },
-    "21-0304": {
+    {
       "file": "21-0304.json",
       "properties": 27,
       "totalFields": 89,
@@ -824,9 +962,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-0304-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21-0304",
+      "fileName": "21-0304.json"
     },
-    "28-0968": {
+    {
       "file": "28-0968.json",
       "properties": 37,
       "totalFields": 111,
@@ -836,9 +976,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-28-0968-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "28-0968",
+      "fileName": "28-0968.json"
     },
-    "22-10278": {
+    {
       "file": "22-10278.json",
       "properties": 31,
       "totalFields": 89,
@@ -848,9 +990,11 @@
       "pageCount": 5,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-10278-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "22-10278",
+      "fileName": "22-10278.json"
     },
-    "21P-0514-1(Spanish)": {
+    {
       "file": "21P-0514-1(Spanish).json",
       "properties": 28,
       "totalFields": 51,
@@ -860,9 +1004,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0514-1(spanish)-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-0514-1(Spanish)",
+      "fileName": "21P-0514-1(Spanish).json"
     },
-    "21P-0512V-1": {
+    {
       "file": "21P-0512V-1.json",
       "properties": 21,
       "totalFields": 24,
@@ -872,9 +1018,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0512v-1-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-0512V-1",
+      "fileName": "21P-0512V-1.json"
     },
-    "20-8800": {
+    {
       "file": "20-8800.json",
       "properties": 10,
       "totalFields": 84,
@@ -883,9 +1031,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-20-8800-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-20-8800-are.pdf",
+      "name": "20-8800",
+      "fileName": "20-8800.json"
     },
-    "21P-0514-1": {
+    {
       "file": "21P-0514-1.json",
       "properties": 26,
       "totalFields": 43,
@@ -895,9 +1045,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0514-1-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21P-0514-1",
+      "fileName": "21P-0514-1.json"
     },
-    "22-0976": {
+    {
       "file": "22-0976.json",
       "properties": 36,
       "totalFields": 42,
@@ -907,9 +1059,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-0976-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "22-0976",
+      "fileName": "22-0976.json"
     },
-    "22-5490": {
+    {
       "file": "22-5490.json",
       "properties": 36,
       "totalFields": 111,
@@ -919,9 +1073,11 @@
       "pageCount": 7,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-5490-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "22-5490",
+      "fileName": "22-5490.json"
     },
-    "21-0845": {
+    {
       "file": "21-0845.json",
       "properties": 22,
       "totalFields": 68,
@@ -931,9 +1087,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-0845-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21-0845",
+      "fileName": "21-0845.json"
     },
-    "27-8832": {
+    {
       "file": "27-8832.json",
       "properties": 14,
       "totalFields": 61,
@@ -943,9 +1101,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-27-8832-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "27-8832",
+      "fileName": "27-8832.json"
     },
-    "21P-4185": {
+    {
       "file": "21P-4185.json",
       "properties": 60,
       "totalFields": 77,
@@ -954,9 +1114,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-4185-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-4185-are.pdf",
+      "name": "21P-4185",
+      "fileName": "21P-4185.json"
     },
-    "20-10208": {
+    {
       "file": "20-10208.json",
       "properties": 21,
       "totalFields": 64,
@@ -966,9 +1128,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-20-10208-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "20-10208",
+      "fileName": "20-10208.json"
     },
-    "21-10210": {
+    {
       "file": "21-10210.json",
       "properties": 18,
       "totalFields": 51,
@@ -978,9 +1142,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-10210-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21-10210",
+      "fileName": "21-10210.json"
     },
-    "22-1990n": {
+    {
       "file": "22-1990n.json",
       "properties": 59,
       "totalFields": 93,
@@ -990,9 +1156,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-1990n-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "22-1990n",
+      "fileName": "22-1990n.json"
     },
-    "22-1990t": {
+    {
       "file": "22-1990t.json",
       "properties": 27,
       "totalFields": 82,
@@ -1002,9 +1170,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-1990t-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z"
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "22-1990t",
+      "fileName": "22-1990t.json"
     },
-    "21P-0571": {
+    {
       "file": "21P-0571.json",
       "properties": 27,
       "totalFields": 74,
@@ -1013,9 +1183,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0571-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0571-are.pdf",
+      "name": "21P-0571",
+      "fileName": "21P-0571.json"
     },
-    "26-10284": {
+    {
       "file": "26-10284.json",
       "properties": 24,
       "totalFields": 73,
@@ -1024,9 +1196,11 @@
       "needsReviewCount": 0,
       "pageCount": 3,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-10284-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-10284-are.pdf",
+      "name": "26-10284",
+      "fileName": "26-10284.json"
     },
-    "26-6705": {
+    {
       "file": "26-6705.json",
       "properties": 62,
       "totalFields": 72,
@@ -1035,9 +1209,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6705-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6705-are.pdf",
+      "name": "26-6705",
+      "fileName": "26-6705.json"
     },
-    "26-6363": {
+    {
       "file": "26-6363.json",
       "properties": 22,
       "totalFields": 70,
@@ -1046,9 +1222,11 @@
       "needsReviewCount": 10,
       "pageCount": 10,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6363-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6363-are.pdf",
+      "name": "26-6363",
+      "fileName": "26-6363.json"
     },
-    "26-8497a": {
+    {
       "file": "26-8497a.json",
       "properties": 69,
       "totalFields": 69,
@@ -1057,9 +1235,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8497a-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8497a-are.pdf",
+      "name": "26-8497a",
+      "fileName": "26-8497a.json"
     },
-    "26-0971": {
+    {
       "file": "26-0971.json",
       "properties": 24,
       "totalFields": 43,
@@ -1069,9 +1249,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-0971-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-0971",
+      "fileName": "26-0971.json"
     },
-    "22-8794": {
+    {
       "file": "22-8794.json",
       "properties": 12,
       "totalFields": 37,
@@ -1081,9 +1263,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-8794-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "22-8794",
+      "fileName": "22-8794.json"
     },
-    "26-1805": {
+    {
       "file": "26-1805.json",
       "properties": 36,
       "totalFields": 76,
@@ -1093,9 +1277,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-1805-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-1805",
+      "fileName": "26-1805.json"
     },
-    "22-1995": {
+    {
       "file": "22-1995.json",
       "properties": 51,
       "totalFields": 80,
@@ -1105,9 +1291,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-1995-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "22-1995",
+      "fileName": "22-1995.json"
     },
-    "28-1903": {
+    {
       "file": "28-1903.json",
       "properties": 14,
       "totalFields": 64,
@@ -1116,9 +1304,11 @@
       "needsReviewCount": 0,
       "pageCount": 4,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-28-1903-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-28-1903-are.pdf",
+      "name": "28-1903",
+      "fileName": "28-1903.json"
     },
-    "21P-534a": {
+    {
       "file": "21P-534a.json",
       "properties": 33,
       "totalFields": 64,
@@ -1127,9 +1317,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-534a-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-534a-are.pdf",
+      "name": "21P-534a",
+      "fileName": "21P-534a.json"
     },
-    "21P-0512s-1(Spanish)": {
+    {
       "file": "21P-0512s-1(Spanish).json",
       "properties": 26,
       "totalFields": 47,
@@ -1139,9 +1331,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0512s-1(spanish)-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21P-0512s-1(Spanish)",
+      "fileName": "21P-0512s-1(Spanish).json"
     },
-    "21-22": {
+    {
       "file": "21-22.json",
       "properties": 27,
       "totalFields": 63,
@@ -1150,9 +1344,11 @@
       "needsReviewCount": 0,
       "pageCount": 4,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-22-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-22-are.pdf",
+      "name": "21-22",
+      "fileName": "21-22.json"
     },
-    "22-1990e": {
+    {
       "file": "22-1990e.json",
       "properties": 43,
       "totalFields": 77,
@@ -1162,9 +1358,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-1990e-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "22-1990e",
+      "fileName": "22-1990e.json"
     },
-    "21P-0518-1(Spanish)": {
+    {
       "file": "21P-0518-1(Spanish).json",
       "properties": 24,
       "totalFields": 48,
@@ -1174,9 +1372,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0518-1(spanish)-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21P-0518-1(Spanish)",
+      "fileName": "21P-0518-1(Spanish).json"
     },
-    "22-1999b": {
+    {
       "file": "22-1999b.json",
       "properties": 51,
       "totalFields": 107,
@@ -1186,9 +1386,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-1999b-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "22-1999b",
+      "fileName": "22-1999b.json"
     },
-    "26-8497": {
+    {
       "file": "26-8497.json",
       "properties": 59,
       "totalFields": 62,
@@ -1197,9 +1399,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8497-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8497-are.pdf",
+      "name": "26-8497",
+      "fileName": "26-8497.json"
     },
-    "21P-0518-1": {
+    {
       "file": "21P-0518-1.json",
       "properties": 23,
       "totalFields": 42,
@@ -1209,9 +1413,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0518-1-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21P-0518-1",
+      "fileName": "21P-0518-1.json"
     },
-    "21-0972": {
+    {
       "file": "21-0972.json",
       "properties": 18,
       "totalFields": 81,
@@ -1221,9 +1427,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-0972-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21-0972",
+      "fileName": "21-0972.json"
     },
-    "21-4192": {
+    {
       "file": "21-4192.json",
       "properties": 20,
       "totalFields": 60,
@@ -1233,9 +1441,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-4192-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21-4192",
+      "fileName": "21-4192.json"
     },
-    "21P-8924": {
+    {
       "file": "21P-8924.json",
       "properties": 28,
       "totalFields": 85,
@@ -1245,9 +1455,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-8924-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21P-8924",
+      "fileName": "21P-8924.json"
     },
-    "21-0966": {
+    {
       "file": "21-0966.json",
       "properties": 18,
       "totalFields": 67,
@@ -1257,9 +1469,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-0966-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21-0966",
+      "fileName": "21-0966.json"
     },
-    "22-10275": {
+    {
       "file": "22-10275.json",
       "properties": 54,
       "totalFields": 54,
@@ -1269,9 +1483,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-10275-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "22-10275",
+      "fileName": "22-10275.json"
     },
-    "26-1880": {
+    {
       "file": "26-1880.json",
       "properties": 46,
       "totalFields": 71,
@@ -1281,9 +1497,11 @@
       "pageCount": 4,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-1880-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-1880",
+      "fileName": "26-1880.json"
     },
-    "21P-0512s-1": {
+    {
       "file": "21P-0512s-1.json",
       "properties": 25,
       "totalFields": 45,
@@ -1293,9 +1511,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0512s-1-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21P-0512s-1",
+      "fileName": "21P-0512s-1.json"
     },
-    "21-4140": {
+    {
       "file": "21-4140.json",
       "properties": 17,
       "totalFields": 59,
@@ -1305,9 +1525,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-4140-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21-4140",
+      "fileName": "21-4140.json"
     },
-    "28-1905h": {
+    {
       "file": "28-1905h.json",
       "properties": 9,
       "totalFields": 49,
@@ -1317,9 +1539,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-28-1905h-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "28-1905h",
+      "fileName": "28-1905h.json"
     },
-    "26-1833": {
+    {
       "file": "26-1833.json",
       "properties": 47,
       "totalFields": 56,
@@ -1328,9 +1552,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-1833-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-1833-are.pdf",
+      "name": "26-1833",
+      "fileName": "26-1833.json"
     },
-    "21-0788": {
+    {
       "file": "21-0788.json",
       "properties": 8,
       "totalFields": 31,
@@ -1340,9 +1566,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-0788-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21-0788",
+      "fileName": "21-0788.json"
     },
-    "22-6553c": {
+    {
       "file": "22-6553c.json",
       "properties": 50,
       "totalFields": 54,
@@ -1351,9 +1579,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-6553c-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-6553c-are.pdf",
+      "name": "22-6553c",
+      "fileName": "22-6553c.json"
     },
-    "21-674b": {
+    {
       "file": "21-674b.json",
       "properties": 16,
       "totalFields": 41,
@@ -1363,9 +1593,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-674b-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21-674b",
+      "fileName": "21-674b.json"
     },
-    "21P-530a": {
+    {
       "file": "21P-530a.json",
       "properties": 22,
       "totalFields": 53,
@@ -1374,9 +1606,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-530a-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-530a-are.pdf",
+      "name": "21P-530a",
+      "fileName": "21P-530a.json"
     },
-    "26-8641a": {
+    {
       "file": "26-8641a.json",
       "properties": 49,
       "totalFields": 51,
@@ -1385,9 +1619,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8641a-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8641a-are.pdf",
+      "name": "26-8641a",
+      "fileName": "26-8641a.json"
     },
-    "21-0779": {
+    {
       "file": "21-0779.json",
       "properties": 22,
       "totalFields": 68,
@@ -1397,9 +1633,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-0779-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21-0779",
+      "fileName": "21-0779.json"
     },
-    "29-4125": {
+    {
       "file": "29-4125.json",
       "properties": 22,
       "totalFields": 48,
@@ -1408,9 +1646,11 @@
       "needsReviewCount": 0,
       "pageCount": 3,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-4125-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-4125-are.pdf",
+      "name": "29-4125",
+      "fileName": "29-4125.json"
     },
-    "22-8865": {
+    {
       "file": "22-8865.json",
       "properties": 20,
       "totalFields": 47,
@@ -1419,9 +1659,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-8865-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-8865-are.pdf",
+      "name": "22-8865",
+      "fileName": "22-8865.json"
     },
-    "26-8736b": {
+    {
       "file": "26-8736b.json",
       "properties": 32,
       "totalFields": 33,
@@ -1431,9 +1673,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8736b-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-8736b",
+      "fileName": "26-8736b.json"
     },
-    "21P-4718a": {
+    {
       "file": "21P-4718a.json",
       "properties": 38,
       "totalFields": 47,
@@ -1442,9 +1686,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-4718a-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-4718a-are.pdf",
+      "name": "21P-4718a",
+      "fileName": "21P-4718a.json"
     },
-    "21-4193": {
+    {
       "file": "21-4193.json",
       "properties": 24,
       "totalFields": 55,
@@ -1454,9 +1700,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-4193-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21-4193",
+      "fileName": "21-4193.json"
     },
-    "22-8691": {
+    {
       "file": "22-8691.json",
       "properties": 44,
       "totalFields": 46,
@@ -1465,9 +1713,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-8691-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-8691-are.pdf",
+      "name": "22-8691",
+      "fileName": "22-8691.json"
     },
-    "21-8951-2": {
+    {
       "file": "21-8951-2.json",
       "properties": 18,
       "totalFields": 56,
@@ -1477,9 +1727,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-8951-2-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21-8951-2",
+      "fileName": "21-8951-2.json"
     },
-    "29-352": {
+    {
       "file": "29-352.json",
       "properties": 23,
       "totalFields": 51,
@@ -1489,9 +1741,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-352-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "29-352",
+      "fileName": "29-352.json"
     },
-    "26-4555c": {
+    {
       "file": "26-4555c.json",
       "properties": 27,
       "totalFields": 47,
@@ -1501,9 +1755,11 @@
       "pageCount": 1,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-4555c-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-4555c",
+      "fileName": "26-4555c.json"
     },
-    "28-10281": {
+    {
       "file": "28-10281.json",
       "properties": 9,
       "totalFields": 40,
@@ -1513,9 +1769,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-28-10281-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "28-10281",
+      "fileName": "28-10281.json"
     },
-    "26-1839": {
+    {
       "file": "26-1839.json",
       "properties": 38,
       "totalFields": 60,
@@ -1525,9 +1783,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-1839-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-1839",
+      "fileName": "26-1839.json"
     },
-    "26-6382": {
+    {
       "file": "26-6382.json",
       "properties": 22,
       "totalFields": 44,
@@ -1537,9 +1797,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6382-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-6382",
+      "fileName": "26-6382.json"
     },
-    "21-8960": {
+    {
       "file": "21-8960.json",
       "properties": 21,
       "totalFields": 66,
@@ -1549,9 +1811,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-8960-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21-8960",
+      "fileName": "21-8960.json"
     },
-    "29-1549": {
+    {
       "file": "29-1549.json",
       "properties": 17,
       "totalFields": 55,
@@ -1561,9 +1825,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-1549-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "29-1549",
+      "fileName": "29-1549.json"
     },
-    "28-1900": {
+    {
       "file": "28-1900.json",
       "properties": 14,
       "totalFields": 55,
@@ -1573,9 +1839,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-28-1900-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "28-1900",
+      "fileName": "28-1900.json"
     },
-    "22-0803": {
+    {
       "file": "22-0803.json",
       "properties": 33,
       "totalFields": 40,
@@ -1584,9 +1852,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-0803-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-0803-are.pdf",
+      "name": "22-0803",
+      "fileName": "22-0803.json"
     },
-    "28-10286": {
+    {
       "file": "28-10286.json",
       "properties": 10,
       "totalFields": 50,
@@ -1596,9 +1866,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-28-10286-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "28-10286",
+      "fileName": "28-10286.json"
     },
-    "26-8736a": {
+    {
       "file": "26-8736a.json",
       "properties": 28,
       "totalFields": 21,
@@ -1608,9 +1880,11 @@
       "pageCount": 1,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8736a-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-8736a",
+      "fileName": "26-8736a.json"
     },
-    "29-0975": {
+    {
       "file": "29-0975.json",
       "properties": 18,
       "totalFields": 31,
@@ -1620,9 +1894,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-0975-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "29-0975",
+      "fileName": "29-0975.json"
     },
-    "20-572": {
+    {
       "file": "20-572.json",
       "properties": 28,
       "totalFields": 51,
@@ -1632,9 +1908,11 @@
       "pageCount": 1,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-20-572-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "20-572",
+      "fileName": "20-572.json"
     },
-    "21P-0537": {
+    {
       "file": "21P-0537.json",
       "properties": 15,
       "totalFields": 30,
@@ -1644,9 +1922,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0537-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21P-0537",
+      "fileName": "21P-0537.json"
     },
-    "22-10201": {
+    {
       "file": "22-10201.json",
       "properties": 23,
       "totalFields": 57,
@@ -1656,9 +1936,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-10201-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "22-10201",
+      "fileName": "22-10201.json"
     },
-    "29-8636": {
+    {
       "file": "29-8636.json",
       "properties": 32,
       "totalFields": 36,
@@ -1667,9 +1949,11 @@
       "needsReviewCount": 0,
       "pageCount": 3,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-8636-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-8636-are.pdf",
+      "name": "29-8636",
+      "fileName": "29-8636.json"
     },
-    "21P-0847": {
+    {
       "file": "21P-0847.json",
       "properties": 13,
       "totalFields": 35,
@@ -1678,9 +1962,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0847-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-0847-are.pdf",
+      "name": "21P-0847",
+      "fileName": "21P-0847.json"
     },
-    "22-10282": {
+    {
       "file": "22-10282.json",
       "properties": 19,
       "totalFields": 38,
@@ -1690,9 +1976,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-10282-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "22-10282",
+      "fileName": "22-10282.json"
     },
-    "29-0152": {
+    {
       "file": "29-0152.json",
       "properties": 32,
       "totalFields": 33,
@@ -1701,9 +1989,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-0152-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-0152-are.pdf",
+      "name": "29-0152",
+      "fileName": "29-0152.json"
     },
-    "21-4138": {
+    {
       "file": "21-4138.json",
       "properties": 12,
       "totalFields": 33,
@@ -1712,9 +2002,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-4138-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-4138-are.pdf",
+      "name": "21-4138",
+      "fileName": "21-4138.json"
     },
-    "22-8979": {
+    {
       "file": "22-8979.json",
       "properties": 17,
       "totalFields": 58,
@@ -1724,9 +2016,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-8979-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "22-8979",
+      "fileName": "22-8979.json"
     },
-    "26-1817": {
+    {
       "file": "26-1817.json",
       "properties": 14,
       "totalFields": 33,
@@ -1736,9 +2030,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-1817-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-1817",
+      "fileName": "26-1817.json"
     },
-    "29-0543": {
+    {
       "file": "29-0543.json",
       "properties": 29,
       "totalFields": 32,
@@ -1747,9 +2043,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-0543-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-0543-are.pdf",
+      "name": "29-0543",
+      "fileName": "29-0543.json"
     },
-    "29-1546": {
+    {
       "file": "29-1546.json",
       "properties": 14,
       "totalFields": 48,
@@ -1759,9 +2057,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-1546-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "29-1546",
+      "fileName": "29-1546.json"
     },
-    "26-6381": {
+    {
       "file": "26-6381.json",
       "properties": 21,
       "totalFields": 42,
@@ -1771,9 +2071,11 @@
       "pageCount": 1,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6381-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-6381",
+      "fileName": "26-6381.json"
     },
-    "22-6553d-1": {
+    {
       "file": "22-6553d-1.json",
       "properties": 14,
       "totalFields": 32,
@@ -1783,9 +2085,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-6553d-1-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "22-6553d-1",
+      "fileName": "22-6553d-1.json"
     },
-    "26-8261a": {
+    {
       "file": "26-8261a.json",
       "properties": 18,
       "totalFields": 31,
@@ -1795,9 +2099,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8261a-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-8261a",
+      "fileName": "26-8261a.json"
     },
-    "21P-8941": {
+    {
       "file": "21P-8941.json",
       "properties": 18,
       "totalFields": 32,
@@ -1807,9 +2113,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21p-8941-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "21P-8941",
+      "fileName": "21P-8941.json"
     },
-    "26-8923": {
+    {
       "file": "26-8923.json",
       "properties": 24,
       "totalFields": 28,
@@ -1818,9 +2126,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8923-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8923-are.pdf",
+      "name": "26-8923",
+      "fileName": "26-8923.json"
     },
-    "26-6705d": {
+    {
       "file": "26-6705d.json",
       "properties": 24,
       "totalFields": 28,
@@ -1829,9 +2139,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6705d-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6705d-are.pdf",
+      "name": "26-6705d",
+      "fileName": "26-6705d.json"
     },
-    "22-0848": {
+    {
       "file": "22-0848.json",
       "properties": 12,
       "totalFields": 27,
@@ -1840,9 +2152,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-0848-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-0848-are.pdf",
+      "name": "22-0848",
+      "fileName": "22-0848.json"
     },
-    "26-8937": {
+    {
       "file": "26-8937.json",
       "properties": 18,
       "totalFields": 32,
@@ -1852,9 +2166,11 @@
       "pageCount": 1,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8937-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-8937",
+      "fileName": "26-8937.json"
     },
-    "29-4125a": {
+    {
       "file": "29-4125a.json",
       "properties": 23,
       "totalFields": 27,
@@ -1863,9 +2179,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-4125a-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-4125a-are.pdf",
+      "name": "29-4125a",
+      "fileName": "29-4125a.json"
     },
-    "27-2008": {
+    {
       "file": "27-2008.json",
       "properties": 16,
       "totalFields": 54,
@@ -1875,9 +2193,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-27-2008-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "27-2008",
+      "fileName": "27-2008.json"
     },
-    "22-10219": {
+    {
       "file": "22-10219.json",
       "properties": 21,
       "totalFields": 32,
@@ -1887,9 +2207,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-10219-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "22-10219",
+      "fileName": "22-10219.json"
     },
-    "22-10270": {
+    {
       "file": "22-10270.json",
       "properties": 17,
       "totalFields": 53,
@@ -1899,9 +2221,11 @@
       "pageCount": 5,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-10270-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "22-10270",
+      "fileName": "22-10270.json"
     },
-    "22-6553b-1": {
+    {
       "file": "22-6553b-1.json",
       "properties": 21,
       "totalFields": 23,
@@ -1910,9 +2234,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-6553b-1-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-6553b-1-are.pdf",
+      "name": "22-6553b-1",
+      "fileName": "22-6553b-1.json"
     },
-    "22-0989": {
+    {
       "file": "22-0989.json",
       "properties": 11,
       "totalFields": 29,
@@ -1922,9 +2248,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-0989-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "22-0989",
+      "fileName": "22-0989.json"
     },
-    "22-10272": {
+    {
       "file": "22-10272.json",
       "properties": 17,
       "totalFields": 24,
@@ -1934,9 +2262,11 @@
       "pageCount": 3,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-10272-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "22-10272",
+      "fileName": "22-10272.json"
     },
-    "26-8644": {
+    {
       "file": "26-8644.json",
       "properties": 16,
       "totalFields": 27,
@@ -1946,9 +2276,11 @@
       "pageCount": 1,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8644-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-8644",
+      "fileName": "26-8644.json"
     },
-    "26-4555": {
+    {
       "file": "26-4555.json",
       "properties": 16,
       "totalFields": 32,
@@ -1958,9 +2290,11 @@
       "pageCount": 1,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-4555-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-4555",
+      "fileName": "26-4555.json"
     },
-    "26-8730": {
+    {
       "file": "26-8730.json",
       "properties": 16,
       "totalFields": 19,
@@ -1969,9 +2303,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8730-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8730-are.pdf",
+      "name": "26-8730",
+      "fileName": "26-8730.json"
     },
-    "26-8731a": {
+    {
       "file": "26-8731a.json",
       "properties": 15,
       "totalFields": 18,
@@ -1981,9 +2317,11 @@
       "pageCount": 1,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8731a-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-8731a",
+      "fileName": "26-8731a.json"
     },
-    "26-8731c": {
+    {
       "file": "26-8731c.json",
       "properties": 15,
       "totalFields": 18,
@@ -1993,9 +2331,11 @@
       "pageCount": 1,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8731c-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-8731c",
+      "fileName": "26-8731c.json"
     },
-    "29-586": {
+    {
       "file": "29-586.json",
       "properties": 13,
       "totalFields": 18,
@@ -2004,9 +2344,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-586-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-586-are.pdf",
+      "name": "29-586",
+      "fileName": "29-586.json"
     },
-    "26-8827": {
+    {
       "file": "26-8827.json",
       "properties": 9,
       "totalFields": 18,
@@ -2016,9 +2358,11 @@
       "pageCount": 1,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8827-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-8827",
+      "fileName": "26-8827.json"
     },
-    "26-10280": {
+    {
       "file": "26-10280.json",
       "properties": 9,
       "totalFields": 22,
@@ -2028,9 +2372,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-10280-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-10280",
+      "fileName": "26-10280.json"
     },
-    "22-0810": {
+    {
       "file": "22-0810.json",
       "properties": 14,
       "totalFields": 33,
@@ -2040,9 +2386,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-0810-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "22-0810",
+      "fileName": "22-0810.json"
     },
-    "26-0829": {
+    {
       "file": "26-0829.json",
       "properties": 13,
       "totalFields": 17,
@@ -2051,9 +2399,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-0829-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-0829-are.pdf",
+      "name": "26-0829",
+      "fileName": "26-0829.json"
     },
-    "26-0785": {
+    {
       "file": "26-0785.json",
       "properties": 16,
       "totalFields": 17,
@@ -2062,9 +2412,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-0785-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-0785-are.pdf",
+      "name": "26-0785",
+      "fileName": "26-0785.json"
     },
-    "29-0309": {
+    {
       "file": "29-0309.json",
       "properties": 13,
       "totalFields": 16,
@@ -2073,9 +2425,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-0309-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-0309-are.pdf",
+      "name": "29-0309",
+      "fileName": "29-0309.json"
     },
-    "29-888": {
+    {
       "file": "29-888.json",
       "properties": 15,
       "totalFields": 16,
@@ -2084,9 +2438,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-888-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-888-are.pdf",
+      "name": "29-888",
+      "fileName": "29-888.json"
     },
-    "26-10280a": {
+    {
       "file": "26-10280a.json",
       "properties": 9,
       "totalFields": 19,
@@ -2096,9 +2452,11 @@
       "pageCount": 2,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-10280a-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "26-10280a",
+      "fileName": "26-10280a.json"
     },
-    "29-0165": {
+    {
       "file": "29-0165.json",
       "properties": 12,
       "totalFields": 14,
@@ -2107,9 +2465,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-0165-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-0165-are.pdf",
+      "name": "29-0165",
+      "fileName": "29-0165.json"
     },
-    "26-1859": {
+    {
       "file": "26-1859.json",
       "properties": 7,
       "totalFields": 14,
@@ -2118,9 +2478,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-1859-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-1859-are.pdf",
+      "name": "26-1859",
+      "fileName": "26-1859.json"
     },
-    "29-0563": {
+    {
       "file": "29-0563.json",
       "properties": 10,
       "totalFields": 23,
@@ -2130,9 +2492,11 @@
       "pageCount": 1,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-0563-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "29-0563",
+      "fileName": "29-0563.json"
     },
-    "26-8731b": {
+    {
       "file": "26-8731b.json",
       "properties": 12,
       "totalFields": 12,
@@ -2141,9 +2505,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8731b-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8731b-are.pdf",
+      "name": "26-8731b",
+      "fileName": "26-8731b.json"
     },
-    "22-10216": {
+    {
       "file": "22-10216.json",
       "properties": 11,
       "totalFields": 11,
@@ -2152,9 +2518,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-10216-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-10216-are.pdf",
+      "name": "22-10216",
+      "fileName": "22-10216.json"
     },
-    "22-1919": {
+    {
       "file": "22-1919.json",
       "properties": 11,
       "totalFields": 11,
@@ -2163,9 +2531,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-1919-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-1919-are.pdf",
+      "name": "22-1919",
+      "fileName": "22-1919.json"
     },
-    "26-0551": {
+    {
       "file": "26-0551.json",
       "properties": 9,
       "totalFields": 10,
@@ -2174,9 +2544,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-0551-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-0551-are.pdf",
+      "name": "26-0551",
+      "fileName": "26-0551.json"
     },
-    "26-0967": {
+    {
       "file": "26-0967.json",
       "properties": 9,
       "totalFields": 9,
@@ -2185,9 +2557,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-0967-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-0967-are.pdf",
+      "name": "26-0967",
+      "fileName": "26-0967.json"
     },
-    "22-1999c": {
+    {
       "file": "22-1999c.json",
       "properties": 9,
       "totalFields": 9,
@@ -2196,9 +2570,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-1999c-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-1999c-are.pdf",
+      "name": "22-1999c",
+      "fileName": "22-1999c.json"
     },
-    "29-8485": {
+    {
       "file": "29-8485.json",
       "properties": 9,
       "totalFields": 19,
@@ -2208,9 +2584,11 @@
       "pageCount": 1,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-8485-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "29-8485",
+      "fileName": "29-8485.json"
     },
-    "29-8485a": {
+    {
       "file": "29-8485a.json",
       "properties": 9,
       "totalFields": 19,
@@ -2220,9 +2598,11 @@
       "pageCount": 1,
       "status": "digitized",
       "formUrl": "https://www.vba.va.gov/pubs/forms/vba-29-8485a-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.093Z"
+      "redigitizedAt": "2026-03-30T20:39:38.093Z",
+      "name": "29-8485a",
+      "fileName": "29-8485a.json"
     },
-    "26-6807a": {
+    {
       "file": "26-6807a.json",
       "properties": 6,
       "totalFields": 7,
@@ -2231,9 +2611,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6807a-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-6807a-are.pdf",
+      "name": "26-6807a",
+      "fileName": "26-6807a.json"
     },
-    "21-651": {
+    {
       "file": "21-651.json",
       "properties": 7,
       "totalFields": 7,
@@ -2242,9 +2624,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-651-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-651-are.pdf",
+      "name": "21-651",
+      "fileName": "21-651.json"
     },
-    "26-0967a": {
+    {
       "file": "26-0967a.json",
       "properties": 6,
       "totalFields": 6,
@@ -2253,9 +2637,11 @@
       "needsReviewCount": 0,
       "pageCount": 6,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-0967a-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-0967a-are.pdf",
+      "name": "26-0967a",
+      "fileName": "26-0967a.json"
     },
-    "22-0993": {
+    {
       "file": "22-0993.json",
       "properties": 3,
       "totalFields": 5,
@@ -2264,9 +2650,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-0993-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-22-0993-are.pdf",
+      "name": "22-0993",
+      "fileName": "22-0993.json"
     },
-    "26-8106": {
+    {
       "file": "26-8106.json",
       "properties": 4,
       "totalFields": 4,
@@ -2275,9 +2663,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8106-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-8106-are.pdf",
+      "name": "26-8106",
+      "fileName": "26-8106.json"
     },
-    "28-0588": {
+    {
       "file": "28-0588.json",
       "properties": 4,
       "totalFields": 4,
@@ -2286,9 +2676,11 @@
       "needsReviewCount": 0,
       "pageCount": 2,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-28-0588-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-28-0588-are.pdf",
+      "name": "28-0588",
+      "fileName": "28-0588.json"
     },
-    "26-0503": {
+    {
       "file": "26-0503.json",
       "properties": 2,
       "totalFields": 2,
@@ -2297,9 +2689,11 @@
       "needsReviewCount": 0,
       "pageCount": 1,
       "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-0503-are.pdf"
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-26-0503-are.pdf",
+      "name": "26-0503",
+      "fileName": "26-0503.json"
     }
-  },
+  ],
   "summary": {
     "totalFields": 17557,
     "totalComposed": 10682,

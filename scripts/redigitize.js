@@ -574,14 +574,8 @@ async function main() {
             return f;
         });
 
-        if (Array.isArray(index.forms)) {
-            index.forms = updatedForms;
-        } else {
-            // Rebuild object
-            const obj = {};
-            updatedForms.forEach(f => { obj[f.name || f.file?.replace('.json', '')] = f; });
-            index.forms = obj;
-        }
+        // Always save as array (frontend requires array format)
+        index.forms = updatedForms;
 
         fs.writeFileSync(indexPath, JSON.stringify(index, null, 2));
         console.log(`\n  Updated ${indexPath}`);
