@@ -1187,6 +1187,40 @@ function disambiguateLabel(label, labelCounts, labelSeen) {
     return label;
 }
 
+// ─── Detect redundant "combined name" fields like "veteranSNameFirstMiddleInitialLast" ───
+// These duplicate individual first/middle/last fields and should be suppressed.
+function isRedundantCombinedName(fieldId, allFieldIds) {
+    // Match patterns like: veteranSNameFirstMiddleInitialLast, veteranServicememberSNameFirstMiddleInitialLast
+    if (!/name.*first.*last|first.*middle.*last/i.test(fieldId)) return false;
+    // Check if there are individual name parts for the same entity in this section
+    const prefix = fieldId.replace(/s?name.*$/i, '').toLowerCase();
+    const hasFirst = allFieldIds.some(k => {
+        const kl = k.toLowerCase();
+        return kl !== fieldId.toLowerCase() && (kl.includes('firstname') || kl.includes('first_name'))
+            && (prefix === '' || kl.startsWith(prefix));
+    });
+    const hasLast = allFieldIds.some(k => {
+        const kl = k.toLowerCase();
+        return kl !== fieldId.toLowerCase() && (kl.includes('lastname') || kl.includes('last_name') || kl.includes('lastna'))
+            && (prefix === '' || kl.startsWith(prefix));
+    });
+    return hasFirst && hasLast;
+}
+
+// ─── Heuristic required: mark common VA form fields as required when schema doesn't specify ───
+function inferRequired(fieldId, requiredList, vaField) {
+    // If schema already marks it, use that
+    if (requiredList.has(fieldId) || vaField?.required) return true;
+    // Heuristic: these key patterns are almost always required on VA forms
+    const k = fieldId.toLowerCase();
+    if (/^(veteran|claimant|applicant).*first.*name$/i.test(fieldId)) return true;
+    if (/^(veteran|claimant|applicant).*last.*name$/i.test(fieldId)) return true;
+    if (/fullname|full_name/i.test(fieldId) && /veteran|claimant|applicant/i.test(fieldId)) return true;
+    if (/socialsecurity|ssn/i.test(fieldId)) return true;
+    if (/dateofbirth|dob/i.test(fieldId)) return true;
+    return false;
+}
+
 function renderNameGroupHtml(grp, fieldEntries) {
     const firstKey = fieldEntries[grp.firstIdx][0];
     const lastKey = fieldEntries[grp.lastIdx][0];
@@ -1208,6 +1242,7 @@ function renderNameGroupHtml(grp, fieldEntries) {
 }
 
 function renderSectionStep(schema, section) {
+    resetSigCounter();
     const props = schema.properties || {};
     const requiredList = new Set(schema.required || []);
     const defs = schema.definitions || {};
@@ -1256,11 +1291,21 @@ function renderSectionStep(schema, section) {
     if (section.note) {
         html += `<div class="va-alert va-alert--warning"><p>${esc(section.note)}</p></div>`;
     }
+    // Collect all field IDs in this section for redundancy detection
+    const sectionFieldIds = [];
+    if (section.rows) {
+        for (const row of section.rows) {
+            for (const col of row.columns) sectionFieldIds.push(col.fieldId);
+        }
+    }
     if (section.rows) {
         for (const row of section.rows) {
             for (const col of row.columns) {
                 let fieldDef = props[col.fieldId];
                 if (!fieldDef) continue;
+
+                // Skip redundant combined name fields (e.g. "veteranSNameFirstMiddleInitialLast")
+                if (isRedundantCombinedName(col.fieldId, sectionFieldIds)) continue;
 
                 // Handle oneOf wrappers (e.g. claimantInformation with oneOf: [null, {object}])
                 if (fieldDef.oneOf) {
@@ -1323,7 +1368,7 @@ function renderSectionStep(schema, section) {
                     const vaField = fieldDef['x-va-field'] || {};
                     let label = vaField.label || humanize(col.fieldId);
                     label = disambiguateLabel(label, secLabelCounts, secLabelSeen);
-                    const isRequired = requiredList.has(col.fieldId) || vaField.required;
+                    const isRequired = inferRequired(col.fieldId, requiredList, vaField);
                     html += '<div class="va-form-row">';
                     html += `<div class="col-${col.width}">`;
                     html += renderVAField(col.fieldId, fieldDef, { ...vaField, label }, isRequired);
@@ -1337,6 +1382,7 @@ function renderSectionStep(schema, section) {
 }
 
 function renderLegacyStep(schema, step) {
+    resetSigCounter();
     step = step || {};
     const props = schema.properties || {};
     const requiredList = new Set(schema.required || []);
@@ -1370,6 +1416,7 @@ function renderLegacyStep(schema, step) {
     const labelCounts = buildLabelCounts(fieldEntries);
     const labelSeen = {};
     const { nameGroups, nameGroupConsumed } = detectNameGroups(fieldEntries);
+    const allLegacyKeys = fieldEntries.map(e => e[0]);
 
     // ─── Detect repeated field groups and render as tables ───
     // Parse field keys to find numbered groups: "date1","from1","amount1","date2","from2","amount2"...
@@ -1472,11 +1519,14 @@ function renderLegacyStep(schema, step) {
             }
         }
 
+        // Skip redundant combined name fields
+        if (isRedundantCombinedName(key, allLegacyKeys)) { i++; continue; }
+
         // Regular field — render normally
         const vaField = def?.['x-va-field'] || {};
         let label = vaField.label || humanize(key);
         label = disambiguateLabel(label, labelCounts, labelSeen);
-        const isRequired = requiredList.has(key);
+        const isRequired = inferRequired(key, requiredList, vaField);
         html += renderVAField(key, def, { ...vaField, label }, isRequired);
         i++;
     }
@@ -1686,12 +1736,22 @@ function navigateToStep(stepIndex) {
 }
 
 // ─── Render a single field ───
+// Track signature field count per render pass for progressive labeling
+let _sigFieldCounter = 0;
+function resetSigCounter() { _sigFieldCounter = 0; }
+const _sigLabels = ["Veteran's Signature", "Witness/Representative Signature", "Provider Signature"];
+
 function renderVAField(fieldId, def, vaField, isRequired) {
     if (!def) return '';
-    const label = (vaField.label ? stripPdfMetadata(vaField.label) : '') || humanize(fieldId);
+    let label = (vaField.label ? stripPdfMetadata(vaField.label) : '') || humanize(fieldId);
     let widget = vaField.widget || guessWidget(fieldId, def);
     // Override widget for signature fields that were mis-typed as "text" in the schema
     if (widget === 'text' && /^signature/i.test(fieldId) && !/design|assign/i.test(fieldId)) widget = 'signature';
+    // Improve generic "Signature Field" labels with contextual names
+    if (widget === 'signature' && /^signature\s*field/i.test(label)) {
+        label = _sigLabels[_sigFieldCounter] || ('Signature ' + (_sigFieldCounter + 1));
+        _sigFieldCounter++;
+    }
     const reqMark = isRequired ? '<span class="required-mark">(*Required)</span>' : '';
     const hintId = vaField.note ? 'hint_' + fieldId : '';
     const hintHtml = vaField.note ? '<div class="va-field-hint" id="' + hintId + '">' + esc(vaField.note) + '</div>' : '';
