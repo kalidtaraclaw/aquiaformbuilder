@@ -21,7 +21,7 @@
     "nameinstrument": {
       "type": "string",
       "x-va-field": {
-        "label": "Nameinstrument",
+        "label": "Name Instrument",
         "widget": "text"
       }
     },
@@ -35,7 +35,7 @@
     "namerdcommittee": {
       "type": "string",
       "x-va-field": {
-        "label": "Namerdcommittee",
+        "label": "Name RD Committee",
         "widget": "text"
       }
     },
@@ -63,7 +63,7 @@
     "datevamcnotified": {
       "type": "string",
       "x-va-field": {
-        "label": "Datevamcnotified",
+        "label": "Date VAMC Notified",
         "widget": "text"
       }
     },
@@ -112,7 +112,7 @@
     "verifyinitials": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Verifyinitials",
+        "label": "Verify Initials",
         "widget": "checkbox"
       }
     },
@@ -226,7 +226,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Date Vamc Notified of Action",
+        "label": "Date VAMC Notified of Action",
         "widget": "date"
       }
     },
@@ -284,6 +284,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-31T00:39:58.640646+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:45:40.677040+00:00"
   }
 }

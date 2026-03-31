@@ -7,7 +7,7 @@
     "maritalstatus1": {
       "type": "string",
       "x-va-field": {
-        "label": "Maritalstatus",
+        "label": "Marital Status",
         "widget": "text"
       }
     },
@@ -49,7 +49,7 @@
     "maritalstatus2": {
       "type": "string",
       "x-va-field": {
-        "label": "Maritalstatus",
+        "label": "Marital Status",
         "widget": "text"
       }
     },
@@ -70,7 +70,7 @@
     "maritalstatus3": {
       "type": "string",
       "x-va-field": {
-        "label": "Maritalstatus",
+        "label": "Marital Status",
         "widget": "text"
       }
     },
@@ -91,7 +91,7 @@
     "maritalstatus4": {
       "type": "string",
       "x-va-field": {
-        "label": "Maritalstatus",
+        "label": "Marital Status",
         "widget": "text"
       }
     },
@@ -112,7 +112,7 @@
     "maritalstatus5": {
       "type": "string",
       "x-va-field": {
-        "label": "Maritalstatus",
+        "label": "Marital Status",
         "widget": "text"
       }
     },
@@ -133,7 +133,7 @@
     "maritalstatus6": {
       "type": "string",
       "x-va-field": {
-        "label": "Maritalstatus",
+        "label": "Marital Status",
         "widget": "text"
       }
     },
@@ -377,6 +377,6 @@
       "acroform",
       "acroform+text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-31T00:39:59.191447+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:45:41.256986+00:00"
   }
 }

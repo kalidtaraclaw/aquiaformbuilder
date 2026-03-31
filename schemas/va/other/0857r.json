@@ -35,7 +35,7 @@
     "dmoname": {
       "type": "string",
       "x-va-field": {
-        "label": "Dmoname",
+        "label": "DMO Name",
         "widget": "text"
       }
     },
@@ -126,7 +126,7 @@
     "dmosignature": {
       "type": "string",
       "x-va-field": {
-        "label": "Dmosignature",
+        "label": "DMO Signature",
         "widget": "text"
       }
     },
@@ -154,7 +154,7 @@
     "officeDepartment5DmoName6RacName": {
       "type": "string",
       "x-va-field": {
-        "label": "Office Department 5 Dmo Name 6 Rac Name",
+        "label": "Office Department 5 DMO Name 6 Rac Name",
         "widget": "text"
       }
     },
@@ -169,7 +169,7 @@
     "askTheEmployeeAndDmoTheFollowing": {
       "type": "string",
       "x-va-field": {
-        "label": "Ask the Employee and Dmo the Following",
+        "label": "Ask the Employee and DMO the Following",
         "widget": "text"
       }
     },
@@ -247,6 +247,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-31T00:39:58.376151+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:45:40.399426+00:00"
   }
 }

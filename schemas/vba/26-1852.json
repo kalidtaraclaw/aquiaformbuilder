@@ -28,7 +28,7 @@
     "footingdrains": {
       "type": "string",
       "x-va-field": {
-        "label": "Footingdrains",
+        "label": "Footing Drains",
         "widget": "text"
       }
     },
@@ -42,7 +42,7 @@
     "foundationvents": {
       "type": "string",
       "x-va-field": {
-        "label": "Foundationvents",
+        "label": "Foundation Vents",
         "widget": "text"
       }
     },
@@ -91,7 +91,7 @@
     "waterheater": {
       "type": "string",
       "x-va-field": {
-        "label": "Waterheater",
+        "label": "Water Heater",
         "widget": "text"
       }
     },
@@ -119,7 +119,7 @@
     "specialfoundations": {
       "type": "string",
       "x-va-field": {
-        "label": "Specialfoundations",
+        "label": "Special Foundations",
         "widget": "text"
       }
     },
@@ -133,14 +133,14 @@
     "fireplacefacing": {
       "type": "string",
       "x-va-field": {
-        "label": "Fireplacefacing",
+        "label": "Fireplace Facing",
         "widget": "text"
       }
     },
     "fluelining": {
       "type": "string",
       "x-va-field": {
-        "label": "Fluelining",
+        "label": "Flue Lining",
         "widget": "text"
       }
     },
@@ -266,21 +266,21 @@
     "woodframe": {
       "type": "string",
       "x-va-field": {
-        "label": "Woodframe",
+        "label": "Wood Frame",
         "widget": "text"
       }
     },
     "joistswoodgradeandspecies": {
       "type": "string",
       "x-va-field": {
-        "label": "Joistswoodgradeandspecies",
+        "label": "Joists Wood Grade and Species",
         "widget": "text"
       }
     },
     "materialgradeandspecies": {
       "type": "string",
       "x-va-field": {
-        "label": "Materialgradeandspecies",
+        "label": "Material Grade and Species",
         "widget": "text"
       }
     },
@@ -301,7 +301,7 @@
     "sheathingwoodgradeandspecies": {
       "type": "string",
       "x-va-field": {
-        "label": "Sheathingwoodgradeandspecies",
+        "label": "Sheathing Wood Grade and Species",
         "widget": "text"
       }
     },
@@ -329,7 +329,7 @@
     "flashingmaterial": {
       "type": "string",
       "x-va-field": {
-        "label": "Flashingmaterial",
+        "label": "Flashing Material",
         "widget": "text"
       }
     },
@@ -434,14 +434,14 @@
     "masonryveneer": {
       "type": "string",
       "x-va-field": {
-        "label": "Masonryveneer",
+        "label": "Masonry Veneer",
         "widget": "text"
       }
     },
     "backupmaterial": {
       "type": "string",
       "x-va-field": {
-        "label": "Backupmaterial",
+        "label": "Backup Material",
         "widget": "text"
       }
     },
@@ -518,7 +518,7 @@
     "coatsof": {
       "type": "string",
       "x-va-field": {
-        "label": "Coatsof",
+        "label": "Coats of",
         "widget": "text"
       }
     },
@@ -532,21 +532,21 @@
     "totalwallthickness": {
       "type": "string",
       "x-va-field": {
-        "label": "Totalwallthickness",
+        "label": "Total Wall Thickness",
         "widget": "text"
       }
     },
     "facingthickness": {
       "type": "string",
       "x-va-field": {
-        "label": "Facingthickness",
+        "label": "Facing Thickness",
         "widget": "text"
       }
     },
     "facingmaterial": {
       "type": "string",
       "x-va-field": {
-        "label": "Facingmaterial",
+        "label": "Facing Material",
         "widget": "text"
       }
     },
@@ -574,7 +574,7 @@
     "baseflashing": {
       "type": "string",
       "x-va-field": {
-        "label": "Baseflashing",
+        "label": "Base Flashing",
         "widget": "text"
       }
     },
@@ -595,7 +595,7 @@
     "buildingpaper": {
       "type": "string",
       "x-va-field": {
-        "label": "Buildingpaper",
+        "label": "Building Paper",
         "widget": "text"
       }
     },
@@ -679,21 +679,21 @@
     "weightorthickness": {
       "type": "string",
       "x-va-field": {
-        "label": "Weightorthickness",
+        "label": "Weight or Thickness",
         "widget": "text"
       }
     },
     "numberofpiles": {
       "type": "string",
       "x-va-field": {
-        "label": "Numberofpiles",
+        "label": "Number of Piles",
         "widget": "text"
       }
     },
     "gageorweight": {
       "type": "string",
       "x-va-field": {
-        "label": "Gageorweight",
+        "label": "Gage or Weight",
         "widget": "text"
       }
     },
@@ -847,7 +847,7 @@
     "framematerial": {
       "type": "string",
       "x-va-field": {
-        "label": "Framematerial",
+        "label": "Frame Material",
         "widget": "text"
       }
     },
@@ -868,7 +868,7 @@
     "atticlouvers": {
       "type": "string",
       "x-va-field": {
-        "label": "Atticlouvers",
+        "label": "Attic Louvers",
         "widget": "text"
       }
     },
@@ -889,49 +889,49 @@
     "ceilingsmaterial": {
       "type": "string",
       "x-va-field": {
-        "label": "Ceilingsmaterial",
+        "label": "Ceilings Material",
         "widget": "text"
       }
     },
     "doorstype": {
       "type": "string",
       "x-va-field": {
-        "label": "Doorstype",
+        "label": "Doors Type",
         "widget": "text"
       }
     },
     "windowstype": {
       "type": "string",
       "x-va-field": {
-        "label": "Windowstype",
+        "label": "Windows Type",
         "widget": "text"
       }
     },
     "basementwindowstype": {
       "type": "string",
       "x-va-field": {
-        "label": "Basementwindowstype",
+        "label": "Basement Windows Type",
         "widget": "text"
       }
     },
     "specialwindows": {
       "type": "string",
       "x-va-field": {
-        "label": "Specialwindows",
+        "label": "Special Windows",
         "widget": "text"
       }
     },
     "glassgrade": {
       "type": "string",
       "x-va-field": {
-        "label": "Glassgrade",
+        "label": "Glass Grade",
         "widget": "text"
       }
     },
     "trimtype": {
       "type": "string",
       "x-va-field": {
-        "label": "Trimtype",
+        "label": "Trim Type",
         "widget": "text"
       }
     },
@@ -945,28 +945,28 @@
     "screenclothmaterial": {
       "type": "string",
       "x-va-field": {
-        "label": "Screenclothmaterial",
+        "label": "Screen Cloth Material",
         "widget": "text"
       }
     },
     "doortrimtype": {
       "type": "string",
       "x-va-field": {
-        "label": "Doortrimtype",
+        "label": "Door Trim Type",
         "widget": "text"
       }
     },
     "finishdoors": {
       "type": "string",
       "x-va-field": {
-        "label": "Finishdoors",
+        "label": "Finish Doors",
         "widget": "text"
       }
     },
     "othertrim": {
       "type": "string",
       "x-va-field": {
-        "label": "Othertrim",
+        "label": "Other Trim",
         "widget": "text"
       }
     },
@@ -980,14 +980,14 @@
     "othercabinets": {
       "type": "string",
       "x-va-field": {
-        "label": "Othercabinets",
+        "label": "Other Cabinets",
         "widget": "text"
       }
     },
     "gradeandspecies": {
       "type": "string",
       "x-va-field": {
-        "label": "Gradeandspecies",
+        "label": "Grade and Species",
         "widget": "text"
       }
     },
@@ -1001,14 +1001,14 @@
     "numbercoats": {
       "type": "string",
       "x-va-field": {
-        "label": "Numbercoats",
+        "label": "Number Coats",
         "widget": "text"
       }
     },
     "linealfeetofshelves": {
       "type": "string",
       "x-va-field": {
-        "label": "Linealfeetofshelves",
+        "label": "Lineal Feet of Shelves",
         "widget": "text"
       }
     },
@@ -1022,7 +1022,7 @@
     "finishofcabinets": {
       "type": "string",
       "x-va-field": {
-        "label": "Finishofcabinets",
+        "label": "Finish of Cabinets",
         "widget": "text"
       }
     },
@@ -1043,7 +1043,7 @@
     "shelfwidth": {
       "type": "string",
       "x-va-field": {
-        "label": "Shelfwidth",
+        "label": "Shelf Width",
         "widget": "text"
       }
     },
@@ -1064,7 +1064,7 @@
     "screensnumber": {
       "type": "string",
       "x-va-field": {
-        "label": "Screensnumber",
+        "label": "Screens Number",
         "widget": "text"
       }
     },
@@ -1085,14 +1085,14 @@
     "sashthickness": {
       "type": "string",
       "x-va-field": {
-        "label": "Sashthickness",
+        "label": "Sash Thickness",
         "widget": "text"
       }
     },
     "headflashing": {
       "type": "string",
       "x-va-field": {
-        "label": "Headflashing",
+        "label": "Head Flashing",
         "widget": "text"
       }
     },
@@ -1113,21 +1113,21 @@
     "jointtreatment": {
       "type": "string",
       "x-va-field": {
-        "label": "Jointtreatment",
+        "label": "Joint Treatment",
         "widget": "text"
       }
     },
     "guttersmaterial": {
       "type": "string",
       "x-va-field": {
-        "label": "Guttersmaterial",
+        "label": "Gutters Material",
         "widget": "text"
       }
     },
     "downspoutsmaterial": {
       "type": "string",
       "x-va-field": {
-        "label": "Downspoutsmaterial",
+        "label": "Downspouts Material",
         "widget": "text"
       }
     },
@@ -1169,14 +1169,14 @@
     "connectedto": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Connectedto",
+        "label": "Connected to",
         "widget": "checkbox"
       }
     },
     "plastercoats": {
       "type": "string",
       "x-va-field": {
-        "label": "Plastercoats",
+        "label": "Plaster Coats",
         "widget": "text"
       }
     },
@@ -1281,7 +1281,7 @@
     "heightinShowers": {
       "type": "string",
       "x-va-field": {
-        "label": "Heightin Showers",
+        "label": "Height in Showers",
         "widget": "text"
       }
     },
@@ -1295,7 +1295,7 @@
     "makeandmodel": {
       "type": "string",
       "x-va-field": {
-        "label": "Makeandmodel",
+        "label": "Make and Model",
         "widget": "text"
       }
     },
@@ -1323,14 +1323,14 @@
     "housedrain": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Housedrain",
+        "label": "House Drain",
         "widget": "checkbox"
       }
     },
     "housesewer": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Housesewer",
+        "label": "House Sewer",
         "widget": "checkbox"
       }
     },
@@ -1358,7 +1358,7 @@
     "househeating": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Househeating",
+        "label": "House Heating",
         "widget": "checkbox"
       }
     },
@@ -1379,7 +1379,7 @@
     "dischargesinto": {
       "type": "string",
       "x-va-field": {
-        "label": "Dischargesinto",
+        "label": "Discharges Into",
         "widget": "text"
       }
     },
@@ -1393,7 +1393,7 @@
     "heatingcapacity": {
       "type": "string",
       "x-va-field": {
-        "label": "Heatingcapacity",
+        "label": "Heating Capacity",
         "widget": "text"
       }
     },
@@ -1407,7 +1407,7 @@
     "drainsConnectedto": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Drains Connectedto",
+        "label": "Drains Connected to",
         "widget": "checkbox"
       }
     },
@@ -1918,7 +1918,7 @@
     "panelcoilmaterial": {
       "type": "string",
       "x-va-field": {
-        "label": "Panelcoilmaterial",
+        "label": "Panel Coil Material",
         "widget": "text"
       }
     },
@@ -2100,7 +2100,7 @@
     "drivewaywidth": {
       "type": "string",
       "x-va-field": {
-        "label": "Drivewaywidth",
+        "label": "Driveway Width",
         "widget": "text"
       }
     },
@@ -2142,7 +2142,7 @@
     "evergreentrees": {
       "type": "string",
       "x-va-field": {
-        "label": "Evergreentrees",
+        "label": "Evergreen Trees",
         "widget": "text"
       }
     },
@@ -2163,7 +2163,7 @@
     "evergreenshrubs": {
       "type": "string",
       "x-va-field": {
-        "label": "Evergreenshrubs",
+        "label": "Evergreen Shrubs",
         "widget": "text"
       }
     },
@@ -2191,14 +2191,14 @@
     "rearyard": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Rearyard",
+        "label": "Rear Yard",
         "widget": "checkbox"
       }
     },
     "rearyardto": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Rearyardto",
+        "label": "Rear Yard to",
         "widget": "checkbox"
       }
     },
@@ -2226,7 +2226,7 @@
     "shadetreesdeciduous": {
       "type": "string",
       "x-va-field": {
-        "label": "Shadetreesdeciduous",
+        "label": "Shade Trees Deciduous",
         "widget": "text"
       }
     },
@@ -2261,14 +2261,14 @@
     "cheekwalls": {
       "type": "string",
       "x-va-field": {
-        "label": "Cheekwalls",
+        "label": "Cheek Walls",
         "widget": "text"
       }
     },
     "frontwalkwidth": {
       "type": "string",
       "x-va-field": {
-        "label": "Frontwalkwidth",
+        "label": "Front Walk Width",
         "widget": "text"
       }
     },
@@ -2282,7 +2282,7 @@
     "basematerial": {
       "type": "string",
       "x-va-field": {
-        "label": "Basematerial",
+        "label": "Base Material",
         "widget": "text"
       }
     },
@@ -2606,6 +2606,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-31T00:39:59.608217+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:45:41.691218+00:00"
   }
 }

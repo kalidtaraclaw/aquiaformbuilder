@@ -357,7 +357,8 @@ def humanize_label(name):
     # Common lowercase words (not at start)
     lowered = {'of', 'the', 'and', 'or', 'in', 'to', 'for', 'a', 'an', 'by', 'on', 'at', 'is', 'no'}
     # Acronyms to always uppercase
-    acronyms = {'va', 'ssn', 'zip', 'id', 'us', 'dob', 'pow', 'ptsd', 'omb', 'po', 'mi', 'dic', 'ein'}
+    acronyms = {'va', 'ssn', 'zip', 'id', 'us', 'dob', 'pow', 'ptsd', 'omb', 'po', 'mi', 'dic', 'ein',
+                 'dmo', 'vamc', 'visn', 'rd'}
 
     result = []
     for i, w in enumerate(words):
@@ -404,6 +405,13 @@ DONT_SPLIT = {
     'charges', 'savings', 'witness', 'offices', 'medical',
     'receipt', 'benefit', 'related', 'company', 'release',
     'defined', 'arrival', 'monthly', 'expenditures', 'expenditure',
+    # Construction terms that should NOT be split
+    'insulation', 'foundation', 'foundations', 'reinforcing', 'prefabricated',
+    'miscellaneous', 'accessories', 'decorating', 'excavation', 'countertop',
+    'waterproofing', 'underlayment', 'conditioning', 'galvanized', 'aluminum',
+    'electrical', 'sheathing', 'fireplace', 'fireplaces', 'downspouts',
+    'bridging', 'doorbell', 'plumbing', 'planting', 'capacity',
+    'shingles', 'exposure', 'membrane', 'diagonal', 'observer',
 }
 
 # VA form term dictionary for splitting concatenated labels.
@@ -499,6 +507,50 @@ VA_WORD_LIST = sorted(set([
     'male', 'female', 'minor', 'adult',
     'employed', 'unemployed', 'retired',
     'self', 'other', 'same', 'different',
+    # Construction/building terms (VA Form 26-1852 and similar)
+    'footing', 'footings', 'drains', 'drain', 'foundation', 'foundations',
+    'vents', 'vent', 'water', 'heater', 'proofing', 'termite',
+    'fireplace', 'fireplaces', 'facing', 'lining', 'flue', 'chimney', 'chimneys',
+    'wood', 'frame', 'joists', 'joist', 'grade', 'species',
+    'material', 'materials', 'thickness', 'width', 'height', 'length', 'size', 'weight',
+    'sash', 'screen', 'screens', 'cloth', 'shutters', 'shutter',
+    'door', 'doors', 'window', 'windows', 'sill', 'sills', 'trim',
+    'roof', 'roofing', 'shingles', 'shingle', 'flashing', 'gutter', 'gutters',
+    'downspouts', 'downspout', 'membrane', 'paper', 'building',
+    'masonry', 'veneer', 'brick', 'concrete', 'mortar', 'stucco',
+    'plaster', 'coats', 'coat', 'joint', 'treatment',
+    'insulation', 'sheathing', 'diagonal', 'bridging',
+    'plumbing', 'sewer', 'house', 'supply', 'return',
+    'heating', 'capacity', 'duct', 'panel', 'coil',
+    'electric', 'electrical', 'circuits', 'circuit', 'wiring',
+    'cabinet', 'cabinets', 'counter', 'countertop', 'shelf', 'shelves',
+    'driveway', 'walk', 'front', 'rear', 'yard', 'side',
+    'evergreen', 'shrubs', 'shrub', 'trees', 'tree', 'deciduous',
+    'shade', 'planting', 'fence', 'fencing', 'wall', 'walls',
+    'piles', 'pile', 'pier', 'column', 'columns', 'girder', 'girders',
+    'excavation', 'grading', 'fill', 'backfill',
+    'paint', 'painting', 'finish', 'decorating', 'stain', 'varnish',
+    'hardware', 'accessories', 'miscellaneous', 'special',
+    'attic', 'louvers', 'louver', 'backup', 'cheek', 'basement',
+    'head', 'lineal', 'feet', 'foot', 'number', 'gage',
+    'glass', 'prefabricated', 'reinforcing', 'model',
+    'connected', 'discharges', 'into', 'exposure',
+    'stairs', 'stair', 'risers', 'riser', 'treads', 'tread', 'railings', 'railing',
+    'subfloor', 'underlayment', 'tile', 'tiles', 'ceramic', 'vinyl',
+    'ceiling', 'ceilings', 'floor', 'floors', 'bath', 'kitchen',
+    'garage', 'porch', 'deck', 'patio', 'carport',
+    'septic', 'tank', 'well', 'gas', 'oil', 'fuel',
+    'doorbell', 'outlet', 'outlets', 'switch', 'switches',
+    'copper', 'steel', 'iron', 'aluminum', 'galvanized',
+    'solar', 'central', 'air', 'conditioning',
+    'dollar', 'dollars', 'baggage', 'fees', 'fee', 'mileage', 'miles',
+    'observer', 'proxy', 'marital',
+    # Additional terms found during visual testing
+    'notify', 'notified', 'project', 'verify', 'verified',
+    'instrument', 'committee', 'initials', 'initial',
+    'dmo', 'vamc', 'visn', 'rd',
+    'signature', 'signed', 'approved', 'disapproved',
+    'justify', 'justification', 'anticipated',
 ]), key=lambda w: -len(w))  # Sort longest first for greedy matching
 
 

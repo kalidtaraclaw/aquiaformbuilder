@@ -12,7 +12,7 @@
     "fromDriverRehabilitationCenterVamc": {
       "type": "string",
       "x-va-field": {
-        "label": "From Driver Rehabilitation Center Vamc"
+        "label": "From Driver Rehabilitation Center VAMC"
       }
     },
     "forFiscalYear": {
@@ -969,6 +969,6 @@
     "generatedAt": "2026-03-28T21:04:22.879Z",
     "pageCount": 1,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-31T00:39:58.804491+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:45:40.842458+00:00"
   }
 }

@@ -749,14 +749,14 @@
     "lengthclaimant7": {
       "type": "string",
       "x-va-field": {
-        "label": "Lengthclaimant",
+        "label": "Length Claimant",
         "widget": "text"
       }
     },
     "lengthvet5": {
       "type": "string",
       "x-va-field": {
-        "label": "Lengthvet",
+        "label": "Length Veteran",
         "widget": "text"
       }
     },
@@ -854,14 +854,14 @@
     "lengthvet52": {
       "type": "string",
       "x-va-field": {
-        "label": "Lengthvet",
+        "label": "Length Veteran",
         "widget": "text"
       }
     },
     "lengthclaimant72": {
       "type": "string",
       "x-va-field": {
-        "label": "Lengthclaimant",
+        "label": "Length Claimant",
         "widget": "text"
       }
     },
@@ -1399,6 +1399,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-31T00:39:59.335263+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:45:41.395596+00:00"
   }
 }

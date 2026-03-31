@@ -168,7 +168,7 @@
     "notifyphone": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Notifyphone",
+        "label": "Notify Phone",
         "widget": "checkbox"
       }
     },
@@ -182,7 +182,7 @@
     "notifydate": {
       "type": "string",
       "x-va-field": {
-        "label": "Notifydate",
+        "label": "Notify Date",
         "widget": "text"
       }
     },
@@ -456,6 +456,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-31T00:39:58.544805+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:45:40.576010+00:00"
   }
 }
