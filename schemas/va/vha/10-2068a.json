@@ -141,7 +141,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Signature of a VA Representative9Date",
+        "label": "Signature of a VA Representative 9 Date",
         "widget": "date"
       }
     },
@@ -149,7 +149,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Social Security Number_3Claim Number4Date of Death",
+        "label": "Social Security Number 3Claim Number 4 Date of Death",
         "widget": "date"
       }
     },
@@ -176,6 +176,6 @@
       "acroform",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.184041+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.668356+00:00"
   }
 }

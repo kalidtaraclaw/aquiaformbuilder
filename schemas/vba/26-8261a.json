@@ -141,7 +141,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Signature of Veteran Sign in Ink_8Date Mm Dd Yyyy",
+        "label": "Signature of Veteran Sign in Ink 8Date Mm Dd Yyyy",
         "widget": "date"
       }
     },
@@ -205,6 +205,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.220743+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.686632+00:00"
   }
 }

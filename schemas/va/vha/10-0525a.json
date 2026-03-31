@@ -90,19 +90,19 @@
     "otherHealthCareProvider3Of3": {
       "type": "string",
       "x-va-field": {
-        "label": "Other Health Care Provider3Of"
+        "label": "Other Health Care Provider 3 of"
       }
     },
     "otherHealthCareProvider2Of3": {
       "type": "string",
       "x-va-field": {
-        "label": "Other Health Care Provider2Of"
+        "label": "Other Health Care Provider 2 of"
       }
     },
     "otherHealthCareProvider1Of3": {
       "type": "string",
       "x-va-field": {
-        "label": "Other Health Care Provider1Of"
+        "label": "Other Health Care Provider 1 of"
       }
     },
     "communityHealthInformationCollaborative": {
@@ -158,6 +158,6 @@
     "generatedAt": "2026-03-28T21:35:10.970Z",
     "pageCount": 2,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T23:47:23.123658+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.601513+00:00"
   }
 }

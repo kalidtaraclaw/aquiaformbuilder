@@ -201,7 +201,7 @@
     "inTheNext30DaysIWillLoseMyHome": {
       "type": "boolean",
       "x-va-field": {
-        "label": "In the Next30Days I Will Lose My Home",
+        "label": "In the Next 30 Days I Will Lose My Home",
         "widget": "checkbox"
       }
     },
@@ -391,7 +391,7 @@
     "dateLastVaf2122Or2122aSubmittedMonth": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Last Vaf2122Or2122a Submitted Month",
+        "label": "Date Last Vaf 2122 or 2122 a Submitted Month",
         "widget": "text"
       }
     },
@@ -462,7 +462,7 @@
     "item_1": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_",
+        "label": "Item",
         "widget": "text"
       }
     },
@@ -499,14 +499,14 @@
     "note_1": {
       "type": "string",
       "x-va-field": {
-        "label": "Note_",
+        "label": "Note",
         "widget": "text"
       }
     },
     "note_2": {
       "type": "string",
       "x-va-field": {
-        "label": "Note_",
+        "label": "Note",
         "widget": "text"
       }
     },
@@ -809,6 +809,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.481557+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.969195+00:00"
   }
 }

@@ -387,7 +387,7 @@
       "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
       "maxLength": 11,
       "x-va-field": {
-        "label": "Social Security Number_999_99_",
+        "label": "Social Security Number 999 99",
         "widget": "ssn"
       }
     },
@@ -402,7 +402,7 @@
       "type": "string",
       "pattern": "^\\d{5}(-\\d{4})?$",
       "x-va-field": {
-        "label": "ZIP Code_99999_",
+        "label": "ZIP Code 99999",
         "widget": "zip"
       }
     },
@@ -504,6 +504,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.364884+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.856205+00:00"
   }
 }

@@ -70,63 +70,63 @@
     "items_1aAnd_1b": {
       "type": "string",
       "x-va-field": {
-        "label": "Items_1a And_1b",
+        "label": "Items 1a and 1b",
         "widget": "text"
       }
     },
     "items_2a_2bAnd_2c": {
       "type": "string",
       "x-va-field": {
-        "label": "Items_2a_2b And_2c",
+        "label": "Items 2a 2b and 2c",
         "widget": "text"
       }
     },
     "items_3a_3bAnd_3c": {
       "type": "string",
       "x-va-field": {
-        "label": "Items_3a_3b And_3c",
+        "label": "Items 3a 3b and 3c",
         "widget": "text"
       }
     },
     "items_4aThrough_5b": {
       "type": "string",
       "x-va-field": {
-        "label": "Items_4a Through_5b",
+        "label": "Items 4a Through 5b",
         "widget": "text"
       }
     },
     "item_6": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_",
+        "label": "Item",
         "widget": "text"
       }
     },
     "item_7a": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_7a",
+        "label": "Item 7a",
         "widget": "text"
       }
     },
     "item_7b": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_7b",
+        "label": "Item 7b",
         "widget": "text"
       }
     },
     "item_7c": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_7c",
+        "label": "Item 7c",
         "widget": "text"
       }
     },
     "item_8": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_",
+        "label": "Item",
         "widget": "text"
       }
     },
@@ -241,6 +241,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.964342+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.435155+00:00"
   }
 }

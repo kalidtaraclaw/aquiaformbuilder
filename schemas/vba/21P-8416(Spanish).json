@@ -605,7 +605,7 @@
     "firmaDeProveedorVeaPregunta_2_15FechaMmDdAaaa": {
       "type": "string",
       "x-va-field": {
-        "label": "Firma De Proveedor Vea Pregunta_2_15Fecha Mm Dd Aaaa",
+        "label": "Firma De Proveedor Vea Pregunta 2 15Fecha Mm Dd Aaaa",
         "widget": "text"
       }
     },
@@ -675,7 +675,7 @@
     "firmaDeProveedorVeaPregunta_2_16FechaMmDdAaaa": {
       "type": "string",
       "x-va-field": {
-        "label": "Firma De Proveedor Vea Pregunta_2_16Fecha Mm Dd Aaaa",
+        "label": "Firma De Proveedor Vea Pregunta 2 16Fecha Mm Dd Aaaa",
         "widget": "text"
       }
     },
@@ -700,6 +700,6 @@
       "acroform",
       "acroform+text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.914230+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.385405+00:00"
   }
 }

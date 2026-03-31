@@ -394,7 +394,7 @@
     "medicalExpensesReadParagraph_6OfTheEvrInstructions": {
       "type": "string",
       "x-va-field": {
-        "label": "Medical Expenses Read Paragraph_6Of the Evr Instructions",
+        "label": "Medical Expenses Read Paragraph 6Of the Evr Instructions",
         "widget": "text"
       }
     },
@@ -432,7 +432,7 @@
     "familyMaintenanceHardshipExpensesForTheNext_12Month": {
       "type": "string",
       "x-va-field": {
-        "label": "Family Maintenance Hardship Expenses for the Next_12Month",
+        "label": "Family Maintenance Hardship Expenses for the Next 12Month",
         "widget": "text"
       }
     },
@@ -460,6 +460,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.697447+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.171771+00:00"
   }
 }

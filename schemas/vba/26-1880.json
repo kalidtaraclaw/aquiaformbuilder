@@ -84,168 +84,168 @@
     "branchOfService11a1": {
       "type": "string",
       "x-va-field": {
-        "label": "Branch of Service11a",
+        "label": "Branch of Service 11 a",
         "widget": "text"
       }
     },
     "dateEntered11a1": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Entered11a",
+        "label": "Date Entered 11 a",
         "widget": "text"
       }
     },
     "dateSeparated11a1": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Separated11a",
+        "label": "Date Separated 11 a",
         "widget": "text"
       }
     },
     "branchOfService11a2": {
       "type": "string",
       "x-va-field": {
-        "label": "Branch of Service11a",
+        "label": "Branch of Service 11 a",
         "widget": "text"
       }
     },
     "dateEntered11a2": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Entered11a",
+        "label": "Date Entered 11 a",
         "widget": "text"
       }
     },
     "dateSeparated11a2": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Separated11a",
+        "label": "Date Separated 11 a",
         "widget": "text"
       }
     },
     "branchOfService11a3": {
       "type": "string",
       "x-va-field": {
-        "label": "Branch of Service11a",
+        "label": "Branch of Service 11 a",
         "widget": "text"
       }
     },
     "dateEntered11a3": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Entered11a",
+        "label": "Date Entered 11 a",
         "widget": "text"
       }
     },
     "dateSeparated11a3": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Separated11a",
+        "label": "Date Separated 11 a",
         "widget": "text"
       }
     },
     "branchOfService11a4": {
       "type": "string",
       "x-va-field": {
-        "label": "Branch of Service11a",
+        "label": "Branch of Service 11 a",
         "widget": "text"
       }
     },
     "dateEntered11a4": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Entered11a",
+        "label": "Date Entered 11 a",
         "widget": "text"
       }
     },
     "dateSeparated11a4": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Separated11a",
+        "label": "Date Separated 11 a",
         "widget": "text"
       }
     },
     "branchOfService11b1": {
       "type": "string",
       "x-va-field": {
-        "label": "Branch of Service11b",
+        "label": "Branch of Service 11 B",
         "widget": "text"
       }
     },
     "dateEntered11b1": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Entered11b",
+        "label": "Date Entered 11 B",
         "widget": "text"
       }
     },
     "dateSeparated11b1": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Separated11b",
+        "label": "Date Separated 11 B",
         "widget": "text"
       }
     },
     "branchOfService11b2": {
       "type": "string",
       "x-va-field": {
-        "label": "Branch of Service11b",
+        "label": "Branch of Service 11 B",
         "widget": "text"
       }
     },
     "dateEntered11b2": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Entered11b",
+        "label": "Date Entered 11 B",
         "widget": "text"
       }
     },
     "dateSeparated11b2": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Separated11b",
+        "label": "Date Separated 11 B",
         "widget": "text"
       }
     },
     "branchOfService11b3": {
       "type": "string",
       "x-va-field": {
-        "label": "Branch of Service11b",
+        "label": "Branch of Service 11 B",
         "widget": "text"
       }
     },
     "dateEntered11b3": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Entered11b",
+        "label": "Date Entered 11 B",
         "widget": "text"
       }
     },
     "dateSeparated11b3": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Separated11b",
+        "label": "Date Separated 11 B",
         "widget": "text"
       }
     },
     "branchOfService11b4": {
       "type": "string",
       "x-va-field": {
-        "label": "Branch of Service11b",
+        "label": "Branch of Service 11 B",
         "widget": "text"
       }
     },
     "dateEntered11b4": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Entered11b",
+        "label": "Date Entered 11 B",
         "widget": "text"
       }
     },
     "dateSeparated11b4": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Separated11b",
+        "label": "Date Separated 11 B",
         "widget": "text"
       }
     },
@@ -301,7 +301,7 @@
     "dateOfLoan17b": {
       "type": "string",
       "x-va-field": {
-        "label": "Date of Loan17b",
+        "label": "Date of Loan 17 B",
         "widget": "text"
       }
     },
@@ -481,7 +481,7 @@
     "item_11aActiveService": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_11a Active Service",
+        "label": "Item 11a Active Service",
         "widget": "text"
       }
     }
@@ -502,6 +502,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.147140+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.615604+00:00"
   }
 }

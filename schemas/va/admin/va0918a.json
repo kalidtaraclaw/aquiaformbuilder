@@ -168,7 +168,7 @@
     "nameAndMailingAddressOfApplicant_2Level": {
       "type": "string",
       "x-va-field": {
-        "label": "Name and Mailing Address of Applicant_2Level",
+        "label": "Name and Mailing Address of Applicant 2Level",
         "widget": "address"
       }
     },
@@ -206,7 +206,7 @@
     "iCertifyThatTheIndividualInItem_1BeganOrResumedThe": {
       "type": "string",
       "x-va-field": {
-        "label": "I Certify That the Individual in Item_1Began or Resumed the",
+        "label": "I Certify That the Individual in Item 1Began or Resumed the",
         "widget": "text"
       }
     },
@@ -250,6 +250,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:22.954390+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.429661+00:00"
   }
 }

@@ -119,35 +119,35 @@
     "yesNo6a": {
       "type": "string",
       "x-va-field": {
-        "label": "Yes No6a",
+        "label": "Yes no 6 a",
         "widget": "text"
       }
     },
     "yesNo6b1": {
       "type": "string",
       "x-va-field": {
-        "label": "Yes No6b",
+        "label": "Yes no 6 B",
         "widget": "text"
       }
     },
     "yesNo6b2": {
       "type": "string",
       "x-va-field": {
-        "label": "Yes No6b",
+        "label": "Yes no 6 B",
         "widget": "text"
       }
     },
     "yesNo6b3": {
       "type": "string",
       "x-va-field": {
-        "label": "Yes No6b",
+        "label": "Yes no 6 B",
         "widget": "text"
       }
     },
     "yesNo6c": {
       "type": "string",
       "x-va-field": {
-        "label": "Yes No6c",
+        "label": "Yes no 6 C",
         "widget": "text"
       }
     },
@@ -414,21 +414,21 @@
     "items_5aThrough_5d": {
       "type": "string",
       "x-va-field": {
-        "label": "Items_5a Through_5d",
+        "label": "Items 5a Through 5d",
         "widget": "text"
       }
     },
     "item_6": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_",
+        "label": "Item",
         "widget": "text"
       }
     },
     "item_6a": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_6a",
+        "label": "Item 6a",
         "widget": "text"
       }
     },
@@ -442,21 +442,21 @@
     "step_1": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_",
+        "label": "Step",
         "widget": "text"
       }
     },
     "step_2": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_",
+        "label": "Step",
         "widget": "text"
       }
     },
     "step_3": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_",
+        "label": "Step",
         "widget": "text"
       }
     },
@@ -491,6 +491,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.022769+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.491735+00:00"
   }
 }

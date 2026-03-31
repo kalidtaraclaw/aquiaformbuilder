@@ -574,126 +574,126 @@
     "notHispanic38b": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Not Hispanic38b",
+        "label": "Not Hispanic 38 B",
         "widget": "checkbox"
       }
     },
     "hispanic38b": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Hispanic38b",
+        "label": "Hispanic 38 B",
         "widget": "checkbox"
       }
     },
     "notHispanic37b": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Not Hispanic37b",
+        "label": "Not Hispanic 37 B",
         "widget": "checkbox"
       }
     },
     "hispanic37b": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Hispanic37b",
+        "label": "Hispanic 37 B",
         "widget": "checkbox"
       }
     },
     "white38c": {
       "type": "boolean",
       "x-va-field": {
-        "label": "White38c",
+        "label": "White 38 C",
         "widget": "checkbox"
       }
     },
     "black38c": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Black38c",
+        "label": "Black 38 C",
         "widget": "checkbox"
       }
     },
     "asian38c": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Asian38c",
+        "label": "Asian 38 C",
         "widget": "checkbox"
       }
     },
     "white37c": {
       "type": "boolean",
       "x-va-field": {
-        "label": "White37c",
+        "label": "White 37 C",
         "widget": "checkbox"
       }
     },
     "black37c": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Black37c",
+        "label": "Black 37 C",
         "widget": "checkbox"
       }
     },
     "asian37c": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Asian37c",
+        "label": "Asian 37 C",
         "widget": "checkbox"
       }
     },
     "nativeHawaiian38c": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Native Hawaiian38c",
+        "label": "Native Hawaiian 38 C",
         "widget": "checkbox"
       }
     },
     "americanIndian38c": {
       "type": "boolean",
       "x-va-field": {
-        "label": "American Indian38c",
+        "label": "American Indian 38 C",
         "widget": "checkbox"
       }
     },
     "nativeHawaiian37c": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Native Hawaiian37c",
+        "label": "Native Hawaiian 37 C",
         "widget": "checkbox"
       }
     },
     "americanIndian37c": {
       "type": "boolean",
       "x-va-field": {
-        "label": "American Indian37c",
+        "label": "American Indian 37 C",
         "widget": "checkbox"
       }
     },
     "male38d": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Male38d",
+        "label": "Male 38 D",
         "widget": "checkbox"
       }
     },
     "female38d": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Female38d",
+        "label": "Female 38 D",
         "widget": "checkbox"
       }
     },
     "male37d": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Male37d",
+        "label": "Male 37 D",
         "widget": "checkbox"
       }
     },
     "female37d": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Female37d",
+        "label": "Female 37 D",
         "widget": "checkbox"
       }
     },
@@ -756,7 +756,7 @@
     "estateInPropertyIs_38Cfr_36_4350": {
       "type": "string",
       "x-va-field": {
-        "label": "Estate in Property Is_38Cfr_36_",
+        "label": "Estate in Property is 38Cfr 36",
         "widget": "text"
       }
     },
@@ -901,7 +901,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Signature and Title of Lender Representative34Date Signed",
+        "label": "Signature and Title of Lender Representative 34 Date Signed",
         "widget": "date"
       }
     },
@@ -1001,6 +1001,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.091369+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.558864+00:00"
   }
 }

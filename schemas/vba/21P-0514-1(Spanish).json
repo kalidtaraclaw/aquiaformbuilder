@@ -154,7 +154,7 @@
     "duringThe_12MonthPeriodPrecedingThe": {
       "type": "string",
       "x-va-field": {
-        "label": "During The_12Month Period Preceding the",
+        "label": "During the 12Month Period Preceding the",
         "widget": "text"
       }
     },
@@ -382,6 +382,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.677080+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.150104+00:00"
   }
 }

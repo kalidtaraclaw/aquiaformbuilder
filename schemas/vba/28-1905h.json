@@ -208,7 +208,7 @@
     "firstDayOfLeaveMmDdYyy_11LastDayOfLeaveMmDdY": {
       "type": "string",
       "x-va-field": {
-        "label": "First Day of Leave Mm Dd Yyy_11Last Day of Leave Mm Dd Y",
+        "label": "First Day of Leave Mm Dd Yyy 11Last Day of Leave Mm Dd Y",
         "widget": "text"
       }
     },
@@ -268,7 +268,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Action Taken_19Date Claimant Notified Mm Dd Yyyy",
+        "label": "Action Taken 19Date Claimant Notified Mm Dd Yyyy",
         "widget": "date"
       }
     },
@@ -311,6 +311,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.314876+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.782818+00:00"
   }
 }

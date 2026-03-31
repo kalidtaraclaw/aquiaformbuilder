@@ -84,14 +84,14 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Datesigned11b"
+        "label": "Datesigned 11 B"
       }
     },
     "datesigned13b": {
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Datesigned13b"
+        "label": "Datesigned 13 B"
       }
     },
     "dateaccepted": {
@@ -165,13 +165,13 @@
     "no5a": {
       "type": "string",
       "x-va-field": {
-        "label": "No5a"
+        "label": "No 5 a"
       }
     },
     "yes5a": {
       "type": "string",
       "x-va-field": {
-        "label": "Yes5a"
+        "label": "Yes 5 a"
       }
     },
     "serviceserialnumber": {
@@ -183,49 +183,49 @@
     "yes6a": {
       "type": "string",
       "x-va-field": {
-        "label": "Yes6a"
+        "label": "Yes 6 a"
       }
     },
     "no6a": {
       "type": "string",
       "x-va-field": {
-        "label": "No6a"
+        "label": "No 6 a"
       }
     },
     "no6b": {
       "type": "string",
       "x-va-field": {
-        "label": "No6b"
+        "label": "No 6 B"
       }
     },
     "yes6b": {
       "type": "string",
       "x-va-field": {
-        "label": "Yes6b"
+        "label": "Yes 6 B"
       }
     },
     "no6d": {
       "type": "string",
       "x-va-field": {
-        "label": "No6d"
+        "label": "No 6 D"
       }
     },
     "yes6d": {
       "type": "string",
       "x-va-field": {
-        "label": "Yes6d"
+        "label": "Yes 6 D"
       }
     },
     "no6c": {
       "type": "string",
       "x-va-field": {
-        "label": "No6c"
+        "label": "No 6 C"
       }
     },
     "yes6c": {
       "type": "string",
       "x-va-field": {
-        "label": "Yes6c"
+        "label": "Yes 6 C"
       }
     },
     "cashoffer": {
@@ -437,6 +437,6 @@
     "needsReviewCount": 0,
     "pageCount": 2,
     "generatedAt": "2026-03-28T17:34:37.050Z",
-    "fieldNameFixedAt": "2026-03-30T23:42:27.614990+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.646647+00:00"
   }
 }

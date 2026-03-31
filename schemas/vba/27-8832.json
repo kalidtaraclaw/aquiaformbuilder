@@ -159,7 +159,7 @@
     "youAreCurrentlyOnActiveDutyWith_6MonthsOrLessRemai": {
       "type": "string",
       "x-va-field": {
-        "label": "You Are Currently on Active Duty With_6Months or Less Remai",
+        "label": "You Are Currently on Active Duty With 6Months or Less Remai",
         "widget": "text"
       }
     },
@@ -369,6 +369,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.271330+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.740099+00:00"
   }
 }

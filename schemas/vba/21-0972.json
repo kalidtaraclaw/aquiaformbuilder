@@ -181,7 +181,7 @@
     "under18YearsOfAge": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Under18Years of Age",
+        "label": "Under 18 Years of Age",
         "widget": "checkbox"
       }
     },
@@ -468,6 +468,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.553198+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.029804+00:00"
   }
 }

@@ -234,14 +234,14 @@
     "totalAmountClaimedItems24a24f": {
       "type": "string",
       "x-va-field": {
-        "label": "Total Amount Claimed Items24a24f",
+        "label": "Total Amount Claimed Items 24 A24f",
         "widget": "text"
       }
     },
     "totalAmountClaimedItems2224g": {
       "type": "string",
       "x-va-field": {
-        "label": "Total Amount Claimed Items2224g",
+        "label": "Total Amount Claimed Items 2224 G",
         "widget": "text"
       }
     },
@@ -404,7 +404,7 @@
     "authority_16FiscalSymbol": {
       "type": "string",
       "x-va-field": {
-        "label": "Authority_16Fiscal Symbol",
+        "label": "Authority 16Fiscal Symbol",
         "widget": "text"
       }
     },
@@ -432,7 +432,7 @@
     "amountClaimedAtAuthorizedMileageRate_22TotalMileage": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount Claimed at Authorized Mileage Rate_22Total Mileage",
+        "label": "Amount Claimed at Authorized Mileage Rate 22Total Mileage",
         "widget": "text"
       }
     },
@@ -525,7 +525,7 @@
     "amountDue34VoucherAuditor": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount Due34Voucher Auditor",
+        "label": "Amount Due 34 Voucher Auditor",
         "widget": "text"
       }
     },
@@ -664,6 +664,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.279325+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.747970+00:00"
   }
 }

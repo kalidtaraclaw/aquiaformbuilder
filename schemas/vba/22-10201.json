@@ -210,7 +210,7 @@
     "mySignatureInItem_14ThatIAmHave": {
       "type": "string",
       "x-va-field": {
-        "label": "My Signature in Item_14That I Am Have",
+        "label": "My Signature in Item 14That I Am Have",
         "widget": "signature"
       }
     },
@@ -319,7 +319,7 @@
       "type": "string",
       "format": "email",
       "x-va-field": {
-        "label": "Name of Training Provider19Type of Program20Email",
+        "label": "Name of Training Provider 19 Type of Program 20 Email",
         "widget": "email"
       }
     },
@@ -356,7 +356,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Average_11Hire Date Mm Dd Yyyy_12Start Date",
+        "label": "Average 11Hire Date Mm Dd Yyyy 12Start Date",
         "widget": "date"
       }
     },
@@ -400,6 +400,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.956071+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.427695+00:00"
   }
 }

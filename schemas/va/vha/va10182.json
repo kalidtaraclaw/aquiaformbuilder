@@ -272,7 +272,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "You Submit Within_90Days Following the",
+        "label": "You Submit Within 90Days Following the",
         "widget": "date"
       }
     },
@@ -286,7 +286,7 @@
     "box_10aDirectReviewByAVeteransLawJudge": {
       "type": "string",
       "x-va-field": {
-        "label": "Box_10a Direct Review by a Veteran's Law Judge",
+        "label": "Box 10a Direct Review by a Veteran's Law Judge",
         "widget": "text"
       }
     },
@@ -314,6 +314,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.399714+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.887731+00:00"
   }
 }

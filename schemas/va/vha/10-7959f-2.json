@@ -166,7 +166,7 @@
       "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
       "maxLength": 11,
       "x-va-field": {
-        "label": "Social Security Number_999_99_",
+        "label": "Social Security Number 999 99",
         "widget": "ssn"
       }
     },
@@ -195,7 +195,7 @@
     "statementOrRepresentationSee_18USC_287And_1001": {
       "type": "string",
       "x-va-field": {
-        "label": "Statement or Representation See_18USC_287And_",
+        "label": "Statement or Representation See 18USC 287And",
         "widget": "select"
       }
     },
@@ -217,7 +217,7 @@
     "chapters_1And_17RoutineUse": {
       "type": "string",
       "x-va-field": {
-        "label": "Chapters_1And_17Routine Use",
+        "label": "Chapters 1And 17Routine Use",
         "widget": "text"
       }
     },
@@ -245,6 +245,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.369114+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.859839+00:00"
   }
 }

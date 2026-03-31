@@ -84,14 +84,14 @@
     "date12b": {
       "type": "string",
       "x-va-field": {
-        "label": "Date12b",
+        "label": "Date 12 B",
         "widget": "text"
       }
     },
     "place12c": {
       "type": "string",
       "x-va-field": {
-        "label": "Place12c",
+        "label": "Place 12 C",
         "widget": "text"
       }
     },
@@ -623,6 +623,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.826513+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.279785+00:00"
   }
 }

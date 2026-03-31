@@ -798,7 +798,7 @@
     "theFacilityIsStaffed24Hours": {
       "type": "boolean",
       "x-va-field": {
-        "label": "The Facility is Staffed24Hours",
+        "label": "The Facility is Staffed 24 Hours",
         "widget": "checkbox"
       }
     },
@@ -918,7 +918,7 @@
     "submitYourClaimOnASignedAndCompleteVaForm_21p_527ez": {
       "type": "string",
       "x-va-field": {
-        "label": "Submit Your Claim on a Signed and Complete VA Form_21p_527ez",
+        "label": "Submit Your Claim on a Signed and Complete VA Form 21p 527ez",
         "widget": "text"
       }
     },
@@ -981,7 +981,7 @@
     "youAreAge_65OrOlderOrArePermanentlyAndTotallyDisab": {
       "type": "string",
       "x-va-field": {
-        "label": "You Are Age_65Or Older or Are Permanently and Totally Disab",
+        "label": "You Are Age 65Or Older or Are Permanently and Totally Disab",
         "widget": "text"
       }
     },
@@ -1226,7 +1226,7 @@
     "10b_4ProviderStartAndEnd": {
       "type": "string",
       "x-va-field": {
-        "label": "10b_4Provider Start and End",
+        "label": "10b 4Provider Start and End",
         "widget": "text"
       }
     },
@@ -1240,7 +1240,7 @@
     "10c_4ProviderStartAndEnd": {
       "type": "string",
       "x-va-field": {
-        "label": "10c_4Provider Start and End",
+        "label": "10c 4Provider Start and End",
         "widget": "text"
       }
     },
@@ -1282,7 +1282,7 @@
     "10d_4ProviderStartAndEnd": {
       "type": "string",
       "x-va-field": {
-        "label": "10d_4Provider Start and End",
+        "label": "10d 4Provider Start and End",
         "widget": "text"
       }
     },
@@ -1429,7 +1429,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Signature of Provider From Question_2_15Date Signed Mm D",
+        "label": "Signature of Provider From Question 2 15Date Signed Mm D",
         "widget": "date"
       }
     },
@@ -1530,7 +1530,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "From Question_2_16Date Signed",
+        "label": "From Question 2 16Date Signed",
         "widget": "date"
       }
     },
@@ -1671,6 +1671,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.880936+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.352087+00:00"
   }
 }

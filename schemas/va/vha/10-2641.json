@@ -42,7 +42,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Section2To Be Completed by Central Office Date Received"
+        "label": "Section 2 to Be Completed by Central Office Date Received"
       }
     },
     "dateOfAction": {
@@ -111,7 +111,7 @@
     "concurrencesSymbolLine2Of5": {
       "type": "string",
       "x-va-field": {
-        "label": "Concurrences Symbol Line2Of"
+        "label": "Concurrences Symbol Line 2 of"
       }
     },
     "remarksAndorInstructionsReasonForDisapproval": {
@@ -137,6 +137,6 @@
     "generatedAt": "2026-03-28T21:03:27.904Z",
     "pageCount": 1,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T23:47:23.224909+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.707704+00:00"
   }
 }

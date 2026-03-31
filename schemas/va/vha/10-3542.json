@@ -21,21 +21,21 @@
     "nameofpersonclaimingtravelreimbursement1a": {
       "type": "string",
       "x-va-field": {
-        "label": "Nameofpersonclaimingtravelreimbursement1a",
+        "label": "Nameofpersonclaimingtravelreimbursement 1 a",
         "widget": "text"
       }
     },
     "claimantsssn1b": {
       "type": "string",
       "x-va-field": {
-        "label": "Claimantsssn1b",
+        "label": "Claimantsssn 1 B",
         "widget": "text"
       }
     },
     "claimantsdateofbirth1c": {
       "type": "string",
       "x-va-field": {
-        "label": "Claimantsdateofbirth1c",
+        "label": "Claimantsdateofbirth 1 C",
         "widget": "text"
       }
     },
@@ -63,7 +63,7 @@
     "veterandateofbirth1c": {
       "type": "string",
       "x-va-field": {
-        "label": "Veterandateofbirth1c",
+        "label": "Veteran Date of Birth 1 C",
         "widget": "text"
       }
     },
@@ -91,7 +91,7 @@
     "other2a": {
       "type": "string",
       "x-va-field": {
-        "label": "Other2a",
+        "label": "Other 2 a",
         "widget": "text"
       }
     },
@@ -112,28 +112,28 @@
     "itemizedexpensesforreimbursement3a": {
       "type": "string",
       "x-va-field": {
-        "label": "Itemizedexpensesforreimbursement3a",
+        "label": "Itemizedexpensesforreimbursement 3 a",
         "widget": "text"
       }
     },
     "itemizedexpensesforreimbursement3b": {
       "type": "string",
       "x-va-field": {
-        "label": "Itemizedexpensesforreimbursement3b",
+        "label": "Itemizedexpensesforreimbursement 3 B",
         "widget": "text"
       }
     },
     "itemizedexpensesforreimbursement3c": {
       "type": "string",
       "x-va-field": {
-        "label": "Itemizedexpensesforreimbursement3c",
+        "label": "Itemizedexpensesforreimbursement 3 C",
         "widget": "text"
       }
     },
     "itemizedexpensesforreimbursement3d": {
       "type": "string",
       "x-va-field": {
-        "label": "Itemizedexpensesforreimbursement3d",
+        "label": "Itemizedexpensesforreimbursement 3 D",
         "widget": "text"
       }
     },
@@ -248,14 +248,14 @@
     "veteransRatedByVa_30OrMoreServiceConnectedForTrave": {
       "type": "string",
       "x-va-field": {
-        "label": "Veterans Rated by Va_30Or More Service Connected for Trave",
+        "label": "Veterans Rated by VA 30Or More Service Connected for Trave",
         "widget": "text"
       }
     },
     "veteransRatedByVaLessThan_30ForTravelRelatingToTh": {
       "type": "string",
       "x-va-field": {
-        "label": "Veterans Rated by VA Less Than_30For Travel Relating to Th",
+        "label": "Veterans Rated by VA Less Than 30For Travel Relating to Th",
         "widget": "text"
       }
     },
@@ -388,7 +388,7 @@
     "forAssistanceInCompletingTheFormCall_1_877_222Vets": {
       "type": "string",
       "x-va-field": {
-        "label": "For Assistance in Completing the Form Call_1_877_222Vets",
+        "label": "For Assistance in Completing the Form Call 1 877 222Vets",
         "widget": "text"
       }
     }
@@ -409,6 +409,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.294353+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.783348+00:00"
   }
 }

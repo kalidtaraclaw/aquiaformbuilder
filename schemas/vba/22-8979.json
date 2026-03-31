@@ -352,35 +352,35 @@
     "step_1": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_",
+        "label": "Step",
         "widget": "text"
       }
     },
     "step_2": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_",
+        "label": "Step",
         "widget": "text"
       }
     },
     "step_3": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_",
+        "label": "Step",
         "widget": "text"
       }
     },
     "step_4": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_",
+        "label": "Step",
         "widget": "text"
       }
     },
     "step_5": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_",
+        "label": "Step",
         "widget": "text"
       }
     },
@@ -415,6 +415,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.058879+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.527906+00:00"
   }
 }

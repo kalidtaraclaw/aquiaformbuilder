@@ -143,7 +143,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Signature of Applicant Sign in Ink_13Date Signed Mm Dd Y",
+        "label": "Signature of Applicant Sign in Ink 13Date Signed Mm Dd Y",
         "widget": "date"
       }
     },
@@ -180,7 +180,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Item_9Show the",
+        "label": "Item 9Show the",
         "widget": "date"
       }
     },
@@ -195,7 +195,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Item_12And_13Sign and",
+        "label": "Item 12And 13Sign and",
         "widget": "date"
       }
     },
@@ -244,6 +244,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.943797+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.415511+00:00"
   }
 }

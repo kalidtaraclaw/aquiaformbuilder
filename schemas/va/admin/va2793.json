@@ -103,13 +103,13 @@
     "ifItem18IsNoAreElevatorsAvailableYesCheckBox": {
       "type": "boolean",
       "x-va-field": {
-        "label": "If Item18Is no Are Elevators Available Yes Check Box"
+        "label": "If Item 18 is no Are Elevators Available Yes Check Box"
       }
     },
     "ifItem18IsNoAreElevatorsAvailableNoCheckBox": {
       "type": "boolean",
       "x-va-field": {
-        "label": "If Item18Is no Are Elevators Available no Check Box"
+        "label": "If Item 18 is no Are Elevators Available no Check Box"
       }
     },
     "isShopEquippedWithParallelBarsForWalkingTrainingYesCheckBox": {
@@ -411,6 +411,6 @@
     "generatedAt": "2026-03-28T21:28:44.069Z",
     "pageCount": 2,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T23:47:22.978443+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.459192+00:00"
   }
 }

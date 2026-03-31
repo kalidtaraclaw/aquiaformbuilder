@@ -49,7 +49,7 @@
     "address3a": {
       "type": "string",
       "x-va-field": {
-        "label": "Address3a",
+        "label": "Address 3 a",
         "widget": "text"
       }
     },
@@ -70,21 +70,21 @@
     "name1a": {
       "type": "string",
       "x-va-field": {
-        "label": "Name1a",
+        "label": "Name 1 a",
         "widget": "text"
       }
     },
     "telephone1c": {
       "type": "string",
       "x-va-field": {
-        "label": "Telephone1c",
+        "label": "Telephone 1 C",
         "widget": "text"
       }
     },
     "name1b": {
       "type": "string",
       "x-va-field": {
-        "label": "Name1b",
+        "label": "Name 1 B",
         "widget": "text"
       }
     },
@@ -217,7 +217,7 @@
     "iWishToApplyForAGrantUnderChapter_21Title_38US": {
       "type": "string",
       "x-va-field": {
-        "label": "I Wish to Apply for a Grant Under Chapter_21Title_38US",
+        "label": "I Wish to Apply for a Grant Under Chapter 21Title 38US",
         "widget": "text"
       }
     },
@@ -337,6 +337,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.153601+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.621664+00:00"
   }
 }

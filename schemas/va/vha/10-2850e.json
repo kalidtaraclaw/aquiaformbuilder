@@ -43,7 +43,7 @@
     "sectionDRemarks19Remarks": {
       "type": "string",
       "x-va-field": {
-        "label": "Section D Remarks19Remarks"
+        "label": "Section D Remarks 19 Remarks"
       }
     },
     "applicantWasEmployed": {
@@ -55,43 +55,43 @@
     "performanceFactors8a": {
       "type": "string",
       "x-va-field": {
-        "label": "Performance Factors8a"
+        "label": "Performance Factors 8 a"
       }
     },
     "performanceFactors8b": {
       "type": "string",
       "x-va-field": {
-        "label": "Performance Factors8b"
+        "label": "Performance Factors 8 B"
       }
     },
     "performanceFactors8c": {
       "type": "string",
       "x-va-field": {
-        "label": "Performance Factors8c"
+        "label": "Performance Factors 8 C"
       }
     },
     "performanceFactors8d": {
       "type": "string",
       "x-va-field": {
-        "label": "Performance Factors8d"
+        "label": "Performance Factors 8 D"
       }
     },
     "performanceFactors8e": {
       "type": "string",
       "x-va-field": {
-        "label": "Performance Factors8e"
+        "label": "Performance Factors 8 E"
       }
     },
     "performanceFactors8f": {
       "type": "string",
       "x-va-field": {
-        "label": "Performance Factors8f"
+        "label": "Performance Factors 8 F"
       }
     },
     "performanceFactors8g": {
       "type": "string",
       "x-va-field": {
-        "label": "Performance Factors8g"
+        "label": "Performance Factors 8 G"
       }
     },
     "wouldYouRehireThisApplicant": {
@@ -123,6 +123,6 @@
     "generatedAt": "2026-03-28T21:07:00.602Z",
     "pageCount": 1,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T21:38:04.700998+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.734783+00:00"
   }
 }

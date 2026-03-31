@@ -250,7 +250,7 @@
     "housingWillBeLostIn30Days": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Housing Will Be Lost In30Days",
+        "label": "Housing Will Be Lost in 30 Days",
         "widget": "checkbox"
       }
     },
@@ -614,14 +614,14 @@
     "oOnOrAfterAugust_2_1990AndServedIn": {
       "type": "string",
       "x-va-field": {
-        "label": "O on or After August_2_1990And Served in",
+        "label": "O on or After August 2 1990And Served in",
         "widget": "text"
       }
     },
     "oOnOrAfterSeptember_11_2001AndServedIn": {
       "type": "string",
       "x-va-field": {
-        "label": "O on or After September_11_2001And Served in",
+        "label": "O on or After September 11 2001And Served in",
         "widget": "text"
       }
     },
@@ -1150,6 +1150,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.621289+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.097334+00:00"
   }
 }

@@ -353,7 +353,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "3Va File Number If Applicable_4Date of Birth",
+        "label": "3Va File Number If Applicable 4Date of Birth",
         "widget": "date"
       }
     },
@@ -418,7 +418,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Information Created Within_12Months After the Date This Aut",
+        "label": "Information Created Within 12Months After the Date This Aut",
         "widget": "date"
       }
     },
@@ -591,6 +591,6 @@
       "acroform",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T22:42:36.119696+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.061550+00:00"
   }
 }

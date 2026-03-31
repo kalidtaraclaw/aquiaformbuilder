@@ -214,7 +214,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Amount Earned During_12Months Preceding Last Date of",
+        "label": "Amount Earned During 12Months Preceding Last Date of",
         "widget": "date"
       }
     },
@@ -222,7 +222,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Time Lost During_12Months Preceding Last Date of Employment",
+        "label": "Time Lost During 12Months Preceding Last Date of Employment",
         "widget": "date"
       }
     },
@@ -244,7 +244,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Date of Birth_4Social Security Number",
+        "label": "Date of Birth 4Social Security Number",
         "widget": "date"
       }
     },
@@ -313,7 +313,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "21a Date Benefit Began_21b",
+        "label": "21a Date Benefit Began 21b",
         "widget": "date"
       }
     },
@@ -342,6 +342,6 @@
       "text-inference"
     ],
     "postProcessedAt": "2026-03-30T20:42:50.094246+00:00",
-    "fieldNameFixedAt": "2026-03-30T23:47:23.596139+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.072473+00:00"
   }
 }

@@ -126,42 +126,42 @@
     "changed7d1": {
       "type": "string",
       "x-va-field": {
-        "label": "Changed7d",
+        "label": "Changed 7 D",
         "widget": "text"
       }
     },
     "when7e1": {
       "type": "string",
       "x-va-field": {
-        "label": "When7e",
+        "label": "When 7 E",
         "widget": "text"
       }
     },
     "how7f1": {
       "type": "string",
       "x-va-field": {
-        "label": "How7f",
+        "label": "How 7 F",
         "widget": "text"
       }
     },
     "changed7d2": {
       "type": "string",
       "x-va-field": {
-        "label": "Changed7d",
+        "label": "Changed 7 D",
         "widget": "text"
       }
     },
     "when7e2": {
       "type": "string",
       "x-va-field": {
-        "label": "When7e",
+        "label": "When 7 E",
         "widget": "text"
       }
     },
     "how7f2": {
       "type": "string",
       "x-va-field": {
-        "label": "How7f",
+        "label": "How 7 F",
         "widget": "text"
       }
     },
@@ -196,7 +196,7 @@
     "wereYouOrYourSpouseEmployedAtAnyTimeDuringThe_12": {
       "type": "string",
       "x-va-field": {
-        "label": "Were You or Your Spouse Employed at Any Time During The_",
+        "label": "Were You or Your Spouse Employed at Any Time During the",
         "widget": "text"
       }
     },
@@ -249,7 +249,7 @@
     "medicalExpensesReadParagraph_6OfTheEvrInstructions": {
       "type": "string",
       "x-va-field": {
-        "label": "Medical Expenses Read Paragraph_6Of the Evr Instructions",
+        "label": "Medical Expenses Read Paragraph 6Of the Evr Instructions",
         "widget": "text"
       }
     },
@@ -324,6 +324,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.680249+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.153596+00:00"
   }
 }

@@ -147,7 +147,7 @@
     "ifYouContactedAnEeoCounselorMoreThan_45CalendarDays": {
       "type": "string",
       "x-va-field": {
-        "label": "If You Contacted an Eeo Counselor More Than_45Calendar Days",
+        "label": "If You Contacted an Eeo Counselor More Than 45Calendar Days",
         "widget": "text"
       }
     },
@@ -276,6 +276,6 @@
       "acroform",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.000978+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.480331+00:00"
   }
 }

@@ -168,14 +168,14 @@
     "the_154afParticipantMayCarryForwardAndExpendInTheNe": {
       "type": "string",
       "x-va-field": {
-        "label": "The_154af Participant May Carry Forward and Expend in the Ne",
+        "label": "The 154af Participant May Carry Forward and Expend in the Ne",
         "widget": "text"
       }
     },
     "beforeA_154afMaySpendItsCurrentYearSVaWorkStudyAl": {
       "type": "string",
       "x-va-field": {
-        "label": "Before A_154af May Spend Its Current Year S VA Work Study Al",
+        "label": "Before a 154af May Spend Its Current Year S VA Work Study Al",
         "widget": "text"
       }
     },
@@ -196,21 +196,21 @@
     "ifThe_154afEmploysAFiscalAgentThatAgentMayPerform": {
       "type": "string",
       "x-va-field": {
-        "label": "If The154af Employs a Fiscal Agent That Agent May Per Form",
+        "label": "If the 154 Af Employs a Fiscal Agent That Agent May Per Form",
         "widget": "text"
       }
     },
     "the_154afShallMaintainFundsReceivedUnderThisAgreement": {
       "type": "string",
       "x-va-field": {
-        "label": "The_154af Shall Maintain Funds Received Under This Agreement",
+        "label": "The 154af Shall Maintain Funds Received Under This Agreement",
         "widget": "text"
       }
     },
     "the_154afMustFollowTheRecordRetentionAndExaminationP": {
       "type": "string",
       "x-va-field": {
-        "label": "The_154af Must Follow the Record Retention and Examination P",
+        "label": "The 154af Must Follow the Record Retention and Examination P",
         "widget": "text"
       }
     },
@@ -231,7 +231,7 @@
     "the_154fRequestsTheFollowingDollarAmount": {
       "type": "string",
       "x-va-field": {
-        "label": "The_154f Requests the Following Dollar Amount",
+        "label": "The 154f Requests the Following Dollar Amount",
         "widget": "text"
       }
     },
@@ -319,28 +319,28 @@
     "item_5": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_",
+        "label": "Item",
         "widget": "text"
       }
     },
     "item_6": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_",
+        "label": "Item",
         "widget": "text"
       }
     },
     "item_7": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_",
+        "label": "Item",
         "widget": "text"
       }
     },
     "item_8": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_",
+        "label": "Item",
         "widget": "text"
       }
     },
@@ -390,6 +390,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.969223+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.440179+00:00"
   }
 }

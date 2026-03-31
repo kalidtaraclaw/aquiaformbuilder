@@ -157,7 +157,7 @@
       "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
       "maxLength": 11,
       "x-va-field": {
-        "label": "Social Security Number3Va File Number5Military Service N",
+        "label": "Social Security Number 3 VA File Number 5 Military Service N",
         "widget": "ssn"
       }
     },
@@ -233,7 +233,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Signature of Person Receiving Flag Sign in Ink_21Date Fla",
+        "label": "Signature of Person Receiving Flag Sign in Ink 21Date Fla",
         "widget": "date"
       }
     },
@@ -262,14 +262,14 @@
     "selectedServiceSeeSectionC_3OnPage_2": {
       "type": "string",
       "x-va-field": {
-        "label": "Selected Service See Section C_3On Page_",
+        "label": "Selected Service See Section C 3On Page",
         "widget": "text"
       }
     },
     "otherSeeSectionC_1OnPage_2": {
       "type": "string",
       "x-va-field": {
-        "label": "Other See Section C_1On Page_",
+        "label": "Other See Section C 1On Page",
         "widget": "text"
       }
     },
@@ -388,6 +388,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.267042+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.735743+00:00"
   }
 }

@@ -56,7 +56,7 @@
     "assignmentSpecialty_6DutyStation": {
       "type": "string",
       "x-va-field": {
-        "label": "Assignment Specialty_6Duty Station",
+        "label": "Assignment Specialty 6Duty Station",
         "widget": "text"
       }
     },
@@ -274,6 +274,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.284766+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.775244+00:00"
   }
 }

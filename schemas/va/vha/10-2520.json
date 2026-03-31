@@ -89,37 +89,37 @@
     "amountOfHcpcLine3Of9": {
       "type": "number",
       "x-va-field": {
-        "label": "Amount of Hcpc Line3Of"
+        "label": "Amount of Hcpc Line 3 of"
       }
     },
     "amountOfHcpcLine4Of9": {
       "type": "number",
       "x-va-field": {
-        "label": "Amount of Hcpc Line4Of"
+        "label": "Amount of Hcpc Line 4 of"
       }
     },
     "amountOfHcpcLine5Of9": {
       "type": "number",
       "x-va-field": {
-        "label": "Amount of Hcpc Line5Of"
+        "label": "Amount of Hcpc Line 5 of"
       }
     },
     "amountOfHcpcLine6Of9": {
       "type": "number",
       "x-va-field": {
-        "label": "Amount of Hcpc Line6Of"
+        "label": "Amount of Hcpc Line 6 of"
       }
     },
     "amountOfHcpcLine7Of9": {
       "type": "number",
       "x-va-field": {
-        "label": "Amount of Hcpc Line7Of"
+        "label": "Amount of Hcpc Line 7 of"
       }
     },
     "amountOfHcpcLine8Of9": {
       "type": "number",
       "x-va-field": {
-        "label": "Amount of Hcpc Line8Of"
+        "label": "Amount of Hcpc Line 8 of"
       }
     },
     "veteransNameLastFirstMiddleInitialThisIsAMandatoryField": {
@@ -149,37 +149,37 @@
     "repairDescriptionLine3Of9": {
       "type": "string",
       "x-va-field": {
-        "label": "Repair Description Line3Of"
+        "label": "Repair Description Line 3 of"
       }
     },
     "repairDescriptionLine4Of9": {
       "type": "string",
       "x-va-field": {
-        "label": "Repair Description Line4Of"
+        "label": "Repair Description Line 4 of"
       }
     },
     "repairDescriptionLine5Of9": {
       "type": "string",
       "x-va-field": {
-        "label": "Repair Description Line5Of"
+        "label": "Repair Description Line 5 of"
       }
     },
     "repairDescriptionLine6Of9": {
       "type": "string",
       "x-va-field": {
-        "label": "Repair Description Line6Of"
+        "label": "Repair Description Line 6 of"
       }
     },
     "repairDescriptionLine8Of9": {
       "type": "string",
       "x-va-field": {
-        "label": "Repair Description Line8Of"
+        "label": "Repair Description Line 8 of"
       }
     },
     "repairDescriptionLine9Of9": {
       "type": "string",
       "x-va-field": {
-        "label": "Repair Description Line9Of"
+        "label": "Repair Description Line 9 of"
       }
     },
     "entertotalCharges": {
@@ -229,6 +229,6 @@
     "generatedAt": "2026-03-28T21:03:05.910Z",
     "pageCount": 1,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T21:38:04.667031+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.686720+00:00"
   }
 }

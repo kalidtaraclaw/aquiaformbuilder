@@ -161,7 +161,7 @@
     "statusOfYoungestDependentChildInYourCareWhileAge_16": {
       "type": "string",
       "x-va-field": {
-        "label": "Status of Youngest Dependent Child in Your Care While Age_",
+        "label": "Status of Youngest Dependent Child in Your Care While Age",
         "widget": "text"
       }
     },
@@ -205,7 +205,7 @@
     "ifYouDoNotCompleteItem_2b": {
       "type": "string",
       "x-va-field": {
-        "label": "If You Do Not Complete Item_2b",
+        "label": "If You Do Not Complete Item 2b",
         "widget": "radio"
       }
     }
@@ -226,6 +226,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.938513+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.409926+00:00"
   }
 }

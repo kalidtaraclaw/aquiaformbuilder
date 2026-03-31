@@ -85,13 +85,13 @@
     "applicantInformation2ANameLastFirstMiddleInitial": {
       "type": "string",
       "x-va-field": {
-        "label": "Applicant Information2A Name Last First Middle Initial"
+        "label": "Applicant Information 2 a Name Last First Middle Initial"
       }
     },
     "aNameLine2Of2": {
       "type": "string",
       "x-va-field": {
-        "label": "A Name Line2Of"
+        "label": "A Name Line 2 of"
       }
     }
   },
@@ -105,6 +105,6 @@
     "generatedAt": "2026-03-28T21:08:12.397Z",
     "pageCount": 1,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T21:38:04.738805+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.791491+00:00"
   }
 }

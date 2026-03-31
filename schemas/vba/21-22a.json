@@ -368,7 +368,7 @@
     "signaturesAreRequiredInItems_17aAnd_18a": {
       "type": "string",
       "x-va-field": {
-        "label": "Signatures Are Required in Items_17a And_18a",
+        "label": "Signatures Are Required in Items 17a and 18a",
         "widget": "signature"
       }
     },
@@ -404,7 +404,7 @@
     "limitationOfConsentMyConsentInItem_20ForTheDisclos": {
       "type": "string",
       "x-va-field": {
-        "label": "Limitation of Consent My Consent in Item_20For the Disclos",
+        "label": "Limitation of Consent My Consent in Item 20For the Disclos",
         "widget": "text"
       }
     },
@@ -484,6 +484,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.565922+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.040715+00:00"
   }
 }

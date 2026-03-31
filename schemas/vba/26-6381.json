@@ -126,7 +126,7 @@
     "amount7b": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount7b",
+        "label": "Amount 7 B",
         "widget": "text"
       }
     },
@@ -252,7 +252,7 @@
     "haveVaForms_26_6382And_26_6807BeenProvidedToYourPurc": {
       "type": "string",
       "x-va-field": {
-        "label": "Have VA Forms_26_6382And_26_6807Been Provided to Your Purc",
+        "label": "Have VA Forms 26 6382And 26 6807Been Provided to Your Purc",
         "widget": "text"
       }
     },
@@ -302,6 +302,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.158061+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.626651+00:00"
   }
 }

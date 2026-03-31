@@ -128,13 +128,13 @@
     "residencyDegreeOrSpecialtyLine1Of2": {
       "type": "string",
       "x-va-field": {
-        "label": "Residency Degree or Specialty Line1Of"
+        "label": "Residency Degree or Specialty Line 1 of"
       }
     },
     "residencyDegreeOrSpecialtyLine2Of2": {
       "type": "string",
       "x-va-field": {
-        "label": "Residency Degree or Specialty Line2Of"
+        "label": "Residency Degree or Specialty Line 2 of"
       }
     },
     "fellowshipDegreeOrSpecialty": {
@@ -238,6 +238,6 @@
     "generatedAt": "2026-03-28T21:18:01.116Z",
     "pageCount": 2,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T21:38:04.546000+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.538443+00:00"
   }
 }

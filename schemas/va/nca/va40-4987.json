@@ -69,7 +69,7 @@
     "last2DigitsOfTheYear": {
       "type": "string",
       "x-va-field": {
-        "label": "Last2Digits of the Year"
+        "label": "Last 2 Digits of the Year"
       }
     },
     "iHerebyAgreeToHaveTheCrematedRemainsOf": {
@@ -119,6 +119,6 @@
     "generatedAt": "2026-03-28T21:34:05.953Z",
     "pageCount": 1,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T23:47:23.445787+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.934549+00:00"
   }
 }

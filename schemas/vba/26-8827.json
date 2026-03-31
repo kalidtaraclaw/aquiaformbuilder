@@ -91,7 +91,7 @@
     "nameAndAddressOfPersonCheckedInItem_3": {
       "type": "string",
       "x-va-field": {
-        "label": "Name and Address of Person Checked in Item_",
+        "label": "Name and Address of Person Checked in Item",
         "widget": "address"
       }
     },
@@ -141,6 +141,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.253974+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.721245+00:00"
   }
 }

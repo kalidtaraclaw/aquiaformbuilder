@@ -246,7 +246,7 @@
       "type": "string",
       "pattern": "^\\d{10}$",
       "x-va-field": {
-        "label": "Phone_999_999_",
+        "label": "Phone 999 999",
         "widget": "phone"
       }
     },
@@ -276,7 +276,7 @@
     "nameOfCemeteryWhereInterred8StationId9BurialSiteI": {
       "type": "string",
       "x-va-field": {
-        "label": "Name of Cemetery Where Interred8Station Id9Burial Site I",
+        "label": "Name of Cemetery Where Interred 8 Station ID 9 Burial Site I",
         "widget": "text"
       }
     },
@@ -305,7 +305,7 @@
     "typeOrPrintedNameOfCemeteryOfficial15Title": {
       "type": "string",
       "x-va-field": {
-        "label": "Type or Printed Name of Cemetery Official15Title",
+        "label": "Type or Printed Name of Cemetery Official 15 Title",
         "widget": "text"
       }
     },
@@ -320,7 +320,7 @@
     "stateAgencyOrTribalOrganization2FederalAcquisitionId": {
       "type": "string",
       "x-va-field": {
-        "label": "State Agency or Tribal Organization2Federal Acquisition ID",
+        "label": "State Agency or Tribal Organization 2 Federal Acquisition ID",
         "widget": "select"
       }
     },
@@ -397,6 +397,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.413438+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.899485+00:00"
   }
 }

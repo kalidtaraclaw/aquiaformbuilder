@@ -50,7 +50,7 @@
     "medicalSupportEachSpecifyLine2Of2": {
       "type": "string",
       "x-va-field": {
-        "label": "Medical Support Each Specify Line2Of"
+        "label": "Medical Support Each Specify Line 2 of"
       }
     },
     "fAINumber": {
@@ -76,6 +76,6 @@
     "generatedAt": "2026-03-28T21:19:16.393Z",
     "pageCount": 2,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T21:38:04.554906+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.548455+00:00"
   }
 }

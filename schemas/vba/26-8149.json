@@ -658,7 +658,7 @@
     "totalCostToVeteranAddItems_27Through_29ColumnB": {
       "type": "string",
       "x-va-field": {
-        "label": "Total Cost to Veteran Add Items_27Through_29Column B",
+        "label": "Total Cost to Veteran Add Items 27Through 29Column B",
         "widget": "text"
       }
     },
@@ -831,7 +831,7 @@
     "amountOfLoanItem_30LessItem_31ColumnB": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount of Loan Item_30Less Item_31Column B",
+        "label": "Amount of Loan Item 30Less Item 31Column B",
         "widget": "text"
       }
     },
@@ -1059,6 +1059,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.216353+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.683049+00:00"
   }
 }

@@ -336,14 +336,14 @@
     "datesofservice18b": {
       "type": "string",
       "x-va-field": {
-        "label": "Datesofservice18b",
+        "label": "Dates of Service 18 B",
         "widget": "text"
       }
     },
     "rank18c": {
       "type": "string",
       "x-va-field": {
-        "label": "Rank18c",
+        "label": "Rank 18 C",
         "widget": "text"
       }
     },
@@ -776,6 +776,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.305249+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.773176+00:00"
   }
 }

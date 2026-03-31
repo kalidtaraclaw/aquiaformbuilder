@@ -155,7 +155,7 @@
     "date12a": {
       "type": "string",
       "x-va-field": {
-        "label": "Date12a",
+        "label": "Date 12 a",
         "widget": "text"
       }
     },
@@ -368,7 +368,7 @@
     "nameOfYourCourseOrCurriculum_8CreditOrClockHourLo": {
       "type": "string",
       "x-va-field": {
-        "label": "Name of Your Course or Curriculum_8Credit or Clock Hour Lo",
+        "label": "Name of Your Course or Curriculum 8Credit or Clock Hour Lo",
         "widget": "text"
       }
     },
@@ -420,7 +420,7 @@
     "nameAndAddressOfEducationalInstitution_16IndicateTyp": {
       "type": "string",
       "x-va-field": {
-        "label": "Name and Address of Educational Institution_16Indicate Typ",
+        "label": "Name and Address of Educational Institution 16Indicate Typ",
         "widget": "address"
       }
     },
@@ -472,7 +472,7 @@
     "step_2TakeToYourTutorTheTutorMust": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_2Take to Your Tutor the Tutor Must",
+        "label": "Step 2Take to Your Tutor the Tutor Must",
         "widget": "text"
       }
     },
@@ -494,7 +494,7 @@
     "step_6WhereToMailThisForm": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_6Where to Mail This Form",
+        "label": "Step 6Where to Mail This Form",
         "widget": "text"
       }
     },
@@ -508,14 +508,14 @@
     "ifYouAreTrainingUnder_38USCChapter_30Or_32OrUnd": {
       "type": "string",
       "x-va-field": {
-        "label": "If You Are Training Under_38USC Chapter_30Or_32Or Und",
+        "label": "If You Are Training Under 38USC Chapter 30Or 32Or Und",
         "widget": "text"
       }
     },
     "ifYouAreTrainingUnder_38USCChapter_33Or_35OrThe": {
       "type": "string",
       "x-va-field": {
-        "label": "If You Are Training Under_38USC Chapter_33Or_35Or the",
+        "label": "If You Are Training Under 38USC Chapter 33Or 35Or the",
         "widget": "text"
       }
     },
@@ -550,6 +550,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.018268+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.486900+00:00"
   }
 }

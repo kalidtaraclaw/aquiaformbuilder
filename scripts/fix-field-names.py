@@ -280,23 +280,34 @@ def humanize_label(name):
     "dateOfBirth" → "Date of Birth"
     Also handles all-lowercase concatenated names: "namevet" → "Name Vet"
     """
+    # Replace underscores with spaces early
+    base = name.replace('_', ' ')
     # Strip trailing digits used for uniqueness (childsLastName2 → childsLastName)
-    base = re.sub(r'\d+$', '', name)
+    base = re.sub(r'\d+$', '', base).strip()
     if not base:
-        base = name
+        base = name.replace('_', ' ')
 
     # Handle trailing single-letter suffixes on known date/time words
     # datea → Date A, montha → Month A, yeara → Year A, daya → Day A
-    base_lower = base.lower()
+    base_lower = base.lower().strip()
     for time_word in ['date', 'month', 'year', 'day']:
         if base_lower.startswith(time_word) and len(base_lower) == len(time_word) + 1:
             suffix_char = base_lower[-1]
             if suffix_char.isalpha():
                 return time_word.capitalize() + ' ' + suffix_char.upper()
 
+    # Insert spaces around digits that separate words (e.g., "Employee2JobTitle" → "Employee 2 Job Title")
+    # But preserve digits at the end of labels (e.g., "amount31a" stays)
+    # Pattern: letter followed by digit(s) followed by letter (mid-word digit separator)
+    base = re.sub(r'([a-zA-Z])(\d+)([a-zA-Z])', r'\1 \2 \3', base)
+
     # Split on camelCase boundaries
     label = re.sub(r'([a-z])([A-Z])', r'\1 \2', base)
     label = re.sub(r'([A-Z]+)([A-Z][a-z])', r'\1 \2', label)
+
+    # Strip trailing underscores/spaces and clean up multiple spaces
+    label = re.sub(r'[\s_]+$', '', label)
+    label = re.sub(r'\s+', ' ', label).strip()
 
     # If the result is still a single word (no camelCase boundaries found),
     # try dictionary-based splitting for all-lowercase concatenated names
@@ -331,6 +342,8 @@ def humanize_label(name):
     label = re.sub(r'\bPhonenumber\b', 'Phone Number', label, flags=re.IGNORECASE)
     label = re.sub(r'\bEmailaddress\b', 'Email Address', label, flags=re.IGNORECASE)
     label = re.sub(r'\bMailingaddress\b', 'Mailing Address', label, flags=re.IGNORECASE)
+    label = re.sub(r'\bDollaramount\b', 'Dollar Amount', label, flags=re.IGNORECASE)
+    label = re.sub(r'\bBaggagefees\b', 'Baggage Fees', label, flags=re.IGNORECASE)
     # Fix abbreviated words (case-insensitive for dictionary-split lowercase results)
     label = re.sub(r'\bNum\b', 'Number', label, flags=re.IGNORECASE)
     label = re.sub(r'\bAcct\b', 'Account', label, flags=re.IGNORECASE)
@@ -794,8 +807,23 @@ def process_schema(filepath, dry_run=False):
                 upper_ratio = sum(1 for c in alpha_chars if c.isupper()) / max(len(alpha_chars), 1)
                 is_all_caps = upper_ratio > 0.7 and len(old_label) > 3
 
+                # Check for underscores in labels (raw field name artifacts)
+                has_underscores = '_' in old_label
+
                 if has_bad_label:
                     needs_label_fix = True
+                elif has_underscores:
+                    # Replace underscores with spaces, clean up, and re-humanize
+                    fixed = old_label.replace('_', ' ')
+                    fixed = re.sub(r'\s+', ' ', fixed).strip()
+                    # Re-insert spaces around digits between words
+                    fixed = re.sub(r'([a-zA-Z])(\d+)([a-zA-Z])', r'\1 \2 \3', fixed)
+                    if fixed != old_label:
+                        va_field["label"] = fixed
+                        defn["x-va-field"] = va_field
+                        stats["labels_fixed"] += 1
+                        total_changes += 1
+                        old_label = fixed
                 elif has_spaced_chars:
                     # Fix spaced-out acronyms in otherwise OK labels
                     fixed = old_label

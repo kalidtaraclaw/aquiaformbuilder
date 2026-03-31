@@ -385,7 +385,7 @@
     "fP2Unknown2": {
       "type": "boolean",
       "x-va-field": {
-        "label": "F P2Unknown",
+        "label": "F P 2 Unknown",
         "widget": "checkbox"
       }
     },
@@ -406,7 +406,7 @@
     "items_7cAnd_7dCreditHours": {
       "type": "string",
       "x-va-field": {
-        "label": "Items_7c And_7d Credit Hours",
+        "label": "Items 7c and 7d Credit Hours",
         "widget": "text"
       }
     },
@@ -420,7 +420,7 @@
     "item_8ChargesForPeriodOfEnrollment": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_8Charges for Period of Enrollment",
+        "label": "Item 8Charges for Period of Enrollment",
         "widget": "text"
       }
     },
@@ -434,21 +434,21 @@
     "item_10CallUpToActiveDuty": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_10Call Up to Active Duty",
+        "label": "Item 10Call Up to Active Duty",
         "widget": "text"
       }
     },
     "item_11MitigatingCircumstances": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_11Mitigating Circumstances",
+        "label": "Item 11Mitigating Circumstances",
         "widget": "text"
       }
     },
     "item_12Remarks": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_12Remarks",
+        "label": "Item 12Remarks",
         "widget": "text"
       }
     },
@@ -462,7 +462,7 @@
     "item_13aFacilityCode": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_13a Facility Code",
+        "label": "Item 13a Facility Code",
         "widget": "text"
       }
     },
@@ -476,7 +476,7 @@
     "item_3EnterTheVaFileNumber": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_3Enter the VA File Number",
+        "label": "Item 3Enter the VA File Number",
         "widget": "text"
       }
     },
@@ -484,7 +484,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Item_5a And_5b Dates of Term Affected",
+        "label": "Item 5a and 5b Dates of Term Affected",
         "widget": "date"
       }
     },
@@ -492,7 +492,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Item_6a Last Date of Attendance",
+        "label": "Item 6a Last Date of Attendance",
         "widget": "date"
       }
     },
@@ -507,7 +507,7 @@
     "item_6bReasonForTermination": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_6b Reason for Termination",
+        "label": "Item 6b Reason for Termination",
         "widget": "text"
       }
     },
@@ -536,7 +536,7 @@
     "item_6cLeaveOfAbsenceLoa": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_6c Leave of Absence Loa",
+        "label": "Item 6c Leave of Absence Loa",
         "widget": "text"
       }
     },
@@ -575,7 +575,7 @@
     "item_7bTypeOfAdjustment": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_7b Type of Adjustment",
+        "label": "Item 7b Type of Adjustment",
         "widget": "text"
       }
     },
@@ -747,7 +747,7 @@
       "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
       "maxLength": 11,
       "x-va-field": {
-        "label": "Social Security Number If Not Entered in Item_",
+        "label": "Social Security Number If Not Entered in Item",
         "widget": "ssn"
       }
     }
@@ -767,6 +767,6 @@
       "acroform",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.030028+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.498575+00:00"
   }
 }

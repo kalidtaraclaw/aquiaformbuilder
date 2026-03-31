@@ -114,7 +114,7 @@
     "mobileNumberIncludeAreaCode_6HomeNumberIncludeAr": {
       "type": "string",
       "x-va-field": {
-        "label": "Mobile Number Include Area Code_6Home Number Include Ar",
+        "label": "Mobile Number Include Area Code 6Home Number Include Ar",
         "widget": "text"
       }
     },
@@ -206,6 +206,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.983596+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.454347+00:00"
   }
 }

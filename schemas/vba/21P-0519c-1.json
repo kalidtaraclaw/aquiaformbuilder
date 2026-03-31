@@ -231,7 +231,7 @@
     "importantNoteAboutItems_3aThrough_3g": {
       "type": "string",
       "x-va-field": {
-        "label": "Important Note About Items_3a Through_3g",
+        "label": "Important Note About Items 3a Through 3g",
         "widget": "text"
       }
     },
@@ -287,14 +287,14 @@
     "childSMedicalExpensesReadParagraph_6OfTheEvrInstr": {
       "type": "string",
       "x-va-field": {
-        "label": "Child S Medical Expenses Read Paragraph_6Of the Evr Instr",
+        "label": "Child S Medical Expenses Read Paragraph 6Of the Evr Instr",
         "widget": "text"
       }
     },
     "noIfNoGoToItem_3g": {
       "type": "string",
       "x-va-field": {
-        "label": "No If no Go to Item_3g",
+        "label": "No If no Go to Item 3g",
         "widget": "text"
       }
     },
@@ -350,7 +350,7 @@
     "childSEducationalExpensesInDollarsReadParagraph_7": {
       "type": "string",
       "x-va-field": {
-        "label": "Child S Educational Expenses in Dollars Read Paragraph_",
+        "label": "Child S Educational Expenses in Dollars Read Paragraph",
         "widget": "text"
       }
     },
@@ -377,6 +377,6 @@
       "acroform",
       "acroform+text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.717037+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.191447+00:00"
   }
 }

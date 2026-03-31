@@ -217,7 +217,7 @@
     "legalBlindnessDefinedAsVisualImpairmentOf_20_200OrLe": {
       "type": "string",
       "x-va-field": {
-        "label": "Legal Blindness Defined As Visual Impairment Of_20_200Or Le",
+        "label": "Legal Blindness Defined As Visual Impairment of 20 200Or Le",
         "widget": "text"
       }
     },
@@ -357,21 +357,21 @@
     "dependentScoreOf_0InThreeOrMoreActivitiesOfDaily": {
       "type": "string",
       "x-va-field": {
-        "label": "Dependent Score Of_0In Three or More Activities of Daily",
+        "label": "Dependent Score of 0In Three or More Activities of Daily",
         "widget": "text"
       }
     },
     "aScoreOf_2OrLowerOnAtLeast_4ItemsOfTheCombinedSe": {
       "type": "string",
       "x-va-field": {
-        "label": "A Score Of_2Or Lower on at Least_4Items of the Combined Se",
+        "label": "A Score of 2Or Lower on at Least 4Items of the Combined Se",
         "widget": "text"
       }
     },
     "aScoreOf_30OrLowerUsingTheGlobalAssessmentOfFuncti": {
       "type": "string",
       "x-va-field": {
-        "label": "A Score Of_30Or Lower Using the Global Assessment of Functi",
+        "label": "A Score of 30Or Lower Using the Global Assessment of Functi",
         "widget": "text"
       }
     },
@@ -456,6 +456,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.064887+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.544805+00:00"
   }
 }

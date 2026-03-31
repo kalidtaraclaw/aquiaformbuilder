@@ -122,14 +122,14 @@
     "telePhoneNumberOfParent1IncludeAreaCode": {
       "type": "string",
       "x-va-field": {
-        "label": "Tele Phone Number of Parent1Include Area Code",
+        "label": "Tele Phone Number of Parent 1 Include Area Code",
         "widget": "text"
       }
     },
     "telePhoneNumberOfParent2IncludeAreaCode": {
       "type": "string",
       "x-va-field": {
-        "label": "Tele Phone Number of Parent2Include Area Code",
+        "label": "Tele Phone Number of Parent 2 Include Area Code",
         "widget": "text"
       }
     },
@@ -513,14 +513,14 @@
     "ifChildIsUnderAge_18CustodianGuardianIsOtherThan": {
       "type": "string",
       "x-va-field": {
-        "label": "If Child is Under Age_18Custodian Guardian is Other Than",
+        "label": "If Child is Under Age 18Custodian Guardian is Other Than",
         "widget": "text"
       }
     },
     "ifChildIsAge_18OrOlderCompleteItems_11a_11b_11c": {
       "type": "string",
       "x-va-field": {
-        "label": "If Child is Age_18Or Older Complete Items_11a_11b_11c",
+        "label": "If Child is Age 18Or Older Complete Items 11a 11b 11c",
         "widget": "text"
       }
     },
@@ -585,6 +585,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.513600+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.997259+00:00"
   }
 }

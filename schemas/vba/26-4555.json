@@ -126,7 +126,7 @@
     "firstNameMiddleInitialLastName2SocialSecurityNo": {
       "type": "string",
       "x-va-field": {
-        "label": "First Name Middle Initial Last Name2Social Security no",
+        "label": "First Name Middle Initial Last Name 2 Social Security no",
         "widget": "text"
       }
     },
@@ -220,6 +220,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.149332+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.617810+00:00"
   }
 }

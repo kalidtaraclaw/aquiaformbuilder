@@ -105,7 +105,7 @@
     "genericName_2BrandName": {
       "type": "string",
       "x-va-field": {
-        "label": "Generic Name_2Brand Name",
+        "label": "Generic Name 2Brand Name",
         "widget": "text"
       }
     },
@@ -288,6 +288,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.272363+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.760887+00:00"
   }
 }

@@ -203,7 +203,7 @@
     "jul_2021Que": {
       "type": "string",
       "x-va-field": {
-        "label": "Jul_2021Que",
+        "label": "Jul 2021Que",
         "widget": "text"
       }
     },
@@ -371,7 +371,7 @@
     "gastosMedicosDeFamiliaresLeaParrafo_6DeLasInstrucci": {
       "type": "string",
       "x-va-field": {
-        "label": "Gastos Medicos De Familiares Lea Parrafo_6De Las Instrucci",
+        "label": "Gastos Medicos De Familiares Lea Parrafo 6De Las Instrucci",
         "widget": "text"
       }
     },
@@ -419,6 +419,6 @@
       "acroform",
       "acroform+text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.712493+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.186817+00:00"
   }
 }

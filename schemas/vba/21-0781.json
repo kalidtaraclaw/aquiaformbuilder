@@ -415,7 +415,7 @@
     "dateLastVaf2122Or2122aSubmittedMonth": {
       "type": "string",
       "x-va-field": {
-        "label": "Date Last Vaf2122Or2122a Submitted Month",
+        "label": "Date Last Vaf 2122 or 2122 a Submitted Month",
         "widget": "text"
       }
     },
@@ -500,7 +500,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Date of Birth Mm Dd Yyyy_2Social Security Number3Va Fil",
+        "label": "Date of Birth Mm Dd Yyyy 2Social Security Number 3 VA Fil",
         "widget": "date"
       }
     },
@@ -602,7 +602,7 @@
     "yesIfYesCompleteItems_13bThrough_13e": {
       "type": "string",
       "x-va-field": {
-        "label": "Yes If Yes Complete Items_13b Through_13e",
+        "label": "Yes If Yes Complete Items 13b Through 13e",
         "widget": "radio"
       }
     },
@@ -727,6 +727,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.534390+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.013846+00:00"
   }
 }

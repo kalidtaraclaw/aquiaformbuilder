@@ -187,13 +187,13 @@
     "otherMajorDisabilitiesLine1Of2": {
       "type": "string",
       "x-va-field": {
-        "label": "Other Major Disabilities Line1Of"
+        "label": "Other Major Disabilities Line 1 of"
       }
     },
     "otherMajorDisabilitiesLine2Of2": {
       "type": "string",
       "x-va-field": {
-        "label": "Other Major Disabilities Line2Of"
+        "label": "Other Major Disabilities Line 2 of"
       }
     },
     "currentHealthSituationOngoingRecurringHealthProblemsLine1Of2": {
@@ -205,7 +205,7 @@
     "ongoingRecurringHealthProblemsLine2Of2": {
       "type": "string",
       "x-va-field": {
-        "label": "Ongoing Recurring Health Problems Line2Of"
+        "label": "Ongoing Recurring Health Problems Line 2 of"
       }
     },
     "reasonNotReviewed": {
@@ -273,6 +273,6 @@
     "generatedAt": "2026-03-28T21:02:06.966Z",
     "pageCount": 1,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T23:47:23.175645+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.658834+00:00"
   }
 }

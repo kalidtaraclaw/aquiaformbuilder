@@ -242,7 +242,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Branch of Service_5Date of Death Mm Dd Yyyy",
+        "label": "Branch of Service 5Date of Death Mm Dd Yyyy",
         "widget": "date"
       }
     },
@@ -475,6 +475,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.935937+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.407151+00:00"
   }
 }

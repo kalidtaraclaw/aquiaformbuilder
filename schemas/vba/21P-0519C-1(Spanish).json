@@ -140,7 +140,7 @@
     "1eOrNoIsCheckedInItem_1fProvideThe": {
       "type": "string",
       "x-va-field": {
-        "label": "1e or no is Checked in Item_1f Provide the",
+        "label": "1e or no is Checked in Item 1f Provide the",
         "widget": "text"
       }
     },
@@ -231,14 +231,14 @@
     "gastosMDicosDelHijoLeParrafo_6DeLasInstrucciones": {
       "type": "string",
       "x-va-field": {
-        "label": "Gastos M Dicos Del Hijo Le Parrafo_6De Las Instrucciones",
+        "label": "Gastos M Dicos Del Hijo Le Parrafo 6De Las Instrucciones",
         "widget": "text"
       }
     },
     "gastosEducativosDelHijoLeElParrafo_7DeLasInstrucc": {
       "type": "string",
       "x-va-field": {
-        "label": "Gastos Educativos Del Hijo Le El Parrafo_7De Las Instrucc",
+        "label": "Gastos Educativos Del Hijo Le El Parrafo 7De Las Instrucc",
         "widget": "text"
       }
     },
@@ -307,6 +307,6 @@
       "acroform",
       "acroform+text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.708518+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.182501+00:00"
   }
 }

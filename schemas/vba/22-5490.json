@@ -133,28 +133,28 @@
     "chapter35dea": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Chapter35dea",
+        "label": "Chapter 35 Dea",
         "widget": "checkbox"
       }
     },
     "chapter33Fryscholarship": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Chapter33Fryscholarship",
+        "label": "Chapter 33 Fryscholarship",
         "widget": "checkbox"
       }
     },
     "iAmApplyingForChapter35DeaBenefits": {
       "type": "boolean",
       "x-va-field": {
-        "label": "I Am Applying for Chapter35Dea Benefits",
+        "label": "I Am Applying for Chapter 35 Dea Benefits",
         "widget": "checkbox"
       }
     },
     "iAmApplyingForChapter33FryScholarshipBenefits": {
       "type": "boolean",
       "x-va-field": {
-        "label": "I Am Applying for Chapter33Fry Scholarship Benefits",
+        "label": "I Am Applying for Chapter 33 Fry Scholarship Benefits",
         "widget": "checkbox"
       }
     },
@@ -549,7 +549,7 @@
     "ifTheApplicantIsUnderAge_18HasTheApplicantGraduate": {
       "type": "string",
       "x-va-field": {
-        "label": "If the Applicant is Under Age_18Has the Applicant Graduate",
+        "label": "If the Applicant is Under Age 18Has the Applicant Graduate",
         "widget": "text"
       }
     },
@@ -684,14 +684,14 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "35a Signature Of_35b Date Signed",
+        "label": "35a Signature of 35b Date Signed",
         "widget": "date"
       }
     },
     "item_13a": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_13a",
+        "label": "Item 13a",
         "widget": "text"
       }
     },
@@ -699,21 +699,21 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "In Item_8Will Up",
+        "label": "In Item 8Will Up",
         "widget": "date"
       }
     },
     "item_13b": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_13b",
+        "label": "Item 13b",
         "widget": "text"
       }
     },
     "item_13c": {
       "type": "string",
       "x-va-field": {
-        "label": "Item_13c",
+        "label": "Item 13c",
         "widget": "text"
       }
     },
@@ -727,21 +727,21 @@
     "step_3": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_",
+        "label": "Step",
         "widget": "text"
       }
     },
     "step_1": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_",
+        "label": "Step",
         "widget": "text"
       }
     },
     "step_2": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_",
+        "label": "Step",
         "widget": "text"
       }
     },
@@ -783,6 +783,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.040210+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.508233+00:00"
   }
 }

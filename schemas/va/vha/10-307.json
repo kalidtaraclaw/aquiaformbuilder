@@ -161,7 +161,7 @@
     "box_9": {
       "type": "string",
       "x-va-field": {
-        "label": "Box_",
+        "label": "Box",
         "widget": "text"
       }
     },
@@ -176,7 +176,7 @@
     "box_10": {
       "type": "string",
       "x-va-field": {
-        "label": "Box_",
+        "label": "Box",
         "widget": "text"
       }
     },
@@ -190,14 +190,14 @@
     "box_11": {
       "type": "string",
       "x-va-field": {
-        "label": "Box_",
+        "label": "Box",
         "widget": "text"
       }
     },
     "box_12": {
       "type": "string",
       "x-va-field": {
-        "label": "Box_",
+        "label": "Box",
         "widget": "text"
       }
     },
@@ -274,7 +274,7 @@
       "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
       "maxLength": 11,
       "x-va-field": {
-        "label": "Caregiver S Social Security Number Last_4Digits_5Caregiv",
+        "label": "Caregiver S Social Security Number Last 4Digits 5Caregiv",
         "widget": "ssn"
       }
     },
@@ -394,6 +394,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.267862+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.756148+00:00"
   }
 }

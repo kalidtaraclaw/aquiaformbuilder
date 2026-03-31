@@ -231,7 +231,7 @@
     "institutionGraduatedClassesDuringEachOfTheLastTwo_12": {
       "type": "string",
       "x-va-field": {
-        "label": "Institution Graduated Classes During Each of the Last Two_",
+        "label": "Institution Graduated Classes During Each of the Last Two",
         "widget": "text"
       }
     },
@@ -293,6 +293,6 @@
       "acroform",
       "acroform+text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.949587+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.421948+00:00"
   }
 }

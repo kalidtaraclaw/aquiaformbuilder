@@ -59,7 +59,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Week5Ending Date"
+        "label": "Week 5 Ending Date"
       }
     },
     "datePaid": {
@@ -127,31 +127,31 @@
     "week1TotalChargesDollars": {
       "type": "string",
       "x-va-field": {
-        "label": "Week1Total Charges Dollars"
+        "label": "Week 1 Total Charges Dollars"
       }
     },
     "week2TotalChargesDollars": {
       "type": "string",
       "x-va-field": {
-        "label": "Week2Total Charges Dollars"
+        "label": "Week 2 Total Charges Dollars"
       }
     },
     "week3TotalChargesDollars": {
       "type": "string",
       "x-va-field": {
-        "label": "Week3Total Charges Dollars"
+        "label": "Week 3 Total Charges Dollars"
       }
     },
     "week4TotalChargesDollars": {
       "type": "string",
       "x-va-field": {
-        "label": "Week4Total Charges Dollars"
+        "label": "Week 4 Total Charges Dollars"
       }
     },
     "week5TotalChargesDollars": {
       "type": "string",
       "x-va-field": {
-        "label": "Week5Total Charges Dollars"
+        "label": "Week 5 Total Charges Dollars"
       }
     },
     "monthlyTotalCalculatedDollars": {
@@ -171,6 +171,6 @@
     "generatedAt": "2026-03-28T21:27:57.676Z",
     "pageCount": 1,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T21:38:04.484853+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.416514+00:00"
   }
 }

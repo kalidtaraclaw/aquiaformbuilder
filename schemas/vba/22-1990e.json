@@ -350,21 +350,21 @@
     "step_1": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_",
+        "label": "Step",
         "widget": "text"
       }
     },
     "step_2": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_",
+        "label": "Step",
         "widget": "text"
       }
     },
     "step_3": {
       "type": "string",
       "x-va-field": {
-        "label": "Step_",
+        "label": "Step",
         "widget": "text"
       }
     },
@@ -512,6 +512,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.003477+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.473433+00:00"
   }
 }

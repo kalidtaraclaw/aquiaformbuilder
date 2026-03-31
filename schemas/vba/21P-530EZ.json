@@ -328,7 +328,7 @@
     "beFiledWithin_2YearsAfterThe": {
       "type": "string",
       "x-va-field": {
-        "label": "Be Filed Within_2Years After the",
+        "label": "Be Filed Within 2Years After the",
         "widget": "text"
       }
     },
@@ -533,7 +533,7 @@
     "ifVeteranServedUnderNameOtherThanThatShownInItem_1": {
       "type": "string",
       "x-va-field": {
-        "label": "If Veteran Served Under Name Other Than That Shown in Item_",
+        "label": "If Veteran Served Under Name Other Than That Shown in Item",
         "widget": "text"
       }
     },
@@ -676,6 +676,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.890279+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.361088+00:00"
   }
 }

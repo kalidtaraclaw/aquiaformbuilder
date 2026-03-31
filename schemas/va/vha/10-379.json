@@ -233,7 +233,7 @@
     "inAccordanceWith_38Cfr_17_170AutopsiesNextOfKin": {
       "type": "string",
       "x-va-field": {
-        "label": "In Accordance With_38Cfr_17_170Autopsies Next of Kin",
+        "label": "In Accordance With 38Cfr 17 170Autopsies Next of Kin",
         "widget": "text"
       }
     },
@@ -261,6 +261,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.299878+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.789601+00:00"
   }
 }

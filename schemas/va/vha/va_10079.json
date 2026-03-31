@@ -77,91 +77,91 @@
     "baggagefees": {
       "type": "string",
       "x-va-field": {
-        "label": "Baggagefees",
+        "label": "Baggage Fees",
         "widget": "text"
       }
     },
     "other9c": {
       "type": "string",
       "x-va-field": {
-        "label": "Other9c",
+        "label": "Other 9 C",
         "widget": "text"
       }
     },
     "other9cDollaramount": {
       "type": "string",
       "x-va-field": {
-        "label": "Other9c Dollaramount",
+        "label": "Other 9 C Dollar Amount",
         "widget": "text"
       }
     },
     "other9d": {
       "type": "string",
       "x-va-field": {
-        "label": "Other9d",
+        "label": "Other 9 D",
         "widget": "text"
       }
     },
     "other9dDollaramount": {
       "type": "string",
       "x-va-field": {
-        "label": "Other9d Dollaramount",
+        "label": "Other 9 D Dollar Amount",
         "widget": "text"
       }
     },
     "other9e": {
       "type": "string",
       "x-va-field": {
-        "label": "Other9e",
+        "label": "Other 9 E",
         "widget": "text"
       }
     },
     "other9eDollaramount": {
       "type": "string",
       "x-va-field": {
-        "label": "Other9e Dollaramount",
+        "label": "Other 9 E Dollar Amount",
         "widget": "text"
       }
     },
     "other9f": {
       "type": "string",
       "x-va-field": {
-        "label": "Other9f",
+        "label": "Other 9 F",
         "widget": "text"
       }
     },
     "other9fDollaramount": {
       "type": "string",
       "x-va-field": {
-        "label": "Other9f Dollaramount",
+        "label": "Other 9 F Dollar Amount",
         "widget": "text"
       }
     },
     "other9g": {
       "type": "string",
       "x-va-field": {
-        "label": "Other9g",
+        "label": "Other 9 G",
         "widget": "text"
       }
     },
     "other9gDollaramount": {
       "type": "string",
       "x-va-field": {
-        "label": "Other9g Dollaramount",
+        "label": "Other 9 G Dollar Amount",
         "widget": "text"
       }
     },
     "other9h": {
       "type": "string",
       "x-va-field": {
-        "label": "Other9h",
+        "label": "Other 9 H",
         "widget": "text"
       }
     },
     "other9hDollaramount": {
       "type": "string",
       "x-va-field": {
-        "label": "Other9h Dollaramount",
+        "label": "Other 9 H Dollar Amount",
         "widget": "text"
       }
     },
@@ -224,7 +224,7 @@
     "baggagefees17b": {
       "type": "string",
       "x-va-field": {
-        "label": "Baggagefees17b",
+        "label": "Baggage Fees 17 B",
         "widget": "text"
       }
     },
@@ -245,70 +245,70 @@
     "other17e": {
       "type": "string",
       "x-va-field": {
-        "label": "Other17e",
+        "label": "Other 17 E",
         "widget": "text"
       }
     },
     "other17eDollaramount": {
       "type": "string",
       "x-va-field": {
-        "label": "Other17e Dollaramount",
+        "label": "Other 17 E Dollar Amount",
         "widget": "text"
       }
     },
     "other17f": {
       "type": "string",
       "x-va-field": {
-        "label": "Other17f",
+        "label": "Other 17 F",
         "widget": "text"
       }
     },
     "other17fDollaramount": {
       "type": "string",
       "x-va-field": {
-        "label": "Other17f Dollaramount",
+        "label": "Other 17 F Dollar Amount",
         "widget": "text"
       }
     },
     "other17g": {
       "type": "string",
       "x-va-field": {
-        "label": "Other17g",
+        "label": "Other 17 G",
         "widget": "text"
       }
     },
     "other17gDollaramount": {
       "type": "string",
       "x-va-field": {
-        "label": "Other17g Dollaramount",
+        "label": "Other 17 G Dollar Amount",
         "widget": "text"
       }
     },
     "other17h": {
       "type": "string",
       "x-va-field": {
-        "label": "Other17h",
+        "label": "Other 17 H",
         "widget": "text"
       }
     },
     "other17hDollaramount": {
       "type": "string",
       "x-va-field": {
-        "label": "Other17h Dollaramount",
+        "label": "Other 17 H Dollar Amount",
         "widget": "text"
       }
     },
     "other17i": {
       "type": "string",
       "x-va-field": {
-        "label": "Other17i",
+        "label": "Other 17 I",
         "widget": "text"
       }
     },
     "other17iDollaramount": {
       "type": "string",
       "x-va-field": {
-        "label": "Other17i Dollaramount",
+        "label": "Other 17 I Dollar Amount",
         "widget": "text"
       }
     },
@@ -474,7 +474,7 @@
     "numberOfMilesIfAirplaneOrTrainIsSelectedOn_5The": {
       "type": "string",
       "x-va-field": {
-        "label": "Number of Miles If Airplane or Train is Selected On_5The",
+        "label": "Number of Miles If Airplane or Train is Selected on 5The",
         "widget": "text"
       }
     },
@@ -502,7 +502,7 @@
     "otherEstimatedTravelExpenses_9aThrough_9hEnterAnyOt": {
       "type": "string",
       "x-va-field": {
-        "label": "Other Estimated Travel Expenses_9a Through_9h Enter Any Ot",
+        "label": "Other Estimated Travel Expenses 9a Through 9h Enter Any Ot",
         "widget": "text"
       }
     },
@@ -630,6 +630,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.409176+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.895485+00:00"
   }
 }

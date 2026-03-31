@@ -507,7 +507,7 @@
     "makeSureThatSectionIiiOfVaForm_21_4502IsCompletedA": {
       "type": "string",
       "x-va-field": {
-        "label": "Make Sure That Section Iii of VA Form_21_4502Is Completed a",
+        "label": "Make Sure That Section Iii of VA Form 21 4502Is Completed a",
         "widget": "text"
       }
     },
@@ -528,7 +528,7 @@
     "giveTheOriginalVaForm_21_4502ToTheSeller": {
       "type": "string",
       "x-va-field": {
-        "label": "Give the Original VA Form_21_4502To the Seller",
+        "label": "Give the Original VA Form 21 4502To the Seller",
         "widget": "text"
       }
     },
@@ -563,7 +563,7 @@
     "submitTheOriginalCopyOfVaForm_21_4502AndItemizedInv": {
       "type": "string",
       "x-va-field": {
-        "label": "Submit the Original Copy of VA Form_21_4502And Itemized Inv",
+        "label": "Submit the Original Copy of VA Form 21 4502And Itemized Inv",
         "widget": "text"
       }
     },
@@ -577,7 +577,7 @@
     "obtainTheOriginalCopyOfVaForm_21_4502FromTheVeteran": {
       "type": "string",
       "x-va-field": {
-        "label": "Obtain the Original Copy of VA Form_21_4502From the Veteran",
+        "label": "Obtain the Original Copy of VA Form 21 4502From the Veteran",
         "widget": "text"
       }
     },
@@ -682,6 +682,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.608336+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.083261+00:00"
   }
 }

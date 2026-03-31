@@ -71,7 +71,7 @@
     "otherLine2Of2": {
       "type": "string",
       "x-va-field": {
-        "label": "Other Line2Of"
+        "label": "Other Line 2 of"
       }
     },
     "nameOfLegalRepresentative": {
@@ -91,6 +91,6 @@
     "generatedAt": "2026-03-28T21:35:29.764Z",
     "pageCount": 1,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T23:47:23.208702+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.690376+00:00"
   }
 }

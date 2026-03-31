@@ -320,7 +320,7 @@
     "gastosMedCosFamiliaresLeaParrafo_6DeLasInstruccione": {
       "type": "string",
       "x-va-field": {
-        "label": "Gastos Med Cos Familiares Lea Parrafo_6De Las Instruccione",
+        "label": "Gastos Med Cos Familiares Lea Parrafo 6De Las Instruccione",
         "widget": "text"
       }
     },
@@ -355,6 +355,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.663929+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.137219+00:00"
   }
 }

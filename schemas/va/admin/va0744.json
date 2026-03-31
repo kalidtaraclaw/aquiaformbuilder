@@ -105,7 +105,7 @@
     "rateorcharge13a": {
       "type": "string",
       "x-va-field": {
-        "label": "Rateorcharge13a",
+        "label": "Rate or Charge 13 a",
         "widget": "text"
       }
     },
@@ -210,7 +210,7 @@
     "rateorcharge17a": {
       "type": "string",
       "x-va-field": {
-        "label": "Rateorcharge17a",
+        "label": "Rate or Charge 17 a",
         "widget": "text"
       }
     },
@@ -421,7 +421,7 @@
       "type": "string",
       "format": "email",
       "x-va-field": {
-        "label": "Arlington Va_20406Email",
+        "label": "Arlington VA 20406Email",
         "widget": "email"
       }
     },
@@ -463,6 +463,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:22.949418+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.424870+00:00"
   }
 }

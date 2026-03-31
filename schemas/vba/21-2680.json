@@ -266,14 +266,14 @@
     "hoursInBed9pmTo9am": {
       "type": "string",
       "x-va-field": {
-        "label": "Hours in Bed9pm To9am",
+        "label": "Hours in Bed 9 Pm to 9 Am",
         "widget": "text"
       }
     },
     "hoursInBed9amTo9pm": {
       "type": "string",
       "x-va-field": {
-        "label": "Hours in Bed9am To9pm",
+        "label": "Hours in Bed 9 Am to 9 Pm",
         "widget": "text"
       }
     },
@@ -625,7 +625,7 @@
     "respiratoryRate25WhatDisabilitiesRestrictTheListedAc": {
       "type": "string",
       "x-va-field": {
-        "label": "Respiratory Rate25What Disabilities Restrict the Listed Ac",
+        "label": "Respiratory Rate 25 What Disabilities Restrict the Listed Ac",
         "widget": "text"
       }
     },
@@ -646,14 +646,14 @@
     "from_9PmTo_9Am": {
       "type": "string",
       "x-va-field": {
-        "label": "From_9Pm To_9Am",
+        "label": "From 9Pm to 9Am",
         "widget": "text"
       }
     },
     "from_9AmTo_9Pm": {
       "type": "string",
       "x-va-field": {
-        "label": "From_9Am To_9Pm",
+        "label": "From 9Am to 9Pm",
         "widget": "text"
       }
     },
@@ -831,6 +831,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.576529+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.049631+00:00"
   }
 }

@@ -146,13 +146,13 @@
     "c1Assets": {
       "type": "number",
       "x-va-field": {
-        "label": "C1Assets"
+        "label": "C 1 Assets"
       }
     },
     "c2Assets": {
       "type": "number",
       "x-va-field": {
-        "label": "C2Assets"
+        "label": "C 2 Assets"
       }
     },
     "aAssets": {
@@ -622,6 +622,6 @@
     "needsReviewCount": 0,
     "pageCount": 2,
     "generatedAt": "2026-03-28T17:32:59.325Z",
-    "fieldNameFixedAt": "2026-03-30T23:47:24.205940+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.672574+00:00"
   }
 }

@@ -218,7 +218,7 @@
     "ifYesWasSelectedForItem12a": {
       "type": "string",
       "x-va-field": {
-        "label": "If Yes Was Selected for Item12a"
+        "label": "If Yes Was Selected for Item 12 a"
       }
     },
     "toBeCompletedByTheGovernment": {
@@ -394,6 +394,6 @@
     "generatedAt": "2026-03-28T21:13:12.843Z",
     "pageCount": 2,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T23:47:22.933596+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.405787+00:00"
   }
 }

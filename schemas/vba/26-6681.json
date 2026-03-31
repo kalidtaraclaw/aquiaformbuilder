@@ -427,7 +427,7 @@
     "presentOccupation11NameAndAddressOfPresentEmployer": {
       "type": "string",
       "x-va-field": {
-        "label": "Present Occupation11Name and Address of Present Employer",
+        "label": "Present Occupation 11 Name and Address of Present Employer",
         "widget": "address"
       }
     },
@@ -455,7 +455,7 @@
     "statePrincipalAssignmentsDuringAtLeastThePast_5Years": {
       "type": "string",
       "x-va-field": {
-        "label": "State Principal Assignments During at Least the Past_5Years",
+        "label": "State Principal Assignments During at Least the Past 5Years",
         "widget": "select"
       }
     },
@@ -470,7 +470,7 @@
     "employmentHistoryDuringThePast_10YearsAttachAddition": {
       "type": "string",
       "x-va-field": {
-        "label": "Employment History During the Past_10Years Attach Addition",
+        "label": "Employment History During the Past 10Years Attach Addition",
         "widget": "text"
       }
     },
@@ -485,7 +485,7 @@
     "referencesListAndSubmitAtLeast_2LettersAttestingTo": {
       "type": "string",
       "x-va-field": {
-        "label": "References List and Submit at Least_2Letters Attesting to",
+        "label": "References List and Submit at Least 2Letters Attesting to",
         "widget": "text"
       }
     },
@@ -514,7 +514,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Do Not Print Must Be Legible_25Date Signed",
+        "label": "Do Not Print Must Be Legible 25Date Signed",
         "widget": "date"
       }
     },
@@ -556,6 +556,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.173905+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.640879+00:00"
   }
 }

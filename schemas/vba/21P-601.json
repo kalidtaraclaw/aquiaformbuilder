@@ -540,7 +540,7 @@
     "listTheExpensesOfLastSicknessAndBurialInItems_15aT": {
       "type": "string",
       "x-va-field": {
-        "label": "List the Expenses of Last Sickness and Burial in Items_15a T",
+        "label": "List the Expenses of Last Sickness and Burial in Items 15a T",
         "widget": "text"
       }
     },
@@ -561,7 +561,7 @@
     "listTheOtherDebtsInItems_18aAnd_18b": {
       "type": "string",
       "x-va-field": {
-        "label": "List the Other Debts in Items_18a And_18b",
+        "label": "List the Other Debts in Items 18a and 18b",
         "widget": "text"
       }
     },
@@ -643,6 +643,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.901357+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.372416+00:00"
   }
 }

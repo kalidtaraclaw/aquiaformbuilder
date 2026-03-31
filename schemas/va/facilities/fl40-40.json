@@ -94,7 +94,7 @@
       "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
       "maxLength": 11,
       "x-va-field": {
-        "label": "Name2Ssn C Service No_3Section4Grave",
+        "label": "Name 2 SSN C Service no 3Section 4 Grave",
         "widget": "ssn"
       }
     },
@@ -122,7 +122,7 @@
     "isTheIndividualInBlock_1DeceasedIfYesWhatIsThe": {
       "type": "string",
       "x-va-field": {
-        "label": "Is the Individual in Block_1Deceased If Yes What is the",
+        "label": "Is the Individual in Block 1Deceased If Yes What is the",
         "widget": "text"
       }
     },
@@ -130,7 +130,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Print Name10Signature11Date",
+        "label": "Print Name 10 Signature 11 Date",
         "widget": "date"
       }
     },
@@ -159,6 +159,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.472328+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.960771+00:00"
   }
 }

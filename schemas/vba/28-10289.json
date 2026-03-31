@@ -365,7 +365,7 @@
     "jobTitle25Employer": {
       "type": "string",
       "x-va-field": {
-        "label": "Job Title25Employer",
+        "label": "Job Title 25 Employer",
         "widget": "text"
       }
     },
@@ -407,7 +407,7 @@
     "hoursPerWeek17Salary": {
       "type": "string",
       "x-va-field": {
-        "label": "Hours Per Week17Salary",
+        "label": "Hours Per Week 17 Salary",
         "widget": "text"
       }
     },
@@ -450,7 +450,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Required_31Date Signed",
+        "label": "Required 31Date Signed",
         "widget": "date"
       }
     },
@@ -493,6 +493,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.290947+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.759025+00:00"
   }
 }

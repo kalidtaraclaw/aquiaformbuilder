@@ -252,13 +252,13 @@
     "itemNumberRow1of5": {
       "type": "string",
       "x-va-field": {
-        "label": "Item Number Row1of"
+        "label": "Item Number Row 1 of"
       }
     },
     "itemNumberRow2of5": {
       "type": "string",
       "x-va-field": {
-        "label": "Item Number Row2of"
+        "label": "Item Number Row 2 of"
       }
     },
     "suppliesservicesInfo": {
@@ -350,6 +350,6 @@
     "generatedAt": "2026-03-28T21:12:32.035Z",
     "pageCount": 1,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T23:47:22.917877+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.389502+00:00"
   }
 }

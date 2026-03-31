@@ -49,7 +49,7 @@
     "nameOfPersonClaimingRefund4YourSocialSecurityNumber": {
       "type": "string",
       "x-va-field": {
-        "label": "Name of Person Claiming Refund4Your Social Security Number",
+        "label": "Name of Person Claiming Refund 4 Your Social Security Number",
         "widget": "text"
       }
     },
@@ -84,14 +84,14 @@
     "ifYouAnsweredYesToItem_7aOr_7bHaveYouBeenAppoin": {
       "type": "string",
       "x-va-field": {
-        "label": "If You Answered Yes to Item_7a Or_7b Have You Been Appoin",
+        "label": "If You Answered Yes to Item 7a or 7b Have You Been Appoin",
         "widget": "text"
       }
     },
     "ifYouSelectedLineCInItem_6PleaseIndicateYourRelat": {
       "type": "string",
       "x-va-field": {
-        "label": "If You Selected Line C in Item_6Please Indicate Your Relat",
+        "label": "If You Selected Line C in Item 6Please Indicate Your Relat",
         "widget": "text"
       }
     },
@@ -112,7 +112,7 @@
     "ifYouAnsweredNoToItem_10aWillOneBeAppointed": {
       "type": "string",
       "x-va-field": {
-        "label": "If You Answered no to Item_10a Will One Be Appointed",
+        "label": "If You Answered no to Item 10a Will One Be Appointed",
         "widget": "text"
       }
     },
@@ -163,6 +163,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.068644+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.536402+00:00"
   }
 }

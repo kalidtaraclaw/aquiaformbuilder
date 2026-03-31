@@ -103,7 +103,7 @@
     "residency1Of2DegreeOrSpecialty": {
       "type": "string",
       "x-va-field": {
-        "label": "Residency1Of2Degree or Specialty"
+        "label": "Residency 1 of 2 Degree or Specialty"
       }
     },
     "internshipInstitution": {
@@ -201,6 +201,6 @@
     "generatedAt": "2026-03-28T21:05:28.447Z",
     "pageCount": 1,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T21:38:04.561877+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.559954+00:00"
   }
 }

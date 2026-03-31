@@ -154,7 +154,7 @@
     "total1a": {
       "type": "string",
       "x-va-field": {
-        "label": "Total1a",
+        "label": "Total 1 a",
         "widget": "text"
       }
     },
@@ -217,63 +217,63 @@
     "total1b": {
       "type": "string",
       "x-va-field": {
-        "label": "Total1b",
+        "label": "Total 1 B",
         "widget": "text"
       }
     },
     "amount22a": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount22a",
+        "label": "Amount 22 a",
         "widget": "text"
       }
     },
     "amount23a": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount23a",
+        "label": "Amount 23 a",
         "widget": "text"
       }
     },
     "amount24a": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount24a",
+        "label": "Amount 24 a",
         "widget": "text"
       }
     },
     "amount25a": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount25a",
+        "label": "Amount 25 a",
         "widget": "text"
       }
     },
     "amount26a": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount26a",
+        "label": "Amount 26 a",
         "widget": "text"
       }
     },
     "amount27a": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount27a",
+        "label": "Amount 27 a",
         "widget": "text"
       }
     },
     "amount28a": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount28a",
+        "label": "Amount 28 a",
         "widget": "text"
       }
     },
     "total1c": {
       "type": "string",
       "x-va-field": {
-        "label": "Total1c",
+        "label": "Total 1 C",
         "widget": "text"
       }
     },
@@ -343,7 +343,7 @@
     "amount32a": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount32a",
+        "label": "Amount 32 a",
         "widget": "text"
       }
     },
@@ -357,7 +357,7 @@
     "amount33a": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount33a",
+        "label": "Amount 33 a",
         "widget": "text"
       }
     },
@@ -385,98 +385,98 @@
     "amount34a": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount34a",
+        "label": "Amount 34 a",
         "widget": "text"
       }
     },
     "amount35a": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount35a",
+        "label": "Amount 35 a",
         "widget": "text"
       }
     },
     "amount36a": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount36a",
+        "label": "Amount 36 a",
         "widget": "text"
       }
     },
     "total3a": {
       "type": "string",
       "x-va-field": {
-        "label": "Total3a",
+        "label": "Total 3 a",
         "widget": "text"
       }
     },
     "total4a": {
       "type": "string",
       "x-va-field": {
-        "label": "Total4a",
+        "label": "Total 4 a",
         "widget": "text"
       }
     },
     "total5a": {
       "type": "string",
       "x-va-field": {
-        "label": "Total5a",
+        "label": "Total 5 a",
         "widget": "text"
       }
     },
     "total6a": {
       "type": "string",
       "x-va-field": {
-        "label": "Total6a",
+        "label": "Total 6 a",
         "widget": "text"
       }
     },
     "total4b": {
       "type": "string",
       "x-va-field": {
-        "label": "Total4b",
+        "label": "Total 4 B",
         "widget": "text"
       }
     },
     "total5b": {
       "type": "string",
       "x-va-field": {
-        "label": "Total5b",
+        "label": "Total 5 B",
         "widget": "text"
       }
     },
     "total6b": {
       "type": "string",
       "x-va-field": {
-        "label": "Total6b",
+        "label": "Total 6 B",
         "widget": "text"
       }
     },
     "total3c": {
       "type": "string",
       "x-va-field": {
-        "label": "Total3c",
+        "label": "Total 3 C",
         "widget": "text"
       }
     },
     "total4c": {
       "type": "string",
       "x-va-field": {
-        "label": "Total4c",
+        "label": "Total 4 C",
         "widget": "text"
       }
     },
     "total5c": {
       "type": "string",
       "x-va-field": {
-        "label": "Total5c",
+        "label": "Total 5 C",
         "widget": "text"
       }
     },
     "total6c": {
       "type": "string",
       "x-va-field": {
-        "label": "Total6c",
+        "label": "Total 6 C",
         "widget": "text"
       }
     },
@@ -511,7 +511,7 @@
     "total3b": {
       "type": "string",
       "x-va-field": {
-        "label": "Total3b",
+        "label": "Total 3 B",
         "widget": "text"
       }
     },
@@ -609,7 +609,7 @@
     "nameOfBorrower_2AmountOfLoan": {
       "type": "string",
       "x-va-field": {
-        "label": "Name of Borrower_2Amount of Loan",
+        "label": "Name of Borrower 2Amount of Loan",
         "widget": "text"
       }
     },
@@ -680,7 +680,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Date Signed_55Signature of VA Approved Underwriter",
+        "label": "Date Signed 55Signature of VA Approved Underwriter",
         "widget": "date"
       }
     },
@@ -688,7 +688,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Final Action_57Date Signed_58Signature and Title of App",
+        "label": "Final Action 57Date Signed 58Signature and Title of App",
         "widget": "date"
       }
     },
@@ -779,6 +779,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:24.168348+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.634676+00:00"
   }
 }

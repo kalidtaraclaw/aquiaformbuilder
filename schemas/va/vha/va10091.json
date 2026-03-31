@@ -350,7 +350,7 @@
       "type": "string",
       "format": "email",
       "x-va-field": {
-        "label": "Email Address for the Person Listed in Boxes_24And_",
+        "label": "Email Address for the Person Listed in Boxes 24And",
         "widget": "email"
       }
     },
@@ -393,7 +393,7 @@
     "currentBank_9DigitRoutingNumber": {
       "type": "string",
       "x-va-field": {
-        "label": "Current Bank_9Digit Routing Number",
+        "label": "Current Bank 9Digit Routing Number",
         "widget": "text"
       }
     },
@@ -703,6 +703,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.392108+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.879102+00:00"
   }
 }

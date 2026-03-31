@@ -103,7 +103,7 @@
     "numberLowerExtremity2Maximum": {
       "type": "string",
       "x-va-field": {
-        "label": "Number Lower Extremity2Maximum"
+        "label": "Number Lower Extremity 2 Maximum"
       }
     },
     "forVA": {
@@ -135,6 +135,6 @@
     "generatedAt": "2026-03-28T21:33:24.746Z",
     "pageCount": 2,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T21:38:04.840413+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.864893+00:00"
   }
 }

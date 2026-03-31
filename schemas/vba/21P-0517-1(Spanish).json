@@ -453,7 +453,7 @@
     "gastosDeManutencionFamiliarPrivaciNLosProximos_12M": {
       "type": "string",
       "x-va-field": {
-        "label": "Gastos De Manutencion Familiar Privaci N Los Proximos_12M",
+        "label": "Gastos De Manutencion Familiar Privaci N Los Proximos 12M",
         "widget": "text"
       }
     },
@@ -481,6 +481,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.693341+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.166932+00:00"
   }
 }

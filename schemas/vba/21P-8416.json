@@ -421,7 +421,7 @@
     "theFacilityIsStaffed24Hours": {
       "type": "boolean",
       "x-va-field": {
-        "label": "The Facility is Staffed24Hours",
+        "label": "The Facility is Staffed 24 Hours",
         "widget": "checkbox"
       }
     },
@@ -631,7 +631,7 @@
     "4a_3ProviderStartAndEndDate": {
       "type": "string",
       "x-va-field": {
-        "label": "4a_3Provider Start and End Date",
+        "label": "4a 3Provider Start and End Date",
         "widget": "text"
       }
     },
@@ -652,7 +652,7 @@
     "4b_3ProviderStartAndEndDate": {
       "type": "string",
       "x-va-field": {
-        "label": "4b_3Provider Start and End Date",
+        "label": "4b 3Provider Start and End Date",
         "widget": "text"
       }
     },
@@ -666,77 +666,77 @@
     "5a_2DateCostsPaid": {
       "type": "string",
       "x-va-field": {
-        "label": "5a_2Date Costs Paid",
+        "label": "5a 2Date Costs Paid",
         "widget": "text"
       }
     },
     "5b_2DateCostsPaid": {
       "type": "string",
       "x-va-field": {
-        "label": "5b_2Date Costs Paid",
+        "label": "5b 2Date Costs Paid",
         "widget": "text"
       }
     },
     "5c_2DateCostsPaid": {
       "type": "string",
       "x-va-field": {
-        "label": "5c_2Date Costs Paid",
+        "label": "5c 2Date Costs Paid",
         "widget": "text"
       }
     },
     "5d_2DateCostsPaid": {
       "type": "string",
       "x-va-field": {
-        "label": "5d_2Date Costs Paid",
+        "label": "5d 2Date Costs Paid",
         "widget": "text"
       }
     },
     "5e_2DateCostsPaid": {
       "type": "string",
       "x-va-field": {
-        "label": "5e_2Date Costs Paid",
+        "label": "5e 2Date Costs Paid",
         "widget": "text"
       }
     },
     "5f_2DateCostsPaid": {
       "type": "string",
       "x-va-field": {
-        "label": "5f_2Date Costs Paid",
+        "label": "5f 2Date Costs Paid",
         "widget": "text"
       }
     },
     "5g_2DateCostsPaid": {
       "type": "string",
       "x-va-field": {
-        "label": "5g_2Date Costs Paid",
+        "label": "5g 2Date Costs Paid",
         "widget": "text"
       }
     },
     "6a_4DateTraveled": {
       "type": "string",
       "x-va-field": {
-        "label": "6a_4Date Traveled",
+        "label": "6a 4Date Traveled",
         "widget": "text"
       }
     },
     "6b_4DateTraveled": {
       "type": "string",
       "x-va-field": {
-        "label": "6b_4Date Traveled",
+        "label": "6b 4Date Traveled",
         "widget": "text"
       }
     },
     "6c_4DateTraveled": {
       "type": "string",
       "x-va-field": {
-        "label": "6c_4Date Traveled",
+        "label": "6c 4Date Traveled",
         "widget": "text"
       }
     },
     "6d_4DateTraveled": {
       "type": "string",
       "x-va-field": {
-        "label": "6d_4Date Traveled",
+        "label": "6d 4Date Traveled",
         "widget": "text"
       }
     },
@@ -1251,6 +1251,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.926746+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.398065+00:00"
   }
 }

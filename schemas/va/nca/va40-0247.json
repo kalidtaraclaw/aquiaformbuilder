@@ -157,7 +157,7 @@
     "nameOfPersonRequestingCertificate8MailingAddressOfP": {
       "type": "string",
       "x-va-field": {
-        "label": "Name of Person Requesting Certificate8Mailing Address of P",
+        "label": "Name of Person Requesting Certificate 8 Mailing Address of P",
         "widget": "address"
       }
     },
@@ -165,7 +165,7 @@
       "type": "string",
       "pattern": "^\\d{10}$",
       "x-va-field": {
-        "label": "Home or Work Telephone Number Include Area Code_999_",
+        "label": "Home or Work Telephone Number Include Area Code 999",
         "widget": "phone"
       }
     },
@@ -173,7 +173,7 @@
       "type": "string",
       "format": "email",
       "x-va-field": {
-        "label": "Request or Email Address11number of Certificates Requested",
+        "label": "Request or Email Address 11 Number of Certificates Requested",
         "widget": "email"
       }
     },
@@ -216,7 +216,7 @@
       "type": "string",
       "format": "email",
       "x-va-field": {
-        "label": "Case Manager Name15Pmc ID Number16Case Manager Email",
+        "label": "Case Manager Name 15 Pmc ID Number 16 Case Manager Email",
         "widget": "email"
       }
     },
@@ -245,6 +245,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.418852+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.904746+00:00"
   }
 }

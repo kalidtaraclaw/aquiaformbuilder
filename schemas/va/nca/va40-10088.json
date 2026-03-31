@@ -246,7 +246,7 @@
       "type": "string",
       "pattern": "^\\d{10}$",
       "x-va-field": {
-        "label": "Telephone Number of Funeral Home_999_999_",
+        "label": "Telephone Number of Funeral Home 999 999",
         "widget": "phone"
       }
     },
@@ -254,7 +254,7 @@
       "type": "string",
       "pattern": "^\\d{10}$",
       "x-va-field": {
-        "label": "Telephone Number of Applicant_999_999_",
+        "label": "Telephone Number of Applicant 999 999",
         "widget": "phone"
       }
     },
@@ -353,6 +353,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.440427+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.927406+00:00"
   }
 }

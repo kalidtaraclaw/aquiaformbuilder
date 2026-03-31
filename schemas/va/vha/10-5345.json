@@ -171,7 +171,7 @@
     "followingConditionsLine2Of2": {
       "type": "string",
       "x-va-field": {
-        "label": "Following Conditions Line2Of"
+        "label": "Following Conditions Line 2 of"
       }
     },
     "patientMedicalRecordsDates": {
@@ -263,6 +263,6 @@
     "generatedAt": "2026-03-28T21:34:44.256Z",
     "pageCount": 2,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T23:42:26.836753+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.814902+00:00"
   }
 }

@@ -57,7 +57,7 @@
     "nameOfBeneficiaryLine2Of12": {
       "type": "string",
       "x-va-field": {
-        "label": "Name of Beneficiary Line2Of"
+        "label": "Name of Beneficiary Line 2 of"
       }
     },
     "totalToBeInsertedByPatientsFundClerk": {
@@ -89,6 +89,6 @@
     "generatedAt": "2026-03-28T21:03:30.393Z",
     "pageCount": 1,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T21:38:04.685259+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.709026+00:00"
   }
 }

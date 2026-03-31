@@ -168,7 +168,7 @@
     "childSMedicalExpensesReadParagraph_6OfTheEvrInstru": {
       "type": "string",
       "x-va-field": {
-        "label": "Child S Medical Expenses Read Paragraph_6Of the Evr Instru",
+        "label": "Child S Medical Expenses Read Paragraph 6Of the Evr Instru",
         "widget": "text"
       }
     },
@@ -230,6 +230,6 @@
       "acroform",
       "acroform+text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.672631+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:59.145572+00:00"
   }
 }

@@ -245,7 +245,7 @@
     "doYouHaveAVaCertificateOfEligibilityVaForm_21_4502": {
       "type": "string",
       "x-va-field": {
-        "label": "Do You Have a VA Certificate of Eligibility VA Form_21_",
+        "label": "Do You Have a VA Certificate of Eligibility VA Form 21",
         "widget": "text"
       }
     },
@@ -311,7 +311,7 @@
     "amountRequestedForPayment14TotalAmountToBePaidToR": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount Requested for Payment14Total Amount to Be Paid to R",
+        "label": "Amount Requested for Payment 14 Total Amount to Be Paid to R",
         "widget": "text"
       }
     },
@@ -346,7 +346,7 @@
     "amountRequestedForReimbursement18TotalAmountToBeRei": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount Requested for Reimbursement18Total Amount to Be Rei",
+        "label": "Amount Requested for Reimbursement 18 Total Amount to Be Rei",
         "widget": "text"
       }
     },
@@ -409,6 +409,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.179726+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.663780+00:00"
   }
 }

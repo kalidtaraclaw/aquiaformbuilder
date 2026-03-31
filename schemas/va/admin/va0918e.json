@@ -266,7 +266,7 @@
     "nameOfPublication20FrequencyOfPublication": {
       "type": "string",
       "x-va-field": {
-        "label": "Name of Publication20Frequency of Publication",
+        "label": "Name of Publication 20 Frequency of Publication",
         "widget": "text"
       }
     },
@@ -346,6 +346,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:22.960415+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.436835+00:00"
   }
 }

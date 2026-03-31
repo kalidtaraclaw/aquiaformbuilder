@@ -311,7 +311,7 @@
       "type": "string",
       "pattern": "^\\d{5}(-\\d{4})?$",
       "x-va-field": {
-        "label": "ZIP Code_99999_",
+        "label": "ZIP Code 99999",
         "widget": "zip"
       }
     },
@@ -319,7 +319,7 @@
       "type": "string",
       "pattern": "^\\d{10}$",
       "x-va-field": {
-        "label": "Phone Number With Area Code_999_999_",
+        "label": "Phone Number With Area Code 999 999",
         "widget": "phone"
       }
     },
@@ -342,7 +342,7 @@
     "nameOfInsurance_1": {
       "type": "string",
       "x-va-field": {
-        "label": "Name of Insurance_",
+        "label": "Name of Insurance",
         "widget": "text"
       }
     },
@@ -357,7 +357,7 @@
     "nameOfInsurance_2": {
       "type": "string",
       "x-va-field": {
-        "label": "Name of Insurance_",
+        "label": "Name of Insurance",
         "widget": "text"
       }
     },
@@ -438,6 +438,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.359315+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:39:58.849496+00:00"
   }
 }
