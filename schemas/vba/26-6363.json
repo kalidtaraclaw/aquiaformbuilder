@@ -88,7 +88,7 @@
     "legaldescription": {
       "type": "string",
       "x-va-field": {
-        "label": "Legaldescription"
+        "label": "Legal Description"
       }
     },
     "master": {
@@ -190,6 +190,6 @@
     "needsReviewCount": 0,
     "pageCount": 10,
     "generatedAt": "2026-03-28T17:34:37.857Z",
-    "fieldNameFixedAt": "2026-03-31T00:39:59.624038+00:00"
+    "fieldNameFixedAt": "2026-03-31T01:08:02.924038+00:00"
   }
 }

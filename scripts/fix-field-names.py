@@ -413,6 +413,9 @@ DONT_SPLIT = {
     'bridging', 'doorbell', 'plumbing', 'planting', 'capacity',
     'shingles', 'exposure', 'membrane', 'diagonal', 'observer',
     'surfacing', 'flowering',
+    # Words that could be falsely split by short words 'up', 'as'
+    'update', 'updated', 'upon', 'upset', 'upper', 'upstairs', 'upcoming',
+    'asset', 'assets', 'assign', 'assigned', 'assurance',
 }
 
 # VA form term dictionary for splitting concatenated labels.
@@ -564,6 +567,20 @@ VA_WORD_LIST = sorted(set([
     'fixtures', 'fixture', 'sewer', 'electric',
     'installation', 'ventilating', 'improvements', 'equipment',
     'construction', 'vaporizing',
+    # Round 8: Words found during visual testing of 26-1852 and bulk schema scan
+    'up', 'as',  # Short words needed for splits like "builtuproofing", "drawingsas"
+    'mix', 'button', 'locations', 'location',
+    'growing', 'drawings', 'drawing', 'supporting', 'supported',
+    'development', 'merit', 'residential',
+    'scholarship', 'recommendation', 'recommendations',
+    'evaluation', 'career', 'legal', 'authorized',
+    'corrective', 'submit', 'follows',
+    'investigational', 'correspondence', 'catastrophically',
+    'compliance', 'specified', 'shown',
+    'myelodysplastic', 'syndrome', 'neurobehavioral', 'effects',
+    'interthoracoscapular', 'forequarter', 'interpelviaabdominal', 'hindquarter',
+    'amputation', 'detachment', 'disarticulation',
+    'devices', 'drugs',
 ]), key=lambda w: -len(w))  # Sort longest first for greedy matching
 
 

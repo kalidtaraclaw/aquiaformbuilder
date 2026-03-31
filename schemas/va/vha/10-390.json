@@ -93,7 +93,7 @@
     "howtosubmit": {
       "type": "string",
       "x-va-field": {
-        "label": "Howtosubmit"
+        "label": "How to Submit"
       }
     },
     "nameFirstLast": {
@@ -155,6 +155,6 @@
     "generatedAt": "2026-03-28T21:22:38.416Z",
     "pageCount": 2,
     "status": "digitized",
-    "fieldNameFixedAt": "2026-03-30T23:42:26.817781+00:00"
+    "fieldNameFixedAt": "2026-03-31T01:08:01.866233+00:00"
   }
 }
