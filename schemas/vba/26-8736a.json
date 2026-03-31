@@ -147,5 +147,165 @@
       "acroform+text-inference"
     ],
     "fieldNameFixedAt": "2026-03-30T23:47:24.248850+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "26-8736a",
+    "formTitle": "Minimum Property Requirements for Existing Construction",
+    "formSections": [
+      {
+        "title": "Certification and Signature",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "dateSigned",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "signatureField11",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "ssn",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "numericField1",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "important",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "vaAndPublishedInTheFederalRegister",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "locatedOnTheOmbInternetPageAt",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "qualiifications",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "nameOfUnderwriterApplicantFirstMiddleLast",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "socialSecurityNumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "businessAddress",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "iAmCurrentlyApprovedAsAVaUnderwriter",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "yesIfYesProvideVaUnderwriterIdNumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "beginningWithPresentEmploymentListChronologicallyAll",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "nameAddress",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "iAmCurrentlyDesignatedAsACruOrAruByTheMba",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "8b",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "9c",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

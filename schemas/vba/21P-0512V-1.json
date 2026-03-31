@@ -161,5 +161,181 @@
       "acroform+text-inference"
     ],
     "fieldNameFixedAt": "2026-03-30T23:47:23.659614+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "21P-0512V-1",
+    "formTitle": "Disability Compensation Form",
+    "formSections": [
+      {
+        "title": "Certification and Signature",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "dateSigned",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "signatureField11",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "ssn",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "amount",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "source",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "showSource",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "maritalStatus",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "doYouReceiveAnyOtherVaBenefitsAsAVeteranParentO",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "didYouReceiveWagesOrWereYouEmployedAtAnyTimeDurin",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "4bShowThe",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "1dYourSpouseSDateOfBirth",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "feesForClaims",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "important",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "socialSecurity",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "familyMedicalExpenses",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "telephoneNumberIncludeAreaCode",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "showThe",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "orTheDateIncomeChanged",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "9bDate",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "dependentchildrenincustody",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

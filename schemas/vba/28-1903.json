@@ -160,5 +160,117 @@
     "generatedAt": "2026-03-28T17:34:53.778Z",
     "postProcessedAt": "2026-03-30T20:02:41.756417+00:00",
     "fieldNameFixedAt": "2026-03-30T21:38:05.256729+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "28-1903",
+    "formTitle": "VA Form 28-1903",
+    "formSections": [
+      {
+        "title": "Certification and Signature",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "dateSignedMonth",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "signature",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "dateOfBirth",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "fullName",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "address",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "phoneNumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "nameOfContractorAnInstitutionOrIndividual",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "periodBeginningMonth",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "nameOfContractor",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "name",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "title",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

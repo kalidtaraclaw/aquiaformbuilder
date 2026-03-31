@@ -334,5 +334,378 @@
       "text-inference"
     ],
     "fieldNameFixedAt": "2026-03-30T23:47:23.009531+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "VA9",
+    "formTitle": "Disability Compensation Form",
+    "formSections": [
+      {
+        "title": "Insurance Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "insurancefilenoorloanno",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "insuranceFileNoOrLoan",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Certification and Signature",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "signature1",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "signatureOfPersonMakingThisAppeal",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "signatureOfAppointedRepresentativeIf",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "nameofveteran",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "claimfileno",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "other",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "workPhone",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "nameifnotveteran",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "appeal",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "listofissuesyouareappealing",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "justification",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "boardhearing",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "date",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "continuationsheetforitem9",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "nameOfVeteranLastNameFirstNameMiddleInitial",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "claimFileNoIncludePrefix",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "iAmThe",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "otherSpecify",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "telephoneNumbers",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "myAddressIsNumberStreetOrPostOfficeBoxCitySta",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "ifIAmNotTheVeteranMyNameIsLastNameFirstName",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "theseAreTheIssuesIWantToAppealToTheBoardBeSure",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "hereIsWhyIThinkThatVaDecidedMyCaseIncorrectlyBe",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "optionalBoardHearing",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "followingBoxes",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "important",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "iWantAnOptionalBoardHearing",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "date2",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "considerGettingAssistanceWeHaveTriedToGiveYouTheGe",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "whatIsThisFormForYouToldYourLocalVaOfficeThatYou",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "doIHaveToFillOutThisFormAndFileItFillOutThisFo",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "howLongDoIHaveToCompleteThisFormAndFileItUnderC",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "cYourLocalVaOfficeMayHaveSentYouAnUp",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "whatIfINeedMoreTimeIfYouNeedMoreTimeToCompleteT",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "thePostmark",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "whatKindOfInformationDoINeedToIncludeWhenIFillOu",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "whereDoIFileTheFormOnceIHaveCompletedItWhenYouH",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "otherSourcesOfInformation",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "appealOnTheInternetAt",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "eligibilityCanBeFoundOnTheInternetAt",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "specialNoteForAttorneysAndVaAccreditedAgentsThereAr",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "homePhone",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

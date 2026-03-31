@@ -1028,19 +1028,10 @@ function renderIntroStep(schema, vaForm, org) {
 
     // Build "what you'll need" from schema sections + required fields
     if (formSections.length > 0) {
-        html += '<p><strong>You\'ll need this information to complete this form:</strong></p><ul>';
+        html += '<p><strong>Here\'s what this form will ask for:</strong></p><ul>';
         for (const sec of formSections) {
-            if (sec.rows) {
-                for (const row of sec.rows) {
-                    for (const col of row.columns) {
-                        const fieldDef = props[col.fieldId];
-                        const vaField = fieldDef?.['x-va-field'] || {};
-                        const isReq = requiredList.has(col.fieldId) || vaField.required;
-                        if (isReq && vaField.label) {
-                            html += `<li>${esc(vaField.label)}</li>`;
-                        }
-                    }
-                }
+            if (sec.title && sec.title !== 'Additional Information') {
+                html += `<li>${esc(sec.title)}</li>`;
             }
         }
         html += '</ul>';
@@ -1147,15 +1138,10 @@ function renderLegacyStep(schema) {
         return html;
     }
 
-    html += '<h2>Form Fields</h2>';
-
-    // Info banner with link to original PDF
-    html += '<div class="va-alert" style="margin-bottom:1.5rem;">';
-    html += '<p style="margin:0;">Field labels are auto-generated from the PDF form. ';
-    if (formUrl) {
-        html += '<a href="' + esc(formUrl) + '" target="_blank" rel="noopener" style="color:var(--vads-color-primary);text-decoration:underline;">View original PDF</a> for reference.';
-    }
-    html += '</p></div>';
+    // Section title from x-va-form or fallback
+    const vaForm = schema['x-va-form'] || {};
+    const sectionTitle = vaForm.formTitle || 'Form Fields';
+    html += `<h2>${esc(sectionTitle)}</h2>`;
 
     // ─── Detect repeated field groups and render as tables ───
     // Parse field keys to find numbered groups: "date1","from1","amount1","date2","from2","amount2"...

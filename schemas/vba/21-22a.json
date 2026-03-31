@@ -485,5 +485,553 @@
       "text-inference"
     ],
     "fieldNameFixedAt": "2026-03-31T00:39:59.040715+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "21-22a",
+    "formTitle": "Appointment of Individual as Claimant's Representative",
+    "formSections": [
+      {
+        "title": "Veteran's Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "veteransFirstName",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "veteransLastName",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "veteransMiddleInitial",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "veteransServiceNumberIfApplicable",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "veteranSNameFirstMiddleInitialLast",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Mailing Address",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "mailingAddressCity",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "mailingAddressApartmentOrUnitNumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "mailingAddressNumberAndStreet",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "mailingAddressZiporPostalCode",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "mailingAddressCountry",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "mailingAddressStateOrProvince",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "mailingAddressNumberAndStreetOrRuralRoutePOBox",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Claimant's Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "claimantsLastName",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "claimantsMiddleInitial",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "claimantsFirstName",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "claimantsDateOfBirthMonth",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "claimantSMailingAddressNumberAndStreetOrRuralRoute",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "claimantSNameFirstMiddleInitialLast",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "claimantSDateOfBirthMmDdYyyy",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Certification and Signature",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "signatureField1",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "authorizationForRepAccessToRecords",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "authorizationForRepActClaimantsBehalf",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "signaturesAreRequiredInItems_17aAnd_18a",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "authorizationForDisclosureToAffiliatedPersonnel",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "authorizationForRepresentativeSAccessToRecordsProtect",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "authorizationForRepresentativeToActOnClaimantSBehalf",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "dateSigned",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Service Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "branchOfService",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "serviceNumberIfApplicable",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "relationshipToVeteran",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "internationalTelephoneNumberIfApplicable",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "telephoneNumberAreaCode",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "telphoneMiddleThreeNumbers",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "telephone",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "eMailAddressOptional",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "socialSecurityNumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "lastName",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "middleInitial",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "nameOfIndividualAppointedAsRepresentativeFirstName",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "specifyOrganization",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "provideTheNameOfTheFirmOrOrganizationHere",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "provideTheNamesOfTheIndividualsHere",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "eMailAddressOfIndividualAppointedAsClaimantsRepresentativeOptional",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "iAuthorizeVaToDiscloseAllMyRecordsOtherThanAsProvidedInItems20And21",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "limitations",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "recommendYouUseTheListToConfirmAndVali",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "moreInformationYouCanContactUsThroughAskVa",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "socialSecurityNumberSsn",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "dateOfBirthMmDdYyyy",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "city",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "zipCodePostalCode",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "stateProvince",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "eMailAddressOptional2",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "relationshipToVeteran2",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "telephoneNumberIncludeAreaCode",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "18bDateSigned",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "followingEvents",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "limitationOfConsentMyConsentInItem_20ForTheDisclos",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "17bDateSigned",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "25bDateSigned",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "fees",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "limitationsOnRepresentationAgentsOrAttorneysOnlyUn",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "23aSignatureOfVeteranClaimantRequired_23b",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "dateOfBirth",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

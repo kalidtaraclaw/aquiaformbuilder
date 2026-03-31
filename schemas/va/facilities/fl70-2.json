@@ -174,5 +174,157 @@
     "pageCount": 1,
     "status": "digitized",
     "fieldNameFixedAt": "2026-03-31T00:39:58.962094+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "FL70-2",
+    "formTitle": "Burial Benefits Application",
+    "formSections": [
+      {
+        "title": "Service Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "serviceNumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "dateEnteredService",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "ssn",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "dateOfBirth",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "address",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "phoneNumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "vaFileNumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "dateOfSeparation",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "dateOfDeathIfDeceased",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "lastNameFirstNameMiddleNameOfVeteran",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "inReplyReferTo1Of5",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "inReplyReferTo2Of5",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "inReplyReferTo3Of5",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "inReplyReferTo4Of5",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "inReplyReferTo5Of5",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "sincerelyYours",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "signature",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

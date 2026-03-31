@@ -77,5 +77,9 @@
       "acroform+text-inference"
     ],
     "fieldNameFixedAt": "2026-03-30T23:47:22.972406+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "VA2345",
+    "formTitle": "VA Form VA2345"
   }
 }

@@ -89,5 +89,109 @@
     "pageCount": 1,
     "generatedAt": "2026-03-28T17:38:47.997Z",
     "fieldNameFixedAt": "2026-03-30T21:38:05.118910+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "22-1919",
+    "formTitle": "Conflicting Interests Certification",
+    "formSections": [
+      {
+        "title": "Certification and Signature",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "dateSigned",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "signature",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "institutionNameAndAddress",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "vaFileNumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "datesOfEnrollmentWithYourSchoolFrom",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "datesOfEnrollmentWithYourSchoolTo",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "descriptionOfAssociationWithSchool",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "employeesNameAndTitle1",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "employeesNameAndTitle2",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "nameOfPresident",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "title",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

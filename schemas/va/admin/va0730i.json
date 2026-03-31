@@ -207,5 +207,213 @@
     "pageCount": 1,
     "status": "digitized",
     "fieldNameFixedAt": "2026-03-31T01:08:01.401876+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "VA0730i",
+    "formTitle": "Education Benefits Form",
+    "formSections": [
+      {
+        "title": "Certification and Signature",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "dateSignedMmddyyyy",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "signature",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "ssn",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "address",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "phoneNumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "licenseExpirationDate",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "ofProviderCheckOnlyOneC",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "ofProviderCheckOnlyOneFamilyChildCareHomeCheckbox",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "childCareServicesCheckOnlyOneFulltimeCareCheckbox",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "childCareServicesCheckOnlyOneBeforeSchoolCareCheckbox",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "childCareServicesCheckOnlyOneAfterSchoolCareCheckbox",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "childCareServicesCheckOnlyOneBeforeAndAfterSchoolCareCheckbox",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "cDoesTheChildReceiveAnyOtherSubsidyIfYesCompleteItemsDAndEYesCheckboxLine3Of3",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "previousChildCareProvider",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "aEnterNameOfEachChildLastFirstMiddleInitialLine1Of3",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "aEnterNameOfEachChildLastFirstMiddleInitialLine2Of3",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "aEnterNameOfEachChildLastFirstMiddleInitialLine3Of3",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "nameOfVAC",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "licenseNumberOfProvider",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "inWhichLicenseIsIssued",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "d",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "e",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "f",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "b",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

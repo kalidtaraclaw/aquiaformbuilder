@@ -80,5 +80,9 @@
     "pageCount": 1,
     "status": "digitized",
     "fieldNameFixedAt": "2026-03-30T21:38:04.748309+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "10-493b",
+    "formTitle": "VA Form 10-493b"
   }
 }

@@ -68,5 +68,77 @@
     "pageCount": 1,
     "generatedAt": "2026-03-28T17:39:00.643Z",
     "fieldNameFixedAt": "2026-03-30T23:47:23.624203+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "21-651",
+    "formTitle": "VA Form 21-651",
+    "formSections": [
+      {
+        "title": "Certification and Signature",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "signatureDate",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "signature",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "ssn",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "address",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "vaFileNumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "namevet",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "servicenum",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

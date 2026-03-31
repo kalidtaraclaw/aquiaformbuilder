@@ -126,5 +126,117 @@
     "generatedAt": "2026-03-29T14:14:58.000Z",
     "generationMethod": "template-based-inference",
     "fieldNameFixedAt": "2026-03-30T21:38:04.858143+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "VA Form 40-10190",
+    "formTitle": "Burial Benefits Application",
+    "formSections": [
+      {
+        "title": "Burial Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "cemeteryName",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "burialLocation",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "nameOfDeceased",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "dateOfDeath",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "vaFileNumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "socialSecurityNumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "dateOfBirth",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "address",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "relationshipToDeceased",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "applicantName",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "phoneNumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "dateOfApplication",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

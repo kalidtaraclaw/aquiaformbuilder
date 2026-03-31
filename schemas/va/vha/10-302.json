@@ -90,5 +90,77 @@
     "pageCount": 1,
     "status": "digitized",
     "fieldNameFixedAt": "2026-03-30T21:38:04.710747+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "10-302",
+    "formTitle": "Pension Benefits Form",
+    "formSections": [
+      {
+        "title": "Certification and Signature",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "dateSigned",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "signature",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "fullName",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "iAgreeMyReportedTotalGrossHouseholdIncomeIs",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "aboveTheVANationalIncomeThresholdOf",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "caseNumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "incomeYear",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

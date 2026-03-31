@@ -172,5 +172,9 @@
     "status": "digitized",
     "postProcessedAt": "2026-03-30T20:02:41.597681+00:00",
     "fieldNameFixedAt": "2026-03-31T00:39:58.535410+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "10-0246",
+    "formTitle": "VA Form 10-0246"
   }
 }

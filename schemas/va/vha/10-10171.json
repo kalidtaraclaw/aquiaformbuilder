@@ -85,5 +85,61 @@
     "pageCount": 16,
     "status": "digitized",
     "fieldNameFixedAt": "2026-03-30T21:38:04.622344+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "10-10171",
+    "formTitle": "VA Form 10-10171",
+    "formSections": [
+      {
+        "title": "Certification and Signature",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "dateSigned",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "signature",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "address",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "oCCAddVCANumber",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "title",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

@@ -41,5 +41,53 @@
     "pageCount": 1,
     "generatedAt": "2026-03-28T17:39:05.873Z",
     "fieldNameFixedAt": "2026-03-30T23:42:27.643939+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "26-8106",
+    "formTitle": "Statement of Borrower",
+    "formSections": [
+      {
+        "title": "Property Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "propertyaddress",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "loannumber",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "date",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "signature",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

@@ -56,5 +56,61 @@
       "acroform"
     ],
     "fieldNameFixedAt": "2026-03-31T01:08:01.831175+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "10-3213B",
+    "formTitle": "VA Form 10-3213B",
+    "formSections": [
+      {
+        "title": "Certification and Signature",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "signatureOfApprovingOfficial",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "signatureOfRequester",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Additional Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "priorityacceptedByAnd",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "39_41Release",
+                "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "dateemployeeSNamehours",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

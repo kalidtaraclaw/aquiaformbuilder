@@ -36,5 +36,9 @@
     "pageCount": 1,
     "status": "digitized",
     "fieldNameFixedAt": "2026-03-30T21:38:04.691273+00:00"
+  },
+  "x-va-form": {
+    "formNumber": "10-2743",
+    "formTitle": "VA Form 10-2743"
   }
 }
