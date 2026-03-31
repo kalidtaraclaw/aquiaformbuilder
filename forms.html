@@ -1189,6 +1189,18 @@ function disambiguateLabel(label, labelCounts, labelSeen) {
 
 // ─── Detect redundant "combined name" fields like "veteranSNameFirstMiddleInitialLast" ───
 // These duplicate individual first/middle/last fields and should be suppressed.
+// ─── Filter out OMB/form metadata fields that aren't user-fillable data ───
+function isFormMetadataField(fieldId) {
+    const k = fieldId.toLowerCase();
+    // OMB approval / control numbers, burden statements, privacy act, form admin fields
+    if (/^omb|ombapproval|ombcontrol|ombnumber|ombexpiration/i.test(k)) return true;
+    if (/^respondent.*burden|^paperwor.*reduction|^privacyact|^publicreporting|^penaltystatement/i.test(k)) return true;
+    if (/^burdenestimate|^reportingburden/i.test(k)) return true;
+    // Exact matches for common form-level metadata keys
+    if (['vaformnumber', 'vadate', 'formapproval', 'formnumber'].includes(k)) return true;
+    return false;
+}
+
 function isRedundantCombinedName(fieldId, allFieldIds) {
     // Match patterns like: veteranSNameFirstMiddleInitialLast, veteranServicememberSNameFirstMiddleInitialLast
     if (!/name.*first.*last|first.*middle.*last/i.test(fieldId)) return false;
@@ -1306,6 +1318,8 @@ function renderSectionStep(schema, section) {
 
                 // Skip redundant combined name fields (e.g. "veteranSNameFirstMiddleInitialLast")
                 if (isRedundantCombinedName(col.fieldId, sectionFieldIds)) continue;
+                // Skip OMB/form metadata fields that aren't user data
+                if (isFormMetadataField(col.fieldId)) continue;
 
                 // Handle oneOf wrappers (e.g. claimantInformation with oneOf: [null, {object}])
                 if (fieldDef.oneOf) {
@@ -1521,6 +1535,8 @@ function renderLegacyStep(schema, step) {
 
         // Skip redundant combined name fields
         if (isRedundantCombinedName(key, allLegacyKeys)) { i++; continue; }
+        // Skip OMB/form metadata fields that aren't user data
+        if (isFormMetadataField(key)) { i++; continue; }
 
         // Regular field — render normally
         const vaField = def?.['x-va-field'] || {};
@@ -1892,6 +1908,13 @@ function renderVAField(fieldId, def, vaField, isRequired) {
                 </div>
             </div>`;
 
+        case 'zip':
+            return `<div class="va-field">
+                <label for="f_${fieldId}">${esc(label)} ${reqMark}</label>
+                ${hintHtml}
+                <input type="text" id="f_${fieldId}" name="${fieldId}" placeholder="00000" maxlength="10" inputmode="numeric"${hintAttr} ${isRequired ? 'required aria-required="true"' : ''}>
+            </div>`;
+
         case 'textarea':
             return `<div class="va-field">
                 <label for="f_${fieldId}">${esc(label)} ${reqMark}</label>
@@ -1911,6 +1934,11 @@ function renderVAField(fieldId, def, vaField, isRequired) {
 function guessWidget(key, def) {
     // Date format check first — fields with format:"date" are always date pickers
     if (def.format === 'date') return 'date';
+    // Detect date fields by ID even when schema lacks format:"date" (844 fields affected)
+    // Match: dateOfBirth, effectiveDate, dateSigned, dateFrom, expirationDate, etc.
+    // Exclude: "update", "candidate", "mandate" where "date" is a substring of another word
+    if (def.type === 'string' && /(?:^date|date$|dateOf|dateSigned|dateFrom|dateThru|dateTo|effectiveDate|expirationDate|birthDate)/i.test(key)
+        && !/update|candidate|mandate/i.test(key)) return 'date';
     // Signature check — signature fields are often typed as boolean but should render as signature pad
     // Exclude false positives: signif*, signal, design, assign, and "dateSigned" / "Signed" alone
     if (/signature/i.test(key) && !/design|assign/i.test(key)) return 'signature';
@@ -1923,34 +1951,74 @@ function guessWidget(key, def) {
     }
     if (def.enum && def.enum.length > 0) return 'select';
     if (def.format === 'email') return 'email';
-    if (/ssn/i.test(key)) return 'ssn';
-    if (/phone|telephone/i.test(key)) return 'phone';
-    if (/remark|comment|explanation|narrative|describe|diagnosis/i.test(key)) return 'textarea';
+    // Detect email fields by ID even when schema lacks format:"email"
+    if (/email|emailAddress/i.test(key) && def.type === 'string') return 'email';
+    if (/ssn|socialSecurity/i.test(key)) return 'ssn';
+    if (/phone|telephone|fax/i.test(key)) return 'phone';
+    // Detect zip/postal code fields — render with maxlength
+    if (/^zip|zipCode|postalCode/i.test(key) && def.type === 'string') return 'zip';
+    if (/remark|comment|explanation|narrative|describe|diagnosis|reason|additional.*info/i.test(key)) return 'textarea';
     return 'text';
 }
 
 function stripPdfMetadata(s) {
-    return s.replace(/\s*This Is (?:A\s*Read|Aread)\s*Only Field\b/gi, '')
+    return s
+         // PDF form instructions
+         .replace(/\s*This Is (?:A\s*Read|Aread)\s*Only Field\b/gi, '')
          .replace(/\s*That Auto\s*populated From Page\s*\d*/gi, '')
          .replace(/\s*Do Not Write In This Space/gi, '')
          .replace(/\s*For VA Use Only/gi, '')
          .replace(/\s*This is A?read Only Field\b/gi, '')
+         .replace(/\s*\(?\s*Read Only\s*\)?\s*/gi, ' ')
+         // Page/section references
          .replace(/\s+Page\s*\d+$/i, '')
+         .replace(/\s*Section\s+\d+\s*(?:Of\s*\d+)?/gi, '')
+         .replace(/\s*Item\s+\d+[A-Z]?\b/gi, '')
+         // Signature junk
          .replace(/\s*\d+Date Signed\b[^)"]*/gi, '')
+         // Cross-references
          .replace(/\s*From Question\s*\d+\s*/gi, ' ')
+         .replace(/\s*See (?:Item|Block|Instructions?|Page)\s*\d*\s*/gi, '')
+         // Numbered prefixes: "12A.", "3.", "8B."
          .replace(/^\d+[A-Z]?\.\s*/i, '')
+         // Form fill instructions
+         .replace(/\s*(?:Check|Mark)\s+(?:One|All|Box|Appropriate)\b[^,;]*/gi, '')
+         .replace(/\s*If (?:Applicable|Yes|No|Known|Available)\b/gi, '')
+         .replace(/\s*Print Clearly\b/gi, '')
+         .replace(/\s*(?:Use Ink|Type Or Print)\b/gi, '')
+         // OMB/Privacy legalese
+         .replace(/\s*(?:Privacy Act|Paperwork Reduction|Public Reporting|Penalty Statement)\b[^,;]*/gi, '')
+         .replace(/\s*OMB\s*(?:Approval|Control|No\.?|Number)\s*[\d-]*/gi, '')
+         .replace(/\s*Respondent(?:s|'s)?\s*Burden\b[^,;]*/gi, '')
+         // Trailing parenthetical fragments
          .replace(/\s*\(\s*$/g, '')
+         // "Mm Dd Yyyy" date format hints in labels
+         .replace(/\s*Mm\s*Dd?\s*Yyyy\b/gi, '')
+         .replace(/\s*Mm\s*\/?\s*Dd\s*\/?\s*Yy(?:yy)?\b/gi, '')
+         // "Click Here To Select" (from digital PDFs)
+         .replace(/Click Here To Select\s*/gi, '')
+         // Clean up
          .replace(/\s+/g, ' ').trim();
 }
 
 function humanize(str) {
+    // Handle very short/numeric field IDs — use them as-is with "Field" prefix
+    if (/^\d+[a-z]?$/i.test(str) && str.length <= 3) return 'Field ' + str.toUpperCase();
+    if (str.length <= 2) return 'Field ' + str.toUpperCase();
     // Strip trailing digits before camelCase split (e.g., buildingPaper2 → buildingPaper)
     let s = str.replace(/\d+$/, '');
     s = s.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/[_-]/g, ' ')
         .replace(/\b\w/g, c => c.toUpperCase())
         .replace(/\bSsn\b/g, 'SSN').replace(/\bDob\b/g, 'Date of Birth')
-        .replace(/\bVa\b/g, 'VA').replace(/\bId\b/g, 'ID');
-    return stripPdfMetadata(s);
+        .replace(/\bVa\b/g, 'VA').replace(/\bId\b/g, 'ID')
+        .replace(/\bDod\b/g, 'DOD').replace(/\bPow\b/g, 'POW')
+        .replace(/\bUsmc\b/g, 'USMC').replace(/\bDob\b/g, 'DOB');
+    s = stripPdfMetadata(s);
+    // Truncate very long labels to ~65 chars at a word boundary
+    if (s.length > 70) {
+        s = s.substring(0, 65).replace(/\s+\S*$/, '') + '…';
+    }
+    return s;
 }
 
 function esc(str) {
