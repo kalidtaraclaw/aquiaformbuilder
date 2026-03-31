@@ -287,14 +287,14 @@
     "studswoodgradeandspecies": {
       "type": "string",
       "x-va-field": {
-        "label": "Studswoodgradeandspecies",
+        "label": "Studs Wood Grade and Species",
         "widget": "text"
       }
     },
     "rafterswoodgradeandspecies": {
       "type": "string",
       "x-va-field": {
-        "label": "Rafterswoodgradeandspecies",
+        "label": "Rafters Wood Grade and Species",
         "widget": "text"
       }
     },
@@ -336,7 +336,7 @@
     "sizeandspacing": {
       "type": "string",
       "x-va-field": {
-        "label": "Sizeandspacing",
+        "label": "Size and Spacing",
         "widget": "text"
       }
     },
@@ -364,7 +364,7 @@
     "slabmaterial": {
       "type": "string",
       "x-va-field": {
-        "label": "Slabmaterial",
+        "label": "Slab Material",
         "widget": "text"
       }
     },
@@ -448,21 +448,21 @@
     "doorsills": {
       "type": "string",
       "x-va-field": {
-        "label": "Doorsills",
+        "label": "Door Sills",
         "widget": "text"
       }
     },
     "interiorsurfacesdampproofing": {
       "type": "string",
       "x-va-field": {
-        "label": "Interiorsurfacesdampproofing",
+        "label": "Interior Surfaces Damp Proofing",
         "widget": "text"
       }
     },
     "exteriorpaintingmaterial": {
       "type": "string",
       "x-va-field": {
-        "label": "Exteriorpaintingmaterial",
+        "label": "Exterior Painting Material",
         "widget": "text"
       }
     },
@@ -490,7 +490,7 @@
     "windowsills": {
       "type": "string",
       "x-va-field": {
-        "label": "Windowsills",
+        "label": "Window Sills",
         "widget": "text"
       }
     },
@@ -553,7 +553,7 @@
     "otherconstruction": {
       "type": "string",
       "x-va-field": {
-        "label": "Otherconstruction",
+        "label": "Other Construction",
         "widget": "text"
       }
     },
@@ -672,7 +672,7 @@
     "surfacingmaterial": {
       "type": "string",
       "x-va-field": {
-        "label": "Surfacingmaterial",
+        "label": "Surfacing Material",
         "widget": "text"
       }
     },
@@ -861,7 +861,7 @@
     "stormdoorsthickness": {
       "type": "string",
       "x-va-field": {
-        "label": "Stormdoorsthickness",
+        "label": "Storm Doors Thickness",
         "widget": "text"
       }
     },
@@ -938,7 +938,7 @@
     "weatherstrippingtype": {
       "type": "string",
       "x-va-field": {
-        "label": "Weatherstrippingtype",
+        "label": "Weather Stripping Type",
         "widget": "text"
       }
     },
@@ -973,7 +973,7 @@
     "medicinecabinetsmake": {
       "type": "string",
       "x-va-field": {
-        "label": "Medicinecabinetsmake",
+        "label": "Medicine Cabinets Make",
         "widget": "text"
       }
     },
@@ -1071,7 +1071,7 @@
     "stormsashnumber": {
       "type": "string",
       "x-va-field": {
-        "label": "Stormsashnumber",
+        "label": "Storm Sash Number",
         "widget": "text"
       }
     },
@@ -1386,7 +1386,7 @@
     "storagetankmaterial": {
       "type": "string",
       "x-va-field": {
-        "label": "Storagetankmaterial",
+        "label": "Storage Tank Material",
         "widget": "text"
       }
     },
@@ -1834,7 +1834,7 @@
     "ventilatingequipment": {
       "type": "boolean",
       "x-va-field": {
-        "label": "Ventilatingequipment",
+        "label": "Ventilating Equipment",
         "widget": "checkbox"
       }
     },
@@ -1925,14 +1925,14 @@
     "typeofsystem": {
       "type": "string",
       "x-va-field": {
-        "label": "Typeofsystem",
+        "label": "Type of System",
         "widget": "text"
       }
     },
     "ductmaterialsupply": {
       "type": "string",
       "x-va-field": {
-        "label": "Ductmaterialsupply",
+        "label": "Duct Material Supply",
         "widget": "text"
       }
     },
@@ -1946,7 +1946,7 @@
     "electricheatingsystemtype": {
       "type": "string",
       "x-va-field": {
-        "label": "Electricheatingsystemtype",
+        "label": "Electric Heating System Type",
         "widget": "text"
       }
     },
@@ -1960,14 +1960,14 @@
     "totalnumberoffixtures": {
       "type": "string",
       "x-va-field": {
-        "label": "Totalnumberoffixtures",
+        "label": "Total Number of Fixtures",
         "widget": "text"
       }
     },
     "nontypicalinstallation": {
       "type": "string",
       "x-va-field": {
-        "label": "Nontypicalinstallation",
+        "label": "Non Typical Installation",
         "widget": "text"
       }
     },
@@ -2093,7 +2093,7 @@
     "otheronsiteimprovements": {
       "type": "string",
       "x-va-field": {
-        "label": "Otheronsiteimprovements",
+        "label": "Other on Site Improvements",
         "widget": "text"
       }
     },
@@ -2107,7 +2107,7 @@
     "lowfloweringtreesdeciduous": {
       "type": "string",
       "x-va-field": {
-        "label": "Lowfloweringtreesdeciduous",
+        "label": "Low Flowering Trees Deciduous",
         "widget": "text"
       }
     },
@@ -2275,7 +2275,7 @@
     "stepsmaterial": {
       "type": "string",
       "x-va-field": {
-        "label": "Stepsmaterial",
+        "label": "Steps Material",
         "widget": "text"
       }
     },
@@ -2606,6 +2606,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-31T00:45:41.691218+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:52:38.552103+00:00"
   }
 }

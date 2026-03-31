@@ -412,6 +412,7 @@ DONT_SPLIT = {
     'electrical', 'sheathing', 'fireplace', 'fireplaces', 'downspouts',
     'bridging', 'doorbell', 'plumbing', 'planting', 'capacity',
     'shingles', 'exposure', 'membrane', 'diagonal', 'observer',
+    'surfacing', 'flowering',
 }
 
 # VA form term dictionary for splitting concatenated labels.
@@ -551,6 +552,18 @@ VA_WORD_LIST = sorted(set([
     'dmo', 'vamc', 'visn', 'rd',
     'signature', 'signed', 'approved', 'disapproved',
     'justify', 'justification', 'anticipated',
+    # More construction terms found during visual testing of 26-1852
+    'storm', 'doors', 'door', 'sash', 'slab', 'surfacing', 'surface', 'surfaces',
+    'storage', 'steps', 'step', 'spacing', 'system', 'systems',
+    'construction', 'medicine', 'non', 'typical', 'total',
+    'flowering', 'equipment', 'weather', 'stripping', 'strip',
+    'interior', 'exterior', 'damp', 'painting',
+    'studs', 'rafters', 'rafter', 'stud', 'underlay',
+    'low', 'high', 'number', 'make', 'type', 'site', 'on',
+    'cabinets', 'cabinet', 'improvements', 'improvement',
+    'fixtures', 'fixture', 'sewer', 'electric',
+    'installation', 'ventilating', 'improvements', 'equipment',
+    'construction', 'vaporizing',
 ]), key=lambda w: -len(w))  # Sort longest first for greedy matching
 
 
@@ -571,36 +584,26 @@ def split_concatenated_label(label):
     if text in DONT_SPLIT:
         return None
 
-    # Try greedy longest-match word splitting
-    result = []
-    pos = 0
-    while pos < len(text):
-        matched = False
+    # Use recursive backtracking to find a complete split
+    word_set = set(VA_WORD_LIST)
+
+    def backtrack(pos):
+        """Try to split text[pos:] into known words. Returns list of words or None."""
+        if pos == len(text):
+            return []
+        # Try matches from longest to shortest
         for word in VA_WORD_LIST:
-            if text[pos:pos+len(word)] == word:
-                result.append(word)
-                pos += len(word)
-                matched = True
-                break
-        if not matched:
-            # Collect remaining chars as one chunk
-            remaining = text[pos:]
-            if remaining:
-                result.append(remaining)
-            break
-
-    if len(result) <= 1:
-        return None  # Couldn't split
-
-    # Validate: every segment must be >= 3 chars (no "to", "of" fragments)
-    # unless it's a known short word in the right context
-    all_matched = all(seg in [w for w in VA_WORD_LIST] for seg in result)
-    if not all_matched:
-        return None  # Has unrecognized leftovers
-
-    # Don't "split" if it just found the original word
-    if len(result) == 1:
+            wlen = len(word)
+            if text[pos:pos+wlen] == word:
+                rest = backtrack(pos + wlen)
+                if rest is not None:
+                    return [word] + rest
         return None
+
+    result = backtrack(0)
+
+    if result is None or len(result) <= 1:
+        return None  # Couldn't split or just found the original word
 
     # Reconstruct as proper label
     return ' '.join(result)

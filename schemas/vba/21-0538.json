@@ -234,7 +234,7 @@
       "type": "string",
       "format": "date",
       "x-va-field": {
-        "label": "Last Date Stepchild Was a Member of Household"
+        "label": "Last Date Step Child Was a Member of Household"
       }
     },
     "hasTheStatusOfYourDependentSChanged": {
@@ -339,7 +339,7 @@
     "stepchildIs": {
       "type": "string",
       "x-va-field": {
-        "label": "Stepchild is",
+        "label": "Step Child is",
         "widget": "radio"
       }
     },
@@ -390,6 +390,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.519791+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:52:37.809552+00:00"
   }
 }

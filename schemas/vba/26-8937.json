@@ -63,7 +63,7 @@
     "datesigned": {
       "type": "string",
       "x-va-field": {
-        "label": "Datesigned",
+        "label": "Date Signed",
         "widget": "text"
       }
     },
@@ -133,7 +133,7 @@
     "datesigned2": {
       "type": "string",
       "x-va-field": {
-        "label": "Datesigned",
+        "label": "Date Signed",
         "widget": "text"
       }
     },
@@ -224,6 +224,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-31T00:39:59.731109+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:52:38.699127+00:00"
   }
 }

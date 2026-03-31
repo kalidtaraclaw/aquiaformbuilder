@@ -535,7 +535,7 @@
     "biolgicalChildStepchildAdoptedChildSelectTheBenefitT": {
       "type": "string",
       "x-va-field": {
-        "label": "Biolgical Child Stepchild Adopted Child Select the Benefit T",
+        "label": "Biolgical Child Step Child Adopted Child Select the Benefit T",
         "widget": "text"
       }
     },
@@ -783,6 +783,6 @@
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-31T00:39:59.508233+00:00"
+    "fieldNameFixedAt": "2026-03-31T00:52:38.430528+00:00"
   }
 }
