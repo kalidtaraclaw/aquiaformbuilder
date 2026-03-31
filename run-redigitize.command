@@ -19,9 +19,10 @@ node scripts/redigitize.js --queue
 
 echo ""
 echo "=================================="
-echo "  Running post-audit..."
+echo "  Running post-processor..."
+echo "  (date composition, field name cleanup, label fixes)"
 echo "=================================="
-python3 scripts/schema-post-processor.py --dry-run 2>/dev/null || echo "(Post-processor requires Python 3)"
+python3 scripts/schema-post-processor.py 2>/dev/null || echo "(Post-processor requires Python 3)"
 
 echo ""
 echo "Done! Press any key to close."

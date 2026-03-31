@@ -361,6 +361,20 @@ def main():
 
         process_schema(filepath, dry_run=args.dry_run)
 
+    # Run field name fixer (label cleanup, concatenation splitting, etc.)
+    if not args.dry_run:
+        print("\n" + "=" * 70)
+        print("Running field name fixer (fix-field-names.py)...")
+        print("=" * 70)
+        import subprocess
+        fix_script = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fix-field-names.py")
+        fix_args = [sys.executable, fix_script]
+        if args.form:
+            fix_args += ["--form", args.form]
+        result = subprocess.run(fix_args, capture_output=False)
+        if result.returncode != 0:
+            print(f"  WARNING: fix-field-names.py exited with code {result.returncode}")
+
     # Update index files
     if not args.dry_run:
         print("\nUpdating index.json files...")

@@ -1128,13 +1128,13 @@ function renderLegacyStep(schema) {
     const props = schema.properties || {};
     const requiredList = new Set(schema.required || []);
     const fieldEntries = Object.entries(props).filter(([k]) => k !== 'x-va-metadata');
+    const meta = schema['x-va-metadata'] || {};
+    const formUrl = meta.formUrl || '';
 
     let html = '<div class="va-step-page">';
 
     // If there are no fields at all, show a flat-form message instead of an empty page
     if (fieldEntries.length === 0) {
-        const meta = schema['x-va-metadata'] || {};
-        const formUrl = meta.formUrl || '';
         html += '<h2>Form Not Yet Available</h2>';
         html += '<div class="va-alert va-alert--warning" role="alert" aria-live="assertive" style="border-left:4px solid var(--vads-color-warning);background:var(--vads-color-warning-light);padding:1.5rem;margin-bottom:1.5rem;">';
         html += '<h3 style="margin-bottom:0.5rem;">This form could not be digitized automatically</h3>';
@@ -1148,12 +1148,114 @@ function renderLegacyStep(schema) {
     }
 
     html += '<h2>Form Fields</h2>';
-    html += '<div class="va-alert"><h3>Legacy Form Schema</h3><p>This form uses the legacy schema format. Field labels are auto-generated. Enhanced versions with full instructions and layout are being rolled out.</p></div>';
-    for (const [key, def] of fieldEntries) {
+
+    // Info banner with link to original PDF
+    html += '<div class="va-alert" style="margin-bottom:1.5rem;">';
+    html += '<p style="margin:0;">Field labels are auto-generated from the PDF form. ';
+    if (formUrl) {
+        html += '<a href="' + esc(formUrl) + '" target="_blank" rel="noopener" style="color:var(--vads-color-primary);text-decoration:underline;">View original PDF</a> for reference.';
+    }
+    html += '</p></div>';
+
+    // ─── Detect repeated field groups and render as tables ───
+    // Parse field keys to find numbered groups: "date1","from1","amount1","date2","from2","amount2"...
+    const numRe = /^(.+?)(\d+)$/;
+    let i = 0;
+    while (i < fieldEntries.length) {
+        const [key, def] = fieldEntries[i];
+
+        // Try to detect a table starting at position i
+        const m = key.match(numRe);
+        if (m) {
+            const basePrefix = m[1];
+            const startNum = parseInt(m[2]);
+
+            // Look ahead to find how many columns in this row (consecutive fields with same suffix number)
+            const cols = [];
+            let j = i;
+            while (j < fieldEntries.length) {
+                const mj = fieldEntries[j][0].match(numRe);
+                if (mj && parseInt(mj[2]) === startNum) {
+                    cols.push(mj[1]); // column base name
+                    j++;
+                } else {
+                    break;
+                }
+            }
+
+            // Now check if the NEXT fields repeat the same column pattern with the next number
+            if (cols.length >= 2) {
+                let rowCount = 1;
+                let scanPos = j;
+                while (scanPos < fieldEntries.length) {
+                    // Check if next N fields match the column pattern
+                    let matchesPattern = true;
+                    const nextRowNum = startNum + rowCount;
+                    for (let c = 0; c < cols.length; c++) {
+                        if (scanPos + c >= fieldEntries.length) { matchesPattern = false; break; }
+                        const mk = fieldEntries[scanPos + c][0].match(numRe);
+                        if (!mk || mk[1] !== cols[c]) { matchesPattern = false; break; }
+                    }
+                    if (matchesPattern) {
+                        rowCount++;
+                        scanPos += cols.length;
+                    } else {
+                        break;
+                    }
+                }
+
+                // If we found 3+ rows of the same pattern, render as a table
+                if (rowCount >= 3) {
+                    const colHeaders = cols.map(c => {
+                        const sampleKey = c + startNum;
+                        const sampleDef = props[sampleKey];
+                        const vaField = sampleDef?.['x-va-field'] || {};
+                        return vaField.label || humanize(c);
+                    });
+
+                    html += '<div class="va-table-group" style="margin:1.5rem 0;">';
+                    html += '<table style="width:100%;border-collapse:collapse;border:1px solid #d6d7d9;">';
+                    html += '<thead><tr style="background:#f1f1f1;">';
+                    for (const h of colHeaders) {
+                        html += '<th style="padding:0.5rem 0.75rem;text-align:left;border:1px solid #d6d7d9;font-weight:600;">' + esc(h) + '</th>';
+                    }
+                    html += '<th style="padding:0.5rem 0.75rem;text-align:left;border:1px solid #d6d7d9;font-weight:600;width:2rem;">#</th>';
+                    html += '</tr></thead><tbody>';
+
+                    for (let r = 0; r < rowCount; r++) {
+                        const rowIdx = i + r * cols.length;
+                        html += '<tr>';
+                        for (let c = 0; c < cols.length; c++) {
+                            const [fKey, fDef] = fieldEntries[rowIdx + c];
+                            const vaField = fDef?.['x-va-field'] || {};
+                            const widgetType = vaField.widget || fDef.format || fDef.type || 'text';
+                            let inputType = 'text';
+                            if (widgetType === 'date' || fDef.format === 'date') inputType = 'date';
+                            else if (widgetType === 'number' || fDef.type === 'number') inputType = 'number';
+                            html += '<td style="padding:0.25rem 0.5rem;border:1px solid #d6d7d9;">';
+                            html += '<input type="' + inputType + '" name="' + esc(fKey) + '" id="f_' + esc(fKey) + '"';
+                            html += ' style="width:100%;padding:0.35rem 0.5rem;border:1px solid #aeb0b5;border-radius:3px;"';
+                            if (inputType === 'date') html += ' placeholder="mm/dd/yyyy"';
+                            html += '>';
+                            html += '</td>';
+                        }
+                        html += '<td style="padding:0.25rem 0.5rem;border:1px solid #d6d7d9;color:#71767a;font-size:0.85rem;text-align:center;">' + (r + 1) + '</td>';
+                        html += '</tr>';
+                    }
+
+                    html += '</tbody></table></div>';
+                    i += rowCount * cols.length;
+                    continue;
+                }
+            }
+        }
+
+        // Regular field — render normally
         const vaField = def?.['x-va-field'] || {};
         const label = vaField.label || humanize(key);
         const isRequired = requiredList.has(key);
         html += renderVAField(key, def, { ...vaField, label }, isRequired);
+        i++;
     }
     html += '</div>';
     return html;
