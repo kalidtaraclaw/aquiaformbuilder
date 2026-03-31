@@ -1763,6 +1763,15 @@ function renderVAField(fieldId, def, vaField, isRequired) {
     let widget = vaField.widget || guessWidget(fieldId, def);
     // Override widget for signature fields that were mis-typed as "text" in the schema
     if (widget === 'text' && /^signature/i.test(fieldId) && !/design|assign/i.test(fieldId)) widget = 'signature';
+    // Override widget for date fields that were mis-typed as "text" in the schema
+    if (widget === 'text' && /(?:^date|date$|dateOf|dateSigned|dateFrom|dateThru|dateTo|effectiveDate|expirationDate|birthDate)/i.test(fieldId)
+        && !/update|candidate|mandate/i.test(fieldId)) widget = 'date';
+    // Override widget for SSN fields mis-typed as "text"
+    if (widget === 'text' && /ssn|socialSecurity/i.test(fieldId)) widget = 'ssn';
+    // Override widget for phone fields mis-typed as "text"
+    if (widget === 'text' && /phone|telephone|fax/i.test(fieldId)) widget = 'phone';
+    // Override widget for email fields mis-typed as "text"
+    if (widget === 'text' && /email|emailAddress/i.test(fieldId) && def.type === 'string') widget = 'email';
     // Improve generic "Signature Field" labels with contextual names
     if (widget === 'signature' && /^signature\s*field/i.test(label)) {
         label = _sigLabels[_sigFieldCounter] || ('Signature ' + (_sigFieldCounter + 1));
