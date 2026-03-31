@@ -84,6 +84,7 @@
       "properties": {
         "first": {
           "type": "string",
+          "example": "John",
           "maxLength": 12
         },
         "middle": {
@@ -91,10 +92,12 @@
             "string",
             "null"
           ],
+          "example": "A",
           "maxLength": 1
         },
         "last": {
           "type": "string",
+          "example": "Doe",
           "maxLength": 18
         }
       }
@@ -104,6 +107,7 @@
       "properties": {
         "street": {
           "type": "string",
+          "example": "123 Main St",
           "maxLength": 30
         },
         "street2": {
@@ -111,22 +115,27 @@
             "string",
             "null"
           ],
+          "example": "Apt 4",
           "maxLength": 5
         },
         "city": {
           "type": "string",
+          "example": "Springfield",
           "maxLength": 18
         },
         "state": {
           "type": "string",
+          "example": "IL",
           "maxLength": 2
         },
         "postalCode": {
           "type": "string",
+          "example": "62701",
           "maxLength": 9
         },
         "country": {
           "type": "string",
+          "example": "US",
           "maxLength": 3
         }
       }
@@ -147,6 +156,7 @@
         },
         "ssn": {
           "type": "string",
+          "example": "123456789",
           "description": "Social Security Number (9 digits)",
           "pattern": "^\\d{9}$",
           "maxLength": 9,
@@ -154,6 +164,7 @@
         },
         "vaFileNumber": {
           "type": "string",
+          "example": "987654321",
           "description": "VA File Number",
           "maxLength": 9
         },
@@ -162,12 +173,14 @@
             "string",
             "null"
           ],
-          "description": "VETERAN'S SERVICE NUMBER",
+          "example": "A2999999",
+          "description": "VETERAN'S SERVICE NUMBER ",
           "maxLength": 10
         },
         "dateOfBirth": {
           "type": "string",
           "format": "date",
+          "example": "1950-01-01",
           "description": "Date of Birth"
         }
       }
@@ -187,10 +200,12 @@
         "dateOfBirth": {
           "type": "string",
           "format": "date",
+          "example": "1950-01-01",
           "description": "Date of Birth"
         },
         "ssn": {
           "type": "string",
+          "example": "123456789",
           "description": "Social Security Number (9 digits)",
           "pattern": "^\\d{9}$",
           "maxLength": 9,
@@ -201,6 +216,7 @@
             "string",
             "null"
           ],
+          "example": "spouse",
           "description": "Relationship to veteran",
           "enum": [
             "self",
@@ -217,6 +233,7 @@
             "string",
             "null"
           ],
+          "example": "5551234567",
           "pattern": "^\\d{10}$",
           "description": "Phone Number",
           "maxLength": 10,
@@ -227,16 +244,19 @@
             "string",
             "null"
           ],
+          "example": "5551234567",
           "description": "Phone Number"
         },
         "agreeToElectronicCorrespondence": {
-          "type": "boolean"
+          "type": "boolean",
+          "example": true
         },
         "email": {
           "type": [
             "string",
             "null"
           ],
+          "example": "test@va.gov",
           "description": "Email Address",
           "maxLength": 70
         }
@@ -251,6 +271,7 @@
       "properties": {
         "benefitSelection": {
           "type": "string",
+          "example": "smc",
           "description": "Type of benefit being claimed",
           "enum": [
             "smc",
@@ -268,6 +289,7 @@
       "properties": {
         "currentlyHospitalized": {
           "type": "boolean",
+          "example": false,
           "description": "Is veteran currently hospitalized?"
         },
         "admissionDate": {
@@ -276,6 +298,7 @@
             "null"
           ],
           "format": "date",
+          "example": "2023-01-01",
           "description": "Date admitted"
         },
         "hospitalName": {
@@ -283,6 +306,7 @@
             "string",
             "null"
           ],
+          "example": "VA Medical Center",
           "description": "Name of hospital"
         },
         "hospitalAddress": {
@@ -300,11 +324,13 @@
       "properties": {
         "signature": {
           "type": "string",
+          "example": "John A Doe",
           "description": "Signature of veteran or claimant"
         },
         "date": {
           "type": "string",
           "format": "date",
+          "example": "2025-10-20",
           "description": "Date signed (must be within last 60 days)"
         }
       }
