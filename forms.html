@@ -1117,7 +1117,12 @@ function renderSectionStep(schema, section) {
                 if (fieldDef.type === 'object' && fieldDef.properties && !fieldDef['x-va-field']) {
                     const subReq = new Set(fieldDef.required || []);
                     if (fieldDef.description) {
-                        html += `<div class="step-description" style="margin-bottom:0.75rem;color:#323a45;">${esc(fieldDef.description)}</div>`;
+                        // Skip description if it's substantially the same as the section heading
+                        const normDesc = fieldDef.description.replace(/[^a-z0-9\s]/gi, '').trim().toLowerCase();
+                        const normTitle = section.title.replace(/[^a-z0-9\s]/gi, '').trim().toLowerCase();
+                        if (normDesc !== normTitle) {
+                            html += `<div class="step-description" style="margin-bottom:0.75rem;color:#323a45;">${esc(fieldDef.description)}</div>`;
+                        }
                     }
                     for (const [subId, subDef] of Object.entries(fieldDef.properties)) {
                         // Resolve $ref
@@ -1128,8 +1133,10 @@ function renderSectionStep(schema, section) {
                         }
                         const subVaField = resolved['x-va-field'] || {};
                         const compoundId = col.fieldId + '.' + subId;
+                        // Use sub-field's description or humanized sub-key as label (not the compound ID)
+                        const subLabel = subVaField.label || resolved.description || humanize(subId);
                         html += '<div class="va-form-row"><div class="col-12">';
-                        html += renderVAField(compoundId, resolved, subVaField, subReq.has(subId));
+                        html += renderVAField(compoundId, resolved, { ...subVaField, label: subLabel }, subReq.has(subId));
                         html += '</div></div>';
                     }
                 } else {
