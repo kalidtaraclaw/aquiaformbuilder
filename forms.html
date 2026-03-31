@@ -910,7 +910,59 @@ function getFormSteps(schema) {
             { type: 'review', title: 'Review & Submit' }
         ];
     } else {
-        // Legacy: intro + single fields step + review
+        // Legacy: try to auto-detect sections from field ID prefixes
+        const props = schema.properties || {};
+        const fieldKeys = Object.keys(props).filter(k => k !== 'x-va-metadata');
+
+        if (fieldKeys.length > 20) {
+            // Group by common prefix (e.g., "veteran*", "spouse*", "financial*")
+            const groups = [];
+            let currentGroup = { prefix: '', keys: [] };
+            const prefixRe = /^([a-z]+(?:s|es|ed)?)/i;
+
+            for (const key of fieldKeys) {
+                const pm = key.match(prefixRe);
+                const prefix = pm ? pm[1].toLowerCase() : '';
+                // Start a new group if prefix changes and current group has fields
+                if (currentGroup.keys.length > 0 && prefix !== currentGroup.prefix && currentGroup.keys.length >= 3) {
+                    groups.push(currentGroup);
+                    currentGroup = { prefix, keys: [key] };
+                } else {
+                    if (currentGroup.keys.length === 0) currentGroup.prefix = prefix;
+                    currentGroup.keys.push(key);
+                }
+            }
+            if (currentGroup.keys.length > 0) groups.push(currentGroup);
+
+            // If we got meaningful groups (3+), use them; otherwise chunk by ~15
+            let sections;
+            if (groups.length >= 3) {
+                sections = groups.map(g => ({
+                    type: 'legacy',
+                    title: humanize(g.prefix) + ' Information',
+                    fieldKeys: g.keys
+                }));
+            } else {
+                // Chunk into pages of ~15 fields
+                sections = [];
+                for (let c = 0; c < fieldKeys.length; c += 15) {
+                    const chunk = fieldKeys.slice(c, c + 15);
+                    const pageNum = Math.floor(c / 15) + 1;
+                    sections.push({
+                        type: 'legacy',
+                        title: 'Section ' + pageNum,
+                        fieldKeys: chunk
+                    });
+                }
+            }
+            return [
+                { type: 'intro', title: 'Introduction' },
+                ...sections,
+                { type: 'review', title: 'Review & Submit' }
+            ];
+        }
+
+        // Small form: single legacy step
         return [
             { type: 'intro', title: 'Introduction' },
             { type: 'legacy', title: 'Form Fields' },
@@ -953,11 +1005,11 @@ function renderVAForm(schema, org) {
     }
 
     if (step.type === 'intro') {
-        html += renderIntroStep(schema, vaForm, org);
+        html += renderIntroStep(schema, vaForm, org, steps);
     } else if (step.type === 'section') {
         html += renderSectionStep(schema, step);
     } else if (step.type === 'legacy') {
-        html += renderLegacyStep(schema);
+        html += renderLegacyStep(schema, step);
     } else if (step.type === 'review') {
         html += renderReviewStep(schema, vaForm, steps);
     }
@@ -1003,20 +1055,26 @@ function renderVAForm(schema, org) {
     }
 }
 
-function renderIntroStep(schema, vaForm, org) {
+function renderIntroStep(schema, vaForm, org, steps) {
     const formNumber = vaForm.formNumber || schema.title || 'Form';
     const formTitle = vaForm.formTitle || schema.description || '';
     const instructions = vaForm.instructions || null;
     const formSections = vaForm.formSections || [];
     const props = schema.properties || {};
     const requiredList = new Set(schema.required || []);
+    // Auto-generated legacy sections from getFormSteps
+    const autoSections = (steps || []).filter(s => s.type === 'legacy' && s.fieldKeys);
 
     let html = '<div class="va-step-page">';
 
     // ─── Form Title (matches BIO FormTitle component) ───
+    const displayTitle = formTitle || 'VA Form ' + formNumber;
+    const subtitleText = 'VA Form ' + formNumber;
+    // Skip subtitle if it's the same as the title (avoids "VA Form 21-4193" shown twice)
+    const showSubtitle = displayTitle.replace(/\s+/g, ' ').trim().toLowerCase() !== subtitleText.toLowerCase();
     html += `<div class="va-form-intro">
-        <h1>${esc(formTitle) || 'VA Form ' + esc(formNumber)}</h1>
-        <div class="va-form-subtitle">VA Form ${esc(formNumber)}</div>
+        <h1>${esc(displayTitle)}</h1>
+        ${showSubtitle ? '<div class="va-form-subtitle">' + esc(subtitleText) + '</div>' : ''}
     </div>`;
 
     // ─── "Follow these steps" heading ───
@@ -1036,6 +1094,13 @@ function renderIntroStep(schema, vaForm, org) {
             if (sec.title && sec.title !== 'Additional Information') {
                 html += `<li>${esc(sec.title)}</li>`;
             }
+        }
+        html += '</ul>';
+    } else if (autoSections.length > 0) {
+        // Auto-generated sections from prefix grouping
+        html += '<p><strong>Here\'s what this form will ask for:</strong></p><ul>';
+        for (const sec of autoSections) {
+            html += `<li>${esc(sec.title)}</li>`;
         }
         html += '</ul>';
     } else {
@@ -1155,10 +1220,12 @@ function renderSectionStep(schema, section) {
     return html;
 }
 
-function renderLegacyStep(schema) {
+function renderLegacyStep(schema, step) {
+    step = step || {};
     const props = schema.properties || {};
     const requiredList = new Set(schema.required || []);
-    const fieldEntries = Object.entries(props).filter(([k]) => k !== 'x-va-metadata');
+    const allowedKeys = step.fieldKeys ? new Set(step.fieldKeys) : null;
+    const fieldEntries = Object.entries(props).filter(([k]) => k !== 'x-va-metadata' && (!allowedKeys || allowedKeys.has(k)));
     const meta = schema['x-va-metadata'] || {};
     const formUrl = meta.formUrl || '';
 
@@ -1178,10 +1245,52 @@ function renderLegacyStep(schema) {
         return html;
     }
 
-    // Section title from x-va-form or fallback
+    // Section title from step (auto-section) or x-va-form or fallback
     const vaForm = schema['x-va-form'] || {};
-    const sectionTitle = vaForm.formTitle || 'Form Fields';
+    const sectionTitle = step.title || vaForm.formTitle || 'Form Fields';
     html += `<h2>${esc(sectionTitle)}</h2>`;
+
+    // ─── Pre-scan: count label occurrences for disambiguation ───
+    const labelCounts = {};
+    for (const [key, def] of fieldEntries) {
+        const vaField = def?.['x-va-field'] || {};
+        const lbl = vaField.label || humanize(key);
+        labelCounts[lbl] = (labelCounts[lbl] || 0) + 1;
+    }
+    const labelSeen = {};
+
+    // ─── Pre-scan: detect name field groups (firstName/lastName/middleInitial) ───
+    const nameGroupConsumed = new Set();
+    const nameGroups = []; // { prefix, firstIdx, lastIdx, middleIdx, label }
+    const nameRe = /^(.+?)(first\s*name|last\s*name|middle\s*(?:initial|name)\d*)$/i;
+    for (let n = 0; n < fieldEntries.length; n++) {
+        const [key] = fieldEntries[n];
+        const nm = key.match(nameRe);
+        if (!nm) continue;
+        const prefix = nm[1];
+        const part = nm[2].toLowerCase();
+        if (part.startsWith('first')) {
+            // Look for matching last (and optional middle) with same prefix
+            let lastIdx = -1, middleIdx = -1;
+            for (let k = 0; k < fieldEntries.length; k++) {
+                if (k === n) continue;
+                const km = fieldEntries[k][0].match(nameRe);
+                if (!km || km[1] !== prefix) continue;
+                const kp = km[2].toLowerCase();
+                if (kp.startsWith('last')) lastIdx = k;
+                else if (kp.startsWith('middle')) middleIdx = k;
+            }
+            if (lastIdx !== -1) {
+                const groupLabel = prefix
+                    ? humanize(prefix.replace(/s$/, "'s")) + ' Full Name'
+                    : 'Full Name';
+                nameGroups.push({ prefix, firstIdx: n, lastIdx, middleIdx, label: groupLabel });
+                nameGroupConsumed.add(n);
+                nameGroupConsumed.add(lastIdx);
+                if (middleIdx !== -1) nameGroupConsumed.add(middleIdx);
+            }
+        }
+    }
 
     // ─── Detect repeated field groups and render as tables ───
     // Parse field keys to find numbered groups: "date1","from1","amount1","date2","from2","amount2"...
@@ -1189,6 +1298,33 @@ function renderLegacyStep(schema) {
     let i = 0;
     while (i < fieldEntries.length) {
         const [key, def] = fieldEntries[i];
+
+        // Check if this field is consumed by a name group
+        if (nameGroupConsumed.has(i)) {
+            // If this is the firstName index, render the group now
+            const grp = nameGroups.find(g => g.firstIdx === i);
+            if (grp) {
+                const firstKey = fieldEntries[grp.firstIdx][0];
+                const lastKey = fieldEntries[grp.lastIdx][0];
+                const middleKey = grp.middleIdx !== -1 ? fieldEntries[grp.middleIdx][0] : null;
+                html += `<fieldset class="va-field">
+                    <legend class="va-field-label">${esc(grp.label)}</legend>
+                    <div class="va-address-row" style="gap:0.75rem;">
+                        <div class="va-field" style="flex:2;">
+                            <label for="f_${firstKey}">First name</label>
+                            <input type="text" id="f_${firstKey}" name="${firstKey}">
+                        </div>
+                        ${middleKey ? '<div class="va-field" style="flex:0.5;"><label for="f_' + middleKey + '">Middle</label><input type="text" id="f_' + middleKey + '" name="' + middleKey + '" maxlength="1"></div>' : ''}
+                        <div class="va-field" style="flex:2;">
+                            <label for="f_${lastKey}">Last name</label>
+                            <input type="text" id="f_${lastKey}" name="${lastKey}">
+                        </div>
+                    </div>
+                </fieldset>`;
+            }
+            i++;
+            continue;
+        }
 
         // Try to detect a table starting at position i
         const m = key.match(numRe);
@@ -1278,7 +1414,12 @@ function renderLegacyStep(schema) {
 
         // Regular field — render normally
         const vaField = def?.['x-va-field'] || {};
-        const label = vaField.label || humanize(key);
+        let label = vaField.label || humanize(key);
+        // Disambiguate duplicate labels
+        if (labelCounts[label] > 1) {
+            labelSeen[label] = (labelSeen[label] || 0) + 1;
+            if (labelSeen[label] > 1) label += ' (' + labelSeen[label] + ')';
+        }
         const isRequired = requiredList.has(key);
         html += renderVAField(key, def, { ...vaField, label }, isRequired);
         i++;
@@ -1623,8 +1764,13 @@ function renderVAField(fieldId, def, vaField, isRequired) {
         case 'signature':
             return `<div class="va-field">
                 <label for="f_${fieldId}">${esc(label)} ${reqMark}</label>
-                <div class="va-signature-box">
-                    <input type="text" id="f_${fieldId}" name="${fieldId}" placeholder="Type your full legal name" ${isRequired ? 'required aria-required="true"' : ''}>
+                <div class="va-signature-block" style="border:2px solid var(--vads-color-base-dark);background:var(--vads-color-base-lightest);padding:1rem;margin-top:0.25rem;">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+                        <span style="font-size:1.5rem;color:var(--vads-color-base);">&#x270D;</span>
+                        <span style="font-size:0.85rem;color:var(--vads-color-base);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">Sign here</span>
+                    </div>
+                    <input type="text" id="f_${fieldId}" name="${fieldId}" placeholder="Type your full legal name" style="border:none;border-bottom:2px solid var(--vads-color-base-dark);background:none;font-size:1.1rem;font-family:'Brush Script MT',cursive,var(--vads-font-sans);color:var(--vads-color-base);width:100%;padding:0.35rem 0;outline:none;" ${isRequired ? 'required aria-required="true"' : ''}>
+                    <div style="font-size:0.75rem;color:var(--vads-color-base);margin-top:0.5rem;">By signing, I certify that the information I have provided is true and correct to the best of my knowledge.</div>
                 </div>
             </div>`;
 
@@ -1662,10 +1808,19 @@ function guessWidget(key, def) {
 }
 
 function humanize(str) {
-    return str.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/[_-]/g, ' ')
+    // Strip trailing digits before camelCase split (e.g., buildingPaper2 → buildingPaper)
+    let s = str.replace(/\d+$/, '');
+    s = s.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/[_-]/g, ' ')
         .replace(/\b\w/g, c => c.toUpperCase())
         .replace(/\bSsn\b/g, 'SSN').replace(/\bDob\b/g, 'Date of Birth')
-        .replace(/\bVa\b/g, 'VA').replace(/\bId\b/g, 'ID').trim();
+        .replace(/\bVa\b/g, 'VA').replace(/\bId\b/g, 'ID');
+    // Strip embedded PDF metadata phrases
+    s = s.replace(/\s*This Is A\s*Read\s*Only Field\b/gi, '')
+         .replace(/\s*That Auto\s*populated From Page\s*\d*/gi, '')
+         .replace(/\s*Do Not Write In This Space/gi, '')
+         .replace(/\s*For VA Use Only/gi, '')
+         .replace(/\s+Page\s*\d+$/i, '');
+    return s.replace(/\s+/g, ' ').trim();
 }
 
 function esc(str) {
