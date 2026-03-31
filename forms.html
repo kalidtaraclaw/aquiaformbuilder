@@ -1688,8 +1688,10 @@ function navigateToStep(stepIndex) {
 // ─── Render a single field ───
 function renderVAField(fieldId, def, vaField, isRequired) {
     if (!def) return '';
-    const label = vaField.label ? stripPdfMetadata(vaField.label) : humanize(fieldId);
-    const widget = vaField.widget || guessWidget(fieldId, def);
+    const label = (vaField.label ? stripPdfMetadata(vaField.label) : '') || humanize(fieldId);
+    let widget = vaField.widget || guessWidget(fieldId, def);
+    // Override widget for signature fields that were mis-typed as "text" in the schema
+    if (widget === 'text' && /^signature/i.test(fieldId) && !/design|assign/i.test(fieldId)) widget = 'signature';
     const reqMark = isRequired ? '<span class="required-mark">(*Required)</span>' : '';
     const hintId = vaField.note ? 'hint_' + fieldId : '';
     const hintHtml = vaField.note ? '<div class="va-field-hint" id="' + hintId + '">' + esc(vaField.note) + '</div>' : '';
@@ -1847,8 +1849,12 @@ function renderVAField(fieldId, def, vaField, isRequired) {
 }
 
 function guessWidget(key, def) {
-    // Signature check first — signature fields are often typed as boolean but should render as signature pad
-    if (/signature|sign/i.test(key) && !/signif|signal|design|assign/i.test(key)) return 'signature';
+    // Date format check first — fields with format:"date" are always date pickers
+    if (def.format === 'date') return 'date';
+    // Signature check — signature fields are often typed as boolean but should render as signature pad
+    // Exclude false positives: signif*, signal, design, assign, and "dateSigned" / "Signed" alone
+    if (/signature/i.test(key) && !/design|assign/i.test(key)) return 'signature';
+    if (/\bsign(?:ed)?\b/i.test(key) && !/signif|signal|design|assign|date.*sign/i.test(key)) return 'signature';
     if (def.type === 'boolean') return 'checkbox';
     if (def.type === 'object' && def.properties) {
         if (def.properties.street || def.properties.city || def.properties.postalCode) return 'address';
@@ -1856,7 +1862,6 @@ function guessWidget(key, def) {
         return 'text';
     }
     if (def.enum && def.enum.length > 0) return 'select';
-    if (def.format === 'date') return 'date';
     if (def.format === 'email') return 'email';
     if (/ssn/i.test(key)) return 'ssn';
     if (/phone|telephone/i.test(key)) return 'phone';
@@ -1871,6 +1876,10 @@ function stripPdfMetadata(s) {
          .replace(/\s*For VA Use Only/gi, '')
          .replace(/\s*This is A?read Only Field\b/gi, '')
          .replace(/\s+Page\s*\d+$/i, '')
+         .replace(/\s*\d+Date Signed\b[^)"]*/gi, '')
+         .replace(/\s*From Question\s*\d+\s*/gi, ' ')
+         .replace(/^\d+[A-Z]?\.\s*/i, '')
+         .replace(/\s*\(\s*$/g, '')
          .replace(/\s+/g, ' ').trim();
 }
 
