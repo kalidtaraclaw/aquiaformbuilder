@@ -139,7 +139,8 @@
       "enum": ["Yes", "No"],
       "x-va-field": {
         "label": "7A. IS THE STUDENT MARRIED?",
-        "widget": "radio"
+        "widget": "radio",
+        "options": ["Yes", "No"]
       }
     },
     "dateOfMarriage": {
@@ -161,7 +162,8 @@
       "enum": ["Yes", "No"],
       "x-va-field": {
         "label": "9A. IS THE STUDENT RECEIVING OR HAS THE STUDENT EVER RECEIVED EDUCATIONAL ASSISTANCE UNDER 38 U.S.C. CHAPTER 35, THE FRY SCHOLARSHIP, OR FEDERAL EMPLOYEES' COMPENSATION?",
-        "widget": "radio"
+        "widget": "radio",
+        "options": ["Yes", "No"]
       }
     },
     "typeOfProgramOrBenefit": {
@@ -192,7 +194,8 @@
       "enum": ["Yes", "No"],
       "x-va-field": {
         "label": "10A. IS THIS A FEDERALLY FUNDED SCHOOL OR PROGRAM?",
-        "widget": "radio"
+        "widget": "radio",
+        "options": ["Yes", "No"]
       }
     },
     "termBeginDate": {
@@ -221,7 +224,8 @@
       "enum": ["Yes", "No"],
       "x-va-field": {
         "label": "12A. DID THE STUDENT ATTEND SCHOOL LAST TERM?",
-        "widget": "radio"
+        "widget": "radio",
+        "options": ["Yes", "No"]
       }
     },
     "dateStoppedAttending": {
