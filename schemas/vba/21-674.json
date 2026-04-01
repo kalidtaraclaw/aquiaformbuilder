@@ -91,11 +91,28 @@
   ],
   "properties": {
     "veteranClaimantName": {
-      "$ref": "#/definitions/fullName",
-      "x-va-field": {
-        "label": "1. VETERAN/CLAIMANT'S NAME (First, Middle Initial, Last)",
-        "widget": "text"
-      }
+      "type": "object",
+      "properties": {
+        "first": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        },
+        "middle": {
+          "type": "string",
+          "maxLength": 1
+        },
+        "last": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        },
+        "suffix": {
+          "type": "string",
+          "enum": ["Jr.", "Sr.", "II", "III", "IV"]
+        }
+      },
+      "required": ["first", "last"]
     },
     "vaFileNumber": {
       "$ref": "#/definitions/vaFileNumber",
@@ -113,12 +130,29 @@
       }
     },
     "studentName": {
-      "$ref": "#/definitions/fullName",
-      "x-va-field": {
-        "label": "4. STUDENT'S NAME (First, Middle Initial, Last)",
-        "widget": "text",
-        "note": "If veteran is the student, enter the veteran's name."
-      }
+      "type": "object",
+      "description": "If veteran is the student, enter the veteran's name.",
+      "properties": {
+        "first": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        },
+        "middle": {
+          "type": "string",
+          "maxLength": 1
+        },
+        "last": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        },
+        "suffix": {
+          "type": "string",
+          "enum": ["Jr.", "Sr.", "II", "III", "IV"]
+        }
+      },
+      "required": ["first", "last"]
     },
     "studentSsn": {
       "$ref": "#/definitions/ssn",
