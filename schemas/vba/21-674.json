@@ -100,7 +100,7 @@
     "vaFileNumber": {
       "$ref": "#/definitions/vaFileNumber",
       "x-va-field": {
-        "label": "2. VA FILE NUMBER — If applicable",
+        "label": "2. VA FILE NUMBER",
         "widget": "text"
       }
     },
@@ -117,7 +117,7 @@
       "x-va-field": {
         "label": "4. STUDENT'S NAME (First, Middle Initial, Last)",
         "widget": "text",
-        "description": "NOTE: If veteran is the student, enter the veteran's name."
+        "note": "If veteran is the student, enter the veteran's name."
       }
     },
     "studentSsn": {
@@ -231,7 +231,7 @@
     "dateStoppedAttending": {
       "$ref": "#/definitions/date",
       "x-va-field": {
-        "label": "12A (continued). IF NO, DATE STUDENT STOPPED ATTENDING",
+        "label": "12A. DATE STUDENT STOPPED ATTENDING",
         "widget": "date"
       }
     },
@@ -336,7 +336,7 @@
     "internationalTelephoneNumber": {
       "type": "string",
       "x-va-field": {
-        "label": "16E. INTERNATIONAL TELEPHONE NUMBER — If applicable",
+        "label": "16E. INTERNATIONAL TELEPHONE NUMBER",
         "widget": "phone"
       }
     }

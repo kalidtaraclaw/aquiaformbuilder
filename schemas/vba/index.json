@@ -48,6 +48,25 @@
       "routingTypes": []
     },
     {
+      "file": "21-674.json",
+      "properties": 34,
+      "totalFields": 34,
+      "composedFields": 34,
+      "coveragePercent": 100,
+      "needsReviewCount": 0,
+      "pageCount": 3,
+      "status": "digitized",
+      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-674-are.pdf",
+      "redigitizedAt": "2026-03-30T20:39:38.092Z",
+      "name": "21-674",
+      "fileName": "21-674.json",
+      "requires3rdParty": "Yes",
+      "routingTypes": [
+        "physician",
+        "school"
+      ]
+    },
+    {
       "file": "26-1852.json",
       "properties": 250,
       "totalFields": 374,
@@ -937,25 +956,6 @@
       "fileName": "21P-4171.json",
       "requires3rdParty": "No",
       "routingTypes": []
-    },
-    {
-      "file": "21-674.json",
-      "properties": 29,
-      "totalFields": 75,
-      "composedFields": 56,
-      "coveragePercent": 100,
-      "needsReviewCount": 0,
-      "pageCount": 3,
-      "status": "digitized",
-      "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-674-are.pdf",
-      "redigitizedAt": "2026-03-30T20:39:38.092Z",
-      "name": "21-674",
-      "fileName": "21-674.json",
-      "requires3rdParty": "Yes",
-      "routingTypes": [
-        "physician",
-        "school"
-      ]
     },
     {
       "file": "21P-601.json",
