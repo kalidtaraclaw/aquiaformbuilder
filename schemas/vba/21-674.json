@@ -284,49 +284,49 @@
       }
     },
     "estateValueSavings": {
-      "type": "string",
+      "type": "number",
       "x-va-field": {
         "label": "13A. SAVINGS (Including cash)",
         "widget": "text"
       }
     },
     "estateValueSecurities": {
-      "type": "string",
+      "type": "number",
       "x-va-field": {
         "label": "13B. SECURITIES AND BONDS",
         "widget": "text"
       }
     },
     "estateValueRealEstate": {
-      "type": "string",
+      "type": "number",
       "x-va-field": {
         "label": "13C. REAL ESTATE (Not your home)",
         "widget": "text"
       }
     },
     "estateValueOtherAssets": {
-      "type": "string",
+      "type": "number",
       "x-va-field": {
         "label": "13D. ALL OTHER ASSETS",
         "widget": "text"
       }
     },
     "estateValueTotal": {
-      "type": "string",
+      "type": "number",
       "x-va-field": {
         "label": "13E. TOTAL",
         "widget": "text"
       }
     },
     "incomeSocSec": {
-      "type": "string",
+      "type": "number",
       "x-va-field": {
         "label": "14A. INCOME FROM SOCIAL SECURITY",
         "widget": "text"
       }
     },
     "incomeFromEmployment": {
-      "type": "string",
+      "type": "number",
       "x-va-field": {
         "label": "14B. ALL OTHER INCOME (Include amounts from all sources, e.g., wages, interest, dividends)",
         "widget": "text"
