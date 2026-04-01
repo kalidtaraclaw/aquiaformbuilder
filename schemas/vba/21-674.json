@@ -100,7 +100,7 @@
     "vaFileNumber": {
       "$ref": "#/definitions/vaFileNumber",
       "x-va-field": {
-        "label": "2. VA FILE NUMBER (If applicable)",
+        "label": "2. VA FILE NUMBER — If applicable",
         "widget": "text"
       }
     },
@@ -280,10 +280,10 @@
         "widget": "text"
       }
     },
-    "incomeFromSocialSecurity": {
+    "incomeSocSec": {
       "type": "string",
       "x-va-field": {
-        "label": "14A. SOCIAL SECURITY",
+        "label": "14A. INCOME FROM SOCIAL SECURITY",
         "widget": "text"
       }
     },
@@ -332,7 +332,7 @@
     "internationalTelephoneNumber": {
       "type": "string",
       "x-va-field": {
-        "label": "16E. INTERNATIONAL TELEPHONE NUMBER (If applicable)",
+        "label": "16E. INTERNATIONAL TELEPHONE NUMBER — If applicable",
         "widget": "phone"
       }
     }
@@ -542,7 +542,7 @@
           {
             "columns": [
               {
-                "fieldId": "incomeFromSocialSecurity",
+                "fieldId": "incomeSocSec",
                 "width": 6
               },
               {
