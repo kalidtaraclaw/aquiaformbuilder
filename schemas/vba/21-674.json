@@ -2,412 +2,338 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "21-674",
   "type": "object",
-  "required": [],
+  "definitions": {
+    "fullName": {
+      "type": "object",
+      "properties": {
+        "first": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        },
+        "middle": {
+          "type": "string",
+          "maxLength": 1
+        },
+        "last": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        },
+        "suffix": {
+          "type": "string",
+          "enum": ["Jr.", "Sr.", "II", "III", "IV"]
+        }
+      },
+      "required": ["first", "last"]
+    },
+    "ssn": {
+      "type": "string",
+      "pattern": "^[0-9]{9}$"
+    },
+    "vaFileNumber": {
+      "type": "string",
+      "pattern": "^\\d{8,9}$"
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^(\\d{4}|XXXX)-(0[1-9]|1[0-2]|XX)-(0[1-9]|[1-2][0-9]|3[0-1]|XX)$"
+    },
+    "address": {
+      "type": "object",
+      "required": ["street", "city", "state", "postalCode", "country"],
+      "properties": {
+        "street": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "street2": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "city": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "state": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "string",
+          "pattern": "^\\d{5}(-\\d{4})?$"
+        },
+        "country": {
+          "type": "string",
+          "enum": ["USA", "CAN", "MEX", "GBR", "DEU", "FRA", "JPN", "KOR", "AUS", "PHL", "ITA", "OTHER"],
+          "enumNames": ["United States", "Canada", "Mexico", "United Kingdom", "Germany", "France", "Japan", "South Korea", "Australia", "Philippines", "Italy", "Other"]
+        }
+      }
+    },
+    "phone": {
+      "type": "string",
+      "pattern": "^\\d{10}$"
+    }
+  },
+  "required": [
+    "veteranClaimantName",
+    "studentName",
+    "studentSsn",
+    "studentDateOfBirth",
+    "studentAddress",
+    "schoolName",
+    "termBeginDate",
+    "courseStartDate",
+    "expectedGraduationDate",
+    "certificationSignature",
+    "certificationDate"
+  ],
   "properties": {
-    "vaFileNumberIfApplicable": {
-      "type": "string",
+    "veteranClaimantName": {
+      "$ref": "#/definitions/fullName",
       "x-va-field": {
-        "label": "VA File Number If Applicable",
+        "label": "1. VETERAN/CLAIMANT'S NAME (First, Middle Initial, Last)",
         "widget": "text"
       }
     },
-    "veteransSocialSecurityNumberSecondTwoNumbers": {
-      "type": "string",
+    "vaFileNumber": {
+      "$ref": "#/definitions/vaFileNumber",
       "x-va-field": {
-        "label": "Veterans Social Security Number Second Two Numbers",
-        "widget": "text"
-      }
-    },
-    "lastName": {
-      "type": "string",
-      "x-va-field": {
-        "label": "Last Name",
-        "widget": "text"
-      }
-    },
-    "middleInitial1": {
-      "type": "string",
-      "x-va-field": {
-        "label": "Middle Initial",
-        "widget": "text"
-      }
-    },
-    "veteranClaimantFirstName": {
-      "type": "string",
-      "x-va-field": {
-        "label": "Veteran Claimant First Name",
+        "label": "2. VA FILE NUMBER (If applicable)",
         "widget": "text"
       }
     },
     "emailAddress": {
       "type": "string",
+      "format": "email",
       "x-va-field": {
-        "label": "Email Address",
-        "widget": "text"
+        "label": "3. E-MAIL ADDRESS",
+        "widget": "email"
       }
     },
-    "studentsNameFirstName": {
-      "type": "string",
+    "studentName": {
+      "$ref": "#/definitions/fullName",
       "x-va-field": {
-        "label": "Students Name First Name",
-        "widget": "text"
+        "label": "4. STUDENT'S NAME (First, Middle Initial, Last)",
+        "widget": "text",
+        "description": "NOTE: If veteran is the student, enter the veteran's name."
       }
     },
-    "ziporPostalCode": {
-      "type": "string",
-      "pattern": "^\\d{5}(-\\d{4})?$",
+    "studentSsn": {
+      "$ref": "#/definitions/ssn",
       "x-va-field": {
-        "label": "ZIP or Postal Code",
-        "widget": "zip"
+        "label": "5. STUDENT'S SOCIAL SECURITY NUMBER",
+        "widget": "ssn"
       }
     },
-    "country": {
-      "type": "string",
+    "studentDateOfBirth": {
+      "$ref": "#/definitions/date",
       "x-va-field": {
-        "label": "Country",
-        "widget": "text"
+        "label": "6. DATE OF BIRTH",
+        "widget": "date"
       }
     },
-    "stateOrProvince": {
+    "isStudentMarried": {
       "type": "string",
+      "enum": ["Yes", "No"],
       "x-va-field": {
-        "label": "State or Province",
-        "widget": "text"
+        "label": "7A. IS THE STUDENT MARRIED?",
+        "widget": "radio"
       }
     },
-    "city": {
-      "type": "string",
+    "dateOfMarriage": {
+      "$ref": "#/definitions/date",
       "x-va-field": {
-        "label": "City",
-        "widget": "text"
+        "label": "7B. DATE OF MARRIAGE",
+        "widget": "date"
       }
     },
-    "apartmentOrUnitNumber": {
-      "type": "string",
+    "studentAddress": {
+      "$ref": "#/definitions/address",
       "x-va-field": {
-        "label": "Apartment or Unit Number",
-        "widget": "text"
+        "label": "8. ADDRESS OF STUDENT (Number and street or rural route, P.O. Box, City, State/Province, ZIP/Postal Code, Country)",
+        "widget": "address"
       }
     },
-    "addressOfStudentNumberAndStreet": {
+    "receivingEducationalAssistance": {
       "type": "string",
+      "enum": ["Yes", "No"],
       "x-va-field": {
-        "label": "Address of Student Number and Street",
-        "widget": "text"
-      }
-    },
-    "beginningDateOfRegularTermOrCourseMonth": {
-      "type": "string",
-      "x-va-field": {
-        "label": "Beginning Date of Regular Term or Course Month",
-        "widget": "text"
-      }
-    },
-    "dateStudentStartedOrExpectsToStartCourseMonth": {
-      "type": "string",
-      "x-va-field": {
-        "label": "Date Student Started or Expects to Start Course Month",
-        "widget": "text"
-      }
-    },
-    "expectedDateOfGraduationMonth": {
-      "type": "string",
-      "x-va-field": {
-        "label": "Expected Date of Graduation Month",
-        "widget": "text"
-      }
-    },
-    "beginningDateOfLastTermMonth": {
-      "type": "string",
-      "x-va-field": {
-        "label": "Beginning Date of Last Term Month",
-        "widget": "text"
-      }
-    },
-    "endingDateOfLastTermMonth": {
-      "type": "string",
-      "x-va-field": {
-        "label": "Ending Date of Last Term Month",
-        "widget": "text"
+        "label": "9A. IS THE STUDENT RECEIVING OR HAS THE STUDENT EVER RECEIVED EDUCATIONAL ASSISTANCE UNDER 38 U.S.C. CHAPTER 35, THE FRY SCHOLARSHIP, OR FEDERAL EMPLOYEES' COMPENSATION?",
+        "widget": "radio"
       }
     },
     "typeOfProgramOrBenefit": {
       "type": "string",
       "x-va-field": {
-        "label": "Type of Program or Benefit",
+        "label": "9B. TYPE OF PROGRAM OR BENEFIT",
         "widget": "text"
       }
     },
-    "federallyFundedSchoolOrProgrm": {
+    "datePaymentsBegan": {
+      "$ref": "#/definitions/date",
+      "x-va-field": {
+        "label": "9C. DATE PAYMENTS BEGAN",
+        "widget": "date"
+      }
+    },
+    "schoolName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "x-va-field": {
+        "label": "10. NAME AND COMPLETE ADDRESS OF SCHOOL",
+        "widget": "textarea"
+      }
+    },
+    "isFederallyFundedSchool": {
+      "type": "string",
+      "enum": ["Yes", "No"],
+      "x-va-field": {
+        "label": "10A. IS THIS A FEDERALLY FUNDED SCHOOL OR PROGRAM?",
+        "widget": "radio"
+      }
+    },
+    "termBeginDate": {
+      "$ref": "#/definitions/date",
+      "x-va-field": {
+        "label": "11A. OFFICIAL BEGINNING DATE OF REGULAR TERM OR COURSE",
+        "widget": "date"
+      }
+    },
+    "courseStartDate": {
+      "$ref": "#/definitions/date",
+      "x-va-field": {
+        "label": "11B. DATE STUDENT STARTED OR EXPECTS TO START COURSE",
+        "widget": "date"
+      }
+    },
+    "expectedGraduationDate": {
+      "$ref": "#/definitions/date",
+      "x-va-field": {
+        "label": "11C. EXPECTED DATE OF GRADUATION",
+        "widget": "date"
+      }
+    },
+    "attendedLastTerm": {
+      "type": "string",
+      "enum": ["Yes", "No"],
+      "x-va-field": {
+        "label": "12A. DID THE STUDENT ATTEND SCHOOL LAST TERM?",
+        "widget": "radio"
+      }
+    },
+    "dateStoppedAttending": {
+      "$ref": "#/definitions/date",
+      "x-va-field": {
+        "label": "12A (continued). IF NO, DATE STUDENT STOPPED ATTENDING",
+        "widget": "date"
+      }
+    },
+    "lastTermBeginDate": {
+      "$ref": "#/definitions/date",
+      "x-va-field": {
+        "label": "12B. BEGINNING DATE OF LAST TERM",
+        "widget": "date"
+      }
+    },
+    "lastTermEndDate": {
+      "$ref": "#/definitions/date",
+      "x-va-field": {
+        "label": "12C. ENDING DATE OF LAST TERM",
+        "widget": "date"
+      }
+    },
+    "estateValueSavings": {
       "type": "string",
       "x-va-field": {
-        "label": "Federally Funded School or Progrm",
+        "label": "13A. SAVINGS (Including cash)",
         "widget": "text"
       }
     },
-    "amount": {
+    "estateValueSecurities": {
       "type": "string",
       "x-va-field": {
-        "label": "Amount",
+        "label": "13B. SECURITIES AND BONDS",
+        "widget": "text"
+      }
+    },
+    "estateValueRealEstate": {
+      "type": "string",
+      "x-va-field": {
+        "label": "13C. REAL ESTATE (Not your home)",
+        "widget": "text"
+      }
+    },
+    "estateValueOtherAssets": {
+      "type": "string",
+      "x-va-field": {
+        "label": "13D. ALL OTHER ASSETS",
+        "widget": "text"
+      }
+    },
+    "estateValueTotal": {
+      "type": "string",
+      "x-va-field": {
+        "label": "13E. TOTAL",
+        "widget": "text"
+      }
+    },
+    "incomeFromSocialSecurity": {
+      "type": "string",
+      "x-va-field": {
+        "label": "14A. SOCIAL SECURITY",
+        "widget": "text"
+      }
+    },
+    "incomeFromEmployment": {
+      "type": "string",
+      "x-va-field": {
+        "label": "14B. ALL OTHER INCOME (Include amounts from all sources, e.g., wages, interest, dividends)",
         "widget": "text"
       }
     },
     "remarks": {
       "type": "string",
       "x-va-field": {
-        "label": "Remarks",
+        "label": "15. REMARKS (If any)",
+        "widget": "textarea"
+      }
+    },
+    "certificationSignature": {
+      "type": "string",
+      "x-va-field": {
+        "label": "16A. SIGNATURE OF CLAIMANT (The student signs if they have attained majority and are claiming benefits in their own right; otherwise the veteran, surviving spouse, guardian or custodian will sign)",
+        "widget": "signature"
+      }
+    },
+    "certificationDate": {
+      "$ref": "#/definitions/date",
+      "x-va-field": {
+        "label": "16B. DATE SIGNED",
+        "widget": "date"
+      }
+    },
+    "relationshipToStudent": {
+      "type": "string",
+      "x-va-field": {
+        "label": "16C. RELATIONSHIP TO STUDENT (If not the student signing)",
         "widget": "text"
       }
     },
-    "telephoneNumberAreaCode": {
-      "type": "string",
+    "telephoneNumber": {
+      "$ref": "#/definitions/phone",
       "x-va-field": {
-        "label": "Telephone Number Area Code",
-        "widget": "text"
-      }
-    },
-    "telephone": {
-      "type": "string",
-      "pattern": "^\\d{10}$",
-      "x-va-field": {
-        "label": "Telephone",
+        "label": "16D. TELEPHONE NUMBER (Include Area Code)",
         "widget": "phone"
       }
     },
-    "internationalTelephoneNumberIfApplicable": {
+    "internationalTelephoneNumber": {
       "type": "string",
       "x-va-field": {
-        "label": "International Telephone Number If Applicable",
-        "widget": "text"
-      }
-    },
-    "signatureField11": {
-      "type": "string",
-      "x-va-field": {
-        "label": "Signature Field",
-        "widget": "text"
-      }
-    },
-    "useThisFormToDetermineEntitlementToBenefitsForAVet": {
-      "type": "string",
-      "x-va-field": {
-        "label": "Use This Form to Determine Entitlement to Benefits for a Veteran",
-        "widget": "text"
-      }
-    },
-    "veteranClaimantSNameFirstMiddleInitialLast": {
-      "type": "string",
-      "x-va-field": {
-        "label": "VETERAN/CLAIMANT'S NAME (First, Middle Initial, Last)",
-        "widget": "text"
-      }
-    },
-    "studentSNameFirstMiddleInitialLastNoteVeteran": {
-      "type": "string",
-      "x-va-field": {
-        "label": "STUDENT'S NAME (First, Middle Initial, Last) (NOTE: Veteran'",
-        "widget": "text"
-      }
-    },
-    "socialSecurityNumber": {
-      "type": "string",
-      "x-va-field": {
-        "label": "Social Security Number",
-        "widget": "text"
-      }
-    },
-    "dateOfBirth": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "Date of Birth",
-        "widget": "date"
-      }
-    },
-    "7b": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "7b",
-        "widget": "date"
-      }
-    },
-    "addressOfStudentNumberAndStreetOrRuralRoutePOB": {
-      "type": "string",
-      "x-va-field": {
-        "label": "ADDRESS OF STUDENT (Number and street or rural route, P.O. B",
-        "widget": "address"
-      }
-    },
-    "zipCodePostalCodeCountryStateProvince": {
-      "type": "string",
-      "x-va-field": {
-        "label": "ZIP Code/Postal Code  Country  State/Province",
-        "widget": "select"
-      }
-    },
-    "cityAptUnitNumber": {
-      "type": "string",
-      "x-va-field": {
-        "label": "City  Apt./Unit Number",
-        "widget": "text"
-      }
-    },
-    "9cDatePaymentsBegan": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "9C. Date Payments Began (",
-        "widget": "date"
-      }
-    },
-    "noIfNoAddThe": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "NO (If \"No,\" add the",
-        "widget": "date"
-      }
-    },
-    "11aOfficialBeginning": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "11A. Official Beginning",
-        "widget": "date"
-      }
-    },
-    "11b": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "11b",
-        "widget": "date"
-      }
-    },
-    "11cExpected": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "11C. Expected",
-        "widget": "date"
-      }
-    },
-    "12bBeginning": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "12B. Beginning",
-        "widget": "date"
-      }
-    },
-    "12cEnding": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "12C. Ending",
-        "widget": "date"
-      }
-    },
-    "valueOfEstate": {
-      "type": "string",
-      "x-va-field": {
-        "label": "Value of Estate",
-        "widget": "select"
-      }
-    },
-    "reportOfIncomeByCalendarYear": {
-      "type": "string",
-      "x-va-field": {
-        "label": "Report of Income by Calendar Year",
-        "widget": "text"
-      }
-    },
-    "remarksIfAny": {
-      "type": "string",
-      "x-va-field": {
-        "label": "REMARKS (If any)",
-        "widget": "text"
-      }
-    },
-    "survivingSpouseGuardianOrCustodianWillSign": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "surviving spouse, guardian or custodian will sign,",
-        "widget": "date"
-      }
-    },
-    "16b": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "16b",
-        "widget": "date"
-      }
-    },
-    "improvedPension": {
-      "type": "string",
-      "x-va-field": {
-        "label": "Improved Pension",
-        "widget": "text"
-      }
-    },
-    "amountSPaidAnd": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "amount(s) paid and",
-        "widget": "date"
-      }
-    },
-    "address": {
-      "type": "string",
-      "x-va-field": {
-        "label": "address.",
-        "widget": "address"
-      }
-    },
-    "dob": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "DOB"
-      }
-    },
-    "dateOfMarriage": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "Date of Marriage"
-      }
-    },
-    "datePaymentsBegan": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "Date Payments Began"
-      }
-    },
-    "dateStoppedAttending": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "Date Stopped Attending"
-      }
-    },
-    "date": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "Date"
-      }
-    },
-    "dateSigned": {
-      "type": "string",
-      "format": "date",
-      "x-va-field": {
-        "label": "Date Signed"
+        "label": "16E. INTERNATIONAL TELEPHONE NUMBER (If applicable)",
+        "widget": "phone"
       }
     }
   },
@@ -415,32 +341,33 @@
     "formUrl": "https://www.vba.va.gov/pubs/forms/vba-21-674-are.pdf",
     "status": "digitized",
     "totalFields": 75,
-    "composedFields": 56,
+    "composedFields": 32,
     "coveragePercent": 100,
     "xfaLabelCount": 0,
     "needsReviewCount": 0,
     "pageCount": 3,
     "generatedAt": "2026-03-28T17:33:05.737Z",
     "postProcessedAt": "2026-03-30T20:02:41.701259+00:00",
-    "redigitizedAt": "2026-03-30T20:37:08.346Z",
+    "redigitizedAt": "2026-04-01T17:30:00.000Z",
+    "demoReady": true,
     "extractionSources": [
       "acroform",
       "acroform+text-inference",
       "text-inference"
     ],
-    "fieldNameFixedAt": "2026-03-30T23:47:23.627751+00:00"
+    "fieldNameFixedAt": "2026-04-01T17:30:00.000Z"
   },
   "x-va-form": {
     "formNumber": "21-674",
     "formTitle": "Request for Approval of School Attendance",
     "formSections": [
       {
-        "title": "Veteran's Information",
+        "title": "Section I — Veteran/Claimant's Identification Information",
         "rows": [
           {
             "columns": [
               {
-                "fieldId": "veteransSocialSecurityNumberSecondTwoNumbers",
+                "fieldId": "veteranClaimantName",
                 "width": 12
               }
             ]
@@ -448,73 +375,24 @@
           {
             "columns": [
               {
-                "fieldId": "veteranClaimantFirstName",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "veteranClaimantSNameFirstMiddleInitialLast",
-                "width": 12
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Certification and Signature",
-        "rows": [
-          {
-            "columns": [
-              {
-                "fieldId": "signatureField11",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "dateSigned",
-                "width": 12
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Additional Information",
-        "rows": [
-          {
-            "columns": [
-              {
-                "fieldId": "vaFileNumberIfApplicable",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "lastName",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "middleInitial1",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
+                "fieldId": "vaFileNumber",
+                "width": 6
+              },
               {
                 "fieldId": "emailAddress",
+                "width": 6
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Section II — Student's Identification Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "studentName",
                 "width": 12
               }
             ]
@@ -522,344 +400,16 @@
           {
             "columns": [
               {
-                "fieldId": "studentsNameFirstName",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
+                "fieldId": "studentSsn",
+                "width": 4
+              },
               {
-                "fieldId": "ziporPostalCode",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
+                "fieldId": "studentDateOfBirth",
+                "width": 4
+              },
               {
-                "fieldId": "country",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "stateOrProvince",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "city",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "apartmentOrUnitNumber",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "addressOfStudentNumberAndStreet",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "beginningDateOfRegularTermOrCourseMonth",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "dateStudentStartedOrExpectsToStartCourseMonth",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "expectedDateOfGraduationMonth",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "beginningDateOfLastTermMonth",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "endingDateOfLastTermMonth",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "typeOfProgramOrBenefit",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "federallyFundedSchoolOrProgrm",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "amount",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "remarks",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "telephoneNumberAreaCode",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "telephone",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "internationalTelephoneNumberIfApplicable",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "useThisFormToDetermineEntitlementToBenefitsForAVet",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "studentSNameFirstMiddleInitialLastNoteVeteran",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "socialSecurityNumber",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "dateOfBirth",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "7b",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "addressOfStudentNumberAndStreetOrRuralRoutePOB",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "zipCodePostalCodeCountryStateProvince",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "cityAptUnitNumber",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "9cDatePaymentsBegan",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "noIfNoAddThe",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "11aOfficialBeginning",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "11b",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "11cExpected",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "12bBeginning",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "12cEnding",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "valueOfEstate",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "reportOfIncomeByCalendarYear",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "remarksIfAny",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "survivingSpouseGuardianOrCustodianWillSign",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "16b",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "improvedPension",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "amountSPaidAnd",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "address",
-                "width": 12
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "fieldId": "dob",
-                "width": 12
+                "fieldId": "isStudentMarried",
+                "width": 4
               }
             ]
           },
@@ -874,15 +424,142 @@
           {
             "columns": [
               {
-                "fieldId": "datePaymentsBegan",
+                "fieldId": "studentAddress",
+                "width": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Section III — School Attendance Information",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "receivingEducationalAssistance",
                 "width": 12
               }
             ]
           },
           {
             "columns": [
+              {
+                "fieldId": "typeOfProgramOrBenefit",
+                "width": 6
+              },
+              {
+                "fieldId": "datePaymentsBegan",
+                "width": 6
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "schoolName",
+                "width": 8
+              },
+              {
+                "fieldId": "isFederallyFundedSchool",
+                "width": 4
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "termBeginDate",
+                "width": 4
+              },
+              {
+                "fieldId": "courseStartDate",
+                "width": 4
+              },
+              {
+                "fieldId": "expectedGraduationDate",
+                "width": 4
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "attendedLastTerm",
+                "width": 4
+              },
               {
                 "fieldId": "dateStoppedAttending",
+                "width": 8
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "lastTermBeginDate",
+                "width": 6
+              },
+              {
+                "fieldId": "lastTermEndDate",
+                "width": 6
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Section IV — Student's Income and Estate (Complete only if benefit claimed or received is Disability or Survivor's Pension)",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "estateValueSavings",
+                "width": 4
+              },
+              {
+                "fieldId": "estateValueSecurities",
+                "width": 4
+              },
+              {
+                "fieldId": "estateValueRealEstate",
+                "width": 4
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "estateValueOtherAssets",
+                "width": 6
+              },
+              {
+                "fieldId": "estateValueTotal",
+                "width": 6
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "incomeFromSocialSecurity",
+                "width": 6
+              },
+              {
+                "fieldId": "incomeFromEmployment",
+                "width": 6
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Section V — Remarks and Certification",
+        "rows": [
+          {
+            "columns": [
+              {
+                "fieldId": "remarks",
                 "width": 12
               }
             ]
@@ -890,8 +567,32 @@
           {
             "columns": [
               {
-                "fieldId": "date",
+                "fieldId": "certificationSignature",
+                "width": 8
+              },
+              {
+                "fieldId": "certificationDate",
+                "width": 4
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "relationshipToStudent",
                 "width": 12
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "telephoneNumber",
+                "width": 6
+              },
+              {
+                "fieldId": "internationalTelephoneNumber",
+                "width": 6
               }
             ]
           }
