@@ -1138,28 +1138,39 @@ function renderIntroStep(schema, vaForm, org, steps) {
 function detectNameGroups(fieldEntries) {
     const consumed = new Set();
     const groups = [];
+    // Match "somethingFirstName", "somethingLastName", "somethingMiddleName/Initial"
     const nameRe = /^(.+?)(first\s*name|last\s*name|middle\s*(?:initial|name)\d*)$/i;
-    for (let n = 0; n < fieldEntries.length; n++) {
-        const [key] = fieldEntries[n];
+    // Match BIO-style compound IDs: "parentObject.first", "parentObject.middle", "parentObject.last"
+    const dotNameRe = /^(.+)\.(first|middle|last|suffix)$/i;
+
+    // Helper: extract prefix and part from a key using either pattern
+    function parseName(key) {
         const nm = key.match(nameRe);
-        if (!nm) continue;
-        const prefix = nm[1];
-        const part = nm[2].toLowerCase();
-        if (part.startsWith('first')) {
+        if (nm) return { prefix: nm[1], part: nm[2].toLowerCase() };
+        const dm = key.match(dotNameRe);
+        if (dm) return { prefix: dm[1] + '.', part: dm[2].toLowerCase() };
+        return null;
+    }
+
+    for (let n = 0; n < fieldEntries.length; n++) {
+        const parsed = parseName(fieldEntries[n][0]);
+        if (!parsed) continue;
+        if (parsed.part.startsWith('first')) {
             let lastIdx = -1, middleIdx = -1;
             for (let k = 0; k < fieldEntries.length; k++) {
                 if (k === n) continue;
-                const km = fieldEntries[k][0].match(nameRe);
-                if (!km || km[1] !== prefix) continue;
-                const kp = km[2].toLowerCase();
-                if (kp.startsWith('last')) lastIdx = k;
-                else if (kp.startsWith('middle')) middleIdx = k;
+                const kp = parseName(fieldEntries[k][0]);
+                if (!kp || kp.prefix !== parsed.prefix) continue;
+                if (kp.part.startsWith('last')) lastIdx = k;
+                else if (kp.part.startsWith('middle')) middleIdx = k;
             }
             if (lastIdx !== -1) {
-                const groupLabel = prefix
-                    ? humanize(prefix).replace(/s$/i, '') + "'s Full Name"
+                // Clean up the label: remove trailing dot for compound IDs
+                const cleanPrefix = parsed.prefix.replace(/\.$/, '');
+                const groupLabel = cleanPrefix
+                    ? humanize(cleanPrefix).replace(/\s*Name$/i, '').replace(/s$/i, '') + "'s Full Name"
                     : 'Full Name';
-                groups.push({ prefix, firstIdx: n, lastIdx, middleIdx, label: groupLabel });
+                groups.push({ prefix: parsed.prefix, firstIdx: n, lastIdx, middleIdx, label: groupLabel });
                 consumed.add(n);
                 consumed.add(lastIdx);
                 if (middleIdx !== -1) consumed.add(middleIdx);

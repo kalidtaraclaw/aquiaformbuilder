@@ -125,6 +125,7 @@
             height: calc(100vh - 64px);
         }
 
+        /* ── Initial state: sidebar hidden, upload centered ── */
         .sidebar {
             width: 35%;
             border-right: 1px solid var(--border);
@@ -133,11 +134,34 @@
             background-color: var(--white);
         }
 
+        /* Before PDF load: sidebar takes full width, main is hidden */
+        .container:not(.has-pdf) .sidebar {
+            width: 100%;
+            border-right: none;
+            align-items: center;
+            justify-content: center;
+            background: var(--offwhite);
+        }
+        .container:not(.has-pdf) .main {
+            display: none;
+        }
+
         .upload-zone {
             padding: 1.5rem;
             text-align: center;
             border-bottom: 1px solid var(--border);
             background: var(--ice);
+        }
+
+        /* Before PDF load: upload zone is a centered hero card */
+        .container:not(.has-pdf) .upload-zone {
+            max-width: 520px;
+            width: 100%;
+            border-bottom: none;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(3, 9, 64, 0.08);
+            padding: 3rem 2.5rem;
         }
 
         .upload-zone.dragover {
@@ -152,6 +176,23 @@
             cursor: pointer;
             transition: all 0.3s ease;
             background: var(--white);
+        }
+
+        /* Before PDF load: larger, more prominent upload area */
+        .container:not(.has-pdf) .upload-area {
+            padding: 3rem 2rem;
+            border-color: var(--sky);
+        }
+        .container:not(.has-pdf) .upload-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .container:not(.has-pdf) .upload-area h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+        .container:not(.has-pdf) .upload-area p {
+            font-size: 0.9rem;
         }
 
         .upload-zone.dragover .upload-area {
@@ -963,11 +1004,11 @@
         }
 
         @media (max-width: 1024px) {
-            .container {
+            .container.has-pdf {
                 flex-direction: column;
             }
 
-            .sidebar {
+            .container.has-pdf .sidebar {
                 width: 100%;
                 height: auto;
                 max-height: 40vh;
@@ -975,7 +1016,7 @@
                 border-bottom: 1px solid var(--border);
             }
 
-            .pdf-preview {
+            .container.has-pdf .pdf-preview {
                 display: none;
             }
 
@@ -1646,7 +1687,8 @@
                     // Render PDF preview
                     await this.renderPDFPreview(pdf);
 
-                    // Update UI
+                    // Update UI — switch to split layout
+                    document.querySelector('.container').classList.add('has-pdf');
                     document.getElementById('pdfPreview').style.display = 'flex';
                     this.renderFields();
                     this.renderSectionDetection();
