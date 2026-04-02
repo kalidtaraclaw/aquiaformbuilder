@@ -120,30 +120,141 @@
             background: rgba(255,255,255,0.15);
         }
 
+        /* ── Landing page ── */
+        .landing {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 64px);
+            background: var(--offwhite);
+            padding: 2rem;
+        }
+
+        .landing-inner {
+            max-width: 580px;
+            width: 100%;
+        }
+
+        .landing-intro {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .landing-icon {
+            margin-bottom: 1rem;
+        }
+
+        .landing-intro h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--midnight);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.3px;
+        }
+
+        .landing-desc {
+            font-size: 0.92rem;
+            color: var(--dark-gray);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .landing-steps {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .landing-step {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+        }
+
+        .step-number {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--ice);
+            color: var(--azure);
+            font-weight: 700;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .step-text strong {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--midnight);
+            margin-bottom: 0.15rem;
+        }
+
+        .step-text span {
+            font-size: 0.75rem;
+            color: var(--dark-gray);
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        .landing-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .landing-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .landing-btn-secondary {
+            background: var(--white);
+            color: var(--dark-gray);
+            border: 1px solid var(--border);
+        }
+        .landing-btn-secondary:hover {
+            background: var(--ice);
+            color: var(--midnight);
+            border-color: var(--sky);
+        }
+
+        @media (max-width: 600px) {
+            .landing-steps { flex-direction: column; }
+            .landing-actions { flex-direction: column; }
+        }
+
+        /* ── Editor layout (after PDF upload) ── */
         .container {
             display: flex;
             height: calc(100vh - 64px);
         }
 
-        /* ── Initial state: sidebar hidden, upload centered ── */
         .sidebar {
             width: 35%;
             border-right: 1px solid var(--border);
             display: flex;
             flex-direction: column;
             background-color: var(--white);
-        }
-
-        /* Before PDF load: sidebar takes full width, main is hidden */
-        .container:not(.has-pdf) .sidebar {
-            width: 100%;
-            border-right: none;
-            align-items: center;
-            justify-content: center;
-            background: var(--offwhite);
-        }
-        .container:not(.has-pdf) .main {
-            display: none;
         }
 
         .upload-zone {
@@ -153,15 +264,18 @@
             background: var(--ice);
         }
 
-        /* Before PDF load: upload zone is a centered hero card */
-        .container:not(.has-pdf) .upload-zone {
-            max-width: 520px;
-            width: 100%;
-            border-bottom: none;
-            background: var(--white);
-            border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(3, 9, 64, 0.08);
-            padding: 3rem 2.5rem;
+        .upload-zone-compact {
+            padding: 1rem;
+        }
+        .upload-zone-compact .upload-area {
+            padding: 1rem;
+        }
+        .upload-zone-compact .upload-area h3 {
+            font-size: 0.85rem;
+        }
+        .upload-zone-compact .upload-area p {
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
         }
 
         .upload-zone.dragover {
@@ -178,21 +292,20 @@
             background: var(--white);
         }
 
-        /* Before PDF load: larger, more prominent upload area */
-        .container:not(.has-pdf) .upload-area {
-            padding: 3rem 2rem;
+        /* Landing page upload: larger, prominent */
+        .landing .upload-area {
+            padding: 2.5rem 2rem;
             border-color: var(--sky);
         }
-        .container:not(.has-pdf) .upload-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.25rem;
+        .landing .upload-icon {
+            margin-bottom: 1rem;
         }
-        .container:not(.has-pdf) .upload-area h3 {
-            font-size: 1.15rem;
-            margin-bottom: 0.5rem;
+        .landing .upload-area h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
         }
-        .container:not(.has-pdf) .upload-area p {
-            font-size: 0.9rem;
+        .landing .upload-area p {
+            font-size: 0.88rem;
         }
 
         .upload-zone.dragover .upload-area {
@@ -201,8 +314,7 @@
         }
 
         .upload-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         .upload-area h3 {
@@ -242,7 +354,7 @@
             transform: translateY(0);
         }
 
-        #fileInput {
+        #fileInput, #fileInputCompact {
             display: none;
         }
 
@@ -1004,11 +1116,11 @@
         }
 
         @media (max-width: 1024px) {
-            .container.has-pdf {
+            .container {
                 flex-direction: column;
             }
 
-            .container.has-pdf .sidebar {
+            .sidebar {
                 width: 100%;
                 height: auto;
                 max-height: 40vh;
@@ -1016,7 +1128,7 @@
                 border-bottom: 1px solid var(--border);
             }
 
-            .container.has-pdf .pdf-preview {
+            .pdf-preview {
                 display: none;
             }
 
@@ -1213,22 +1325,98 @@
             <p>Transform PDF forms into fillable digital forms</p>
         </div>
         <nav class="header-nav">
-            <a href="forms.html">Forms</a>
             <a href="index.html" class="active">Digitizer</a>
+            <a href="forms.html">Forms</a>
             <a href="report.html">Report</a>
         </nav>
     </div>
 
-    <div class="container">
-        <div class="sidebar">
+    <!-- Landing page (shown before PDF upload) -->
+    <div class="landing" id="landing">
+        <div class="landing-inner">
+            <div class="landing-intro">
+                <div class="landing-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--azure)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="9" y1="15" x2="15" y2="15"/>
+                        <line x1="9" y1="11" x2="15" y2="11"/>
+                    </svg>
+                </div>
+                <h2>VA Form Digitizer</h2>
+                <p class="landing-desc">Upload a VA PDF form and automatically extract fields, sections, and metadata into a structured JSON schema — ready to preview as a fillable digital form or publish to the schema database.</p>
+            </div>
+
+            <div class="landing-steps">
+                <div class="landing-step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">
+                        <strong>Upload</strong>
+                        <span>Drop a VA PDF form to extract fields</span>
+                    </div>
+                </div>
+                <div class="landing-step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">
+                        <strong>Preview</strong>
+                        <span>Review the generated digital form</span>
+                    </div>
+                </div>
+                <div class="landing-step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">
+                        <strong>Publish</strong>
+                        <span>Export the schema to the forms database</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="upload-zone" id="uploadZone">
                 <div class="upload-area">
-                    <div class="upload-icon">📄</div>
+                    <div class="upload-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--azure)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                    </div>
                     <h3>Upload PDF Form</h3>
                     <p>Drag and drop your VA form PDF here, or click to browse</p>
                     <button class="upload-button" id="uploadButton">Choose File</button>
                 </div>
                 <input type="file" id="fileInput" accept=".pdf" />
+            </div>
+
+            <div class="landing-actions">
+                <a href="forms.html" class="landing-btn landing-btn-secondary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    Preview Existing Forms
+                </a>
+                <a href="redigitize.html" class="landing-btn landing-btn-secondary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.778-7.778zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+                    Batch Re-Digitize
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Editor layout (shown after PDF upload) -->
+    <div class="container" id="editorContainer" style="display: none;">
+        <div class="sidebar">
+            <div class="upload-zone upload-zone-compact" id="uploadZoneCompact">
+                <div class="upload-area">
+                    <div class="upload-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--azure)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3>Upload PDF Form</h3>
+                    <p>Drag and drop or click to browse</p>
+                    <button class="upload-button" id="uploadButtonCompact">Choose File</button>
+                </div>
+                <input type="file" id="fileInputCompact" accept=".pdf" />
             </div>
             <div class="pdf-preview" id="pdfPreview" style="display: none;">
                 <canvas id="pdfCanvas" class="pdf-canvas"></canvas>
@@ -1449,31 +1637,31 @@
             },
 
             setupEventListeners() {
-                // File upload
-                document.getElementById('fileInput').addEventListener('change', (e) => this.handleFileUpload(e));
-                document.getElementById('uploadButton').addEventListener('click', () => {
-                    document.getElementById('fileInput').click();
-                });
+                // Helper: wire up a file input + button + drag-drop zone
+                const wireUpload = (fileInputId, buttonId, zoneId) => {
+                    const fileInput = document.getElementById(fileInputId);
+                    const button = document.getElementById(buttonId);
+                    const zone = document.getElementById(zoneId);
+                    if (!fileInput || !button || !zone) return;
+                    fileInput.addEventListener('change', (e) => this.handleFileUpload(e));
+                    button.addEventListener('click', () => fileInput.click());
+                    zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('dragover'); });
+                    zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+                    zone.addEventListener('drop', (e) => {
+                        e.preventDefault();
+                        zone.classList.remove('dragover');
+                        const file = e.dataTransfer.files[0];
+                        if (file && file.type === 'application/pdf') {
+                            this.processPDF(file);
+                        } else {
+                            this.showToast('Please upload a PDF file', 'error');
+                        }
+                    });
+                };
 
-                // Drag and drop
-                const uploadZone = document.getElementById('uploadZone');
-                uploadZone.addEventListener('dragover', (e) => {
-                    e.preventDefault();
-                    uploadZone.classList.add('dragover');
-                });
-                uploadZone.addEventListener('dragleave', () => {
-                    uploadZone.classList.remove('dragover');
-                });
-                uploadZone.addEventListener('drop', (e) => {
-                    e.preventDefault();
-                    uploadZone.classList.remove('dragover');
-                    const file = e.dataTransfer.files[0];
-                    if (file && file.type === 'application/pdf') {
-                        this.processPDF(file);
-                    } else {
-                        this.showToast('Please upload a PDF file', 'error');
-                    }
-                });
+                // Wire both upload zones (landing + compact sidebar)
+                wireUpload('fileInput', 'uploadButton', 'uploadZone');
+                wireUpload('fileInputCompact', 'uploadButtonCompact', 'uploadZoneCompact');
 
                 // Tab switching
                 document.querySelectorAll('.tab-button').forEach(button => {
@@ -1687,8 +1875,9 @@
                     // Render PDF preview
                     await this.renderPDFPreview(pdf);
 
-                    // Update UI — switch to split layout
-                    document.querySelector('.container').classList.add('has-pdf');
+                    // Update UI — transition from landing to editor
+                    document.getElementById('landing').style.display = 'none';
+                    document.getElementById('editorContainer').style.display = 'flex';
                     document.getElementById('pdfPreview').style.display = 'flex';
                     this.renderFields();
                     this.renderSectionDetection();
