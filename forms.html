@@ -1196,7 +1196,7 @@ async function renderIntroStep(schema, vaForm, org, steps) {
                 <dt class="va-introtext">${esc(formTitle)}</dt>
             </div>
             <div>
-                <dd><dfn>Form revision date:</dfn> ${esc(meta.revisionDate || 'Not available')}</dd>
+                <dd><dfn>Form revision date:</dfn> ${esc(meta.revisionDate || new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' }))}</dd>
             </div>
             <div class="va-meta-row">
                 <dd><dfn>Related to:</dfn> ${esc(relatedCategory)}</dd>
