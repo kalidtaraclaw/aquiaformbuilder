@@ -629,15 +629,12 @@
             margin: 0;
         }
         .va-action-link:hover { color: var(--vads-color-primary-dark); }
-        .va-action-link::before {
-            content: '›';
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--vads-color-primary);
-            display: inline;
-            margin-right: 2px;
+        .va-action-link-icon {
+            width: 1.06rem;
+            height: 1.06rem;
+            flex-shrink: 0;
+            margin-right: 0.4rem;
         }
-        .va-action-link:hover::before { color: var(--vads-color-primary-dark); }
 
         /* ─── OMB Info / Last Updated (footer of intro page) ─── */
         .va-omb-info {
@@ -828,14 +825,16 @@
         }
         .va-related-form h3 {
             font-family: var(--vads-font-serif);
-            font-size: 20px;
-            font-weight: 700;
+            font-size: 1.06rem;
+            font-weight: 400;
             margin-top: 30px;
             margin-bottom: 10px;
+            display: inline-block;
         }
         .va-related-form h3 a {
             color: var(--vads-color-primary);
             text-decoration: underline;
+            font-weight: 400;
         }
         .va-related-form h3 a:hover { text-decoration: none; }
         .va-related-form p {
@@ -1018,7 +1017,7 @@ async function selectForm(orgId, fileName, formName) {
         currentSchema = schema;
         currentStep = 0;
         formData = {}; // reset data model for new form
-        renderVAForm(schema, org);
+        await renderVAForm(schema, org);
     } catch (e) {
         main.innerHTML = `<div class="empty-state"><h2>Failed to load form</h2><p>${e.message}</p></div>`;
     }
@@ -1086,7 +1085,7 @@ function getFormSteps(schema) {
 }
 
 // ─── Render Form (VA.gov wizard style) ───
-function renderVAForm(schema, org) {
+async function renderVAForm(schema, org) {
     const main = document.getElementById('mainPanel');
     const steps = getFormSteps(schema);
     const vaForm = schema['x-va-form'] || {};
@@ -1119,7 +1118,7 @@ function renderVAForm(schema, org) {
     }
 
     if (step.type === 'intro') {
-        html += renderIntroStep(schema, vaForm, org, steps);
+        html += await renderIntroStep(schema, vaForm, org, steps);
     } else if (step.type === 'section') {
         html += renderSectionStep(schema, step);
     } else if (step.type === 'legacy') {
@@ -1169,13 +1168,23 @@ function renderVAForm(schema, org) {
     }
 }
 
-function renderIntroStep(schema, vaForm, org, steps) {
+async function renderIntroStep(schema, vaForm, org, steps) {
     const formNumber = vaForm.formNumber || schema.title || 'Form';
     const formTitle = vaForm.formTitle || schema.description || '';
     const formSections = vaForm.formSections || [];
     const meta = currentFormMeta || {};
     const pdfUrl = meta.formUrl || '';
     const pageCount = meta.pageCount || '';
+    // Map org IDs to VA.gov-style categories
+    const orgCategoryMap = {
+        'vba': 'Disability',
+        'vha': 'Health care',
+        'nca': 'Burials and memorials',
+        'admin': 'Records',
+        'facilities': 'Facilities',
+        'other': 'VA benefits'
+    };
+    const relatedCategory = orgCategoryMap[org.id] || org.shortName || org.fullName;
 
     let html = '<div class="va-intro-content">';
 
@@ -1185,15 +1194,12 @@ function renderIntroStep(schema, vaForm, org, steps) {
         <dl>
             <div class="va-introtext-wrap">
                 <dt class="va-introtext">${esc(formTitle)}</dt>
-            </div>`;
-    // Form revision date (if available in meta)
-    if (meta.revisionDate) {
-        html += `<div>
-                <dd><dfn>Form revision date:</dfn> ${esc(meta.revisionDate)}</dd>
-            </div>`;
-    }
-    html += `<div class="va-meta-row">
-                <dd><dfn>Related to:</dfn> ${esc(org.fullName)}</dd>
+            </div>
+            <div>
+                <dd><dfn>Form revision date:</dfn> ${esc(meta.revisionDate || 'Not available')}</dd>
+            </div>
+            <div class="va-meta-row">
+                <dd><dfn>Related to:</dfn> ${esc(relatedCategory)}</dd>
             </div>
         </dl>
     </div>`;
@@ -1202,39 +1208,46 @@ function renderIntroStep(schema, vaForm, org, steps) {
     html += '<div class="va-about-section">';
     html += '<h2>When to use this form</h2>';
     if (formTitle) {
-        html += `<p>Use VA Form ${esc(formNumber)} (${esc(formTitle)}) when you need to provide or request information related to this process. This form collects the details needed by the VA to process your submission.</p>`;
+        html += `<p>Use this form if you need to provide information related to ${esc(formTitle.toLowerCase())}. VA will use this information to process your submission.</p>`;
     } else {
         html += `<p>Use this form to submit required information to the VA for processing.</p>`;
     }
 
-    // ─── H3: Download form ───
+    // ─── H3: Download form (always shown like VA.gov) ───
+    html += '<h3>Download form</h3>';
+    html += `<p>Download this PDF form and fill it out. Then submit your completed form on this page. Or you can print the form and mail it to the address listed on the form.</p>`;
     if (pdfUrl) {
-        html += '<h3>Download form</h3>';
-        html += `<p>Download this PDF form and fill it out. Then submit your completed form on this page. Or you can print the form and mail it to the address listed on the form.</p>`;
-        html += `<button class="va-download-link" onclick="window.open('${esc(pdfUrl)}','_blank')">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        html += `<a class="va-download-link" href="${esc(pdfUrl)}" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
             Download VA Form ${esc(formNumber)} (PDF)
-        </button>`;
+        </a>`;
     }
 
     // ─── H3: Online tool ───
     html += '<h3>Online tool</h3>';
     html += `<p>You can fill out this form online instead of filling out and sending us the paper form.</p>`;
-    html += `<button class="va-action-link" onclick="navigateStep(1)">Go to the online tool</button>`;
+    html += `<a class="va-action-link" href="#" onclick="event.preventDefault();navigateStep(1)"><svg class="va-action-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>Go to the online tool</a>`;
     html += '</div>';
 
-    // ─── Related forms section (if there are related forms in the index) ───
-    const relatedForms = findRelatedForms(formNumber);
+    // ─── Related forms section ───
+    const relatedForms = await findRelatedForms(formNumber);
     if (relatedForms.length > 0) {
-        html += '<div class="va-related-section">';
+        html += '<section class="va-related-section">';
         html += '<h2>Related forms and instructions</h2>';
         for (const rf of relatedForms) {
             html += '<div class="va-related-form">';
             html += `<h3><a href="#" onclick="event.preventDefault();selectFormByFileName('${esc(rf.fileName)}')">VA Form ${esc(rf.formNumber)}</a></h3>`;
             if (rf.formTitle) html += `<p class="va-form-name">Form name: ${esc(rf.formTitle)}</p>`;
+            if (rf.description) html += `<p>${esc(rf.description)}</p>`;
+            if (rf.formUrl) {
+                html += `<a class="va-download-link" href="${esc(rf.formUrl)}" target="_blank" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    Download VA Form ${esc(rf.formNumber)} (PDF)
+                </a>`;
+            }
             html += '</div>';
         }
-        html += '</div>';
+        html += '</section>';
     }
 
     // ─── Last updated ───
@@ -1245,17 +1258,39 @@ function renderIntroStep(schema, vaForm, org, steps) {
 }
 
 // Helper: find related forms from the same org index
-function findRelatedForms(currentFormNumber) {
+// Loads form titles asynchronously from schema files
+async function findRelatedForms(currentFormNumber) {
     if (!currentOrgData?.index?.forms) return [];
     const allForms = currentOrgData.index.forms;
-    const related = [];
+    const candidates = [];
     for (const f of allForms) {
-        // Use the "name" field from index (e.g., "21-674", "BIO-21-0779")
         const fNum = f.name || '';
         if (fNum && fNum !== currentFormNumber && !fNum.startsWith('BIO-')) {
-            related.push({ formNumber: fNum, fileName: f.fileName, formTitle: '' });
-            if (related.length >= 3) break;
+            candidates.push(f);
+            if (candidates.length >= 3) break;
         }
+    }
+    // Try to load titles from schemas
+    const orgObj = currentOrgData?.org;
+    const related = [];
+    for (const f of candidates) {
+        let formTitle = '';
+        let description = '';
+        try {
+            const schema = await loadSchema(orgObj, f.fileName);
+            const xva = schema?.['x-va-form'] || {};
+            formTitle = xva.formTitle || '';
+            if (formTitle) {
+                description = `Use VA Form ${f.name} for ${formTitle.toLowerCase()}.`;
+            }
+        } catch(e) { /* schema not available */ }
+        related.push({
+            formNumber: f.name,
+            fileName: f.fileName,
+            formTitle,
+            description,
+            formUrl: f.formUrl || ''
+        });
     }
     return related;
 }
@@ -1871,7 +1906,7 @@ function validateCurrentStep() {
     return valid;
 }
 
-function navigateStep(delta) {
+async function navigateStep(delta) {
     const steps = getFormSteps(currentSchema);
     // Validate before moving forward (not when going back)
     if (delta > 0 && steps[currentStep]?.type !== 'intro') {
@@ -1883,14 +1918,14 @@ function navigateStep(delta) {
     const newStep = currentStep + delta;
     if (newStep >= 0 && newStep < steps.length) {
         currentStep = newStep;
-        renderVAForm(currentSchema, currentOrg);
+        await renderVAForm(currentSchema, currentOrg);
     }
 }
 
-function navigateToStep(stepIndex) {
+async function navigateToStep(stepIndex) {
     saveFormValues();
     currentStep = stepIndex;
-    renderVAForm(currentSchema, currentOrg);
+    await renderVAForm(currentSchema, currentOrg);
 }
 
 // ─── Render a single field ───
