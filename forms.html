@@ -6,7 +6,7 @@
     <title>VA Forms — Aquia Form Builder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Bitter:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Bitter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* ─── USWDS / VA.gov Design Tokens ─── */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -230,6 +230,7 @@
         /* ─── VA.gov About Page – exact replica ─── */
         .va-intro-content {
             max-width: 700px;
+            padding-bottom: 48px;
         }
         .va-form-intro {
             background: var(--vads-color-white);
@@ -248,7 +249,7 @@
         }
         /* DL structure matching VA.gov */
         .va-form-intro dl {
-            margin: 16px 0;
+            margin: 1.06rem 0;
         }
         .va-form-intro dl .va-introtext {
             font-family: var(--vads-font-serif);
@@ -262,7 +263,7 @@
             margin-bottom: 32px;
         }
         .va-form-intro dl dd {
-            font-size: 17px;
+            font-size: 1.06rem;
             line-height: 1.5;
             color: var(--vads-color-base);
             margin: 0;
@@ -613,10 +614,10 @@
 
         /* ─── Action Link (VA.gov secondary style — blue with arrow) ─── */
         .va-action-link {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 0.4rem;
-            font-size: 17px;
+            font-size: 1.06rem;
             font-weight: 700;
             color: var(--vads-color-primary);
             text-decoration: underline;
@@ -625,7 +626,7 @@
             border: none;
             font-family: inherit;
             padding: 0;
-            margin: 0.5rem 0 0;
+            margin: 0;
         }
         .va-action-link:hover { color: var(--vads-color-primary-dark); }
         .va-action-link::before {
@@ -772,7 +773,7 @@
             color: var(--vads-color-base);
             margin-top: 32px;
             margin-bottom: 16px;
-            line-height: 1.3;
+            line-height: 41.6px;
         }
         .va-about-section h3 {
             font-family: var(--vads-font-serif);
@@ -780,30 +781,30 @@
             font-weight: 700;
             color: var(--vads-color-base);
             margin-top: 30px;
-            margin-bottom: 16px;
-            line-height: 1.3;
+            margin-bottom: 10px;
+            line-height: 26px;
         }
         .va-about-section p {
-            font-size: 17px;
+            font-size: 1.06rem;
             line-height: 1.5;
             color: var(--vads-color-base);
-            margin-bottom: 16px;
+            margin: 1.06rem 0;
         }
         .va-download-link {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 17px;
+            font-size: 1.06rem;
             font-weight: 400;
             color: var(--vads-color-primary);
-            text-decoration: none;
+            text-decoration: underline;
             background: none;
             border: none;
             cursor: pointer;
             padding: 0;
             font-family: inherit;
         }
-        .va-download-link:hover { text-decoration: underline; }
+        .va-download-link:hover { text-decoration: none; }
         .va-download-link svg {
             width: 20px;
             height: 20px;
@@ -838,13 +839,13 @@
         }
         .va-related-form h3 a:hover { text-decoration: none; }
         .va-related-form p {
-            font-size: 17px;
+            font-size: 1.06rem;
             color: var(--vads-color-base);
             margin: 0 0 8px;
             line-height: 1.5;
         }
         .va-related-form p.va-form-name {
-            font-size: 17px;
+            font-size: 1.06rem;
             font-weight: 400;
             margin-top: 0;
         }
@@ -1184,8 +1185,14 @@ function renderIntroStep(schema, vaForm, org, steps) {
         <dl>
             <div class="va-introtext-wrap">
                 <dt class="va-introtext">${esc(formTitle)}</dt>
-            </div>
-            <div class="va-meta-row">
+            </div>`;
+    // Form revision date (if available in meta)
+    if (meta.revisionDate) {
+        html += `<div>
+                <dd><dfn>Form revision date:</dfn> ${esc(meta.revisionDate)}</dd>
+            </div>`;
+    }
+    html += `<div class="va-meta-row">
                 <dd><dfn>Related to:</dfn> ${esc(org.fullName)}</dd>
             </div>
         </dl>
