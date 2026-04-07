@@ -823,30 +823,27 @@
         .va-related-form {
             margin-bottom: 16px;
         }
-        .va-related-form h3 {
-            font-family: var(--vads-font-serif);
+        .va-related-form > a.va-related-form-link {
             font-size: 1.06rem;
             font-weight: 400;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-        .va-related-form h3 a {
             color: var(--vads-color-primary);
             text-decoration: underline;
-            font-weight: 400;
+            display: inline;
         }
-        .va-related-form h3 a:hover { text-decoration: none; }
+        .va-related-form > a.va-related-form-link:hover { text-decoration: none; }
+        .va-related-form p.va-form-name {
+            font-size: 1.06rem;
+            font-weight: 700;
+            color: var(--vads-color-base);
+            margin-top: 0;
+            margin-bottom: 1.06rem;
+            line-height: 1.5;
+        }
         .va-related-form p {
             font-size: 1.06rem;
             color: var(--vads-color-base);
-            margin: 0 0 8px;
+            margin: 1.06rem 0;
             line-height: 1.5;
-        }
-        .va-related-form p.va-form-name {
-            font-size: 1.06rem;
-            font-weight: 400;
-            margin-top: 0;
         }
         .va-last-updated {
             font-size: 16px;
@@ -1236,14 +1233,14 @@ async function renderIntroStep(schema, vaForm, org, steps) {
         html += '<h2>Related forms and instructions</h2>';
         for (const rf of relatedForms) {
             html += '<div class="va-related-form">';
-            html += `<h3><a href="#" onclick="event.preventDefault();selectFormByFileName('${esc(rf.fileName)}')">VA Form ${esc(rf.formNumber)}</a></h3>`;
+            html += `<a class="va-related-form-link" href="#" onclick="event.preventDefault();selectFormByFileName('${esc(rf.fileName)}')">VA Form ${esc(rf.formNumber)}</a>`;
             if (rf.formTitle) html += `<p class="va-form-name">Form name: ${esc(rf.formTitle)}</p>`;
             if (rf.description) html += `<p>${esc(rf.description)}</p>`;
             if (rf.formUrl) {
-                html += `<a class="va-download-link" href="${esc(rf.formUrl)}" target="_blank" rel="noopener">
+                html += `<div><a class="va-download-link" href="${esc(rf.formUrl)}" target="_blank" rel="noopener">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                     Download VA Form ${esc(rf.formNumber)} (PDF)
-                </a>`;
+                </a></div>`;
             }
             html += '</div>';
         }
@@ -1267,7 +1264,7 @@ async function findRelatedForms(currentFormNumber) {
         const fNum = f.name || '';
         if (fNum && fNum !== currentFormNumber && !fNum.startsWith('BIO-')) {
             candidates.push(f);
-            if (candidates.length >= 3) break;
+            if (candidates.length >= 1) break;
         }
     }
     // Try to load titles from schemas
