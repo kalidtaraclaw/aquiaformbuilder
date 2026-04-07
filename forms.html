@@ -198,7 +198,7 @@
         .badge-bio { background: #e3f2fd; color: #0d47a1; font-weight: 600; }
 
         /* ─── Main Content ─── */
-        .main { flex: 1; overflow-y: auto; background: var(--vads-color-base-lightest); }
+        .main { flex: 1; overflow-y: auto; background: var(--vads-color-white); }
 
         /* ─── Empty State ─── */
         .empty-state {
@@ -212,17 +212,17 @@
 
         /* ─── Form Container (VA.gov wizard style) ─── */
         .va-form-container {
-            max-width: 720px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 0 2rem 4rem;
         }
 
         /* ─── Breadcrumb ─── */
         .va-breadcrumb {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--vads-color-base-dark);
-            padding: 1rem 0;
-            background: var(--vads-color-base-lightest);
+            padding: 1.25rem 0;
+            background: var(--vads-color-white);
         }
         .va-breadcrumb a { color: var(--vads-color-primary); text-decoration: none; }
         .va-breadcrumb a:hover { text-decoration: underline; }
@@ -234,14 +234,15 @@
         }
         .va-form-intro h1 {
             font-family: var(--vads-font-serif);
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.15;
             color: var(--vads-color-base);
             margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
         }
         .va-form-intro .va-form-subtitle {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: var(--vads-color-base-dark);
             margin-bottom: 0.75rem;
         }
@@ -262,7 +263,7 @@
         }
         .va-progress-segment {
             flex: 1;
-            height: 8px;
+            height: 10px;
             background: var(--vads-color-base-lighter);
             transition: background 0.2s;
         }
@@ -271,38 +272,40 @@
         .va-progress-segment.completed { background: var(--vads-color-primary); }
         .va-progress-segment.active { background: var(--vads-color-primary); }
         .va-progress-label {
-            font-size: 0.95rem;
+            font-size: 1.06rem;
             font-weight: 700;
             color: var(--vads-color-base);
             margin-bottom: 0.25rem;
         }
         .va-progress-sublabel {
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             font-weight: 400;
             color: var(--vads-color-base-dark);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
         }
 
         /* ─── Step Page ─── */
         .va-step-page {
             background: var(--vads-color-white);
-            border: 1px solid var(--vads-color-base-lighter);
-            border-radius: 4px;
-            padding: 2rem;
+            border: none;
+            border-top: 1px solid var(--vads-color-base-lighter);
+            border-radius: 0;
+            padding: 2rem 0;
             margin-bottom: 1.5rem;
         }
         .va-step-page h2 {
             font-family: var(--vads-font-serif);
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 700;
             color: var(--vads-color-base);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
         }
         .va-step-page h3 {
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--vads-color-base);
-            margin-top: 1.5rem;
+            margin-top: 1.75rem;
             margin-bottom: 0.75rem;
         }
         .va-step-page .step-description {
@@ -332,25 +335,25 @@
             border-left-color: var(--vads-color-success);
             background: var(--vads-color-success-lighter);
         }
-        .va-alert h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.35rem; margin-top: 0; }
-        .va-alert p { font-size: 0.88rem; color: var(--vads-color-base); line-height: 1.5; margin: 0; }
+        .va-alert h3 { font-size: 1.06rem; font-weight: 700; margin-bottom: 0.35rem; margin-top: 0; }
+        .va-alert p { font-size: 0.95rem; color: var(--vads-color-base); line-height: 1.6; margin: 0; }
 
         /* ─── Instructions ─── */
         .va-instructions { margin-bottom: 2rem; }
         .va-instructions h2 {
             font-family: var(--vads-font-serif);
-            font-size: 1.35rem;
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 0.75rem;
         }
         .va-instructions h3 {
-            font-size: 1rem;
+            font-size: 1.15rem;
             font-weight: 700;
             margin-top: 1.25rem;
             margin-bottom: 0.35rem;
         }
         .va-instructions p {
-            font-size: 0.92rem;
+            font-size: 1rem;
             line-height: 1.65;
             margin-bottom: 0.6rem;
         }
@@ -379,14 +382,14 @@
         .col-12 { flex: 0 0 100%; max-width: 100%; }
 
         /* ─── Form Fields (USWDS style) ─── */
-        .va-field { margin-bottom: 1.25rem; }
+        .va-field { margin-bottom: 1.5rem; }
         .va-field label, .va-field .va-field-label {
             display: block;
-            font-size: 0.92rem;
-            font-weight: 600;
+            font-size: 1rem;
+            font-weight: 700;
             color: var(--vads-color-base);
-            margin-bottom: 0.3rem;
-            line-height: 1.3;
+            margin-bottom: 0.4rem;
+            line-height: 1.4;
         }
         .va-field .required-mark { color: var(--vads-color-secondary); margin-left: 0.15rem; }
         .va-field-error {
@@ -401,10 +404,11 @@
             border-width: 2px !important;
         }
         .va-field .va-field-hint {
-            font-size: 0.8rem;
+            font-size: 0.88rem;
             color: var(--vads-color-base-dark);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.4rem;
             font-weight: 400;
+            line-height: 1.5;
         }
         .va-field input[type="text"],
         .va-field input[type="email"],
@@ -414,19 +418,19 @@
         .va-field select,
         .va-field textarea {
             width: 100%;
-            padding: 0.5rem 0.75rem;
+            padding: 0.55rem 0.75rem;
             font-family: inherit;
-            font-size: 0.95rem;
+            font-size: 1.06rem;
             color: var(--vads-color-base);
-            border: 1px solid var(--vads-color-base-dark);
+            border: 2px solid var(--vads-color-base);
             border-radius: 0;
             background: var(--vads-color-white);
             line-height: 1.4;
-            height: 40px;
+            height: 44px;
             transition: border-color 0.15s;
         }
         .va-field input:focus, .va-field select:focus, .va-field textarea:focus {
-            outline: 3px solid #73b3e7;
+            outline: 4px solid #73b3e7;
             outline-offset: 0;
             border-color: var(--vads-color-primary);
         }
@@ -434,7 +438,7 @@
         .va-field textarea { min-height: 80px; height: auto; resize: vertical; }
         .va-field select {
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23565c65' stroke-width='2'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%231b1b1b' stroke-width='2'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 0.75rem center;
             padding-right: 2.5rem;
@@ -450,11 +454,11 @@
         }
         .va-radio-item input[type="radio"],
         .va-checkbox-item input[type="checkbox"] {
-            width: 20px; height: 20px; margin-top: 0.15rem;
+            width: 22px; height: 22px; margin-top: 0.15rem;
             accent-color: var(--vads-color-primary); flex-shrink: 0;
         }
         .va-radio-item label, .va-checkbox-item label {
-            font-size: 0.92rem; font-weight: 400; color: var(--vads-color-base); cursor: pointer; line-height: 1.5;
+            font-size: 1rem; font-weight: 400; color: var(--vads-color-base); cursor: pointer; line-height: 1.5;
         }
 
         /* Address widget */
@@ -488,13 +492,15 @@
         /* ─── Navigation buttons (wizard) ─── */
         .va-nav-buttons {
             display: flex;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--vads-color-base-lighter);
             flex-wrap: wrap;
         }
         .va-btn {
             font-family: inherit;
-            font-size: 0.95rem;
+            font-size: 1.06rem;
             font-weight: 700;
             padding: 0.75rem 2rem;
             border-radius: 5px;
@@ -536,9 +542,9 @@
         }
         .va-process-list-item {
             position: relative;
-            padding: 0 0 2rem 3rem;
+            padding: 0 0 2rem 3.5rem;
             border-left: 4px solid var(--vads-color-base-lighter);
-            margin-left: 12px;
+            margin-left: 16px;
         }
         .va-process-list-item:last-child {
             border-left-color: transparent;
@@ -547,13 +553,13 @@
         .va-process-list-item::before {
             content: attr(data-step);
             position: absolute;
-            left: -16px;
-            top: 0;
-            width: 28px;
-            height: 28px;
+            left: -20px;
+            top: -2px;
+            width: 34px;
+            height: 34px;
             background: var(--vads-color-primary);
             color: white;
-            font-size: 0.85rem;
+            font-size: 1rem;
             font-weight: 700;
             border-radius: 50%;
             display: flex;
@@ -561,15 +567,16 @@
             justify-content: center;
         }
         .va-process-list-item h3 {
-            font-size: 1.1rem;
+            font-family: var(--vads-font-serif);
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--vads-color-base);
             margin: 0 0 0.5rem;
-            padding-top: 0.15rem;
+            padding-top: 0.1rem;
         }
         .va-process-list-item p {
-            font-size: 0.92rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.65;
             color: var(--vads-color-base);
             margin: 0 0 0.5rem;
         }
@@ -578,8 +585,8 @@
             padding: 0;
         }
         .va-process-list-item li {
-            font-size: 0.92rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.65;
             color: var(--vads-color-base);
         }
 
@@ -587,8 +594,8 @@
         .va-action-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 1.1rem;
+            gap: 0.6rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--vads-color-success);
             text-decoration: none;
@@ -597,16 +604,16 @@
             border: none;
             font-family: inherit;
             padding: 0.5rem 0;
-            margin: 0.5rem 0 1.5rem;
+            margin: 1rem 0 2rem;
         }
         .va-action-link:hover { color: #008516; }
         .va-action-link::before {
             content: '▶';
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             background: var(--vads-color-success);
             color: white;
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -675,7 +682,7 @@
             justify-content: space-between;
             padding: 0.5rem 0;
             border-bottom: 1px solid var(--vads-color-base-lightest);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
         .va-review-row:last-child { border-bottom: none; }
         .va-review-row dt { color: var(--vads-color-base-dark); font-weight: 400; }
@@ -734,6 +741,86 @@
             margin: 0 auto 0.6rem;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ─── About Page Sections (VA.gov pattern) ─── */
+        .va-about-section {
+            margin-top: 2.5rem;
+        }
+        .va-about-section h2 {
+            font-family: var(--vads-font-serif);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--vads-color-base);
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+        .va-about-section p {
+            font-size: 1.06rem;
+            line-height: 1.65;
+            color: var(--vads-color-base);
+            margin-bottom: 0.75rem;
+        }
+        .va-about-meta {
+            font-size: 1rem;
+            color: var(--vads-color-base);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+        .va-about-meta strong {
+            font-weight: 700;
+        }
+        .va-download-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.06rem;
+            font-weight: 700;
+            color: var(--vads-color-primary);
+            text-decoration: none;
+            padding: 0.25rem 0;
+        }
+        .va-download-link:hover { text-decoration: underline; }
+        .va-download-link svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--vads-color-primary);
+            flex-shrink: 0;
+        }
+        .va-related-form {
+            border: 1px solid var(--vads-color-base-lighter);
+            border-radius: 4px;
+            padding: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        .va-related-form h3 {
+            font-size: 1.06rem;
+            font-weight: 700;
+            color: var(--vads-color-primary);
+            margin-bottom: 0.25rem;
+        }
+        .va-related-form p {
+            font-size: 0.95rem;
+            color: var(--vads-color-base-dark);
+            margin: 0 0 0.5rem;
+            line-height: 1.5;
+        }
+        .va-helpful-link {
+            display: block;
+            color: var(--vads-color-primary);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+        }
+        .va-helpful-link:hover { text-decoration: underline; }
+        .va-last-updated {
+            font-size: 0.88rem;
+            color: var(--vads-color-base-dark);
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--vads-color-base-lighter);
+        }
 
         /* ─── Responsive ─── */
         @media (max-width: 768px) {
@@ -797,6 +884,7 @@ const ORGS = [
 
 let currentOrg = null;
 let currentSchema = null;
+let currentFormMeta = null; // index entry data (formUrl, pageCount, etc.)
 let currentStep = 0;
 let allFormsByOrg = {};
 let formData = {}; // in-memory data model — persists field values across step navigation
@@ -887,6 +975,9 @@ async function selectForm(orgId, fileName, formName) {
     const main = document.getElementById('mainPanel');
     main.innerHTML = '<div class="loading" role="status" aria-live="polite"><div class="spinner"></div>Loading form...</div>';
     const org = ORGS.find(o => o.id === orgId);
+    // Look up index entry for this form to get formUrl, pageCount, etc.
+    const orgData = allFormsByOrg[orgId];
+    currentFormMeta = orgData?.index?.forms?.find(f => f.fileName === fileName) || {};
     try {
         const schema = await loadSchema(org, fileName);
         currentSchema = schema;
@@ -1046,56 +1137,78 @@ function renderVAForm(schema, org) {
 function renderIntroStep(schema, vaForm, org, steps) {
     const formNumber = vaForm.formNumber || schema.title || 'Form';
     const formTitle = vaForm.formTitle || schema.description || '';
-    const instructions = vaForm.instructions || null;
     const formSections = vaForm.formSections || [];
-    const props = schema.properties || {};
-    const requiredList = new Set(schema.required || []);
-    // Auto-generated legacy sections from getFormSteps
-    const autoSections = (steps || []).filter(s => s.type === 'legacy' && s.fieldKeys);
+    const meta = currentFormMeta || {};
+    const pdfUrl = meta.formUrl || '';
+    const pageCount = meta.pageCount || '';
 
-    let html = '<div class="va-step-page">';
+    let html = '';
 
-    // ─── Form Title (matches BIO FormTitle component) ───
-    const displayTitle = formTitle || 'VA Form ' + formNumber;
-    const subtitleText = 'VA Form ' + formNumber;
-    // Skip subtitle if it's the same as the title (avoids "VA Form 21-4193" shown twice)
-    const showSubtitle = displayTitle.replace(/\s+/g, ' ').trim().toLowerCase() !== subtitleText.toLowerCase();
+    // ─── Page Title (matches VA.gov "About VA Form [number]") ───
     html += `<div class="va-form-intro">
-        <h1>${esc(displayTitle)}</h1>
-        ${showSubtitle ? '<div class="va-form-subtitle">' + esc(subtitleText) + '</div>' : ''}
+        <h1>About VA Form ${esc(formNumber)}</h1>
+        ${formTitle ? '<div class="va-form-subtitle" style="font-family:var(--vads-font-serif);font-size:1.35rem;font-weight:700;line-height:1.3;color:var(--vads-color-base);margin-top:0.25rem;">' + esc(formTitle) + '</div>' : ''}
     </div>`;
 
-    // ─── "Follow these steps" heading ───
-    html += `<h2 class="vads-u-font-size--h3" style="font-family:var(--vads-font-sans);font-size:1.1rem;font-weight:700;margin:1rem 0 0.25rem;">Follow these steps to submit VA Form ${esc(formNumber)}</h2>`;
+    // ─── Meta info (Form revision date, Related to) ───
+    html += '<div class="va-about-meta">';
+    html += `<strong>Related to:</strong> ${esc(org.fullName)}<br>`;
+    if (pageCount) html += `<strong>Pages:</strong> ${esc(String(pageCount))}<br>`;
+    if (formSections.length > 0) html += `<strong>Sections:</strong> ${formSections.length}<br>`;
+    html += '</div>';
 
-    // ─── Process List (matches <va-process-list>) ───
+    // ─── When to use this form ───
+    html += '<div class="va-about-section">';
+    html += '<h2>When to use this form</h2>';
+    if (formTitle) {
+        html += `<p>Use VA Form ${esc(formNumber)} (${esc(formTitle)}) when you need to provide or request information related to this process. This form collects the details needed by the VA to process your submission.</p>`;
+    } else {
+        html += `<p>Use this form to submit required information to the VA for processing.</p>`;
+    }
+
+    // List what the form covers (sections)
+    if (formSections.length > 0) {
+        html += '<p><strong>This form will ask for:</strong></p><ul style="margin:0.25rem 0 0 1.5rem;padding:0;">';
+        for (const sec of formSections) {
+            if (sec.title && sec.title !== 'Additional Information') {
+                html += `<li style="font-size:1rem;line-height:1.65;margin-bottom:0.25rem;">${esc(sec.title)}</li>`;
+            }
+        }
+        html += '</ul>';
+    }
+    html += '</div>';
+
+    // ─── Download form ───
+    if (pdfUrl) {
+        html += '<div class="va-about-section">';
+        html += '<h2>Download form</h2>';
+        html += `<p>Download this PDF form and fill it out. Then submit your completed form through the appropriate VA channel, or you can print the form and mail it to the address listed on the form.</p>`;
+        html += `<a href="${esc(pdfUrl)}" target="_blank" rel="noopener" class="va-download-link">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Download VA Form ${esc(formNumber)} (PDF)
+        </a>`;
+        html += '</div>';
+    }
+
+    // ─── Online tool (our wizard) ───
+    html += '<div class="va-about-section">';
+    html += '<h2>Online tool</h2>';
+    html += `<p>You can fill out this form online instead of downloading and filling out the paper form.</p>`;
+    html += `<button class="va-action-link" onclick="navigateStep(1)">Start VA Form ${esc(formNumber)}</button>`;
+    html += '</div>';
+
+    // ─── Follow these steps (process list) ───
+    html += '<div class="va-about-section">';
+    html += `<h2>Follow these steps to submit VA Form ${esc(formNumber)}</h2>`;
     html += '<div class="va-process-list">';
 
     // Step 1: Gather your information
     html += '<div class="va-process-list-item" data-step="1">';
     html += '<h3>Gather your information</h3>';
-
-    // Build "what you'll need" from schema sections + required fields
     if (formSections.length > 0) {
-        html += '<p><strong>Here\'s what this form will ask for:</strong></p><ul>';
-        for (const sec of formSections) {
-            if (sec.title && sec.title !== 'Additional Information') {
-                html += `<li>${esc(sec.title)}</li>`;
-            }
-        }
-        html += '</ul>';
+        html += '<p>You\'ll need the information listed in each section above to complete this form.</p>';
     } else {
-        // Legacy: list required fields
-        const reqFields = [];
-        for (const [key, def] of Object.entries(props)) {
-            const vaField = def?.['x-va-field'] || {};
-            if (requiredList.has(key) && vaField.label) reqFields.push(vaField.label);
-        }
-        if (reqFields.length > 0) {
-            html += '<p><strong>You\'ll need this information to complete this form:</strong></p><ul>';
-            for (const f of reqFields) html += `<li>${esc(f)}</li>`;
-            html += '</ul>';
-        }
+        html += '<p>Have your personal information, identification numbers, and any relevant documents ready before starting.</p>';
     }
     html += '</div>';
 
@@ -1112,25 +1225,20 @@ function renderIntroStep(schema, vaForm, org, steps) {
     html += '</div>';
 
     html += '</div>'; // end process list
+    html += '</div>'; // end section
 
-    // ─── Action Link (green arrow CTA — matches <VaLinkAction>) ───
-    html += `<button class="va-action-link" onclick="navigateStep(1)">Start VA Form ${esc(formNumber)}</button>`;
-
-    // ─── OMB Info (matches <va-omb-info>) ───
-    if (vaForm.ombNumber || vaForm.respondentBurden) {
-        html += '<div class="va-omb-info">';
-        if (vaForm.respondentBurden) {
-            html += `<strong>Respondent burden:</strong> ${esc(vaForm.respondentBurden)}<br>`;
-        }
-        if (vaForm.ombNumber) {
-            html += `<strong>OMB Control #:</strong> ${esc(vaForm.ombNumber)}<br>`;
-        }
-        html += `<strong>Expiration date:</strong> Refer to form for current date<br>`;
-        html += '<strong>Privacy Act Statement:</strong> VA Form ' + esc(formNumber) + ' collects the information needed to process your request under applicable federal laws.';
-        html += '</div>';
+    // ─── OMB Info ───
+    html += '<div class="va-omb-info">';
+    if (vaForm.respondentBurden) {
+        html += `<strong>Respondent burden:</strong> ${esc(vaForm.respondentBurden)}<br>`;
     }
-
+    if (vaForm.ombNumber) {
+        html += `<strong>OMB Control #:</strong> ${esc(vaForm.ombNumber)}<br>`;
+    }
+    html += `<strong>Expiration date:</strong> Refer to form for current date<br>`;
+    html += '<strong>Privacy Act Statement:</strong> VA Form ' + esc(formNumber) + ' collects the information needed to process your request under applicable federal laws.';
     html += '</div>';
+
     return html;
 }
 
