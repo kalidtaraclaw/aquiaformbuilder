@@ -230,29 +230,40 @@
         /* ─── Form Title Block (introduction page) ─── */
         .va-form-intro {
             background: var(--vads-color-white);
-            padding: 2rem 0;
+            padding: 0;
+            margin-bottom: 0;
         }
         .va-form-intro h1 {
             font-family: var(--vads-font-serif);
-            font-size: 2.5rem;
+            font-size: 40px;
             font-weight: 700;
-            line-height: 1.15;
+            line-height: 52px;
             color: var(--vads-color-base);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.5px;
+            margin-bottom: 0;
+            letter-spacing: normal;
+            outline: none;
         }
-        .va-form-intro .va-form-subtitle {
-            font-size: 1.05rem;
-            color: var(--vads-color-base-dark);
-            margin-bottom: 0.75rem;
+        /* DL structure matching VA.gov */
+        .va-form-intro dl {
+            margin: 17px 0;
         }
-        .va-form-intro .va-form-meta {
-            font-size: 0.78rem;
-            color: #71767a; /* darkened from base-light for better contrast (5.2:1 on white) */
-            margin-top: 0.5rem;
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
+        .va-form-intro dl .va-introtext {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--vads-color-base);
+            margin-bottom: 32px;
+        }
+        .va-form-intro dl dd {
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--vads-color-base);
+            margin: 8px 0;
+        }
+        .va-form-intro dl dd dfn {
+            font-weight: 700;
+            font-style: normal;
+            display: inline;
         }
 
         /* ─── Segmented Progress Bar (matches VA.gov va-segmented-progress-bar) ─── */
@@ -590,48 +601,46 @@
             color: var(--vads-color-base);
         }
 
-        /* ─── Action Link (green arrow CTA) ─── */
+        /* ─── Action Link (VA.gov secondary style — blue with arrow) ─── */
         .va-action-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            font-size: 1.25rem;
+            gap: 0.4rem;
+            font-size: 17px;
             font-weight: 700;
-            color: var(--vads-color-success);
-            text-decoration: none;
+            color: var(--vads-color-primary);
+            text-decoration: underline;
             cursor: pointer;
             background: none;
             border: none;
             font-family: inherit;
-            padding: 0.5rem 0;
-            margin: 1rem 0 2rem;
+            padding: 0;
+            margin: 0.5rem 0 0;
         }
-        .va-action-link:hover { color: #008516; }
+        .va-action-link:hover { color: var(--vads-color-primary-dark); }
         .va-action-link::before {
-            content: '▶';
-            font-size: 0.75rem;
-            background: var(--vads-color-success);
-            color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
+            content: '›';
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--vads-color-primary);
+            display: inline;
+            margin-right: 2px;
         }
-        .va-action-link:hover::before { background: #008516; }
+        .va-action-link:hover::before { color: var(--vads-color-primary-dark); }
 
-        /* ─── OMB Info (footer of intro page) ─── */
+        /* ─── OMB Info / Last Updated (footer of intro page) ─── */
         .va-omb-info {
-            border-top: 1px solid var(--vads-color-base-lighter);
-            padding-top: 1rem;
-            margin-top: 1rem;
-            font-size: 0.8rem;
-            color: var(--vads-color-base-dark);
-            line-height: 1.6;
+            margin-top: 48px;
+            padding: 0;
+            font-size: 16px;
+            color: var(--vads-color-base);
+            line-height: 1.5;
         }
         .va-omb-info strong { font-weight: 700; }
+        .va-last-updated {
+            font-size: 16px;
+            color: var(--vads-color-base);
+        }
 
         /* ─── Section divider inside wizard step ─── */
         .va-section-divider {
@@ -744,31 +753,31 @@
 
         /* ─── About Page Sections (VA.gov pattern) ─── */
         .va-about-section {
-            margin-top: 2.5rem;
+            margin-top: 0;
         }
         .va-about-section h2 {
             font-family: var(--vads-font-serif);
-            font-size: 1.6rem;
+            font-size: 32px;
             font-weight: 700;
             color: var(--vads-color-base);
-            margin-bottom: 0.75rem;
-            line-height: 1.2;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .va-about-section h3 {
+            font-family: var(--vads-font-serif);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--vads-color-base);
+            margin-top: 30px;
+            margin-bottom: 16px;
+            line-height: 1.3;
         }
         .va-about-section p {
-            font-size: 1.06rem;
-            line-height: 1.65;
+            font-size: 17px;
+            line-height: 1.5;
             color: var(--vads-color-base);
-            margin-bottom: 0.75rem;
-        }
-        .va-about-meta {
-            font-size: 1rem;
-            color: var(--vads-color-base);
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            line-height: 1.8;
-        }
-        .va-about-meta strong {
-            font-weight: 700;
+            margin-bottom: 16px;
         }
         .va-download-link {
             display: inline-flex;
@@ -1147,15 +1156,15 @@ function renderIntroStep(schema, vaForm, org, steps) {
     // ─── Page Title (matches VA.gov "About VA Form [number]") ───
     html += `<div class="va-form-intro">
         <h1>About VA Form ${esc(formNumber)}</h1>
-        ${formTitle ? '<div class="va-form-subtitle" style="font-family:var(--vads-font-serif);font-size:1.35rem;font-weight:700;line-height:1.3;color:var(--vads-color-base);margin-top:0.25rem;">' + esc(formTitle) + '</div>' : ''}
+        <dl>
+            <div style="margin-bottom:32px;">
+                <dt class="va-introtext">${esc(formTitle)}</dt>
+            </div>
+            <div>
+                <dd><dfn>Related to:</dfn> ${esc(org.fullName)}</dd>
+            </div>
+        </dl>
     </div>`;
-
-    // ─── Meta info (Form revision date, Related to) ───
-    html += '<div class="va-about-meta">';
-    html += `<strong>Related to:</strong> ${esc(org.fullName)}<br>`;
-    if (pageCount) html += `<strong>Pages:</strong> ${esc(String(pageCount))}<br>`;
-    if (formSections.length > 0) html += `<strong>Sections:</strong> ${formSections.length}<br>`;
-    html += '</div>';
 
     // ─── When to use this form ───
     html += '<div class="va-about-section">';
@@ -1165,24 +1174,13 @@ function renderIntroStep(schema, vaForm, org, steps) {
     } else {
         html += `<p>Use this form to submit required information to the VA for processing.</p>`;
     }
-
-    // List what the form covers (sections)
-    if (formSections.length > 0) {
-        html += '<p><strong>This form will ask for:</strong></p><ul style="margin:0.25rem 0 0 1.5rem;padding:0;">';
-        for (const sec of formSections) {
-            if (sec.title && sec.title !== 'Additional Information') {
-                html += `<li style="font-size:1rem;line-height:1.65;margin-bottom:0.25rem;">${esc(sec.title)}</li>`;
-            }
-        }
-        html += '</ul>';
-    }
     html += '</div>';
 
     // ─── Download form ───
     if (pdfUrl) {
         html += '<div class="va-about-section">';
-        html += '<h2>Download form</h2>';
-        html += `<p>Download this PDF form and fill it out. Then submit your completed form through the appropriate VA channel, or you can print the form and mail it to the address listed on the form.</p>`;
+        html += '<h3>Download form</h3>';
+        html += `<p>Download this PDF form and fill it out. Then submit your completed form on this page. Or you can print the form and mail it to the address listed on the form.</p>`;
         html += `<a href="${esc(pdfUrl)}" target="_blank" rel="noopener" class="va-download-link">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
             Download VA Form ${esc(formNumber)} (PDF)
@@ -1192,51 +1190,14 @@ function renderIntroStep(schema, vaForm, org, steps) {
 
     // ─── Online tool (our wizard) ───
     html += '<div class="va-about-section">';
-    html += '<h2>Online tool</h2>';
-    html += `<p>You can fill out this form online instead of downloading and filling out the paper form.</p>`;
-    html += `<button class="va-action-link" onclick="navigateStep(1)">Start VA Form ${esc(formNumber)}</button>`;
+    html += '<h3>Online tool</h3>';
+    html += `<p>You can fill out this form online instead of filling out and sending us the paper form.</p>`;
+    html += `<button class="va-action-link" onclick="navigateStep(1)">Go to the online tool</button>`;
     html += '</div>';
-
-    // ─── Follow these steps (process list) ───
-    html += '<div class="va-about-section">';
-    html += `<h2>Follow these steps to submit VA Form ${esc(formNumber)}</h2>`;
-    html += '<div class="va-process-list">';
-
-    // Step 1: Gather your information
-    html += '<div class="va-process-list-item" data-step="1">';
-    html += '<h3>Gather your information</h3>';
-    if (formSections.length > 0) {
-        html += '<p>You\'ll need the information listed in each section above to complete this form.</p>';
-    } else {
-        html += '<p>Have your personal information, identification numbers, and any relevant documents ready before starting.</p>';
-    }
-    html += '</div>';
-
-    // Step 2: Fill out the form
-    html += '<div class="va-process-list-item" data-step="2">';
-    html += '<h3>Fill out and sign the form</h3>';
-    html += `<p>We'll take you through each step of the process. It should take about ${esc(vaForm.respondentBurden || '15 minutes')} to complete this form.</p>`;
-    html += '</div>';
-
-    // Step 3: Submit the form
-    html += '<div class="va-process-list-item" data-step="3">';
-    html += '<h3>Submit the form</h3>';
-    html += '<p>After you submit the form, you\'ll receive a confirmation message. You can print this for your records.</p>';
-    html += '</div>';
-
-    html += '</div>'; // end process list
-    html += '</div>'; // end section
 
     // ─── OMB Info ───
     html += '<div class="va-omb-info">';
-    if (vaForm.respondentBurden) {
-        html += `<strong>Respondent burden:</strong> ${esc(vaForm.respondentBurden)}<br>`;
-    }
-    if (vaForm.ombNumber) {
-        html += `<strong>OMB Control #:</strong> ${esc(vaForm.ombNumber)}<br>`;
-    }
-    html += `<strong>Expiration date:</strong> Refer to form for current date<br>`;
-    html += '<strong>Privacy Act Statement:</strong> VA Form ' + esc(formNumber) + ' collects the information needed to process your request under applicable federal laws.';
+    html += `<p class="va-last-updated">Last updated: ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>`;
     html += '</div>';
 
     return html;
