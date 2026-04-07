@@ -227,7 +227,10 @@
         .va-breadcrumb a { color: var(--vads-color-primary); text-decoration: none; }
         .va-breadcrumb a:hover { text-decoration: underline; }
 
-        /* ─── Form Title Block (introduction page) ─── */
+        /* ─── VA.gov About Page – exact replica ─── */
+        .va-intro-content {
+            max-width: 700px;
+        }
         .va-form-intro {
             background: var(--vads-color-white);
             padding: 0;
@@ -245,19 +248,26 @@
         }
         /* DL structure matching VA.gov */
         .va-form-intro dl {
-            margin: 17px 0;
+            margin: 16px 0;
         }
         .va-form-intro dl .va-introtext {
+            font-family: var(--vads-font-serif);
             font-size: 20px;
             font-weight: 400;
-            line-height: 1.5;
+            line-height: 34px;
             color: var(--vads-color-base);
+            margin-bottom: 0;
+        }
+        .va-form-intro dl .va-introtext-wrap {
             margin-bottom: 32px;
         }
         .va-form-intro dl dd {
-            font-size: 16px;
+            font-size: 17px;
             line-height: 1.5;
             color: var(--vads-color-base);
+            margin: 0;
+        }
+        .va-form-intro dl .va-meta-row {
             margin: 8px 0;
         }
         .va-form-intro dl dd dfn {
@@ -782,12 +792,16 @@
         .va-download-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 1.06rem;
-            font-weight: 700;
+            gap: 8px;
+            font-size: 17px;
+            font-weight: 400;
             color: var(--vads-color-primary);
             text-decoration: none;
-            padding: 0.25rem 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            font-family: inherit;
         }
         .va-download-link:hover { text-decoration: underline; }
         .va-download-link svg {
@@ -796,39 +810,48 @@
             fill: var(--vads-color-primary);
             flex-shrink: 0;
         }
+        /* Related forms section */
+        .va-related-section {
+            margin-top: 48px;
+        }
+        .va-related-section h2 {
+            font-family: var(--vads-font-serif);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--vads-color-base);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
         .va-related-form {
-            border: 1px solid var(--vads-color-base-lighter);
-            border-radius: 4px;
-            padding: 1.25rem;
-            margin-bottom: 0.75rem;
+            margin-bottom: 16px;
         }
         .va-related-form h3 {
-            font-size: 1.06rem;
+            font-family: var(--vads-font-serif);
+            font-size: 20px;
             font-weight: 700;
-            color: var(--vads-color-primary);
-            margin-bottom: 0.25rem;
+            margin-top: 30px;
+            margin-bottom: 10px;
         }
+        .va-related-form h3 a {
+            color: var(--vads-color-primary);
+            text-decoration: underline;
+        }
+        .va-related-form h3 a:hover { text-decoration: none; }
         .va-related-form p {
-            font-size: 0.95rem;
-            color: var(--vads-color-base-dark);
-            margin: 0 0 0.5rem;
+            font-size: 17px;
+            color: var(--vads-color-base);
+            margin: 0 0 8px;
             line-height: 1.5;
         }
-        .va-helpful-link {
-            display: block;
-            color: var(--vads-color-primary);
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            margin-bottom: 0.5rem;
+        .va-related-form p.va-form-name {
+            font-size: 17px;
+            font-weight: 400;
+            margin-top: 0;
         }
-        .va-helpful-link:hover { text-decoration: underline; }
         .va-last-updated {
-            font-size: 0.88rem;
-            color: var(--vads-color-base-dark);
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--vads-color-base-lighter);
+            font-size: 16px;
+            color: var(--vads-color-base);
+            margin-top: 48px;
         }
 
         /* ─── Responsive ─── */
@@ -894,6 +917,7 @@ const ORGS = [
 let currentOrg = null;
 let currentSchema = null;
 let currentFormMeta = null; // index entry data (formUrl, pageCount, etc.)
+let currentOrgData = null; // org index data for related forms lookup
 let currentStep = 0;
 let allFormsByOrg = {};
 let formData = {}; // in-memory data model — persists field values across step navigation
@@ -986,6 +1010,7 @@ async function selectForm(orgId, fileName, formName) {
     const org = ORGS.find(o => o.id === orgId);
     // Look up index entry for this form to get formUrl, pageCount, etc.
     const orgData = allFormsByOrg[orgId];
+    currentOrgData = orgData;
     currentFormMeta = orgData?.index?.forms?.find(f => f.fileName === fileName) || {};
     try {
         const schema = await loadSchema(org, fileName);
@@ -1151,22 +1176,22 @@ function renderIntroStep(schema, vaForm, org, steps) {
     const pdfUrl = meta.formUrl || '';
     const pageCount = meta.pageCount || '';
 
-    let html = '';
+    let html = '<div class="va-intro-content">';
 
-    // ─── Page Title (matches VA.gov "About VA Form [number]") ───
+    // ─── H1: About VA Form [number] ───
     html += `<div class="va-form-intro">
         <h1>About VA Form ${esc(formNumber)}</h1>
         <dl>
-            <div style="margin-bottom:32px;">
+            <div class="va-introtext-wrap">
                 <dt class="va-introtext">${esc(formTitle)}</dt>
             </div>
-            <div>
+            <div class="va-meta-row">
                 <dd><dfn>Related to:</dfn> ${esc(org.fullName)}</dd>
             </div>
         </dl>
     </div>`;
 
-    // ─── When to use this form ───
+    // ─── H2: When to use this form ───
     html += '<div class="va-about-section">';
     html += '<h2>When to use this form</h2>';
     if (formTitle) {
@@ -1174,33 +1199,63 @@ function renderIntroStep(schema, vaForm, org, steps) {
     } else {
         html += `<p>Use this form to submit required information to the VA for processing.</p>`;
     }
-    html += '</div>';
 
-    // ─── Download form ───
+    // ─── H3: Download form ───
     if (pdfUrl) {
-        html += '<div class="va-about-section">';
         html += '<h3>Download form</h3>';
         html += `<p>Download this PDF form and fill it out. Then submit your completed form on this page. Or you can print the form and mail it to the address listed on the form.</p>`;
-        html += `<a href="${esc(pdfUrl)}" target="_blank" rel="noopener" class="va-download-link">
+        html += `<button class="va-download-link" onclick="window.open('${esc(pdfUrl)}','_blank')">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
             Download VA Form ${esc(formNumber)} (PDF)
-        </a>`;
-        html += '</div>';
+        </button>`;
     }
 
-    // ─── Online tool (our wizard) ───
-    html += '<div class="va-about-section">';
+    // ─── H3: Online tool ───
     html += '<h3>Online tool</h3>';
     html += `<p>You can fill out this form online instead of filling out and sending us the paper form.</p>`;
     html += `<button class="va-action-link" onclick="navigateStep(1)">Go to the online tool</button>`;
     html += '</div>';
 
-    // ─── OMB Info ───
-    html += '<div class="va-omb-info">';
-    html += `<p class="va-last-updated">Last updated: ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>`;
-    html += '</div>';
+    // ─── Related forms section (if there are related forms in the index) ───
+    const relatedForms = findRelatedForms(formNumber);
+    if (relatedForms.length > 0) {
+        html += '<div class="va-related-section">';
+        html += '<h2>Related forms and instructions</h2>';
+        for (const rf of relatedForms) {
+            html += '<div class="va-related-form">';
+            html += `<h3><a href="#" onclick="event.preventDefault();selectFormByFileName('${esc(rf.fileName)}')">VA Form ${esc(rf.formNumber)}</a></h3>`;
+            if (rf.formTitle) html += `<p class="va-form-name">Form name: ${esc(rf.formTitle)}</p>`;
+            html += '</div>';
+        }
+        html += '</div>';
+    }
 
+    // ─── Last updated ───
+    html += `<p class="va-last-updated">Last updated: ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>`;
+
+    html += '</div>'; // end va-intro-content
     return html;
+}
+
+// Helper: find related forms from the same org index
+function findRelatedForms(currentFormNumber) {
+    if (!currentOrgData?.index?.forms) return [];
+    const allForms = currentOrgData.index.forms;
+    const related = [];
+    for (const f of allForms) {
+        // Use the "name" field from index (e.g., "21-674", "BIO-21-0779")
+        const fNum = f.name || '';
+        if (fNum && fNum !== currentFormNumber && !fNum.startsWith('BIO-')) {
+            related.push({ formNumber: fNum, fileName: f.fileName, formTitle: '' });
+            if (related.length >= 3) break;
+        }
+    }
+    return related;
+}
+
+// Helper: select a form by fileName
+function selectFormByFileName(fileName) {
+    if (fileName) selectForm(fileName);
 }
 
 // ─── Shared helpers for name grouping and label disambiguation ───
